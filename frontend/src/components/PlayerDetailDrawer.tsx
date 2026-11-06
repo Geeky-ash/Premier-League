@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from "react";
 import {
   X,
-  User,
   TrendingUp,
   Target,
   Crosshair,
   Users,
   BarChart3,
+  ExternalLink,
 } from "lucide-react";
 import {
   PlayerRecord,
@@ -17,37 +17,26 @@ import {
   TransferPredictResponse,
   ScoutTwinResponse,
 } from "@/lib/api";
+import { getClubCrest, getPlayerPhoto } from "@/lib/logos";
 
 interface Props {
   player: PlayerRecord | null;
   open: boolean;
   onClose: () => void;
+  onCompareWith?: (twinName: string) => void;
 }
 
 const CLUB_COLORS: Record<string, string> = {
-  Arsenal: "#ef0107",
-  Chelsea: "#034694",
-  "Manchester City": "#6cabdd",
-  "Manchester United": "#d81920",
-  Liverpool: "#c8102e",
-  "Tottenham Hotspur": "#132257",
-  "Newcastle United": "#241f20",
-  "Aston Villa": "#670e36",
-  Brighton: "#0057b8",
-  "West Ham United": "#7a263a",
-  Wolves: "#fdb913",
-  Bournemouth: "#da291c",
-  Fulham: "#000000",
-  "Crystal Palace": "#1b458f",
-  Brentford: "#e30613",
-  Everton: "#003399",
-  "Nottingham Forest": "#dd0000",
-  Leicester: "#003090",
-  Ipswich: "#0044aa",
-  Southampton: "#d71920",
+  Arsenal: "#ef0107", Chelsea: "#034694", "Manchester City": "#6cabdd",
+  "Manchester United": "#d81920", Liverpool: "#c8102e", "Tottenham Hotspur": "#132257",
+  "Newcastle United": "#241f20", "Aston Villa": "#670e36", Brighton: "#0057b8",
+  "West Ham United": "#7a263a", Wolves: "#fdb913", Bournemouth: "#da291c",
+  Fulham: "#000000", "Crystal Palace": "#1b458f", Brentford: "#e30613",
+  Everton: "#003399", "Nottingham Forest": "#dd0000", Leicester: "#003090",
+  Ipswich: "#0044aa", Southampton: "#d71920",
 };
 
-export default function PlayerDetailDrawer({ player, open, onClose }: Props) {
+export default function PlayerDetailDrawer({ player, open, onClose, onCompareWith }: Props) {
   const [transferData, setTransferData] = useState<TransferPredictResponse | null>(null);
   const [scoutData, setScoutData] = useState<ScoutTwinResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -87,44 +76,60 @@ export default function PlayerDetailDrawer({ player, open, onClose }: Props) {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Drawer */}
-      <div className="drawer-panel animate-slide-right">
-        {/* Hero Header */}
+      {/* Drawer Panel */}
+      <div className="drawer-panel animate-slide-right z-50">
+        {/* Hero Header with Club Color & Official Player Cutout */}
         <div
-          className="relative p-6 pb-8"
+          className="relative p-6 pb-8 border-b border-pl-border"
           style={{
-            background: `linear-gradient(135deg, ${clubColor}dd 0%, #190019 100%)`,
+            background: `linear-gradient(135deg, ${clubColor}cc 0%, #240024 70%, #190019 100%)`,
           }}
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-white/60 hover:text-white transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-full bg-black/30 text-white/70 hover:text-white transition-colors"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
 
           <div className="flex items-end gap-5">
-            <div
-              className="w-24 h-24 rounded-full flex items-center justify-center border-2 border-white/20"
-              style={{ backgroundColor: clubColor }}
-            >
-              <User size={40} className="text-white/70" />
+            {/* Player Headshot Cutout */}
+            <div className="relative w-24 h-24 rounded-full bg-black/30 border-2 border-white/20 p-1 shrink-0 overflow-hidden shadow-2xl">
+              <img
+                src={getPlayerPhoto(player.name)}
+                alt={player.name}
+                className="w-full h-full object-cover object-top"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = getClubCrest(player.club, 100);
+                }}
+              />
             </div>
-            <div>
-              <h2 className="text-2xl font-extrabold text-white tracking-tight">
+
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                <img
+                  src={getClubCrest(player.club, 50)}
+                  alt={player.club}
+                  className="w-5 h-5 object-contain drop-shadow"
+                />
+                <span className="text-xs font-bold text-white/90 uppercase tracking-wider">
+                  {player.club}
+                </span>
+              </div>
+              <h2 className="text-2xl font-extrabold text-white tracking-tight leading-tight">
                 {player.name}
               </h2>
-              <p className="text-sm text-white/70 mt-1">
-                {player.club} · {player.position} · Age {player.age}
+              <p className="text-xs text-white/75 mt-1 font-medium">
+                {player.position} · Age {player.age} · {player.minutes_played.toLocaleString()} mins
               </p>
-              <div className="mt-2 flex items-center gap-2">
-                <span className="pos-badge">{player.position}</span>
+              <div className="mt-2.5 flex items-center gap-2">
+                <span className="pos-badge bg-black/40 text-white font-bold">{player.position}</span>
                 {player.cluster_archetype && (
-                  <span className="pos-badge bg-pl-cyan/20 text-pl-cyan">
+                  <span className="pos-badge bg-pl-cyan/25 text-pl-cyan font-bold border border-pl-cyan/40">
                     {player.cluster_archetype}
                   </span>
                 )}
@@ -133,10 +138,11 @@ export default function PlayerDetailDrawer({ player, open, onClose }: Props) {
           </div>
         </div>
 
-        {/* Stats Grid */}
+        {/* Season Performance Grid */}
         <div className="p-6">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-4">
-            Season Performance
+          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3 flex items-center justify-between">
+            <span>Season Performance</span>
+            <span className="text-[10px] text-pl-green font-semibold">Premier League 2024/25</span>
           </h3>
           <div className="grid grid-cols-3 gap-3">
             {[
@@ -147,7 +153,7 @@ export default function PlayerDetailDrawer({ player, open, onClose }: Props) {
               { label: "Pass %", value: `${player.pass_completion}%`, icon: Users },
               { label: "Tackles", value: player.tackles_interceptions, icon: Users },
             ].map((s) => (
-              <div key={s.label} className="pl-card p-3 text-center">
+              <div key={s.label} className="pl-card p-3 text-center border-pl-border/60">
                 <div className="text-stat-md text-white">{s.value}</div>
                 <div className="stat-label mt-1">{s.label}</div>
               </div>
@@ -157,90 +163,90 @@ export default function PlayerDetailDrawer({ player, open, onClose }: Props) {
 
         {/* ML Transfer Valuation */}
         <div className="px-6 pb-6">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-4">
-            ML Transfer Valuation
+          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3">
+            Machine Learning Valuation
           </h3>
-          <div className="pl-card">
+          <div className="pl-card bg-pl-card-gradient border-pl-green/30">
             {loading ? (
-              <p className="text-sm text-pl-text-muted text-center py-4">
-                Running model inference...
+              <p className="text-sm text-pl-text-muted text-center py-4 animate-pulse">
+                Evaluating Scikit-learn OLS pipeline...
               </p>
             ) : transferData ? (
               <div className="text-center">
-                <div className="text-stat-xl text-pl-green">
+                <div className="text-stat-xl text-pl-green font-extrabold tracking-tight">
                   €{transferData.valuation_eur_m.toFixed(1)}M
                 </div>
-                <div className="stat-label mt-2">Predicted Market Value</div>
-                <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                <div className="stat-label mt-1 text-pl-text-muted">Estimated Market Value</div>
+                <div className="mt-4 grid grid-cols-2 gap-3 text-sm pt-3 border-t border-pl-border">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-white">
+                    <div className="text-base font-bold text-white">
                       {(transferData.r2_score * 100).toFixed(0)}%
                     </div>
-                    <div className="stat-label">Model R²</div>
+                    <div className="stat-label text-[10px]">Holdout R² Confidence</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-white">
-                      €{transferData.mae_score.toFixed(1)}M
+                    <div className="text-base font-bold text-white">
+                      ±€{transferData.mae_score.toFixed(1)}M
                     </div>
-                    <div className="stat-label">MAE</div>
+                    <div className="stat-label text-[10px]">MAE Error Margin</div>
                   </div>
                 </div>
               </div>
             ) : (
               <p className="text-sm text-pl-text-muted text-center py-4">
-                Valuation unavailable
+                Valuation currently unavailable
               </p>
             )}
           </div>
         </div>
 
-        {/* Top 5 Statistical Twins */}
+        {/* Top 5 Statistical Twins with Club Badges */}
         <div className="px-6 pb-8">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-4">
-            Top 5 Statistical Twins
+          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3">
+            Top 5 Statistical Twins (K-Means Similarity)
           </h3>
           {loading ? (
-            <p className="text-sm text-pl-text-muted text-center py-4">
-              Computing similarity vectors...
+            <p className="text-sm text-pl-text-muted text-center py-4 animate-pulse">
+              Computing Euclidean distances in PCA space...
             </p>
           ) : scoutData && scoutData.top_twins.length > 0 ? (
             <div className="space-y-2">
               {scoutData.top_twins.map((twin, i) => (
                 <div
                   key={twin.name}
-                  className="flex items-center gap-3 px-4 py-3 rounded-pl bg-pl-purple border border-pl-border"
+                  className="flex items-center gap-3 px-4 py-3 rounded-pl bg-pl-purple border border-pl-border hover:border-pl-cyan transition-colors"
                 >
-                  <span className="text-sm font-bold text-pl-cyan w-6">
+                  <span className="text-xs font-bold text-pl-cyan w-5">
                     #{i + 1}
                   </span>
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{
-                      backgroundColor: CLUB_COLORS[twin.club] || "#38003c",
-                    }}
-                  >
-                    <User size={14} className="text-white/70" />
-                  </div>
+                  {/* Twin Club Crest */}
+                  <img
+                    src={getClubCrest(twin.club, 50)}
+                    alt={twin.club}
+                    className="w-7 h-7 object-contain shrink-0"
+                  />
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-white">
+                    <div className="text-xs font-bold text-white">
                       {twin.name}
                     </div>
-                    <div className="text-[11px] text-pl-text-muted">
-                      {twin.club} · {twin.position}
+                    <div className="text-[10px] text-pl-text-muted">
+                      {twin.club} · {twin.position} · Age {twin.age}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold text-pl-green">
+                    <div className="text-xs font-extrabold text-pl-green">
                       {twin.similarity_pct.toFixed(1)}%
                     </div>
-                    <div className="text-[10px] text-pl-text-muted">MATCH</div>
+                    <div className="text-[9px] text-pl-text-muted uppercase font-semibold">
+                      SIMILARITY
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
             <p className="text-sm text-pl-text-muted text-center py-4">
-              No twin data available
+              No similarity vectors found
             </p>
           )}
         </div>

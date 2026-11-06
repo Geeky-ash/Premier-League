@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>stripe.com design system — designlang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ececee;--bg2:#f4f4f6;--card:#fff;--ink:#1b1d3a;--ink2:#4a4e6a;--ink3:#5b5f7a;--line:rgba(28,31,59,.1);--purple:#8a4fe0;--tint:#ece2fc;--lime:#d4f56b;--brand:#533afd;--on-brand:#ffffff;--sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'Geist Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#14152b;--bg2:#1b1d3a;--card:#202247;--ink:#f1f0fb;--ink2:#c9c8e0;--ink3:#a3a2c0;--line:rgba(255,255,255,.1);--tint:#2c2460}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+code{font-family:var(--mono);font-size:12.5px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,40px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 0;font-size:14px;color:var(--ink3)}
+.top b{color:var(--ink);font-weight:300;font-size:20px;letter-spacing:.01em}
+.top a{color:inherit}
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(18px,3vw,36px);align-items:stretch;padding:12px 0 8px}
+.hero h1{margin:0;font-size:clamp(44px,7vw,92px);font-weight:300;letter-spacing:-.045em;line-height:.98;overflow-wrap:anywhere}
+.hero h1 b{font-weight:800}
+.hero .sub{margin:16px 0 0;color:var(--ink2);max-width:52ch}
+.hero .facts{margin:20px 0 0;font:500 14px var(--mono);color:var(--ink3)}
+.brandcard{border-radius:32px;background:var(--brand);color:var(--on-brand);padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px}
+.brandcard b{font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.brandcard span{font:500 15px var(--mono);opacity:.85}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 8px}
+nav.toc a{padding:8px 14px;border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600}
+nav.toc a:hover{background:var(--tint)}
+section{margin:22px 0;padding:clamp(20px,3vw,34px);border-radius:28px;background:var(--card)}
+section>header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+section h2{margin:0;font-size:26px;font-weight:800;letter-spacing:-.03em}
+section>header p{margin:0;color:var(--ink3);font-size:14px}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.role{margin:0;border-radius:22px;padding:22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.role figcaption{display:flex;justify-content:space-between;gap:8px;font-size:15px}
+.role figcaption span{font:500 14px var(--mono)}
+.role p{margin:0;font-size:13px;opacity:.85}
+.ramp{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));margin-top:12px;border-radius:16px;overflow:hidden}
+.ramp div{padding:12px 8px;display:grid;gap:2px;font-size:11px}.ramp span{font:10px var(--mono);opacity:.8}
+.chips{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.chips li{display:flex;align-items:center;gap:8px;padding:6px;border-radius:12px;background:var(--bg2)}
+.chips i{width:28px;height:28px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line);flex:none}
+.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.face{display:flex;gap:16px;align-items:center;padding:18px;border-radius:20px;background:var(--bg2)}
+.face-aa{font-size:56px;line-height:1;color:var(--purple)}
+.face h3{margin:0;font-size:18px;font-family:var(--sans)}.face p{margin:2px 0 0;color:var(--ink3);font:13px var(--sans)}
+.tscale{margin-top:16px;display:grid;gap:4px}
+.tscale-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
+.tscale-row code{color:var(--ink3)}.tscale-row p{margin:0;line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ruler{display:grid;gap:8px}.ruler div{display:flex;align-items:center;gap:14px}
+.ruler i{display:block;height:14px;border-radius:4px;background:var(--lime);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);max-width:70%}
+.ruler code{color:var(--ink3)}
+.shapes{display:flex;flex-wrap:wrap;gap:16px}
+.radius{display:grid;justify-items:center;gap:6px;color:var(--ink3)}.radius i{width:72px;height:72px;background:var(--tint);border:2px solid var(--purple)}
+.radius span{font-size:12px}
+.shadows{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px;padding:18px;border-radius:20px;background:var(--bg2)}
+.shadows div{height:90px;border-radius:16px;background:#fff;display:grid;place-items:end start;padding:10px;color:#5b5f7a}
+.btns{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;padding:22px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.btn-spec{margin:0;display:grid;gap:8px;justify-items:start}.btn-spec span{display:inline-block;line-height:1.2}
+.btn-spec figcaption{font:12px var(--mono);color:#5b5f7a}
+.lead-num{margin:0 0 14px;font-size:18px}.lead-num b{font-size:42px;letter-spacing:-.04em}
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.pairs div{border-radius:16px;padding:16px;display:grid;gap:6px;box-shadow:inset 0 0 0 1px var(--line)}.pairs b{font-size:26px}
+.slop{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start}
+.slop-num{padding:20px;border-radius:22px;background:var(--lime);color:#1b1d3a}.slop-num b{font-size:64px;font-weight:800;letter-spacing:-.05em;line-height:.9}
+.slop-num span{font-weight:600}.slop-num p{margin:6px 0 0;font-weight:700}
+.flags{list-style:none;margin:0;padding:0;display:grid;gap:8px}.flags li{display:grid;gap:2px;padding:12px 14px;border-radius:14px;background:var(--bg2)}
+.flags span{font:12.5px var(--mono);color:var(--ink3);overflow-wrap:anywhere}
+.note{margin:14px 0 0;font-size:13px;color:var(--ink3)}
+footer{padding:28px 0 48px;color:var(--ink3);font-size:14px}footer a{color:var(--purple);font-weight:600}
+@media (max-width:820px){.hero,.slop{grid-template-columns:1fr}.ramp{grid-template-columns:repeat(6,minmax(0,1fr))}.tscale-row{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><b>designlang</b><span>Read in a real browser on 6 November 2026 · <a href="https://stripe.com" rel="noreferrer">stripe.com</a></span></div>
+  <div class="hero">
+    <div>
+      <h1><b>stripe.com</b><br>design system</h1>
+      <p class="sub">Stripe | Financial Infrastructure to Grow Your Revenue</p>
+      <p class="facts">31 colours · 1 type family · 4px spacing base · 5 corner radii · system grade B</p>
+    </div>
+    <div class="brandcard"><span>primary</span><b>#533afd</b><span>sohne-var</span></div>
+  </div>
+  <nav class="toc" aria-label="Sections"><a href="#colours">Colours</a><a href="#type">Typography</a><a href="#space">Spacing</a><a href="#shape">Shape and depth</a><a href="#components">Components</a><a href="#a11y">Contrast</a><a href="#slop">Slop Score</a></nav>
+  <section id="colours"><header><h2>Color Palette</h2><p>31 colours measured</p></header><div class="roles"><figure class="role" style="background:#533afd;color:#ffffff">
+      <figcaption><b>primary</b><span>#533afd</span></figcaption>
+      <p>1528 uses · 6.2:1 on white</p>
+    </figure><figure class="role" style="background:#ff6118;color:#1b1d3a">
+      <figcaption><b>secondary</b><span>#ff6118</span></figcaption>
+      <p>28 uses · 3.0:1 on white</p>
+    </figure><figure class="role" style="background:#00d66f;color:#1b1d3a">
+      <figcaption><b>accent</b><span>#00d66f</span></figcaption>
+      <p>1 uses · 1.9:1 on white</p>
+    </figure></div><div class="ramp" aria-label="Primary tonal ramp"><div style="background:#dbeaff;color:#1b1d3a"><b>50</b><span>#dbeaff</span></div><div style="background:#ceddff;color:#1b1d3a"><b>100</b><span>#ceddff</span></div><div style="background:#bbc9ff;color:#1b1d3a"><b>200</b><span>#bbc9ff</span></div><div style="background:#a0aaff;color:#1b1d3a"><b>300</b><span>#a0aaff</span></div><div style="background:#8181ff;color:#1b1d3a"><b>400</b><span>#8181ff</span></div><div style="background:#675cff;color:#ffffff"><b>500</b><span>#675cff</span></div><div style="background:#533afd;color:#ffffff"><b>600</b><span>#533afd</span></div><div style="background:#442ed4;color:#ffffff"><b>700</b><span>#442ed4</span></div><div style="background:#371fb5;color:#ffffff"><b>800</b><span>#371fb5</span></div><div style="background:#2c1399;color:#ffffff"><b>900</b><span>#2c1399</span></div><div style="background:#170160;color:#ffffff"><b>950</b><span>#170160</span></div></div><ul class="chips"><li><i style="background:#000000"></i><code>#000000</code></li><li><i style="background:#533afd"></i><code>#533afd</code></li><li><i style="background:#50617a"></i><code>#50617a</code></li><li><i style="background:#061b31"></i><code>#061b31</code></li><li><i style="background:#ffffff"></i><code>#ffffff</code></li><li><i style="background:#64748d"></i><code>#64748d</code></li><li><i style="background:#0000ee"></i><code>#0000ee</code></li><li><i style="background:#7389ff"></i><code>#7389ff</code></li><li><i style="background:#e5edf5"></i><code>#e5edf5</code></li><li><i style="background:#7f7dfc"></i><code>#7f7dfc</code></li><li><i style="background:#3c4f69"></i><code>#3c4f69</code></li><li><i style="background:#273951"></i><code>#273951</code></li><li><i style="background:#1a2c44"></i><code>#1a2c44</code></li><li><i style="background:#ff6118"></i><code>#ff6118</code></li><li><i style="background:#b9b9f9"></i><code>#b9b9f9</code></li><li><i style="background:#7d8ba4"></i><code>#7d8ba4</code></li><li><i style="background:#d6d9fc"></i><code>#d6d9fc</code></li><li><i style="background:#839bc8"></i><code>#839bc8</code></li><li><i style="background:#101010"></i><code>#101010</code></li><li><i style="background:#a3b5d6"></i><code>#a3b5d6</code></li><li><i style="background:#81b81a"></i><code>#81b81a</code></li><li><i style="background:#000eff"></i><code>#000eff</code></li><li><i style="background:#2d2564"></i><code>#2d2564</code></li><li><i style="background:#ffe0d1"></i><code>#ffe0d1</code></li><li><i style="background:#808080"></i><code>#808080</code></li><li><i style="background:#d8351e"></i><code>#d8351e</code></li><li><i style="background:#00d66f"></i><code>#00d66f</code></li><li><i style="background:#4834db"></i><code>#4834db</code></li><li><i style="background:#182659"></i><code>#182659</code></li><li><i style="background:#f2f7fe"></i><code>#f2f7fe</code></li><li><i style="background:#d4dee9"></i><code>#d4dee9</code></li></ul></section>
+  <section id="type"><header><h2>Typography</h2><p>14 sizes</p></header><div class="faces"><article class="face" style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif">
+      <span class="face-aa">Aa</span>
+      <div><h3>sohne-var</h3><p>all · 513 elements</p></div>
+    </article></div><div class="tscale"><div class="tscale-row"><code>56px · 300 · h2</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:56px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>48px · 300 · h1</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:48px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>32px · 300 · h2</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:32px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>26px · 400 · div</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:26px;font-weight:400">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>22px · 300 · h3</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:22px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>20px · 300 · p</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:20px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>18px · 300 · p</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:18px;font-weight:300">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>16px · 400 · html</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:16px;font-weight:400">Flexible solutions for every business model.</p></div><div class="tscale-row"><code>14px · 400 · button</code><p style="font-family:&#39;sohne-var&#39;, system-ui, sans-serif;font-size:14px;font-weight:400">Flexible solutions for every business model.</p></div></div><p class="note">Shown in each family when it is installed on this computer; otherwise a system face stands in.</p></section>
+  <section id="space"><header><h2>Spacing</h2><p>4px base</p></header><div class="ruler"><div><i style="width:8px"></i><code>4px</code></div><div><i style="width:16px"></i><code>8px</code></div><div><i style="width:24px"></i><code>12px</code></div><div><i style="width:32px"></i><code>16px</code></div><div><i style="width:40px"></i><code>20px</code></div><div><i style="width:48px"></i><code>24px</code></div><div><i style="width:64px"></i><code>32px</code></div><div><i style="width:80px"></i><code>40px</code></div><div><i style="width:128px"></i><code>64px</code></div></div></section>
+  <section id="shape"><header><h2>Shape and depth</h2></header><div class="shapes"><div class="radius"><i style="border-radius:1px"></i><code>1px</code><span>31×</span></div><div class="radius"><i style="border-radius:4px"></i><code>4px</code><span>74×</span></div><div class="radius"><i style="border-radius:8px"></i><code>8px</code><span>4×</span></div><div class="radius"><i style="border-radius:16px"></i><code>16px</code><span>1×</span></div><div class="radius"><i style="border-radius:60px"></i><code>100px</code><span>3×</span></div></div>
+    <div class="shadows"><div style="box-shadow:rgba(23, 23, 23, 0.06) 0px 3px 6px 0px"><code>shadow 1</code></div><div style="box-shadow:rgba(50, 50, 93, 0.12) 0px 16px 32px 0px"><code>shadow 2</code></div><div style="box-shadow:rgba(23, 23, 23, 0.08) 0px 15px 35px 0px"><code>shadow 3</code></div></div></section>
+  <section id="components"><header><h2>Components</h2><p>Buttons as measured</p></header><div class="btns"><figure class="btn-spec"><span style="background:transparent;color:#000000;font-size:16px;font-weight:400;border-radius:4px;padding:0px 0px">Ghost link</span><figcaption>ghost · 29×</figcaption></figure><figure class="btn-spec"><span style="background:transparent;color:#533afd;font-size:16px;font-weight:400;border-radius:4px;padding:14.5px 24px;border:1.5px solid #533afd">Secondary</span><figcaption>secondary · 24×</figcaption></figure><figure class="btn-spec"><span style="background:#533afd;color:#ffffff;font-size:16px;font-weight:400;border-radius:4px;padding:15.5px 24px">Primary action</span><figcaption>variant-3 · 10×</figcaption></figure><figure class="btn-spec"><span style="background:#e8e9ff;color:#000000;font-size:16px;font-weight:400;border-radius:4px;padding:0px 0px">Button</span><figcaption>variant-4 · 4×</figcaption></figure><figure class="btn-spec"><span style="background:#e2e4ff;color:#533afd;font-size:16px;font-weight:400;border-radius:4px;padding:0px 0px">Button</span><figcaption>variant-5 · 3×</figcaption></figure><figure class="btn-spec"><span style="background:#ffffff;color:#533afd;font-size:16px;font-weight:400;border-radius:4px;padding:15.5px 24px">Button</span><figcaption>variant-6 · 1×</figcaption></figure></div></section>
+  <section id="a11y"><header><h2>Contrast</h2><p>WCAG 2.1 AA</p></header><p class="lead-num"><b>75</b>% of measured text pairs pass WCAG AA</p><div class="pairs"><div style="background:#e3ecf7;color:#ffffff"><b>Aa</b><code>#ffffff on #e3ecf7 · 1.19:1</code></div></div></section>
+  <section id="slop"><header><h2>Slop Score</h2><p>How generic it looks</p></header><div class="slop"><div class="slop-num"><b>26</b><span>/100</span><p>Looks distinct</p></div>
+    <div><ul class="flags"><li><b>Indigo or violet gradient</b><span>gradient 2: radial-gradient(circle, rgb(127, 125, 252), rgb(244, 75, 204) 33%, rgb(229, 237, 245) 66%)</span></li></ul>
+    <p class="note">0 is distinct, 100 is every known tell of AI-made design at once. <code>npx designlang slop stripe.com</code></p></div></div></section>
+  <footer>Every value here was measured from the rendered page. Tokens, Tailwind, Figma and DESIGN.md files sit next to this page. Made with <a href="https://designlang.app">designlang</a>.</footer>
+</div>
+</body>
+</html>
