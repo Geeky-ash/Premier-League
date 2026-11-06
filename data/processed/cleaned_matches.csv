@@ -1,0 +1,381 @@
+match_id,date,home_team,away_team,home_goals,away_goals,full_time_result,home_shots,away_shots,home_shots_on_target,away_shots_on_target,home_possession,away_possession,home_form_points_last_5,away_form_points_last_5,goal_difference,shot_difference,sot_difference,possession_difference,home_advantage,form_difference
+1001,2023-08-01,Manchester City,Arsenal,2,1,H,11,8,6,3,56,44,13,9,1,3,3,12,1,4
+1002,2023-08-02,Manchester City,Liverpool,0,2,A,5,6,1,3,61,39,7,1,-2,-1,-2,22,1,6
+1003,2023-08-03,Manchester City,Aston Villa,2,2,D,11,10,5,4,73,27,9,10,0,1,1,46,1,-1
+1004,2023-08-04,Manchester City,Tottenham Hotspur,3,0,H,7,9,3,4,69,31,13,12,3,-2,-1,38,1,1
+1005,2023-08-05,Manchester City,Chelsea,3,0,H,13,4,7,1,78,22,13,2,3,9,6,56,1,11
+1006,2023-08-06,Manchester City,Newcastle United,4,0,H,18,9,7,3,75,25,5,4,4,9,4,50,1,1
+1007,2023-08-07,Manchester City,Manchester United,1,2,A,15,7,7,2,78,22,3,5,-1,8,5,56,1,-2
+1008,2023-08-08,Manchester City,West Ham United,4,1,H,14,9,6,4,78,22,11,8,3,5,2,56,1,3
+1009,2023-08-09,Manchester City,Crystal Palace,3,0,H,11,11,5,4,78,22,15,4,3,0,1,56,1,11
+1010,2023-08-10,Manchester City,Brighton & Hove Albion,4,1,H,11,6,4,3,76,24,12,13,3,5,1,52,1,-1
+1011,2023-08-11,Manchester City,Bournemouth,2,2,D,12,8,5,2,78,22,13,12,0,4,3,56,1,1
+1012,2023-08-12,Manchester City,Fulham,2,0,H,12,6,6,3,78,22,10,1,2,6,3,56,1,9
+1013,2023-08-13,Manchester City,Wolverhampton Wanderers,3,0,H,14,5,7,2,78,22,12,6,3,9,5,56,1,6
+1014,2023-08-14,Manchester City,Everton,1,2,A,13,12,6,5,78,22,7,13,-1,1,1,56,1,-6
+1015,2023-08-15,Manchester City,Brentford,3,0,H,15,10,5,4,78,22,14,5,3,5,1,56,1,9
+1016,2023-08-16,Manchester City,Nottingham Forest,3,0,H,12,8,3,2,78,22,9,12,3,4,1,56,1,-3
+1017,2023-08-17,Manchester City,Leicester City,3,1,H,8,10,3,4,78,22,3,4,2,-2,-1,56,1,-1
+1018,2023-08-18,Manchester City,Southampton,1,2,A,14,5,5,2,78,22,8,5,-1,9,3,56,1,3
+1019,2023-08-19,Manchester City,Ipswich Town,1,2,A,13,13,7,5,78,22,7,7,-1,0,2,56,1,0
+1020,2023-08-20,Arsenal,Manchester City,0,0,D,10,8,5,3,56,44,5,8,0,2,2,12,1,-3
+1021,2023-08-21,Arsenal,Liverpool,2,0,H,12,3,5,1,53,47,10,3,2,9,4,6,1,7
+1022,2023-08-22,Arsenal,Aston Villa,2,0,H,12,8,5,3,66,34,9,5,2,4,2,32,1,4
+1023,2023-08-23,Arsenal,Tottenham Hotspur,1,0,H,6,10,3,3,64,36,8,4,1,-4,0,28,1,4
+1024,2023-08-24,Arsenal,Chelsea,2,0,H,6,6,3,2,67,33,6,3,2,0,1,34,1,3
+1025,2023-08-25,Arsenal,Newcastle United,1,0,H,14,6,7,3,73,27,5,10,1,8,4,46,1,-5
+1026,2023-08-26,Arsenal,Manchester United,2,1,H,10,5,3,1,76,24,13,7,1,5,2,52,1,6
+1027,2023-08-27,Arsenal,West Ham United,1,1,D,6,7,3,2,73,27,13,10,0,-1,1,46,1,3
+1028,2023-08-28,Arsenal,Crystal Palace,2,0,H,11,11,5,3,78,22,13,6,2,0,2,56,1,7
+1029,2023-08-01,Arsenal,Brighton & Hove Albion,2,2,D,13,6,7,2,78,22,10,12,0,7,5,56,1,-2
+1030,2023-08-02,Arsenal,Bournemouth,3,2,H,9,13,3,7,78,22,11,13,1,-4,-4,56,1,-2
+1031,2023-08-03,Arsenal,Fulham,1,2,A,11,9,6,4,78,22,4,5,-1,2,2,56,1,-1
+1032,2023-08-04,Arsenal,Wolverhampton Wanderers,1,1,D,12,10,3,5,78,22,5,8,0,2,-2,56,1,-3
+1033,2023-08-05,Arsenal,Everton,3,0,H,11,8,6,4,78,22,7,9,3,3,2,56,1,-2
+1034,2023-08-06,Arsenal,Brentford,2,1,H,7,7,3,3,78,22,14,8,1,0,0,56,1,6
+1035,2023-08-07,Arsenal,Nottingham Forest,1,2,A,5,6,1,3,78,22,7,11,-1,-1,-2,56,1,-4
+1036,2023-08-08,Arsenal,Leicester City,4,2,H,16,13,6,6,78,22,8,6,2,3,0,56,1,2
+1037,2023-08-09,Arsenal,Southampton,1,0,H,9,7,3,2,78,22,4,12,1,2,1,56,1,-8
+1038,2023-08-10,Arsenal,Ipswich Town,3,1,H,10,11,5,6,78,22,11,10,2,-1,-1,56,1,1
+1039,2023-08-11,Liverpool,Manchester City,1,1,D,8,8,3,3,48,52,14,9,0,0,0,-4,1,5
+1040,2023-08-12,Liverpool,Arsenal,2,2,D,6,5,2,2,57,43,13,13,0,1,0,14,1,0
+1041,2023-08-13,Liverpool,Aston Villa,1,0,H,5,7,2,2,68,32,3,5,1,-2,0,36,1,-2
+1042,2023-08-14,Liverpool,Tottenham Hotspur,1,0,H,6,9,1,4,70,30,3,3,1,-3,-3,40,1,0
+1043,2023-08-15,Liverpool,Chelsea,3,0,H,8,6,3,2,64,36,12,13,3,2,1,28,1,-1
+1044,2023-08-16,Liverpool,Newcastle United,3,2,H,14,12,7,7,68,32,7,10,1,2,0,36,1,-3
+1045,2023-08-17,Liverpool,Manchester United,2,0,H,9,6,4,2,70,30,5,9,2,3,2,40,1,-4
+1046,2023-08-18,Liverpool,West Ham United,2,1,H,6,10,3,4,77,23,3,4,1,-4,-1,54,1,-1
+1047,2023-08-19,Liverpool,Crystal Palace,4,0,H,15,4,5,1,78,22,15,11,4,11,4,56,1,4
+1048,2023-08-20,Liverpool,Brighton & Hove Albion,3,2,H,8,13,3,7,73,27,5,2,1,-5,-4,46,1,3
+1049,2023-08-21,Liverpool,Bournemouth,2,1,H,10,8,3,4,78,22,14,7,1,2,-1,56,1,7
+1050,2023-08-22,Liverpool,Fulham,4,2,H,15,6,4,2,78,22,8,10,2,9,2,56,1,-2
+1051,2023-08-23,Liverpool,Wolverhampton Wanderers,4,0,H,9,6,4,2,78,22,3,13,4,3,2,56,1,-10
+1052,2023-08-24,Liverpool,Everton,4,0,H,10,10,4,5,78,22,5,10,4,0,-1,56,1,-5
+1053,2023-08-25,Liverpool,Brentford,1,2,A,6,12,2,4,78,22,4,3,-1,-6,-2,56,1,1
+1054,2023-08-26,Liverpool,Nottingham Forest,4,2,H,15,9,8,4,78,22,11,1,2,6,4,56,1,10
+1055,2023-08-27,Liverpool,Leicester City,1,0,H,10,7,3,3,78,22,11,1,1,3,0,56,1,10
+1056,2023-08-28,Liverpool,Southampton,1,2,A,5,8,2,4,78,22,13,8,-1,-3,-2,56,1,5
+1057,2023-08-01,Liverpool,Ipswich Town,2,1,H,10,12,5,5,78,22,14,8,1,-2,0,56,1,6
+1058,2023-08-02,Aston Villa,Manchester City,0,1,A,14,7,5,2,36,64,9,2,-1,7,3,-28,1,7
+1059,2023-08-03,Aston Villa,Arsenal,1,1,D,12,5,6,2,49,51,14,5,0,7,4,-2,1,9
+1060,2023-08-04,Aston Villa,Liverpool,1,0,H,12,10,5,3,43,57,6,10,1,2,2,-14,1,-4
+1061,2023-08-05,Aston Villa,Tottenham Hotspur,2,0,H,10,9,5,4,57,43,3,5,2,1,1,14,1,-2
+1062,2023-08-06,Aston Villa,Chelsea,2,1,H,8,11,3,4,60,40,15,9,1,-3,-1,20,1,6
+1063,2023-08-07,Aston Villa,Newcastle United,0,1,A,9,7,4,2,57,43,15,7,-1,2,2,14,1,8
+1064,2023-08-08,Aston Villa,Manchester United,1,2,A,12,11,7,5,61,39,13,3,-1,1,2,22,1,10
+1065,2023-08-09,Aston Villa,West Ham United,0,0,D,6,11,2,3,69,31,10,2,0,-5,-1,38,1,8
+1066,2023-08-10,Aston Villa,Crystal Palace,1,0,H,7,9,4,2,71,29,15,5,1,-2,2,42,1,10
+1067,2023-08-11,Aston Villa,Brighton & Hove Albion,2,1,H,16,5,8,2,65,35,9,6,1,11,6,30,1,3
+1068,2023-08-12,Aston Villa,Bournemouth,1,0,H,14,4,6,2,66,34,6,12,1,10,4,32,1,-6
+1069,2023-08-13,Aston Villa,Fulham,2,2,D,7,6,2,2,70,30,3,1,0,1,0,40,1,2
+1070,2023-08-14,Aston Villa,Wolverhampton Wanderers,4,0,H,12,8,5,2,69,31,9,10,4,4,3,38,1,-1
+1071,2023-08-15,Aston Villa,Everton,3,1,H,9,5,5,2,73,27,6,8,2,4,3,46,1,-2
+1072,2023-08-16,Aston Villa,Brentford,3,1,H,14,8,5,2,71,29,15,8,2,6,3,42,1,7
+1073,2023-08-17,Aston Villa,Nottingham Forest,4,1,H,9,11,5,4,72,28,9,12,3,-2,1,44,1,-3
+1074,2023-08-18,Aston Villa,Leicester City,4,2,H,12,8,6,2,75,25,9,10,2,4,4,50,1,-1
+1075,2023-08-19,Aston Villa,Southampton,4,0,H,12,3,5,0,78,22,13,13,4,9,5,56,1,0
+1076,2023-08-20,Aston Villa,Ipswich Town,2,2,D,10,8,5,2,78,22,6,10,0,2,3,56,1,-4
+1077,2023-08-21,Tottenham Hotspur,Manchester City,1,2,A,15,6,7,2,43,57,10,1,-1,9,5,-14,1,9
+1078,2023-08-22,Tottenham Hotspur,Arsenal,1,2,A,6,9,3,3,42,58,5,13,-1,-3,0,-16,1,-8
+1079,2023-08-23,Tottenham Hotspur,Liverpool,1,2,A,7,9,4,3,46,54,8,13,-1,-2,1,-8,1,-5
+1080,2023-08-24,Tottenham Hotspur,Aston Villa,1,1,D,6,6,3,3,52,48,9,13,0,0,0,4,1,-4
+1081,2023-08-25,Tottenham Hotspur,Chelsea,2,0,H,12,3,5,1,55,45,13,12,2,9,4,10,1,1
+1082,2023-08-26,Tottenham Hotspur,Newcastle United,2,1,H,16,9,8,3,53,47,12,9,1,7,5,6,1,3
+1083,2023-08-27,Tottenham Hotspur,Manchester United,2,1,H,16,5,8,2,64,36,7,11,1,11,6,28,1,-4
+1084,2023-08-28,Tottenham Hotspur,West Ham United,0,0,D,6,3,2,1,58,42,4,4,0,3,1,16,1,0
+1085,2023-08-01,Tottenham Hotspur,Crystal Palace,2,1,H,13,9,7,4,70,30,11,7,1,4,3,40,1,4
+1086,2023-08-02,Tottenham Hotspur,Brighton & Hove Albion,2,1,H,16,5,7,2,65,35,7,1,1,11,5,30,1,6
+1087,2023-08-03,Tottenham Hotspur,Bournemouth,4,1,H,15,11,8,3,64,36,13,6,3,4,5,28,1,7
+1088,2023-08-04,Tottenham Hotspur,Fulham,4,0,H,14,7,8,4,64,36,10,2,4,7,4,28,1,8
+1089,2023-08-05,Tottenham Hotspur,Wolverhampton Wanderers,3,0,H,7,8,4,4,66,34,6,2,3,-1,0,32,1,4
+1090,2023-08-06,Tottenham Hotspur,Everton,3,1,H,10,9,5,4,65,35,7,3,2,1,1,30,1,4
+1091,2023-08-07,Tottenham Hotspur,Brentford,3,0,H,9,4,5,1,73,27,8,13,3,5,4,46,1,-5
+1092,2023-08-08,Tottenham Hotspur,Nottingham Forest,3,0,H,7,5,3,2,70,30,11,2,3,2,1,40,1,9
+1093,2023-08-09,Tottenham Hotspur,Leicester City,2,2,D,13,10,6,4,75,25,6,10,0,3,2,50,1,-4
+1094,2023-08-10,Tottenham Hotspur,Southampton,2,0,H,13,3,7,1,70,30,9,11,2,10,6,40,1,-2
+1095,2023-08-11,Tottenham Hotspur,Ipswich Town,2,2,D,13,6,5,2,73,27,5,5,0,7,3,46,1,0
+1096,2023-08-12,Chelsea,Manchester City,1,0,H,14,11,6,5,37,63,4,13,1,3,1,-26,1,-9
+1097,2023-08-13,Chelsea,Arsenal,0,2,A,10,12,4,6,40,60,9,7,-2,-2,-2,-20,1,2
+1098,2023-08-14,Chelsea,Liverpool,0,2,A,10,10,3,5,49,51,13,8,-2,0,-2,-2,1,5
+1099,2023-08-15,Chelsea,Aston Villa,1,0,H,6,4,1,2,55,45,15,3,1,2,-1,10,1,12
+1100,2023-08-16,Chelsea,Tottenham Hotspur,1,2,A,15,6,6,2,57,43,15,7,-1,9,4,14,1,8
+1101,2023-08-17,Chelsea,Newcastle United,1,2,A,14,9,4,4,57,43,5,11,-1,5,0,14,1,-6
+1102,2023-08-18,Chelsea,Manchester United,0,1,A,5,9,2,4,62,38,12,4,-1,-4,-2,24,1,8
+1103,2023-08-19,Chelsea,West Ham United,0,0,D,13,7,4,3,58,42,7,6,0,6,1,16,1,1
+1104,2023-08-20,Chelsea,Crystal Palace,2,0,H,8,5,3,1,69,31,14,11,2,3,2,38,1,3
+1105,2023-08-21,Chelsea,Brighton & Hove Albion,1,0,H,13,6,5,2,64,36,8,5,1,7,3,28,1,3
+1106,2023-08-22,Chelsea,Bournemouth,4,0,H,8,5,4,1,63,37,4,5,4,3,3,26,1,-1
+1107,2023-08-23,Chelsea,Fulham,1,2,A,12,12,4,6,67,33,4,6,-1,0,-2,34,1,-2
+1108,2023-08-24,Chelsea,Wolverhampton Wanderers,1,0,H,9,10,4,3,71,29,9,10,1,-1,1,42,1,-1
+1109,2023-08-25,Chelsea,Everton,2,0,H,9,7,4,3,66,34,7,6,2,2,1,32,1,1
+1110,2023-08-26,Chelsea,Brentford,2,0,H,13,9,4,4,65,35,6,9,2,4,0,30,1,-3
+1111,2023-08-27,Chelsea,Nottingham Forest,4,0,H,14,3,4,1,72,28,8,10,4,11,3,44,1,-2
+1112,2023-08-28,Chelsea,Leicester City,1,2,A,15,11,5,3,71,29,8,3,-1,4,2,42,1,5
+1113,2023-08-01,Chelsea,Southampton,1,0,H,6,9,2,4,71,29,11,2,1,-3,-2,42,1,9
+1114,2023-08-02,Chelsea,Ipswich Town,1,0,H,10,6,5,1,77,23,13,2,1,4,4,54,1,11
+1115,2023-08-03,Newcastle United,Manchester City,1,2,A,10,7,3,2,34,66,5,10,-1,3,1,-32,1,-5
+1116,2023-08-04,Newcastle United,Arsenal,1,1,D,7,11,3,5,43,57,10,11,0,-4,-2,-14,1,-1
+1117,2023-08-05,Newcastle United,Liverpool,1,2,A,7,12,3,5,38,62,15,5,-1,-5,-2,-24,1,10
+1118,2023-08-06,Newcastle United,Aston Villa,1,2,A,13,6,5,2,52,48,8,5,-1,7,3,4,1,3
+1119,2023-08-07,Newcastle United,Tottenham Hotspur,1,0,H,14,11,6,5,55,45,15,12,1,3,1,10,1,3
+1120,2023-08-08,Newcastle United,Chelsea,1,1,D,14,7,6,3,54,46,3,8,0,7,3,8,1,-5
+1121,2023-08-09,Newcastle United,Manchester United,1,2,A,6,13,2,4,62,38,10,8,-1,-7,-2,24,1,2
+1122,2023-08-10,Newcastle United,West Ham United,2,2,D,11,9,4,3,63,37,12,1,0,2,1,26,1,11
+1123,2023-08-11,Newcastle United,Crystal Palace,2,0,H,11,4,5,1,66,34,14,11,2,7,4,32,1,3
+1124,2023-08-12,Newcastle United,Brighton & Hove Albion,2,2,D,7,7,2,3,62,38,13,7,0,0,-1,24,1,6
+1125,2023-08-13,Newcastle United,Bournemouth,2,0,H,10,11,4,4,66,34,5,11,2,-1,0,32,1,-6
+1126,2023-08-14,Newcastle United,Fulham,1,1,D,13,9,5,3,60,40,6,6,0,4,2,20,1,0
+1127,2023-08-15,Newcastle United,Wolverhampton Wanderers,1,1,D,8,6,2,3,63,37,4,9,0,2,-1,26,1,-5
+1128,2023-08-16,Newcastle United,Everton,2,0,H,15,5,6,1,70,30,14,13,2,10,5,40,1,1
+1129,2023-08-17,Newcastle United,Brentford,3,2,H,7,11,3,4,66,34,10,10,1,-4,-1,32,1,0
+1130,2023-08-18,Newcastle United,Nottingham Forest,4,2,H,11,13,4,7,67,33,10,4,2,-2,-3,34,1,6
+1131,2023-08-19,Newcastle United,Leicester City,4,2,H,15,9,6,3,72,28,5,4,2,6,3,44,1,1
+1132,2023-08-20,Newcastle United,Southampton,3,0,H,7,10,3,3,74,26,11,2,3,-3,0,48,1,9
+1133,2023-08-21,Newcastle United,Ipswich Town,4,0,H,10,7,5,2,77,23,9,2,4,3,3,54,1,7
+1134,2023-08-22,Manchester United,Manchester City,0,3,A,9,6,2,3,36,64,6,7,-3,3,-1,-28,1,-1
+1135,2023-08-23,Manchester United,Arsenal,0,2,A,7,5,4,2,39,61,13,6,-2,2,2,-22,1,7
+1136,2023-08-24,Manchester United,Liverpool,1,2,A,5,9,2,3,43,57,14,8,-1,-4,-1,-14,1,6
+1137,2023-08-25,Manchester United,Aston Villa,0,0,D,5,3,1,1,50,50,14,10,0,2,0,0,1,4
+1138,2023-08-26,Manchester United,Tottenham Hotspur,0,0,D,8,6,2,2,52,48,13,13,0,2,0,4,1,0
+1139,2023-08-27,Manchester United,Chelsea,0,0,D,5,10,2,4,57,43,12,4,0,-5,-2,14,1,8
+1140,2023-08-28,Manchester United,Newcastle United,2,2,D,12,5,4,2,58,42,5,11,0,7,2,16,1,-6
+1141,2023-08-01,Manchester United,West Ham United,1,2,A,6,13,2,7,63,37,11,1,-1,-7,-5,26,1,10
+1142,2023-08-02,Manchester United,Crystal Palace,0,1,A,5,10,1,3,62,38,15,2,-1,-5,-2,24,1,13
+1143,2023-08-03,Manchester United,Brighton & Hove Albion,2,1,H,16,5,8,1,64,36,3,6,1,11,7,28,1,-3
+1144,2023-08-04,Manchester United,Bournemouth,2,1,H,16,11,7,5,65,35,4,12,1,5,2,30,1,-8
+1145,2023-08-05,Manchester United,Fulham,0,0,D,8,6,4,3,58,42,8,5,0,2,1,16,1,3
+1146,2023-08-06,Manchester United,Wolverhampton Wanderers,0,1,A,8,4,2,1,70,30,15,1,-1,4,1,40,1,14
+1147,2023-08-07,Manchester United,Everton,2,2,D,7,10,3,5,66,34,9,6,0,-3,-2,32,1,3
+1148,2023-08-08,Manchester United,Brentford,2,1,H,13,9,4,2,68,32,9,2,1,4,2,36,1,7
+1149,2023-08-09,Manchester United,Nottingham Forest,1,1,D,13,8,4,3,68,32,7,5,0,5,1,36,1,2
+1150,2023-08-10,Manchester United,Leicester City,1,2,A,7,12,3,6,69,31,8,10,-1,-5,-3,38,1,-2
+1151,2023-08-11,Manchester United,Southampton,1,0,H,15,3,7,1,68,32,11,13,1,12,6,36,1,-2
+1152,2023-08-12,Manchester United,Ipswich Town,3,0,H,9,10,3,3,69,31,13,6,3,-1,0,38,1,7
+1153,2023-08-13,West Ham United,Manchester City,1,3,A,14,6,4,3,34,66,8,6,-2,8,1,-32,1,2
+1154,2023-08-14,West Ham United,Arsenal,1,2,A,14,7,5,2,38,62,7,4,-1,7,3,-24,1,3
+1155,2023-08-15,West Ham United,Liverpool,0,1,A,6,11,2,5,39,61,7,13,-1,-5,-3,-22,1,-6
+1156,2023-08-16,West Ham United,Aston Villa,1,0,H,8,7,2,2,49,51,4,8,1,1,0,-2,1,-4
+1157,2023-08-17,West Ham United,Tottenham Hotspur,1,0,H,6,8,2,2,53,47,11,5,1,-2,0,6,1,6
+1158,2023-08-18,West Ham United,Chelsea,1,2,A,15,7,6,2,48,52,6,13,-1,8,4,-4,1,-7
+1159,2023-08-19,West Ham United,Newcastle United,1,2,A,12,5,5,2,50,50,15,9,-1,7,3,0,1,6
+1160,2023-08-20,West Ham United,Manchester United,2,0,H,7,7,4,3,52,48,11,7,2,0,1,4,1,4
+1161,2023-08-21,West Ham United,Crystal Palace,0,0,D,6,8,1,3,62,38,11,6,0,-2,-2,24,1,5
+1162,2023-08-22,West Ham United,Brighton & Hove Albion,2,1,H,8,10,4,3,59,41,4,9,1,-2,1,18,1,-5
+1163,2023-08-23,West Ham United,Bournemouth,2,2,D,8,7,4,2,59,41,11,5,0,1,2,18,1,6
+1164,2023-08-24,West Ham United,Fulham,1,2,A,8,13,2,5,58,42,11,2,-1,-5,-3,16,1,9
+1165,2023-08-25,West Ham United,Wolverhampton Wanderers,2,1,H,8,9,2,5,64,36,4,1,1,-1,-3,28,1,3
+1166,2023-08-26,West Ham United,Everton,2,1,H,15,10,7,4,64,36,13,9,1,5,3,28,1,4
+1167,2023-08-27,West Ham United,Brentford,2,2,D,13,8,5,3,65,35,14,1,0,5,2,30,1,13
+1168,2023-08-28,West Ham United,Nottingham Forest,2,1,H,12,11,4,5,65,35,8,12,1,1,-1,30,1,-4
+1169,2023-08-01,West Ham United,Leicester City,2,2,D,12,7,5,2,65,35,6,8,0,5,3,30,1,-2
+1170,2023-08-02,West Ham United,Southampton,2,0,H,13,6,4,2,65,35,9,10,2,7,2,30,1,-1
+1171,2023-08-03,West Ham United,Ipswich Town,1,1,D,7,9,3,3,73,27,5,8,0,-2,0,46,1,-3
+1172,2023-08-04,Crystal Palace,Manchester City,0,3,A,11,10,3,5,31,69,11,8,-3,1,-2,-38,1,3
+1173,2023-08-05,Crystal Palace,Arsenal,0,2,A,13,10,4,4,28,72,13,11,-2,3,0,-44,1,2
+1174,2023-08-06,Crystal Palace,Liverpool,1,3,A,13,6,5,3,31,69,14,6,-2,7,2,-38,1,8
+1175,2023-08-07,Crystal Palace,Aston Villa,2,2,D,6,11,2,3,40,60,11,5,0,-5,-1,-20,1,6
+1176,2023-08-08,Crystal Palace,Tottenham Hotspur,0,0,D,12,10,4,5,50,50,13,10,0,2,-1,0,1,3
+1177,2023-08-09,Crystal Palace,Chelsea,0,2,A,5,11,2,4,47,53,8,13,-2,-6,-2,-6,1,-5
+1178,2023-08-10,Crystal Palace,Newcastle United,1,2,A,14,13,6,4,49,51,5,12,-1,1,2,-2,1,-7
+1179,2023-08-11,Crystal Palace,Manchester United,1,0,H,13,10,6,4,47,53,8,10,1,3,2,-6,1,-2
+1180,2023-08-12,Crystal Palace,West Ham United,2,1,H,12,8,4,4,58,42,11,8,1,4,0,16,1,3
+1181,2023-08-13,Crystal Palace,Brighton & Hove Albion,2,1,H,6,9,3,5,54,46,12,5,1,-3,-2,8,1,7
+1182,2023-08-14,Crystal Palace,Bournemouth,1,1,D,9,7,4,2,52,48,13,12,0,2,2,4,1,1
+1183,2023-08-15,Crystal Palace,Fulham,0,1,A,14,7,6,3,52,48,6,1,-1,7,3,4,1,5
+1184,2023-08-16,Crystal Palace,Wolverhampton Wanderers,0,2,A,10,7,5,2,60,40,15,10,-2,3,3,20,1,5
+1185,2023-08-17,Crystal Palace,Everton,0,0,D,6,11,2,6,57,43,10,9,0,-5,-4,14,1,1
+1186,2023-08-18,Crystal Palace,Brentford,0,2,A,6,12,2,4,62,38,15,12,-2,-6,-2,24,1,3
+1187,2023-08-19,Crystal Palace,Nottingham Forest,2,1,H,9,7,4,2,61,39,7,13,1,2,2,22,1,-6
+1188,2023-08-20,Crystal Palace,Leicester City,2,1,H,13,9,5,5,65,35,15,12,1,4,0,30,1,3
+1189,2023-08-21,Crystal Palace,Southampton,4,0,H,9,11,5,4,67,33,8,13,4,-2,1,34,1,-5
+1190,2023-08-22,Crystal Palace,Ipswich Town,3,0,H,7,7,3,3,64,36,7,12,3,0,0,28,1,-5
+1191,2023-08-23,Brighton & Hove Albion,Manchester City,1,2,A,8,13,4,6,29,71,5,2,-1,-5,-2,-42,1,3
+1192,2023-08-24,Brighton & Hove Albion,Arsenal,0,1,A,13,7,4,4,33,67,6,11,-1,6,0,-34,1,-5
+1193,2023-08-25,Brighton & Hove Albion,Liverpool,1,1,D,6,10,3,3,36,64,15,3,0,-4,0,-28,1,12
+1194,2023-08-26,Brighton & Hove Albion,Aston Villa,0,2,A,10,12,4,6,49,51,7,6,-2,-2,-2,-2,1,1
+1195,2023-08-27,Brighton & Hove Albion,Tottenham Hotspur,1,1,D,6,7,3,3,51,49,3,3,0,-1,0,2,1,0
+1196,2023-08-28,Brighton & Hove Albion,Chelsea,2,2,D,6,11,2,5,50,50,7,1,0,-5,-3,0,1,6
+1197,2023-08-01,Brighton & Hove Albion,Newcastle United,0,2,A,13,6,5,3,50,50,11,9,-2,7,2,0,1,2
+1198,2023-08-02,Brighton & Hove Albion,Manchester United,0,1,A,12,11,4,3,50,50,5,12,-1,1,1,0,1,-7
+1199,2023-08-03,Brighton & Hove Albion,West Ham United,0,2,A,6,5,3,2,56,44,15,4,-2,1,1,12,1,11
+1200,2023-08-04,Brighton & Hove Albion,Crystal Palace,2,1,H,12,12,3,6,57,43,5,3,1,0,-3,14,1,2
+1201,2023-08-05,Brighton & Hove Albion,Bournemouth,0,2,A,7,5,2,2,58,42,7,6,-2,2,0,16,1,1
+1202,2023-08-06,Brighton & Hove Albion,Fulham,2,0,H,10,8,3,2,57,43,7,3,2,2,1,14,1,4
+1203,2023-08-07,Brighton & Hove Albion,Wolverhampton Wanderers,0,2,A,5,9,2,3,60,40,5,8,-2,-4,-1,20,1,-3
+1204,2023-08-08,Brighton & Hove Albion,Everton,2,1,H,15,9,7,5,61,39,15,9,1,6,2,22,1,6
+1205,2023-08-09,Brighton & Hove Albion,Brentford,2,1,H,16,5,6,2,63,37,4,10,1,11,4,26,1,-6
+1206,2023-08-10,Brighton & Hove Albion,Nottingham Forest,1,0,H,13,11,6,3,61,39,8,9,1,2,3,22,1,-1
+1207,2023-08-11,Brighton & Hove Albion,Leicester City,0,0,D,14,6,6,3,69,31,10,13,0,8,3,38,1,-3
+1208,2023-08-12,Brighton & Hove Albion,Southampton,2,2,D,8,13,3,4,69,31,10,11,0,-5,-1,38,1,-1
+1209,2023-08-13,Brighton & Hove Albion,Ipswich Town,4,0,H,14,7,7,3,64,36,3,7,4,7,4,28,1,-4
+1210,2023-08-14,Bournemouth,Manchester City,1,1,D,6,12,3,3,28,72,10,1,0,-6,0,-44,1,9
+1211,2023-08-15,Bournemouth,Arsenal,1,3,A,7,8,4,3,37,63,9,6,-2,-1,1,-26,1,3
+1212,2023-08-16,Bournemouth,Liverpool,1,3,A,11,12,5,5,29,71,11,3,-2,-1,0,-42,1,8
+1213,2023-08-17,Bournemouth,Aston Villa,1,1,D,7,12,3,6,45,55,6,1,0,-5,-3,-10,1,5
+1214,2023-08-18,Bournemouth,Tottenham Hotspur,0,2,A,11,13,5,7,46,54,6,8,-2,-2,-2,-8,1,-2
+1215,2023-08-19,Bournemouth,Chelsea,1,2,A,9,8,2,3,41,59,12,13,-1,1,-1,-18,1,-1
+1216,2023-08-20,Bournemouth,Newcastle United,0,2,A,7,6,3,2,43,57,13,12,-2,1,1,-14,1,1
+1217,2023-08-21,Bournemouth,Manchester United,0,2,A,5,11,1,4,50,50,15,1,-2,-6,-3,0,1,14
+1218,2023-08-22,Bournemouth,West Ham United,2,2,D,9,10,4,5,57,43,8,4,0,-1,-1,14,1,4
+1219,2023-08-23,Bournemouth,Crystal Palace,2,1,H,16,12,6,4,52,48,11,10,1,4,2,4,1,1
+1220,2023-08-24,Bournemouth,Brighton & Hove Albion,2,1,H,14,11,8,6,48,52,13,7,1,3,2,-4,1,6
+1221,2023-08-25,Bournemouth,Fulham,2,1,H,12,6,4,3,55,45,10,4,1,6,1,10,1,6
+1222,2023-08-26,Bournemouth,Wolverhampton Wanderers,2,2,D,8,12,3,7,52,48,11,9,0,-4,-4,4,1,2
+1223,2023-08-27,Bournemouth,Everton,2,1,H,9,8,3,2,55,45,10,6,1,1,1,10,1,4
+1224,2023-08-28,Bournemouth,Brentford,1,1,D,5,8,2,3,58,42,4,4,0,-3,-1,16,1,0
+1225,2023-08-01,Bournemouth,Nottingham Forest,2,1,H,9,9,5,2,59,41,6,12,1,0,3,18,1,-6
+1226,2023-08-02,Bournemouth,Leicester City,1,1,D,8,7,4,3,63,37,15,5,0,1,1,26,1,10
+1227,2023-08-03,Bournemouth,Southampton,0,1,A,12,9,4,4,64,36,10,8,-1,3,0,28,1,2
+1228,2023-08-04,Bournemouth,Ipswich Town,2,2,D,11,8,4,2,66,34,6,12,0,3,2,32,1,-6
+1229,2023-08-05,Fulham,Manchester City,0,2,A,8,13,3,5,31,69,5,4,-2,-5,-2,-38,1,1
+1230,2023-08-06,Fulham,Arsenal,1,2,A,11,8,5,4,34,66,8,5,-1,3,1,-32,1,3
+1231,2023-08-07,Fulham,Liverpool,1,1,D,15,11,5,5,35,65,5,3,0,4,0,-30,1,2
+1232,2023-08-08,Fulham,Aston Villa,2,2,D,14,5,4,2,47,53,13,1,0,9,2,-6,1,12
+1233,2023-08-09,Fulham,Tottenham Hotspur,0,0,D,6,6,3,1,41,59,11,8,0,0,2,-18,1,3
+1234,2023-08-10,Fulham,Chelsea,1,1,D,14,11,6,3,50,50,11,7,0,3,3,0,1,4
+1235,2023-08-11,Fulham,Newcastle United,0,1,A,12,8,7,2,50,50,14,11,-1,4,5,0,1,3
+1236,2023-08-12,Fulham,Manchester United,2,2,D,7,6,2,2,51,49,11,5,0,1,0,2,1,6
+1237,2023-08-13,Fulham,West Ham United,2,2,D,12,6,7,2,53,47,6,12,0,6,5,6,1,-6
+1238,2023-08-14,Fulham,Crystal Palace,2,2,D,16,6,9,2,59,41,3,2,0,10,7,18,1,1
+1239,2023-08-15,Fulham,Brighton & Hove Albion,0,1,A,10,12,3,3,55,45,5,2,-1,-2,0,10,1,3
+1240,2023-08-16,Fulham,Bournemouth,0,1,A,14,9,8,5,60,40,11,1,-1,5,3,20,1,10
+1241,2023-08-17,Fulham,Wolverhampton Wanderers,2,1,H,15,11,4,3,56,44,7,9,1,4,1,12,1,-2
+1242,2023-08-18,Fulham,Everton,1,1,D,10,4,4,2,55,45,14,7,0,6,2,10,1,7
+1243,2023-08-19,Fulham,Brentford,1,2,A,7,8,3,3,61,39,11,6,-1,-1,0,22,1,5
+1244,2023-08-20,Fulham,Nottingham Forest,0,1,A,5,12,1,5,60,40,4,6,-1,-7,-4,20,1,-2
+1245,2023-08-21,Fulham,Leicester City,0,2,A,5,9,2,3,64,36,9,7,-2,-4,-1,28,1,2
+1246,2023-08-22,Fulham,Southampton,2,1,H,7,8,3,2,63,37,5,7,1,-1,1,26,1,-2
+1247,2023-08-23,Fulham,Ipswich Town,3,2,H,12,10,3,5,62,38,10,6,1,2,-2,24,1,4
+1248,2023-08-24,Wolverhampton Wanderers,Manchester City,1,2,A,7,6,3,2,28,72,11,7,-1,1,1,-44,1,4
+1249,2023-08-25,Wolverhampton Wanderers,Arsenal,0,2,A,5,10,1,4,33,67,8,7,-2,-5,-3,-34,1,1
+1250,2023-08-26,Wolverhampton Wanderers,Liverpool,0,3,A,10,12,5,5,28,72,6,10,-3,-2,0,-44,1,-4
+1251,2023-08-27,Wolverhampton Wanderers,Aston Villa,1,0,H,7,5,2,2,41,59,4,3,1,2,0,-18,1,1
+1252,2023-08-28,Wolverhampton Wanderers,Tottenham Hotspur,2,2,D,12,9,6,3,46,54,6,12,0,3,3,-8,1,-6
+1253,2023-08-01,Wolverhampton Wanderers,Chelsea,2,2,D,13,6,5,3,41,59,8,10,0,7,2,-18,1,-2
+1254,2023-08-02,Wolverhampton Wanderers,Newcastle United,2,2,D,13,10,7,5,46,54,12,3,0,3,2,-8,1,9
+1255,2023-08-03,Wolverhampton Wanderers,Manchester United,1,2,A,14,8,5,4,49,51,8,5,-1,6,1,-2,1,3
+1256,2023-08-04,Wolverhampton Wanderers,West Ham United,0,1,A,9,10,4,4,50,50,4,10,-1,-1,0,0,1,-6
+1257,2023-08-05,Wolverhampton Wanderers,Crystal Palace,2,1,H,16,12,9,5,48,52,14,4,1,4,4,-4,1,10
+1258,2023-08-06,Wolverhampton Wanderers,Brighton & Hove Albion,0,2,A,5,11,2,5,56,44,6,5,-2,-6,-3,12,1,1
+1259,2023-08-07,Wolverhampton Wanderers,Bournemouth,2,1,H,12,5,7,2,56,44,9,9,1,7,5,12,1,0
+1260,2023-08-08,Wolverhampton Wanderers,Fulham,0,0,D,9,11,4,3,58,42,15,4,0,-2,1,16,1,11
+1261,2023-08-09,Wolverhampton Wanderers,Everton,2,1,H,16,4,9,2,60,40,9,13,1,12,7,20,1,-4
+1262,2023-08-10,Wolverhampton Wanderers,Brentford,2,1,H,7,4,2,1,52,48,11,9,1,3,1,4,1,2
+1263,2023-08-11,Wolverhampton Wanderers,Nottingham Forest,2,1,H,11,10,5,4,61,39,11,3,1,1,1,22,1,8
+1264,2023-08-12,Wolverhampton Wanderers,Leicester City,2,0,H,13,4,5,2,59,41,4,12,2,9,3,18,1,-8
+1265,2023-08-13,Wolverhampton Wanderers,Southampton,2,2,D,10,10,5,4,65,35,8,8,0,0,1,30,1,0
+1266,2023-08-14,Wolverhampton Wanderers,Ipswich Town,1,1,D,12,9,4,4,61,39,4,1,0,3,0,22,1,3
+1267,2023-08-15,Everton,Manchester City,1,1,D,6,6,2,2,28,72,8,9,0,0,0,-44,1,-1
+1268,2023-08-16,Everton,Arsenal,1,3,A,8,12,2,5,35,65,9,7,-2,-4,-3,-30,1,2
+1269,2023-08-17,Everton,Liverpool,0,1,A,13,7,6,2,34,66,14,4,-1,6,4,-32,1,10
+1270,2023-08-18,Everton,Aston Villa,1,2,A,6,6,2,2,45,55,10,2,-1,0,0,-10,1,8
+1271,2023-08-19,Everton,Tottenham Hotspur,1,0,H,13,8,5,3,48,52,4,6,1,5,2,-4,1,-2
+1272,2023-08-20,Everton,Chelsea,1,0,H,14,5,7,1,49,51,12,10,1,9,6,-2,1,2
+1273,2023-08-21,Everton,Newcastle United,0,2,A,9,6,3,2,43,57,14,3,-2,3,1,-14,1,11
+1274,2023-08-22,Everton,Manchester United,2,0,H,15,5,6,1,51,49,13,9,2,10,5,2,1,4
+1275,2023-08-23,Everton,West Ham United,2,1,H,13,8,4,4,48,52,12,1,1,5,0,-4,1,11
+1276,2023-08-24,Everton,Crystal Palace,2,0,H,13,5,7,2,51,49,11,11,2,8,5,2,1,0
+1277,2023-08-25,Everton,Brighton & Hove Albion,0,1,A,14,11,7,4,52,48,5,2,-1,3,3,4,1,3
+1278,2023-08-26,Everton,Bournemouth,1,1,D,9,4,3,1,53,47,15,8,0,5,2,6,1,7
+1279,2023-08-27,Everton,Fulham,0,0,D,13,4,6,2,53,47,8,9,0,9,4,6,1,-1
+1280,2023-08-28,Everton,Wolverhampton Wanderers,1,1,D,13,7,4,3,57,43,15,4,0,6,1,14,1,11
+1281,2023-08-01,Everton,Brentford,2,0,H,13,7,7,2,56,44,4,13,2,6,5,12,1,-9
+1282,2023-08-02,Everton,Nottingham Forest,2,1,H,15,9,7,3,63,37,5,13,1,6,4,26,1,-8
+1283,2023-08-03,Everton,Leicester City,2,1,H,6,9,2,4,63,37,8,12,1,-3,-2,26,1,-4
+1284,2023-08-04,Everton,Southampton,2,2,D,15,9,8,4,66,34,4,3,0,6,4,32,1,1
+1285,2023-08-05,Everton,Ipswich Town,0,0,D,8,5,2,2,62,38,6,13,0,3,0,24,1,-7
+1286,2023-08-06,Brentford,Manchester City,0,3,A,11,8,5,3,30,70,9,8,-3,3,2,-40,1,1
+1287,2023-08-07,Brentford,Arsenal,0,1,A,5,10,2,5,33,67,8,8,-1,-5,-3,-34,1,0
+1288,2023-08-08,Brentford,Liverpool,1,3,A,14,6,7,3,28,72,13,12,-2,8,4,-44,1,1
+1289,2023-08-09,Brentford,Aston Villa,1,1,D,13,10,7,5,40,60,10,5,0,3,2,-20,1,5
+1290,2023-08-10,Brentford,Tottenham Hotspur,1,2,A,10,13,3,7,48,52,15,6,-1,-3,-4,-4,1,9
+1291,2023-08-11,Brentford,Chelsea,0,1,A,5,11,1,6,39,61,10,8,-1,-6,-5,-22,1,2
+1292,2023-08-12,Brentford,Newcastle United,0,0,D,7,5,2,2,50,50,7,2,0,2,0,0,1,5
+1293,2023-08-13,Brentford,Manchester United,1,2,A,6,10,3,3,52,48,9,11,-1,-4,0,4,1,-2
+1294,2023-08-14,Brentford,West Ham United,2,1,H,12,5,3,2,47,53,5,10,1,7,1,-6,1,-5
+1295,2023-08-15,Brentford,Crystal Palace,2,1,H,6,4,3,2,53,47,9,12,1,2,1,6,1,-3
+1296,2023-08-16,Brentford,Brighton & Hove Albion,2,1,H,7,7,2,3,52,48,4,6,1,0,-1,4,1,-2
+1297,2023-08-17,Brentford,Bournemouth,2,2,D,8,11,3,5,51,49,4,9,0,-3,-2,2,1,-5
+1298,2023-08-18,Brentford,Fulham,1,1,D,12,9,5,3,52,48,9,10,0,3,2,4,1,-1
+1299,2023-08-19,Brentford,Wolverhampton Wanderers,0,1,A,5,5,2,2,53,47,9,6,-1,0,0,6,1,3
+1300,2023-08-20,Brentford,Everton,0,2,A,6,8,2,2,55,45,12,10,-2,-2,0,10,1,2
+1301,2023-08-21,Brentford,Nottingham Forest,2,0,H,16,7,7,3,57,43,14,7,2,9,4,14,1,7
+1302,2023-08-22,Brentford,Leicester City,2,0,H,9,10,3,4,61,39,12,2,2,-1,-1,22,1,10
+1303,2023-08-23,Brentford,Southampton,1,2,A,10,7,5,3,64,36,8,9,-1,3,2,28,1,-1
+1304,2023-08-24,Brentford,Ipswich Town,2,1,H,7,4,2,1,69,31,3,1,1,3,1,38,1,2
+1305,2023-08-25,Nottingham Forest,Manchester City,1,1,D,9,12,3,5,28,72,13,9,0,-3,-2,-44,1,4
+1306,2023-08-26,Nottingham Forest,Arsenal,0,1,A,6,8,2,3,28,72,6,13,-1,-2,-1,-44,1,-7
+1307,2023-08-27,Nottingham Forest,Liverpool,0,1,A,9,10,4,5,33,67,13,11,-1,-1,-1,-34,1,2
+1308,2023-08-28,Nottingham Forest,Aston Villa,0,2,A,10,8,3,4,34,66,4,8,-2,2,-1,-32,1,-4
+1309,2023-08-01,Nottingham Forest,Tottenham Hotspur,0,2,A,14,7,4,2,37,63,3,3,-2,7,2,-26,1,0
+1310,2023-08-02,Nottingham Forest,Chelsea,2,2,D,14,13,4,4,40,60,15,5,0,1,0,-20,1,10
+1311,2023-08-03,Nottingham Forest,Newcastle United,0,1,A,9,10,4,3,41,59,12,11,-1,-1,1,-18,1,1
+1312,2023-08-04,Nottingham Forest,Manchester United,0,0,D,11,11,3,6,44,56,5,6,0,0,-3,-12,1,-1
+1313,2023-08-05,Nottingham Forest,West Ham United,1,2,A,6,6,3,2,46,54,3,4,-1,0,1,-8,1,-1
+1314,2023-08-06,Nottingham Forest,Crystal Palace,0,0,D,9,9,3,5,47,53,3,9,0,0,-2,-6,1,-6
+1315,2023-08-07,Nottingham Forest,Brighton & Hove Albion,2,2,D,11,8,6,3,49,51,4,10,0,3,3,-2,1,-6
+1316,2023-08-08,Nottingham Forest,Bournemouth,2,0,H,14,3,5,1,48,52,3,7,2,11,4,-4,1,-4
+1317,2023-08-09,Nottingham Forest,Fulham,1,1,D,9,8,2,3,51,49,8,4,0,1,-1,2,1,4
+1318,2023-08-10,Nottingham Forest,Wolverhampton Wanderers,2,2,D,15,8,6,4,55,45,15,13,0,7,2,10,1,2
+1319,2023-08-11,Nottingham Forest,Everton,2,1,H,8,4,2,1,54,46,13,12,1,4,1,8,1,1
+1320,2023-08-12,Nottingham Forest,Brentford,1,2,A,5,11,1,5,52,48,6,7,-1,-6,-4,4,1,-1
+1321,2023-08-13,Nottingham Forest,Leicester City,0,0,D,6,7,1,2,53,47,11,7,0,-1,-1,6,1,4
+1322,2023-08-14,Nottingham Forest,Southampton,2,1,H,7,5,2,2,63,37,4,10,1,2,0,26,1,-6
+1323,2023-08-15,Nottingham Forest,Ipswich Town,1,1,D,15,6,5,3,60,40,15,7,0,9,2,20,1,8
+1324,2023-08-16,Leicester City,Manchester City,0,1,A,9,9,3,2,28,72,6,3,-1,0,1,-44,1,3
+1325,2023-08-17,Leicester City,Arsenal,0,2,A,6,6,2,2,28,72,4,9,-2,0,0,-44,1,-5
+1326,2023-08-18,Leicester City,Liverpool,1,2,A,12,9,4,3,29,71,5,13,-1,3,1,-42,1,-8
+1327,2023-08-19,Leicester City,Aston Villa,1,1,D,8,9,2,3,35,65,8,7,0,-1,-1,-30,1,1
+1328,2023-08-20,Leicester City,Tottenham Hotspur,0,2,A,8,7,4,3,34,66,11,12,-2,1,1,-32,1,-1
+1329,2023-08-21,Leicester City,Chelsea,1,1,D,12,5,4,1,36,64,15,4,0,7,3,-28,1,11
+1330,2023-08-22,Leicester City,Newcastle United,1,2,A,11,10,5,4,46,54,12,10,-1,1,1,-8,1,2
+1331,2023-08-23,Leicester City,Manchester United,1,1,D,5,5,2,2,40,60,5,2,0,0,0,-20,1,3
+1332,2023-08-24,Leicester City,West Ham United,1,1,D,5,11,1,5,42,58,14,7,0,-6,-4,-16,1,7
+1333,2023-08-25,Leicester City,Crystal Palace,2,1,H,12,10,4,5,45,55,7,5,1,2,-1,-10,1,2
+1334,2023-08-26,Leicester City,Brighton & Hove Albion,2,2,D,6,8,2,3,52,48,11,8,0,-2,-1,4,1,3
+1335,2023-08-27,Leicester City,Bournemouth,0,1,A,8,10,3,4,47,53,15,9,-1,-2,-1,-6,1,6
+1336,2023-08-28,Leicester City,Fulham,1,1,D,11,9,5,4,52,48,12,9,0,2,1,4,1,3
+1337,2023-08-01,Leicester City,Wolverhampton Wanderers,2,1,H,10,6,3,2,46,54,15,13,1,4,1,-8,1,2
+1338,2023-08-02,Leicester City,Everton,2,0,H,13,11,6,6,51,49,5,2,2,2,0,2,1,3
+1339,2023-08-03,Leicester City,Brentford,2,1,H,10,12,5,7,46,54,12,13,1,-2,-2,-8,1,-1
+1340,2023-08-04,Leicester City,Nottingham Forest,0,2,A,6,7,2,3,52,48,14,6,-2,-1,-1,4,1,8
+1341,2023-08-05,Leicester City,Southampton,1,2,A,14,7,8,3,63,37,15,8,-1,7,5,26,1,7
+1342,2023-08-06,Leicester City,Ipswich Town,2,1,H,13,4,4,1,56,44,3,9,1,9,3,12,1,-6
+1343,2023-08-07,Southampton,Manchester City,1,2,A,10,8,4,2,28,72,15,6,-1,2,2,-44,1,9
+1344,2023-08-08,Southampton,Arsenal,0,2,A,6,7,3,3,28,72,4,6,-2,-1,0,-44,1,-2
+1345,2023-08-09,Southampton,Liverpool,0,1,A,10,5,3,1,28,72,5,12,-1,5,2,-44,1,-7
+1346,2023-08-10,Southampton,Aston Villa,1,1,D,12,9,6,4,32,68,12,13,0,3,2,-36,1,-1
+1347,2023-08-11,Southampton,Tottenham Hotspur,1,2,A,15,7,5,3,37,63,5,3,-1,8,2,-26,1,2
+1348,2023-08-12,Southampton,Chelsea,0,0,D,13,3,6,1,33,67,12,4,0,10,5,-34,1,8
+1349,2023-08-13,Southampton,Newcastle United,0,0,D,6,8,2,4,34,66,5,11,0,-2,-2,-32,1,-6
+1350,2023-08-14,Southampton,Manchester United,0,2,A,11,5,3,2,38,62,8,5,-2,6,1,-24,1,3
+1351,2023-08-15,Southampton,West Ham United,0,1,A,5,10,2,5,46,54,9,8,-1,-5,-3,-8,1,1
+1352,2023-08-16,Southampton,Crystal Palace,2,2,D,14,11,7,5,41,59,12,11,0,3,2,-18,1,1
+1353,2023-08-17,Southampton,Brighton & Hove Albion,1,2,A,12,6,4,2,39,61,4,2,-1,6,2,-22,1,2
+1354,2023-08-18,Southampton,Bournemouth,1,2,A,11,7,5,3,43,57,4,6,-1,4,2,-14,1,-2
+1355,2023-08-19,Southampton,Fulham,2,1,H,12,6,6,2,51,49,4,6,1,6,4,2,1,-2
+1356,2023-08-20,Southampton,Wolverhampton Wanderers,1,2,A,11,13,4,4,51,49,6,2,-1,-2,0,2,1,4
+1357,2023-08-21,Southampton,Everton,0,0,D,13,11,4,4,50,50,9,2,0,2,0,0,1,7
+1358,2023-08-22,Southampton,Brentford,1,0,H,8,4,2,1,43,57,4,8,1,4,1,-14,1,-4
+1359,2023-08-23,Southampton,Nottingham Forest,1,2,A,11,12,6,4,53,47,13,9,-1,-1,2,6,1,4
+1360,2023-08-24,Southampton,Leicester City,0,1,A,9,10,3,3,53,47,10,8,-1,-1,0,6,1,2
+1361,2023-08-25,Southampton,Ipswich Town,2,1,H,10,4,5,2,54,46,4,11,1,6,3,8,1,-7
+1362,2023-08-26,Ipswich Town,Manchester City,1,1,D,11,7,3,2,28,72,11,7,0,4,1,-44,1,4
+1363,2023-08-27,Ipswich Town,Arsenal,0,1,A,11,7,4,2,28,72,14,1,-1,4,2,-44,1,13
+1364,2023-08-28,Ipswich Town,Liverpool,0,1,A,12,6,7,2,28,72,5,4,-1,6,5,-44,1,1
+1365,2023-08-01,Ipswich Town,Aston Villa,0,2,A,5,11,2,4,29,71,13,3,-2,-6,-2,-42,1,10
+1366,2023-08-02,Ipswich Town,Tottenham Hotspur,0,3,A,9,7,3,3,31,69,8,5,-3,2,0,-38,1,3
+1367,2023-08-03,Ipswich Town,Chelsea,0,3,A,5,14,1,4,36,64,12,10,-3,-9,-3,-28,1,2
+1368,2023-08-04,Ipswich Town,Newcastle United,0,1,A,13,5,7,2,35,65,9,5,-1,8,5,-30,1,4
+1369,2023-08-05,Ipswich Town,Manchester United,2,0,H,15,10,5,4,33,67,12,10,2,5,1,-34,1,2
+1370,2023-08-06,Ipswich Town,West Ham United,2,1,H,12,9,3,3,40,60,7,6,1,3,0,-20,1,1
+1371,2023-08-07,Ipswich Town,Crystal Palace,0,2,A,8,9,4,5,43,57,13,2,-2,-1,-1,-14,1,11
+1372,2023-08-08,Ipswich Town,Brighton & Hove Albion,1,2,A,9,12,3,5,42,58,13,2,-1,-3,-2,-16,1,11
+1373,2023-08-09,Ipswich Town,Bournemouth,1,0,H,8,9,4,5,47,53,3,9,1,-1,-1,-6,1,-6
+1374,2023-08-10,Ipswich Town,Fulham,1,1,D,9,12,3,6,46,54,12,1,0,-3,-3,-8,1,11
+1375,2023-08-11,Ipswich Town,Wolverhampton Wanderers,1,2,A,8,5,2,2,45,55,8,12,-1,3,0,-10,1,-4
+1376,2023-08-12,Ipswich Town,Everton,1,2,A,10,12,4,6,50,50,13,1,-1,-2,-2,0,1,12
+1377,2023-08-13,Ipswich Town,Brentford,1,2,A,12,12,7,5,44,56,11,6,-1,0,2,-12,1,5
+1378,2023-08-14,Ipswich Town,Nottingham Forest,1,2,A,9,6,2,2,49,51,12,13,-1,3,0,-2,1,-1
+1379,2023-08-15,Ipswich Town,Leicester City,2,1,H,16,7,5,3,56,44,11,1,1,9,2,12,1,10
+1380,2023-08-16,Ipswich Town,Southampton,1,1,D,7,6,3,2,58,42,12,13,0,1,1,16,1,-1

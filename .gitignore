@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+**/node_modules/
+package-lock.json.bak
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Python & Virtual Environments
+venv/
+.venv/
+env/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing & Caching
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Environment variables & secrets
+.env*.local
+.env
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

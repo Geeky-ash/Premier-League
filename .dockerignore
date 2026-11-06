@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+
+# Next.js & Frontend dependencies
+.next
+node_modules
+**/node_modules
+npm-debug.log*
+
+# Python environments & caches
+venv
+.venv
+env
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+
+# Testing & Logs
+.coverage
+htmlcov/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
