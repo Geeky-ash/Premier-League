@@ -27,7 +27,8 @@ This living memory document tracks active configurations, technology choices, de
 | **MOD-01** | **Transfer Value Predictor** | Linear Regression Pipeline | 🟢 Complete | 🟢 Saved (`transfer_predictor.joblib`) | 🟢 `POST /api/v1/predict/transfer-value` | 🟢 `/transfer-predictor` | `CONTAINERIZED` |
 | **MOD-02** | **Match Outcome Predictor** | XGBoost Classification | 🟢 Complete | 🟢 Saved (`match_predictor.joblib`) | 🟢 `POST /api/v1/predict/match-outcome` | 🟢 `/match-predictor` | `CONTAINERIZED` |
 | **MOD-03** | **Player Scouting System** | K-Means Clustering & PCA | 🟢 Complete | 🟢 Saved (`scouting_kmeans.joblib`) | 🟢 `POST /api/v1/predict/scout-twin` | 🟢 `/scouting-studio` | `CONTAINERIZED` |
-| **CORE** | **Unified Architecture** | Next.js 14 + FastAPI Microservice | 🟢 Complete | 🟢 Complete | 🟢 `GET /api/v1/health` | 🟢 `Sidebar + layout.tsx` | `CONTAINERIZED` |
+| **MOD-04** | **Player Comparison System** | 1v1 Stat Matrix & ML Twin Comparison | 🟢 Complete | 🟢 Real-time Enriched | 🟢 Multi-endpoint Pipeline | 🟢 `/comparison` | `CONTAINERIZED` |
+| **CORE** | **Unified Architecture** | Next.js 14 + FastAPI Microservice | 🟢 Complete | 🟢 Complete | 🟢 `GET /api/v1/health` | 🟢 `Navbar + StatsBanner` | `CONTAINERIZED` |
 | **PHASE-05**| **CI/CD Automated Data Ingestion** | GitHub Actions Weekly Cron | 🟢 Complete | 🟢 Validated by Pytest | 🟢 Automated Ingestion | N/A | `AUTOMATED_CI_CD` |
 
 *Legend: 🟢 Complete & Verified | 🟡 In Progress / Staged | 🔴 Pending Implementation*
@@ -47,6 +48,13 @@ This living memory document tracks active configurations, technology choices, de
 ---
 
 ### 4. Known Bugs, Blockers & Active Notes
+- **Premier League Stats Centre UI Redesign Completed**:
+  - Replaced generic AI glassmorphism with the official Premier League visual identity matching `premierleague.com`.
+  - Palette: Base `#190019` / `#240024` (Deep Purple), Containers `#38003c` (PL Purple), Accents `#00ff85` (Green), `#e90052` (Magenta), `#00d4ff` (Cyan).
+  - Navigation: Global top utility strip (`#140014`), main navbar with lion emblem and ticker strip with live club news.
+  - Stats Centre Header: Signature cyan-to-purple diagonal gradient banner with sub-navigation tabs (Dashboard, Transfer Predictor, Match Predictor, Scouting Studio, Player Comparison).
+  - Module 4 (Player Comparison `/comparison`): Side-by-side slot cards, modal search with position filters, club badges, head-to-head stat matrix with ML predictions, and popular comparison presets.
+  - Interactive Drawer (`PlayerDetailDrawer.tsx`): Slide-in profile with season performance metrics, ML valuation, and top 5 statistical twins.
 - **Phase 5 CI/CD Data Ingestion Implemented**:
   - Workflow file: `.github/workflows/update_data.yml` titled `"Automated Matchweek Data Refresh"`.
   - Cron trigger: `0 4 * * 1` (Mondays at 04:00 UTC) with `workflow_dispatch` manual trigger.

@@ -1,24 +1,39 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
+import StatsBanner from "@/components/StatsBanner";
 
 export const metadata: Metadata = {
-  title: "Premier League Analytics // Next.js & FastAPI Intelligence Suite",
-  description: "Unified AI analytics platform integrating Linear Regression, XGBoost, and K-Means for Premier League data.",
+  title: "Stats Centre | Premier League Analytics Platform",
+  description:
+    "Official-style Premier League Stats Centre powered by Machine Learning — Transfer Values, Match Outcomes, and Player Scouting Intelligence.",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-[#0B0E14] text-slate-100 flex min-h-screen">
-        <Sidebar />
-        <main className="flex-1 p-8 lg:p-10 overflow-y-auto max-w-7xl mx-auto">
-          {children}
-        </main>
+    <html lang="en">
+      <body className="bg-pl-deepest text-white min-h-screen">
+        <Navbar />
+        <StatsBanner />
+        <main className="max-w-[1400px] mx-auto px-4 py-8">{children}</main>
+
+        {/* Footer */}
+        <footer className="w-full bg-pl-utility border-t border-pl-border mt-12">
+          <div className="max-w-[1400px] mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">⚽</span>
+              <span className="text-[12px] font-bold tracking-wider text-pl-text-secondary">
+                PREMIER LEAGUE ANALYTICS PLATFORM
+              </span>
+            </div>
+            <p className="text-[11px] text-pl-text-muted">
+              ML-powered predictions. Not affiliated with the Premier League.
+              Built for educational purposes.
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );

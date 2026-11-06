@@ -2,51 +2,222 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0B0E14;
-  --foreground: #F8FAFC;
+/* ═══════════════════════════════════════════════════════════════════
+   Official Premier League Design System — globals.css
+   Based on premierleague.com Stats Centre visual identity
+   ═══════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    --pl-deepest: #190019;
+    --pl-dark: #240024;
+    --pl-purple: #38003c;
+    --pl-purple-light: #4a0050;
+    --pl-utility: #140014;
+    --pl-green: #00ff85;
+    --pl-magenta: #e90052;
+    --pl-cyan: #00d4ff;
+    --pl-white: #ffffff;
+    --pl-text-secondary: rgba(255, 255, 255, 0.75);
+    --pl-text-muted: rgba(255, 255, 255, 0.50);
+    --pl-border: rgba(255, 255, 255, 0.10);
+    --pl-border-light: rgba(255, 255, 255, 0.18);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--pl-deepest);
+    color: var(--pl-white);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar — deep purple theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--pl-deepest);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--pl-purple);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--pl-purple-light);
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  overflow-x: hidden;
+@layer components {
+  /* ── Official PL Card ── */
+  .pl-card {
+    @apply rounded-pl bg-pl-purple border border-pl-border p-6;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  .pl-card:hover {
+    border-color: var(--pl-border-light);
+  }
+
+  /* ── Stat Value — bold high-contrast numbers ── */
+  .stat-value {
+    @apply font-display font-extrabold text-white tracking-tight;
+  }
+  .stat-label {
+    @apply text-xs uppercase tracking-widest font-semibold;
+    color: var(--pl-text-muted);
+  }
+
+  /* ── PL Gradient Banner Header ── */
+  .pl-banner {
+    background: linear-gradient(135deg, #00d4ff 0%, #38003c 100%);
+    @apply w-full py-10 px-8;
+  }
+
+  /* ── Navigation Tab (Stats Centre Sub-Nav) ── */
+  .nav-tab {
+    @apply px-5 py-3 text-sm font-semibold uppercase tracking-wider cursor-pointer
+           transition-colors duration-200;
+    color: var(--pl-text-secondary);
+    border-bottom: 3px solid transparent;
+  }
+  .nav-tab:hover {
+    color: var(--pl-white);
+  }
+  .nav-tab.active {
+    color: var(--pl-white);
+    border-bottom-color: var(--pl-white);
+  }
+
+  /* ── Player Slot Card ── */
+  .player-slot {
+    @apply flex flex-col items-center justify-center rounded-pl-lg
+           border-2 border-dashed cursor-pointer transition-all duration-200;
+    border-color: var(--pl-border-light);
+    background: var(--pl-purple);
+    min-height: 280px;
+  }
+  .player-slot:hover {
+    border-color: var(--pl-cyan);
+    background: var(--pl-purple-light);
+  }
+
+  /* ── Stat Comparison Row ── */
+  .stat-row {
+    @apply flex items-center justify-between py-3 px-4 border-b;
+    border-color: var(--pl-border);
+  }
+  .stat-row:last-child {
+    border-bottom: none;
+  }
+
+  /* ── PL Button ── */
+  .pl-btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           font-semibold text-sm rounded-full transition-all duration-200;
+  }
+  .pl-btn-magenta {
+    @apply pl-btn text-white;
+    background: var(--pl-magenta);
+  }
+  .pl-btn-magenta:hover {
+    background: #ff1a6d;
+    transform: translateY(-1px);
+  }
+  .pl-btn-outline {
+    @apply pl-btn text-white border;
+    border-color: var(--pl-border-light);
+    background: transparent;
+  }
+  .pl-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--pl-white);
+  }
+  .pl-btn-white {
+    @apply pl-btn bg-white text-pl-purple font-bold;
+  }
+  .pl-btn-white:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+  }
+
+  /* ── News Ticker Strip ── */
+  .ticker-strip {
+    @apply flex items-center overflow-hidden whitespace-nowrap;
+    background: var(--pl-dark);
+    border-top: 1px solid var(--pl-border);
+    border-bottom: 1px solid var(--pl-border);
+  }
+
+  /* ── Search Input ── */
+  .pl-search {
+    @apply w-full px-4 py-3 rounded-pl text-white text-sm
+           border outline-none transition-colors duration-200;
+    background: var(--pl-dark);
+    border-color: var(--pl-border-light);
+  }
+  .pl-search::placeholder {
+    color: var(--pl-text-muted);
+  }
+  .pl-search:focus {
+    border-color: var(--pl-cyan);
+  }
+
+  /* ── Position Badge ── */
+  .pos-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px]
+           font-bold uppercase tracking-wider;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--pl-text-secondary);
+  }
+
+  /* ── Popular Comparison Card ── */
+  .comparison-card {
+    @apply rounded-pl-lg overflow-hidden cursor-pointer transition-all duration-200;
+    background: var(--pl-purple);
+    border: 1px solid var(--pl-border);
+  }
+  .comparison-card:hover {
+    border-color: var(--pl-cyan);
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* ── Modal Overlay ── */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Drawer (Slide-in Panel) ── */
+  .drawer-panel {
+    @apply fixed top-0 right-0 h-full z-50 overflow-y-auto;
+    background: var(--pl-deepest);
+    border-left: 1px solid var(--pl-border);
+    width: min(520px, 90vw);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+  }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-::-webkit-scrollbar-track {
-  background: #0B0E14;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 255, 133, 0.4);
-}
-
-/* Glass Card Utility */
-.glass-panel {
-  background: rgba(18, 24, 38, 0.70);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 14px;
-}
-
-.glass-glow-green {
-  box-shadow: 0 0 25px -5px rgba(0, 255, 133, 0.25);
-}
-
-.glass-glow-cyan {
-  box-shadow: 0 0 25px -5px rgba(0, 229, 255, 0.25);
-}
-
-.glass-glow-pink {
-  box-shadow: 0 0 25px -5px rgba(233, 0, 82, 0.25);
+@layer utilities {
+  .text-gradient-pl {
+    background: linear-gradient(135deg, #00ff85, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
