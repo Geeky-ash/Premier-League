@@ -40,7 +40,7 @@ const STAT_KEYS: { key: keyof PlayerRecord; label: string }[] = [
 const POPULAR_COMPARISONS = [
   { a: "Bukayo Saka", b: "Cole Palmer" },
   { a: "Erling Haaland", b: "Mohamed Salah" },
-  { a: "Bruno Fernandes", b: "Martin Odegaard" },
+  { a: "Bruno Fernandes", b: "Declan Rice" },
   { a: "Alexander Isak", b: "Ollie Watkins" },
 ];
 
