@@ -115,6 +115,10 @@ export default function Navbar() {
   }, []);
 
   const moreTools = [
+    { label: "Fixtures & Referees", href: "/fixtures", icon: Trophy, tag: "PGMOL" },
+    { label: "Opposition Stats", href: "/opposition", icon: Crosshair, tag: "Heatmap" },
+    { label: "Season Leaderboards", href: "/leaderboards", icon: Trophy, tag: "Leaders" },
+    { label: "In-Play Fouls & Alerts", href: "/inplay-fouls", icon: TrendingUp, tag: "Live" },
     { label: "Transfer Predictor", href: "/transfer-predictor", icon: TrendingUp, tag: "OLS" },
     { label: "Match Predictor", href: "/match-predictor", icon: Trophy, tag: "XGBoost" },
     { label: "Scouting Studio", href: "/scouting-studio", icon: Crosshair, tag: "K-Means" },
@@ -204,6 +208,14 @@ export default function Navbar() {
             {/* Desktop Nav Items */}
             <div className="hidden lg:flex items-center gap-1">
               <Link
+                href="/fixtures"
+                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
+                  pathname === "/fixtures" ? "text-white font-bold" : "text-pl-text-secondary hover:text-white"
+                }`}
+              >
+                Fixtures
+              </Link>
+              <Link
                 href="/match-predictor"
                 className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
                   pathname === "/match-predictor" ? "text-white" : "text-pl-text-secondary hover:text-white"
@@ -211,45 +223,46 @@ export default function Navbar() {
               >
                 Matches
               </Link>
-              <button
-                onClick={() => setUtilityModalTitle("The Archive")}
-                className="px-3 py-2 text-[13px] font-semibold text-pl-text-secondary hover:text-white transition-colors"
+              <Link
+                href="/opposition"
+                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
+                  pathname === "/opposition" ? "text-white" : "text-pl-text-secondary hover:text-white"
+                }`}
               >
-                Table
-              </button>
+                Opposition
+              </Link>
+              <Link
+                href="/leaderboards"
+                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
+                  pathname === "/leaderboards" ? "text-white" : "text-pl-text-secondary hover:text-white"
+                }`}
+              >
+                Leaderboards
+              </Link>
+              <Link
+                href="/inplay-fouls"
+                className={`px-3 py-2 text-[13px] font-semibold transition-colors flex items-center gap-1.5 ${
+                  pathname === "/inplay-fouls" ? "text-pl-magenta font-bold" : "text-pl-text-secondary hover:text-pl-magenta"
+                }`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-pl-magenta animate-pulse" />
+                <span>In-Play</span>
+              </Link>
               <Link
                 href="/"
                 className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
                   pathname === "/" ? "text-white font-bold" : "text-pl-text-secondary hover:text-white"
                 }`}
               >
-                Statistics
+                Stats Centre
               </Link>
-              <button
-                onClick={() => setUtilityModalTitle("Fantasy")}
-                className="px-3 py-2 text-[13px] font-semibold text-pl-text-secondary hover:text-white transition-colors"
-              >
-                Fantasy
-              </button>
-              <button
-                onClick={() => setSelectedNews(TICKER_NEWS[0])}
-                className="px-3 py-2 text-[13px] font-semibold text-pl-text-secondary hover:text-white transition-colors"
-              >
-                News
-              </button>
-              <button
-                onClick={() => setUtilityModalTitle("Injuries")}
-                className="px-3 py-2 text-[13px] font-semibold text-pl-text-secondary hover:text-white transition-colors"
-              >
-                Injuries
-              </button>
               <Link
                 href="/scouting-studio"
                 className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
                   pathname === "/scouting-studio" ? "text-white" : "text-pl-text-secondary hover:text-white"
                 }`}
               >
-                Players
+                Scouting
               </Link>
 
               {/* More Dropdown */}

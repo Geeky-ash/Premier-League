@@ -24,10 +24,20 @@ const FEATURED_DERBIES = [
   { name: "North West Classic", home: "Liverpool", away: "Manchester United" },
 ];
 
+const REFEREE_OPTIONS = [
+  { name: "Anthony Taylor", yellows: 4.62, strictness: 6.5 },
+  { name: "Michael Oliver", yellows: 4.10, strictness: 5.8 },
+  { name: "Paul Tierney", yellows: 3.85, strictness: 4.8 },
+  { name: "Simon Hooper", yellows: 4.40, strictness: 6.2 },
+  { name: "Jarred Gillett", yellows: 4.76, strictness: 7.2 },
+  { name: "Andy Madley", yellows: 3.75, strictness: 4.2 },
+];
+
 export default function MatchPredictorPage() {
   const [clubs, setClubs] = useState<string[]>([]);
   const [homeTeam, setHomeTeam] = useState("Arsenal");
   const [awayTeam, setAwayTeam] = useState("Chelsea");
+  const [selectedReferee, setSelectedReferee] = useState(REFEREE_OPTIONS[0]);
   const [homePossession, setHomePossession] = useState(56);
   const [homeShots, setHomeShots] = useState(16);
   const [awayShots, setAwayShots] = useState(9);
@@ -40,6 +50,13 @@ export default function MatchPredictorPage() {
 
   useEffect(() => {
     fetchClubs().then(setClubs).catch(() => {});
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const h = params.get("home");
+      const a = params.get("away");
+      if (h) setHomeTeam(h);
+      if (a) setAwayTeam(a);
+    }
   }, []);
 
   const triggerPredict = async () => {
@@ -55,6 +72,9 @@ export default function MatchPredictorPage() {
         away_goals: awayGoals,
         home_form_points: homeForm,
         away_form_points: awayForm,
+        referee_name: selectedReferee.name,
+        referee_yellows_per_game: selectedReferee.yellows,
+        referee_strictness_index: selectedReferee.strictness,
       });
       setPrediction(res);
     } catch {
@@ -69,6 +89,7 @@ export default function MatchPredictorPage() {
   }, [
     homeTeam,
     awayTeam,
+    selectedReferee,
     homePossession,
     homeShots,
     awayShots,
@@ -390,6 +411,28 @@ export default function MatchPredictorPage() {
                 className="w-full accent-[#e90052] cursor-pointer"
               />
             </div>
+          </div>
+
+          {/* Referee Selection & Impact Levers */}
+          <div>
+            <div className="flex justify-between text-xs font-semibold mb-1.5">
+              <span className="text-pl-text-secondary">Assigned Match Referee</span>
+              <span className="text-pl-cyan font-bold">{selectedReferee.yellows} 🟨/game (Rating: {selectedReferee.strictness})</span>
+            </div>
+            <select
+              value={selectedReferee.name}
+              onChange={(e) => {
+                const found = REFEREE_OPTIONS.find((r) => r.name === e.target.value);
+                if (found) setSelectedReferee(found);
+              }}
+              className="pl-search w-full"
+            >
+              {REFEREE_OPTIONS.map((r) => (
+                <option key={r.name} value={r.name}>
+                  {r.name} · {r.yellows} Cards/game (Strictness: {r.strictness})
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 

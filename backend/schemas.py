@@ -53,6 +53,9 @@ class MatchPredictRequest(BaseModel):
     away_goals: int = Field(1, ge=0, le=10, description="Recent average away goals")
     home_form_points: float = Field(10.0, ge=0.0, le=15.0, description="Home form points over last 5 matches")
     away_form_points: float = Field(6.0, ge=0.0, le=15.0, description="Away form points over last 5 matches")
+    referee_name: Optional[str] = Field("Anthony Taylor", description="Assigned match referee")
+    referee_yellows_per_game: Optional[float] = Field(4.62, description="Referee historical yellow cards per game")
+    referee_strictness_index: Optional[float] = Field(6.50, description="Calculated referee strictness index (1.0 - 10.0)")
 
 
 class MatchPredictResponse(BaseModel):
@@ -63,6 +66,7 @@ class MatchPredictResponse(BaseModel):
     confidence: float
     probabilities: Dict[str, float]
     tactical_diffs: Dict[str, float]
+    referee_impact: Optional[Dict[str, Any]] = None
 
 
 # --- Player Scouting System ---
@@ -108,3 +112,121 @@ class ScoutTwinResponse(BaseModel):
     pca_coords: Dict[str, float]
     top_twins: List[PlayerTwin]
     all_cluster_points: List[ClusterMapPoint]
+
+
+# --- Fixtures Hub Schemas ---
+class FixtureItem(BaseModel):
+    fixture_id: str
+    date: str
+    kickoff_time: str
+    status: str  # SCHEDULED, LIVE, FT
+    minute: Optional[int] = None
+    home_team: str
+    away_team: str
+    home_score: Optional[int] = None
+    away_score: Optional[int] = None
+    lineups_status: str  # LINEUPS_CONFIRMED, EXPECTED_LINEUPS
+    referee: Dict[str, Any]
+    venue: str
+    home_win_prob: float
+    draw_prob: float
+    away_win_prob: float
+
+
+class FixturesResponse(BaseModel):
+    date: str
+    total_fixtures: int
+    fixtures: List[FixtureItem]
+
+
+# --- Opposition / Against Analytics ---
+class PositionalConcededStat(BaseModel):
+    shots_conceded_per_game: float
+    tackles_conceded_per_game: float
+    key_passes_conceded_per_game: float
+    vulnerability_score: float
+
+
+class OppositionConcededTeam(BaseModel):
+    club: str
+    positions: Dict[str, PositionalConcededStat]
+    formations: Dict[str, Any]
+    overall_defensive_rating: float
+
+
+# --- H2H Snapshot Schemas ---
+class H2HPlayerProp(BaseModel):
+    player_name: str
+    club: str
+    prop_type: str  # e.g., "2+ Shots on Target", "3+ Tackles", "1+ Foul Committed"
+    hit_rate: str  # e.g. "8/10 matches"
+    hit_percentage: float
+    avg_per_game: float
+
+
+class H2HResponse(BaseModel):
+    home_team: str
+    away_team: str
+    total_matches_analyzed: int
+    home_wins: int
+    draws: int
+    away_wins: int
+    home_win_rate: float
+    draw_rate: float
+    away_win_rate: float
+    avg_goals_home: float
+    avg_goals_away: float
+    avg_total_corners: float
+    avg_total_cards: float
+    btts_rate: float
+    top_player_props: List[H2HPlayerProp]
+
+
+# --- Season Leaderboards Schemas ---
+class LeaderboardPlayer(BaseModel):
+    rank: int
+    player_id: int
+    name: str
+    club: str
+    position: str
+    age: int
+    stat_name: str
+    stat_value: float
+    per_90_value: float
+    appearances: int
+    minutes_played: int
+
+
+class LeaderboardsResponse(BaseModel):
+    stat_category: str
+    leaders: List[LeaderboardPlayer]
+
+
+# --- Alert System Schemas ---
+class TelegramAlertTestRequest(BaseModel):
+    chat_id: str = Field(..., description="Target Telegram chat ID")
+    message: Optional[str] = Field(None, description="Optional custom test message")
+
+
+class TelegramAlertResponse(BaseModel):
+    alert_id: str
+    status: str
+    chat_id: str
+    message: str
+    timestamp: str
+
+
+class InPlayFoulSubscribeRequest(BaseModel):
+    chat_id: str = Field(..., description="Telegram chat ID for alert delivery")
+    foul_threshold: int = Field(2, ge=1, le=10, description="Notify when player hits or exceeds this foul count")
+    player_name: Optional[str] = Field("ANY_PLAYER", description="Specific player name or ANY_PLAYER")
+    email: Optional[str] = Field(None, description="Optional email for secondary notification dispatch")
+
+
+class InPlayFoulSubscribeResponse(BaseModel):
+    subscription_id: str
+    chat_id: str
+    foul_threshold: int
+    player_name: str
+    status: str = "subscribed"
+    created_at: str

@@ -1,0 +1,222 @@
+{
+  "Arsenal": {
+    "club": "Arsenal",
+    "corners_for_per_game": 6.3,
+    "corners_against_per_game": 3.67,
+    "cards_first_half_avg": 1.19,
+    "cards_second_half_avg": 2.09,
+    "total_cards_avg": 3.28,
+    "scored_first_pct": 68.9,
+    "both_teams_to_score_pct": 56.8,
+    "over_2_5_goals_pct": 64.4
+  },
+  "Aston Villa": {
+    "club": "Aston Villa",
+    "corners_for_per_game": 7.42,
+    "corners_against_per_game": 3.32,
+    "cards_first_half_avg": 1.25,
+    "cards_second_half_avg": 1.72,
+    "total_cards_avg": 2.97,
+    "scored_first_pct": 79.9,
+    "both_teams_to_score_pct": 58.5,
+    "over_2_5_goals_pct": 59.7
+  },
+  "Bournemouth": {
+    "club": "Bournemouth",
+    "corners_for_per_game": 4.58,
+    "corners_against_per_game": 6.33,
+    "cards_first_half_avg": 0.79,
+    "cards_second_half_avg": 1.85,
+    "total_cards_avg": 2.64,
+    "scored_first_pct": 53.6,
+    "both_teams_to_score_pct": 61.2,
+    "over_2_5_goals_pct": 42.4
+  },
+  "Brentford": {
+    "club": "Brentford",
+    "corners_for_per_game": 4.78,
+    "corners_against_per_game": 6.69,
+    "cards_first_half_avg": 1.0,
+    "cards_second_half_avg": 1.43,
+    "total_cards_avg": 2.43,
+    "scored_first_pct": 46.1,
+    "both_teams_to_score_pct": 53.6,
+    "over_2_5_goals_pct": 50.9
+  },
+  "Brighton": {
+    "club": "Brighton",
+    "corners_for_per_game": 4.33,
+    "corners_against_per_game": 6.18,
+    "cards_first_half_avg": 1.26,
+    "cards_second_half_avg": 2.34,
+    "total_cards_avg": 3.6,
+    "scored_first_pct": 38.4,
+    "both_teams_to_score_pct": 52.9,
+    "over_2_5_goals_pct": 59.7
+  },
+  "Chelsea": {
+    "club": "Chelsea",
+    "corners_for_per_game": 6.78,
+    "corners_against_per_game": 4.03,
+    "cards_first_half_avg": 1.05,
+    "cards_second_half_avg": 1.52,
+    "total_cards_avg": 2.57,
+    "scored_first_pct": 74.7,
+    "both_teams_to_score_pct": 48.9,
+    "over_2_5_goals_pct": 52.0
+  },
+  "Crystal Palace": {
+    "club": "Crystal Palace",
+    "corners_for_per_game": 3.83,
+    "corners_against_per_game": 6.36,
+    "cards_first_half_avg": 0.75,
+    "cards_second_half_avg": 1.44,
+    "total_cards_avg": 2.19,
+    "scored_first_pct": 36.9,
+    "both_teams_to_score_pct": 58.5,
+    "over_2_5_goals_pct": 52.7
+  },
+  "Everton": {
+    "club": "Everton",
+    "corners_for_per_game": 4.1,
+    "corners_against_per_game": 7.06,
+    "cards_first_half_avg": 0.81,
+    "cards_second_half_avg": 1.83,
+    "total_cards_avg": 2.64,
+    "scored_first_pct": 47.8,
+    "both_teams_to_score_pct": 60.5,
+    "over_2_5_goals_pct": 44.1
+  },
+  "Fulham": {
+    "club": "Fulham",
+    "corners_for_per_game": 4.08,
+    "corners_against_per_game": 5.94,
+    "cards_first_half_avg": 1.04,
+    "cards_second_half_avg": 2.24,
+    "total_cards_avg": 3.28,
+    "scored_first_pct": 38.5,
+    "both_teams_to_score_pct": 57.8,
+    "over_2_5_goals_pct": 44.4
+  },
+  "Ipswich Town": {
+    "club": "Ipswich Town",
+    "corners_for_per_game": 4.89,
+    "corners_against_per_game": 6.17,
+    "cards_first_half_avg": 0.79,
+    "cards_second_half_avg": 2.07,
+    "total_cards_avg": 2.86,
+    "scored_first_pct": 45.8,
+    "both_teams_to_score_pct": 61.3,
+    "over_2_5_goals_pct": 44.4
+  },
+  "Leicester City": {
+    "club": "Leicester City",
+    "corners_for_per_game": 4.17,
+    "corners_against_per_game": 6.05,
+    "cards_first_half_avg": 1.21,
+    "cards_second_half_avg": 1.69,
+    "total_cards_avg": 2.9,
+    "scored_first_pct": 48.8,
+    "both_teams_to_score_pct": 60.6,
+    "over_2_5_goals_pct": 53.4
+  },
+  "Liverpool": {
+    "club": "Liverpool",
+    "corners_for_per_game": 6.52,
+    "corners_against_per_game": 4.13,
+    "cards_first_half_avg": 0.99,
+    "cards_second_half_avg": 1.66,
+    "total_cards_avg": 2.65,
+    "scored_first_pct": 73.5,
+    "both_teams_to_score_pct": 61.7,
+    "over_2_5_goals_pct": 54.6
+  },
+  "Manchester City": {
+    "club": "Manchester City",
+    "corners_for_per_game": 7.18,
+    "corners_against_per_game": 3.76,
+    "cards_first_half_avg": 1.24,
+    "cards_second_half_avg": 1.92,
+    "total_cards_avg": 3.16,
+    "scored_first_pct": 82.3,
+    "both_teams_to_score_pct": 51.6,
+    "over_2_5_goals_pct": 54.9
+  },
+  "Manchester United": {
+    "club": "Manchester United",
+    "corners_for_per_game": 4.49,
+    "corners_against_per_game": 5.51,
+    "cards_first_half_avg": 1.0,
+    "cards_second_half_avg": 1.51,
+    "total_cards_avg": 2.51,
+    "scored_first_pct": 51.7,
+    "both_teams_to_score_pct": 63.2,
+    "over_2_5_goals_pct": 49.1
+  },
+  "Newcastle United": {
+    "club": "Newcastle United",
+    "corners_for_per_game": 3.98,
+    "corners_against_per_game": 6.88,
+    "cards_first_half_avg": 1.3,
+    "cards_second_half_avg": 1.91,
+    "total_cards_avg": 3.21,
+    "scored_first_pct": 41.7,
+    "both_teams_to_score_pct": 56.2,
+    "over_2_5_goals_pct": 55.8
+  },
+  "Nottingham Forest": {
+    "club": "Nottingham Forest",
+    "corners_for_per_game": 4.08,
+    "corners_against_per_game": 5.79,
+    "cards_first_half_avg": 0.82,
+    "cards_second_half_avg": 2.25,
+    "total_cards_avg": 3.07,
+    "scored_first_pct": 49.7,
+    "both_teams_to_score_pct": 67.0,
+    "over_2_5_goals_pct": 58.5
+  },
+  "Southampton": {
+    "club": "Southampton",
+    "corners_for_per_game": 4.58,
+    "corners_against_per_game": 5.93,
+    "cards_first_half_avg": 1.08,
+    "cards_second_half_avg": 2.25,
+    "total_cards_avg": 3.33,
+    "scored_first_pct": 51.7,
+    "both_teams_to_score_pct": 48.5,
+    "over_2_5_goals_pct": 59.7
+  },
+  "Tottenham Hotspur": {
+    "club": "Tottenham Hotspur",
+    "corners_for_per_game": 4.43,
+    "corners_against_per_game": 5.9,
+    "cards_first_half_avg": 0.87,
+    "cards_second_half_avg": 2.34,
+    "total_cards_avg": 3.21,
+    "scored_first_pct": 41.1,
+    "both_teams_to_score_pct": 56.1,
+    "over_2_5_goals_pct": 42.6
+  },
+  "West Ham United": {
+    "club": "West Ham United",
+    "corners_for_per_game": 4.45,
+    "corners_against_per_game": 6.6,
+    "cards_first_half_avg": 0.98,
+    "cards_second_half_avg": 1.72,
+    "total_cards_avg": 2.7,
+    "scored_first_pct": 46.9,
+    "both_teams_to_score_pct": 55.7,
+    "over_2_5_goals_pct": 47.1
+  },
+  "Wolverhampton Wanderers": {
+    "club": "Wolverhampton Wanderers",
+    "corners_for_per_game": 4.26,
+    "corners_against_per_game": 6.27,
+    "cards_first_half_avg": 0.97,
+    "cards_second_half_avg": 2.37,
+    "total_cards_avg": 3.34,
+    "scored_first_pct": 38.8,
+    "both_teams_to_score_pct": 65.0,
+    "over_2_5_goals_pct": 55.5
+  }
+}

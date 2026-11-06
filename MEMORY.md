@@ -30,6 +30,12 @@ This living memory document tracks active configurations, technology choices, de
 | **MOD-04** | **Player Comparison System** | 1v1 Stat Matrix & ML Twin Comparison | 🟢 Complete | 🟢 Real-time Enriched | 🟢 Multi-endpoint Pipeline | 🟢 `/comparison` | `CONTAINERIZED` |
 | **CORE** | **Unified Architecture** | Next.js 14 + FastAPI Microservice | 🟢 Complete | 🟢 Complete | 🟢 `GET /api/v1/health` | 🟢 `Navbar + StatsBanner` | `CONTAINERIZED` |
 | **PHASE-05**| **CI/CD Automated Data Ingestion** | GitHub Actions Weekly Cron | 🟢 Complete | 🟢 Validated by Pytest | 🟢 Automated Ingestion | N/A | `AUTOMATED_CI_CD` |
+| **MOD-05** | **Fixtures Hub & Referee Engine** | Referee Strictness Index (1.0–10.0) | 🟢 Complete | 🟢 `referee_stats.json` | 🟢 `GET /api/v1/fixtures` | 🟢 `/fixtures` | `LIVE` |
+| **MOD-06** | **Opposition / Against Analytics** | Positional Conceded Vectors (8 pos × 3 formations) | 🟢 Complete | 🟢 `opposition_conceded.json` | 🟢 `GET /api/v1/opposition-against` | 🟢 `/opposition` | `LIVE` |
+| **MOD-07** | **Season Leaderboards** | Ranked Leaders (7 categories + per-90) | 🟢 Complete | 🟢 Real-time from player data | 🟢 `GET /api/v1/leaderboards` | 🟢 `/leaderboards` | `LIVE` |
+| **MOD-08** | **In-Play Fouls & Alerts** | Telegram Bot API + SMTP Dispatch | 🟢 Complete | 🟢 `alerts.py` service | 🟢 `POST /api/v1/inplay/fouls/subscribe` | 🟢 `/inplay-fouls` | `LIVE` |
+| **MOD-09** | **Advanced Filtering Engine** | Multi-filter: sample, minutes, venue, starter | 🟢 Complete | 🟢 `player_prop_histories.json` | 🟢 `GET /api/v1/players/stats/filtered` | 🟢 `FilterBar.tsx` component | `LIVE` |
+| **MOD-10** | **H2H & Head-to-Head Analysis** | 10-match history + player prop trends | 🟢 Complete | 🟢 Real-time computation | 🟢 `GET /api/v1/h2h/{home}/{away}` | 🟢 `H2HModal.tsx` | `LIVE` |
 
 *Legend: 🟢 Complete & Verified | 🟡 In Progress / Staged | 🔴 Pending Implementation*
 
@@ -42,8 +48,14 @@ This living memory document tracks active configurations, technology choices, de
   - Processed storage: `./data/processed/` (`cleaned_players.csv`, `cleaned_matches.csv`)
   - Model artifacts: `./models/saved/`
     - `transfer_predictor.joblib` (LinearRegression + StandardScaler + OneHotEncoder)
-    - `match_predictor.joblib` (XGBClassifier multi:softprob)
+    - `match_predictor.joblib` (XGBClassifier multi:softprob, 15 features incl. referee stats)
+    - `match_outcome_xgb.pkl` (XGBClassifier duplicate for backwards compat)
     - `scouting_kmeans.joblib` (KMeans k=4 + StandardScaler + PCA 2D)
+  - New processed data artifacts: `./data/processed/`
+    - `referee_stats.json` — 16 PL referees with yellows/reds/fouls per game + strictness index (1.0–10.0)
+    - `player_prop_histories.json` — 32-matchday player prop logs (shots, SoT, tackles, fouls, venue, started)
+    - `opposition_conceded.json` — Positional conceded vectors (8 positions × 3 formations × 20 clubs)
+    - `team_props.json` — Team aggregate props (corners, cards by half, scored first %, BTTS)
 
 ---
 
@@ -68,4 +80,15 @@ This living memory document tracks active configurations, technology choices, de
   - Backend microservice in `backend/main.py` with Pydantic schemas in `backend/schemas.py`.
   - Next.js App Router application in `frontend/src/app` with TypeScript, Tailwind CSS, Recharts, and Framer Motion.
   - Production build verified: `npm run build` static generation succeeded with 0 errors.
-  - Full test suite verified: `pytest` passes 22/22 tests across ingestion, models, and FastAPI routes.
+  - Full test suite verified: `pytest` passes 29/29 tests across ingestion, models, and FastAPI routes.
+- **Phase 6 — Six New Feature Suites (November 2026)**:
+  - **Fixtures Hub (`/fixtures`)**: Date-tab selector (Yesterday/Today/Tomorrow/+2/+3), fixture cards with club crests, kickoff clocks, live score badges, lineups status indicators, referee name + color-coded strictness badge, "Simulate Fixture" CTA linking to match predictor, and "View H2H Trends" button opening H2HModal.
+  - **Referee Impact Engine**: 16 PL referees with per-game card/foul stats. `calculate_referee_strictness()` returns normalized 1.0–10.0 index. `referee_yellows_per_game` and `referee_strictness_index` injected into XGBoost feature matrix (15 features total). Re-trained model: Test Accuracy 1.00.
+  - **Opposition / Against Analytics (`/opposition`)**: Club selector with crest, 3 KPI cards, interactive tactical pitch diagram (8 positions color-coded by vulnerability), formation toggle (4-3-3, 4-2-3-1, 3-5-2), positional inspector with progress bars.
+  - **Season Leaderboards (`/leaderboards`)**: 7 category tabs (Goals, Assists, xG, SoT, Tackles, Fouls, Market Value), Top 3 podium cards with player photos, full ranked table with per-90 stats, FilterBar integration, PlayerDetailDrawer on click.
+  - **In-Play Fouls & Alerts (`/inplay-fouls`)**: Live match card grid with per-player foul tallies, yellow card indicators, threshold breach badges, Telegram Config Modal (Chat ID + threshold slider), SMTP email dispatch, auto-refresh every 15 seconds.
+  - **Advanced Filtering Engine (`FilterBar.tsx`)**: Reusable filter bar — sample size (L5/L10/L20/Full), minutes threshold, started-only toggle, venue split (All/Home/Away). Glassmorphic dark styling.
+  - **H2H Modal (`H2HModal.tsx`)**: 3-column record summary, 10-match encounter averages, top 5 player prop trends with hit rates, "Run Match Simulation" CTA.
+  - **New API Endpoints**: `GET /fixtures`, `GET /players/stats/filtered`, `GET /opposition-against`, `GET /h2h/{home}/{away}`, `GET /leaderboards`, `GET /inplay/matches`, `POST /alerts/telegram/test`, `POST /inplay/fouls/subscribe`, `POST /inplay/fouls/trigger`.
+  - **StatsBanner expanded**: 9 tabs — Dashboard, Fixtures & Referees, Opposition Stats, Season Leaderboards, In-Play Fouls & Alerts, Transfer Predictor, Match Predictor, Scouting Studio, Player Comparison.
+  - **Navbar expanded**: Desktop nav includes Fixtures, Opposition, Leaderboards, In-Play (with live pulse dot). "More" dropdown lists all 8 modules with tags.

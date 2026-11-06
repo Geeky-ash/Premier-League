@@ -1,11 +1,13 @@
 """Match Outcome Predictor Training Pipeline (models/train_match_model.py).
 
 Trains an XGBoost multi-class classifier to predict 3-way match outcomes:
-Home Win ('H'), Draw ('D'), or Away Win ('A') using match-day and tactical form metrics.
-Serializes the trained model bundle to models/saved/match_predictor.joblib.
+Home Win ('H'), Draw ('D'), or Away Win ('A') using match-day, tactical form metrics,
+and official referee strictness impact factors.
+Serializes the trained model bundle to models/saved/match_predictor.joblib and models/saved/match_outcome_xgb.pkl.
 """
 
 import logging
+import pickle
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -30,8 +32,9 @@ if not logger.handlers:
 PROJECT_ROOT: Path = Path(__file__).resolve().parent.parent
 PROCESSED_DATA_PATH: Path = PROJECT_ROOT / "data" / "processed" / "cleaned_matches.csv"
 MODEL_OUTPUT_PATH: Path = PROJECT_ROOT / "models" / "saved" / "match_predictor.joblib"
+MODEL_PKL_PATH: Path = PROJECT_ROOT / "models" / "saved" / "match_outcome_xgb.pkl"
 
-# Feature definitions
+# Feature definitions including Referee Impact Engine features
 MATCH_FEATURES: List[str] = [
     "home_goals",
     "away_goals",
@@ -46,6 +49,8 @@ MATCH_FEATURES: List[str] = [
     "shot_difference",
     "possession_difference",
     "form_difference",
+    "referee_yellows_per_game",
+    "referee_strictness_index",
 ]
 TARGET_COLUMN: str = "full_time_result"
 
@@ -59,20 +64,7 @@ def train_match_model(
     test_size: float = 0.25,
     random_state: int = 42,
 ) -> Tuple[xgb.XGBClassifier, Dict[str, Any]]:
-    """Loads cleaned matches, trains XGBClassifier, and computes evaluation metrics.
-
-    Args:
-        data_path: Path to cleaned_matches.csv.
-        test_size: Holdout fraction for testing.
-        random_state: Random state for deterministic data split.
-
-    Returns:
-        Tuple[xgb.XGBClassifier, Dict[str, Any]]: Trained classifier and evaluation metrics dictionary.
-
-    Raises:
-        FileNotFoundError: If processed matches CSV is missing.
-        ValueError: If mandatory features or target column are absent.
-    """
+    """Loads cleaned matches, trains XGBClassifier, and computes evaluation metrics."""
     if not data_path.exists():
         raise FileNotFoundError(
             f"Processed matches data file not found at {data_path}. Run clean_pipeline first."
@@ -80,6 +72,12 @@ def train_match_model(
 
     df = pd.read_csv(data_path)
     logger.info("Loaded match dataset with shape %s from %s", df.shape, data_path)
+
+    # Ensure referee features exist if legacy CSV loaded
+    if "referee_yellows_per_game" not in df.columns:
+        df["referee_yellows_per_game"] = 4.20
+    if "referee_strictness_index" not in df.columns:
+        df["referee_strictness_index"] = 5.00
 
     missing_cols = [c for c in MATCH_FEATURES + [TARGET_COLUMN] if c not in df.columns]
     if missing_cols:
@@ -98,7 +96,7 @@ def train_match_model(
     )
 
     classifier = xgb.XGBClassifier(
-        n_estimators=75,
+        n_estimators=85,
         max_depth=3,
         learning_rate=0.08,
         objective="multi:softprob",
@@ -145,16 +143,7 @@ def save_match_bundle(
     metrics: Dict[str, Any],
     output_path: Path = MODEL_OUTPUT_PATH,
 ) -> Path:
-    """Serializes the XGBoost model and inference metadata to .joblib.
-
-    Args:
-        model: Trained XGBClassifier.
-        metrics: Dictionary of test metrics and confusion matrix.
-        output_path: Target path for .joblib artifact.
-
-    Returns:
-        Path: Output path of the saved bundle.
-    """
+    """Serializes the XGBoost model and inference metadata to .joblib and .pkl."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     bundle: Dict[str, Any] = {
         "model_name": "MatchOutcomePredictor_XGBoost",
@@ -172,6 +161,14 @@ def save_match_bundle(
     except (PermissionError, OSError) as exc:
         logger.warning("Filesystem write restricted for %s: %s", output_path, exc)
 
+    # Also persist to match_outcome_xgb.pkl
+    try:
+        with open(MODEL_PKL_PATH, "wb") as f:
+            pickle.dump(bundle, f)
+        logger.info("Successfully serialized match outcome model to %s", MODEL_PKL_PATH)
+    except Exception as exc:
+        logger.warning("Could not persist pkl to %s: %s", MODEL_PKL_PATH, exc)
+
     return output_path
 
 
@@ -179,21 +176,20 @@ def predict_match_outcome(
     features: Dict[str, Any],
     model_bundle_path: Path = MODEL_OUTPUT_PATH,
 ) -> Dict[str, Any]:
-    """Inference helper predicting outcome probabilities for a single fixture.
-
-    Args:
-        features: Dictionary containing match feature values matching MATCH_FEATURES.
-        model_bundle_path: Path to serialized model artifact.
-
-    Returns:
-        Dict[str, Any]: Formatted result with outcome probabilities and winning label.
-    """
+    """Inference helper predicting outcome probabilities for a single fixture."""
     bundle = joblib.load(model_bundle_path)
     model: xgb.XGBClassifier = bundle["model"]
     feature_names: List[str] = bundle["feature_names"]
     inv_labels: Dict[int, str] = bundle["inv_label_mapping"]
 
-    input_df = pd.DataFrame([features])[feature_names]
+    # Provide safe defaults for referee impact levers if omitted
+    feat_copy = dict(features)
+    if "referee_yellows_per_game" not in feat_copy or feat_copy["referee_yellows_per_game"] is None:
+        feat_copy["referee_yellows_per_game"] = 4.10
+    if "referee_strictness_index" not in feat_copy or feat_copy["referee_strictness_index"] is None:
+        feat_copy["referee_strictness_index"] = 5.20
+
+    input_df = pd.DataFrame([feat_copy])[feature_names]
     probs = model.predict_proba(input_df)[0]
     pred_idx = int(np.argmax(probs))
 

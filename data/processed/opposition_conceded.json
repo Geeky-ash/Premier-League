@@ -1,0 +1,1422 @@
+{
+  "Arsenal": {
+    "club": "Arsenal",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.18,
+        "tackles_conceded_per_game": 5.54,
+        "key_passes_conceded_per_game": 1.73,
+        "vulnerability_score": 9.5
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.61,
+        "tackles_conceded_per_game": 5.24,
+        "key_passes_conceded_per_game": 1.9,
+        "vulnerability_score": 8.9
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.06,
+        "tackles_conceded_per_game": 5.56,
+        "key_passes_conceded_per_game": 1.97,
+        "vulnerability_score": 9.8
+      },
+      "CAM": {
+        "shots_conceded_per_game": 1.54,
+        "tackles_conceded_per_game": 5.82,
+        "key_passes_conceded_per_game": 1.23,
+        "vulnerability_score": 5.5
+      },
+      "CM": {
+        "shots_conceded_per_game": 1.85,
+        "tackles_conceded_per_game": 3.11,
+        "key_passes_conceded_per_game": 1.44,
+        "vulnerability_score": 6.5
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.99,
+        "tackles_conceded_per_game": 2.18,
+        "key_passes_conceded_per_game": 0.45,
+        "vulnerability_score": 2.8
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.04,
+        "tackles_conceded_per_game": 2.11,
+        "key_passes_conceded_per_game": 0.53,
+        "vulnerability_score": 3.0
+      },
+      "CB": {
+        "shots_conceded_per_game": 0.86,
+        "tackles_conceded_per_game": 1.6,
+        "key_passes_conceded_per_game": 0.4,
+        "vulnerability_score": 2.4
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 10.8,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 10.7,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 9.9,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 7.6
+  },
+  "Aston Villa": {
+    "club": "Aston Villa",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.44,
+        "tackles_conceded_per_game": 8.31,
+        "key_passes_conceded_per_game": 2.57,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.91,
+        "tackles_conceded_per_game": 6.48,
+        "key_passes_conceded_per_game": 2.78,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.18,
+        "tackles_conceded_per_game": 5.58,
+        "key_passes_conceded_per_game": 1.9,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.73,
+        "tackles_conceded_per_game": 6.16,
+        "key_passes_conceded_per_game": 1.8,
+        "vulnerability_score": 8.9
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.52,
+        "tackles_conceded_per_game": 4.62,
+        "key_passes_conceded_per_game": 0.93,
+        "vulnerability_score": 6.6
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.34,
+        "tackles_conceded_per_game": 1.9,
+        "key_passes_conceded_per_game": 0.47,
+        "vulnerability_score": 3.4
+      },
+      "RB": {
+        "shots_conceded_per_game": 0.98,
+        "tackles_conceded_per_game": 1.88,
+        "key_passes_conceded_per_game": 0.89,
+        "vulnerability_score": 3.7
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.06,
+        "tackles_conceded_per_game": 2.49,
+        "key_passes_conceded_per_game": 0.82,
+        "vulnerability_score": 3.7
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 16.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 12.7,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 14.9,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Bournemouth": {
+    "club": "Bournemouth",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 2.42,
+        "tackles_conceded_per_game": 6.83,
+        "key_passes_conceded_per_game": 2.82,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.45,
+        "tackles_conceded_per_game": 8.03,
+        "key_passes_conceded_per_game": 1.32,
+        "vulnerability_score": 7.3
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.92,
+        "tackles_conceded_per_game": 4.02,
+        "key_passes_conceded_per_game": 1.15,
+        "vulnerability_score": 9.6
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.04,
+        "tackles_conceded_per_game": 6.15,
+        "key_passes_conceded_per_game": 1.9,
+        "vulnerability_score": 7.9
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.99,
+        "tackles_conceded_per_game": 5.27,
+        "key_passes_conceded_per_game": 1.21,
+        "vulnerability_score": 8.0
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.38,
+        "tackles_conceded_per_game": 2.34,
+        "key_passes_conceded_per_game": 1.07,
+        "vulnerability_score": 4.8
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.31,
+        "tackles_conceded_per_game": 2.81,
+        "key_passes_conceded_per_game": 0.65,
+        "vulnerability_score": 3.8
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.73,
+        "tackles_conceded_per_game": 2.99,
+        "key_passes_conceded_per_game": 1.09,
+        "vulnerability_score": 5.5
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 11.1,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 15.6,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.8,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Brentford": {
+    "club": "Brentford",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.53,
+        "tackles_conceded_per_game": 6.37,
+        "key_passes_conceded_per_game": 1.21,
+        "vulnerability_score": 9.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 4.4,
+        "tackles_conceded_per_game": 6.65,
+        "key_passes_conceded_per_game": 1.23,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.07,
+        "tackles_conceded_per_game": 4.42,
+        "key_passes_conceded_per_game": 1.73,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.01,
+        "tackles_conceded_per_game": 4.63,
+        "key_passes_conceded_per_game": 0.89,
+        "vulnerability_score": 7.4
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.92,
+        "tackles_conceded_per_game": 4.28,
+        "key_passes_conceded_per_game": 1.33,
+        "vulnerability_score": 8.2
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.05,
+        "tackles_conceded_per_game": 1.82,
+        "key_passes_conceded_per_game": 1.1,
+        "vulnerability_score": 4.3
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.44,
+        "tackles_conceded_per_game": 2.53,
+        "key_passes_conceded_per_game": 0.95,
+        "vulnerability_score": 4.7
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.25,
+        "tackles_conceded_per_game": 1.77,
+        "key_passes_conceded_per_game": 0.83,
+        "vulnerability_score": 4.1
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 12.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 12.3,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 10.1,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Brighton": {
+    "club": "Brighton",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.32,
+        "tackles_conceded_per_game": 4.14,
+        "key_passes_conceded_per_game": 2.68,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.22,
+        "tackles_conceded_per_game": 7.15,
+        "key_passes_conceded_per_game": 2.11,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.37,
+        "tackles_conceded_per_game": 5.44,
+        "key_passes_conceded_per_game": 1.1,
+        "vulnerability_score": 8.5
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.98,
+        "tackles_conceded_per_game": 3.35,
+        "key_passes_conceded_per_game": 1.13,
+        "vulnerability_score": 7.8
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.53,
+        "tackles_conceded_per_game": 4.32,
+        "key_passes_conceded_per_game": 1.31,
+        "vulnerability_score": 9.2
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.52,
+        "tackles_conceded_per_game": 1.97,
+        "key_passes_conceded_per_game": 0.66,
+        "vulnerability_score": 4.2
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.18,
+        "tackles_conceded_per_game": 2.72,
+        "key_passes_conceded_per_game": 0.45,
+        "vulnerability_score": 3.1
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.24,
+        "tackles_conceded_per_game": 3.25,
+        "key_passes_conceded_per_game": 0.85,
+        "vulnerability_score": 4.1
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 12.8,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 11.5,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 9.7,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Chelsea": {
+    "club": "Chelsea",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 4.47,
+        "tackles_conceded_per_game": 8.09,
+        "key_passes_conceded_per_game": 2.82,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.46,
+        "tackles_conceded_per_game": 6.6,
+        "key_passes_conceded_per_game": 1.57,
+        "vulnerability_score": 9.7
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.28,
+        "tackles_conceded_per_game": 6.55,
+        "key_passes_conceded_per_game": 1.58,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.33,
+        "tackles_conceded_per_game": 4.25,
+        "key_passes_conceded_per_game": 1.74,
+        "vulnerability_score": 8.0
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.19,
+        "tackles_conceded_per_game": 3.36,
+        "key_passes_conceded_per_game": 2.1,
+        "vulnerability_score": 10.0
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.58,
+        "tackles_conceded_per_game": 2.91,
+        "key_passes_conceded_per_game": 0.54,
+        "vulnerability_score": 4.0
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.03,
+        "tackles_conceded_per_game": 2.78,
+        "key_passes_conceded_per_game": 1.06,
+        "vulnerability_score": 4.2
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.21,
+        "tackles_conceded_per_game": 1.67,
+        "key_passes_conceded_per_game": 0.63,
+        "vulnerability_score": 3.6
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 15.4,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 15.3,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 11.1,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Crystal Palace": {
+    "club": "Crystal Palace",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 2.7,
+        "tackles_conceded_per_game": 6.15,
+        "key_passes_conceded_per_game": 1.62,
+        "vulnerability_score": 8.4
+      },
+      "LW": {
+        "shots_conceded_per_game": 4.33,
+        "tackles_conceded_per_game": 6.02,
+        "key_passes_conceded_per_game": 1.45,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.35,
+        "tackles_conceded_per_game": 4.91,
+        "key_passes_conceded_per_game": 2.32,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.55,
+        "tackles_conceded_per_game": 5.13,
+        "key_passes_conceded_per_game": 1.13,
+        "vulnerability_score": 8.9
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.26,
+        "tackles_conceded_per_game": 4.28,
+        "key_passes_conceded_per_game": 0.92,
+        "vulnerability_score": 7.9
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.04,
+        "tackles_conceded_per_game": 2.15,
+        "key_passes_conceded_per_game": 0.98,
+        "vulnerability_score": 4.0
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.1,
+        "tackles_conceded_per_game": 2.87,
+        "key_passes_conceded_per_game": 0.46,
+        "vulnerability_score": 3.0
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.66,
+        "tackles_conceded_per_game": 2.75,
+        "key_passes_conceded_per_game": 0.46,
+        "vulnerability_score": 4.0
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 9.8,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 11.3,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 10.8,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Everton": {
+    "club": "Everton",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.85,
+        "tackles_conceded_per_game": 6.04,
+        "key_passes_conceded_per_game": 2.08,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.01,
+        "tackles_conceded_per_game": 8.35,
+        "key_passes_conceded_per_game": 1.23,
+        "vulnerability_score": 8.1
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.89,
+        "tackles_conceded_per_game": 6.32,
+        "key_passes_conceded_per_game": 2.84,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.52,
+        "tackles_conceded_per_game": 4.68,
+        "key_passes_conceded_per_game": 1.43,
+        "vulnerability_score": 9.5
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.44,
+        "tackles_conceded_per_game": 3.6,
+        "key_passes_conceded_per_game": 1.75,
+        "vulnerability_score": 8.2
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.7,
+        "tackles_conceded_per_game": 2.33,
+        "key_passes_conceded_per_game": 1.04,
+        "vulnerability_score": 5.3
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.12,
+        "tackles_conceded_per_game": 1.97,
+        "key_passes_conceded_per_game": 1.07,
+        "vulnerability_score": 4.4
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.73,
+        "tackles_conceded_per_game": 2.4,
+        "key_passes_conceded_per_game": 0.79,
+        "vulnerability_score": 4.9
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 12.0,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 9.7,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.1,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Fulham": {
+    "club": "Fulham",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 4.65,
+        "tackles_conceded_per_game": 6.21,
+        "key_passes_conceded_per_game": 2.51,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.72,
+        "tackles_conceded_per_game": 7.24,
+        "key_passes_conceded_per_game": 2.11,
+        "vulnerability_score": 9.5
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.65,
+        "tackles_conceded_per_game": 5.32,
+        "key_passes_conceded_per_game": 1.89,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.29,
+        "tackles_conceded_per_game": 5.58,
+        "key_passes_conceded_per_game": 0.9,
+        "vulnerability_score": 6.1
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.12,
+        "tackles_conceded_per_game": 5.92,
+        "key_passes_conceded_per_game": 1.15,
+        "vulnerability_score": 8.1
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.22,
+        "tackles_conceded_per_game": 2.1,
+        "key_passes_conceded_per_game": 1.01,
+        "vulnerability_score": 4.4
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.04,
+        "tackles_conceded_per_game": 3.1,
+        "key_passes_conceded_per_game": 0.46,
+        "vulnerability_score": 2.9
+      },
+      "CB": {
+        "shots_conceded_per_game": 0.93,
+        "tackles_conceded_per_game": 2.92,
+        "key_passes_conceded_per_game": 0.45,
+        "vulnerability_score": 2.7
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 13.5,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 13.1,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 15.7,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Ipswich Town": {
+    "club": "Ipswich Town",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 5.09,
+        "tackles_conceded_per_game": 8.37,
+        "key_passes_conceded_per_game": 2.96,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 4.06,
+        "tackles_conceded_per_game": 8.17,
+        "key_passes_conceded_per_game": 1.54,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 5.12,
+        "tackles_conceded_per_game": 4.39,
+        "key_passes_conceded_per_game": 1.78,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.24,
+        "tackles_conceded_per_game": 4.75,
+        "key_passes_conceded_per_game": 1.14,
+        "vulnerability_score": 8.3
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.29,
+        "tackles_conceded_per_game": 4.88,
+        "key_passes_conceded_per_game": 1.55,
+        "vulnerability_score": 9.3
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.65,
+        "tackles_conceded_per_game": 2.86,
+        "key_passes_conceded_per_game": 0.69,
+        "vulnerability_score": 4.5
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.53,
+        "tackles_conceded_per_game": 1.98,
+        "key_passes_conceded_per_game": 0.75,
+        "vulnerability_score": 4.4
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.21,
+        "tackles_conceded_per_game": 3.17,
+        "key_passes_conceded_per_game": 0.98,
+        "vulnerability_score": 4.3
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 15.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "High"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 20.4,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "High"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.5,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "High"
+      }
+    },
+    "overall_defensive_rating": 5.5
+  },
+  "Leicester City": {
+    "club": "Leicester City",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.36,
+        "tackles_conceded_per_game": 3.99,
+        "key_passes_conceded_per_game": 1.42,
+        "vulnerability_score": 9.2
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.05,
+        "tackles_conceded_per_game": 6.67,
+        "key_passes_conceded_per_game": 3.05,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.12,
+        "tackles_conceded_per_game": 8.12,
+        "key_passes_conceded_per_game": 3.14,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 4.65,
+        "tackles_conceded_per_game": 5.69,
+        "key_passes_conceded_per_game": 1.99,
+        "vulnerability_score": 10.0
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.47,
+        "tackles_conceded_per_game": 3.42,
+        "key_passes_conceded_per_game": 1.63,
+        "vulnerability_score": 8.0
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.33,
+        "tackles_conceded_per_game": 2.62,
+        "key_passes_conceded_per_game": 0.58,
+        "vulnerability_score": 3.7
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.8,
+        "tackles_conceded_per_game": 2.14,
+        "key_passes_conceded_per_game": 0.87,
+        "vulnerability_score": 5.2
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.26,
+        "tackles_conceded_per_game": 2.76,
+        "key_passes_conceded_per_game": 1.22,
+        "vulnerability_score": 5.0
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 15.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "High"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 15.8,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "High"
+      },
+      "3-5-2": {
+        "expected_shots_against": 18.7,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "High"
+      }
+    },
+    "overall_defensive_rating": 5.5
+  },
+  "Liverpool": {
+    "club": "Liverpool",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 1.85,
+        "tackles_conceded_per_game": 6.7,
+        "key_passes_conceded_per_game": 1.16,
+        "vulnerability_score": 5.9
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.79,
+        "tackles_conceded_per_game": 6.79,
+        "key_passes_conceded_per_game": 1.13,
+        "vulnerability_score": 7.5
+      },
+      "RW": {
+        "shots_conceded_per_game": 2.1,
+        "tackles_conceded_per_game": 5.68,
+        "key_passes_conceded_per_game": 1.11,
+        "vulnerability_score": 6.2
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.22,
+        "tackles_conceded_per_game": 5.77,
+        "key_passes_conceded_per_game": 1.05,
+        "vulnerability_score": 6.3
+      },
+      "CM": {
+        "shots_conceded_per_game": 1.56,
+        "tackles_conceded_per_game": 4.72,
+        "key_passes_conceded_per_game": 1.3,
+        "vulnerability_score": 5.7
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.97,
+        "tackles_conceded_per_game": 1.53,
+        "key_passes_conceded_per_game": 0.32,
+        "vulnerability_score": 2.5
+      },
+      "RB": {
+        "shots_conceded_per_game": 0.87,
+        "tackles_conceded_per_game": 2.97,
+        "key_passes_conceded_per_game": 0.49,
+        "vulnerability_score": 2.6
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.02,
+        "tackles_conceded_per_game": 2.49,
+        "key_passes_conceded_per_game": 0.32,
+        "vulnerability_score": 2.5
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 9.0,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 8.8,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 8.9,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 7.6
+  },
+  "Manchester City": {
+    "club": "Manchester City",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.13,
+        "tackles_conceded_per_game": 5.26,
+        "key_passes_conceded_per_game": 1.97,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.41,
+        "tackles_conceded_per_game": 6.07,
+        "key_passes_conceded_per_game": 1.64,
+        "vulnerability_score": 7.9
+      },
+      "RW": {
+        "shots_conceded_per_game": 2.42,
+        "tackles_conceded_per_game": 4.17,
+        "key_passes_conceded_per_game": 1.44,
+        "vulnerability_score": 7.5
+      },
+      "CAM": {
+        "shots_conceded_per_game": 1.37,
+        "tackles_conceded_per_game": 6.25,
+        "key_passes_conceded_per_game": 0.87,
+        "vulnerability_score": 4.4
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.44,
+        "tackles_conceded_per_game": 4.82,
+        "key_passes_conceded_per_game": 1.33,
+        "vulnerability_score": 7.3
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.95,
+        "tackles_conceded_per_game": 1.87,
+        "key_passes_conceded_per_game": 0.77,
+        "vulnerability_score": 3.4
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.03,
+        "tackles_conceded_per_game": 2.29,
+        "key_passes_conceded_per_game": 0.74,
+        "vulnerability_score": 3.5
+      },
+      "CB": {
+        "shots_conceded_per_game": 0.98,
+        "tackles_conceded_per_game": 2.21,
+        "key_passes_conceded_per_game": 0.38,
+        "vulnerability_score": 2.6
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 8.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 10.6,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 7.4,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 7.6
+  },
+  "Manchester United": {
+    "club": "Manchester United",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.42,
+        "tackles_conceded_per_game": 6.82,
+        "key_passes_conceded_per_game": 1.85,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.27,
+        "tackles_conceded_per_game": 4.07,
+        "key_passes_conceded_per_game": 2.52,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 2.51,
+        "tackles_conceded_per_game": 5.87,
+        "key_passes_conceded_per_game": 1.19,
+        "vulnerability_score": 7.1
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.37,
+        "tackles_conceded_per_game": 5.73,
+        "key_passes_conceded_per_game": 2.1,
+        "vulnerability_score": 8.9
+      },
+      "CM": {
+        "shots_conceded_per_game": 1.87,
+        "tackles_conceded_per_game": 4.05,
+        "key_passes_conceded_per_game": 1.76,
+        "vulnerability_score": 7.2
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.23,
+        "tackles_conceded_per_game": 3.23,
+        "key_passes_conceded_per_game": 0.5,
+        "vulnerability_score": 3.3
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.02,
+        "tackles_conceded_per_game": 2.77,
+        "key_passes_conceded_per_game": 0.89,
+        "vulnerability_score": 3.8
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.74,
+        "tackles_conceded_per_game": 1.63,
+        "key_passes_conceded_per_game": 0.41,
+        "vulnerability_score": 4.0
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 10.4,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 16.0,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.5,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Newcastle United": {
+    "club": "Newcastle United",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.34,
+        "tackles_conceded_per_game": 5.13,
+        "key_passes_conceded_per_game": 1.39,
+        "vulnerability_score": 9.1
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.61,
+        "tackles_conceded_per_game": 7.33,
+        "key_passes_conceded_per_game": 1.12,
+        "vulnerability_score": 7.2
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.07,
+        "tackles_conceded_per_game": 6.18,
+        "key_passes_conceded_per_game": 1.37,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.21,
+        "tackles_conceded_per_game": 3.15,
+        "key_passes_conceded_per_game": 1.98,
+        "vulnerability_score": 8.3
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.87,
+        "tackles_conceded_per_game": 5.57,
+        "key_passes_conceded_per_game": 1.55,
+        "vulnerability_score": 8.6
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.95,
+        "tackles_conceded_per_game": 2.74,
+        "key_passes_conceded_per_game": 1.02,
+        "vulnerability_score": 4.0
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.14,
+        "tackles_conceded_per_game": 2.18,
+        "key_passes_conceded_per_game": 1.09,
+        "vulnerability_score": 4.5
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.46,
+        "tackles_conceded_per_game": 1.73,
+        "key_passes_conceded_per_game": 0.52,
+        "vulnerability_score": 3.8
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 11.3,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 16.0,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 15.2,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Nottingham Forest": {
+    "club": "Nottingham Forest",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 2.38,
+        "tackles_conceded_per_game": 6.46,
+        "key_passes_conceded_per_game": 1.4,
+        "vulnerability_score": 7.4
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.92,
+        "tackles_conceded_per_game": 6.3,
+        "key_passes_conceded_per_game": 1.39,
+        "vulnerability_score": 8.3
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.95,
+        "tackles_conceded_per_game": 4.07,
+        "key_passes_conceded_per_game": 1.1,
+        "vulnerability_score": 9.5
+      },
+      "CAM": {
+        "shots_conceded_per_game": 2.32,
+        "tackles_conceded_per_game": 3.32,
+        "key_passes_conceded_per_game": 2.0,
+        "vulnerability_score": 8.6
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.18,
+        "tackles_conceded_per_game": 4.96,
+        "key_passes_conceded_per_game": 1.83,
+        "vulnerability_score": 9.8
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.91,
+        "tackles_conceded_per_game": 1.92,
+        "key_passes_conceded_per_game": 0.76,
+        "vulnerability_score": 3.3
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.62,
+        "tackles_conceded_per_game": 2.53,
+        "key_passes_conceded_per_game": 0.63,
+        "vulnerability_score": 4.3
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.13,
+        "tackles_conceded_per_game": 3.0,
+        "key_passes_conceded_per_game": 0.79,
+        "vulnerability_score": 3.8
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 15.5,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 10.2,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 15.1,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Southampton": {
+    "club": "Southampton",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 3.25,
+        "tackles_conceded_per_game": 5.5,
+        "key_passes_conceded_per_game": 2.3,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.24,
+        "tackles_conceded_per_game": 8.13,
+        "key_passes_conceded_per_game": 2.33,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.24,
+        "tackles_conceded_per_game": 7.04,
+        "key_passes_conceded_per_game": 2.14,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.74,
+        "tackles_conceded_per_game": 5.33,
+        "key_passes_conceded_per_game": 2.81,
+        "vulnerability_score": 10.0
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.69,
+        "tackles_conceded_per_game": 5.25,
+        "key_passes_conceded_per_game": 2.79,
+        "vulnerability_score": 10.0
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.55,
+        "tackles_conceded_per_game": 2.08,
+        "key_passes_conceded_per_game": 1.17,
+        "vulnerability_score": 5.4
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.92,
+        "tackles_conceded_per_game": 2.08,
+        "key_passes_conceded_per_game": 1.37,
+        "vulnerability_score": 6.5
+      },
+      "CB": {
+        "shots_conceded_per_game": 2.31,
+        "tackles_conceded_per_game": 3.24,
+        "key_passes_conceded_per_game": 1.15,
+        "vulnerability_score": 6.7
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 19.9,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "High"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 20.5,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "High"
+      },
+      "3-5-2": {
+        "expected_shots_against": 17.8,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "High"
+      }
+    },
+    "overall_defensive_rating": 5.5
+  },
+  "Tottenham Hotspur": {
+    "club": "Tottenham Hotspur",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 4.46,
+        "tackles_conceded_per_game": 6.41,
+        "key_passes_conceded_per_game": 1.63,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 3.56,
+        "tackles_conceded_per_game": 4.63,
+        "key_passes_conceded_per_game": 2.81,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 2.72,
+        "tackles_conceded_per_game": 5.41,
+        "key_passes_conceded_per_game": 1.27,
+        "vulnerability_score": 7.7
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.29,
+        "tackles_conceded_per_game": 5.6,
+        "key_passes_conceded_per_game": 1.98,
+        "vulnerability_score": 10.0
+      },
+      "CM": {
+        "shots_conceded_per_game": 3.46,
+        "tackles_conceded_per_game": 5.74,
+        "key_passes_conceded_per_game": 1.64,
+        "vulnerability_score": 9.8
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.53,
+        "tackles_conceded_per_game": 2.99,
+        "key_passes_conceded_per_game": 0.51,
+        "vulnerability_score": 3.9
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.11,
+        "tackles_conceded_per_game": 2.51,
+        "key_passes_conceded_per_game": 0.73,
+        "vulnerability_score": 3.6
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.74,
+        "tackles_conceded_per_game": 2.08,
+        "key_passes_conceded_per_game": 0.45,
+        "vulnerability_score": 4.1
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 11.5,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 10.7,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.5,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "West Ham United": {
+    "club": "West Ham United",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 2.59,
+        "tackles_conceded_per_game": 6.73,
+        "key_passes_conceded_per_game": 1.75,
+        "vulnerability_score": 8.5
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.88,
+        "tackles_conceded_per_game": 7.94,
+        "key_passes_conceded_per_game": 2.84,
+        "vulnerability_score": 10.0
+      },
+      "RW": {
+        "shots_conceded_per_game": 3.94,
+        "tackles_conceded_per_game": 4.39,
+        "key_passes_conceded_per_game": 2.0,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 3.06,
+        "tackles_conceded_per_game": 4.64,
+        "key_passes_conceded_per_game": 1.04,
+        "vulnerability_score": 7.8
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.42,
+        "tackles_conceded_per_game": 6.13,
+        "key_passes_conceded_per_game": 0.86,
+        "vulnerability_score": 6.2
+      },
+      "LB": {
+        "shots_conceded_per_game": 0.95,
+        "tackles_conceded_per_game": 2.72,
+        "key_passes_conceded_per_game": 0.98,
+        "vulnerability_score": 3.9
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.46,
+        "tackles_conceded_per_game": 3.08,
+        "key_passes_conceded_per_game": 0.76,
+        "vulnerability_score": 4.3
+      },
+      "CB": {
+        "shots_conceded_per_game": 1.49,
+        "tackles_conceded_per_game": 2.26,
+        "key_passes_conceded_per_game": 0.95,
+        "vulnerability_score": 4.8
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 9.7,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 12.2,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.0,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  },
+  "Wolverhampton Wanderers": {
+    "club": "Wolverhampton Wanderers",
+    "positions": {
+      "ST": {
+        "shots_conceded_per_game": 2.6,
+        "tackles_conceded_per_game": 6.07,
+        "key_passes_conceded_per_game": 2.4,
+        "vulnerability_score": 10.0
+      },
+      "LW": {
+        "shots_conceded_per_game": 2.69,
+        "tackles_conceded_per_game": 8.43,
+        "key_passes_conceded_per_game": 1.4,
+        "vulnerability_score": 7.9
+      },
+      "RW": {
+        "shots_conceded_per_game": 4.45,
+        "tackles_conceded_per_game": 3.99,
+        "key_passes_conceded_per_game": 1.97,
+        "vulnerability_score": 10.0
+      },
+      "CAM": {
+        "shots_conceded_per_game": 1.91,
+        "tackles_conceded_per_game": 4.03,
+        "key_passes_conceded_per_game": 1.93,
+        "vulnerability_score": 7.7
+      },
+      "CM": {
+        "shots_conceded_per_game": 2.9,
+        "tackles_conceded_per_game": 6.12,
+        "key_passes_conceded_per_game": 1.48,
+        "vulnerability_score": 8.5
+      },
+      "LB": {
+        "shots_conceded_per_game": 1.0,
+        "tackles_conceded_per_game": 1.63,
+        "key_passes_conceded_per_game": 0.77,
+        "vulnerability_score": 3.5
+      },
+      "RB": {
+        "shots_conceded_per_game": 1.73,
+        "tackles_conceded_per_game": 3.22,
+        "key_passes_conceded_per_game": 0.93,
+        "vulnerability_score": 5.2
+      },
+      "CB": {
+        "shots_conceded_per_game": 0.96,
+        "tackles_conceded_per_game": 1.81,
+        "key_passes_conceded_per_game": 0.84,
+        "vulnerability_score": 3.6
+      }
+    },
+    "formations": {
+      "4-3-3": {
+        "expected_shots_against": 13.6,
+        "weak_zone": "Left Half-Space",
+        "counter_vulnerability": "Low"
+      },
+      "4-2-3-1": {
+        "expected_shots_against": 15.9,
+        "weak_zone": "Central Pocket",
+        "counter_vulnerability": "Low"
+      },
+      "3-5-2": {
+        "expected_shots_against": 12.9,
+        "weak_zone": "Wide Channels",
+        "counter_vulnerability": "Low"
+      }
+    },
+    "overall_defensive_rating": 6.5
+  }
+}
