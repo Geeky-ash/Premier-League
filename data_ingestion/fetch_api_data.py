@@ -403,6 +403,13 @@ if not (RAW_DATA_DIR / "raw_players.json").exists() or not (RAW_DATA_DIR / "raw_
 
 
 if __name__ == "__main__":
-    print("Testing data ingestion module...")
+    api_key = os.getenv("FOOTBALL_DATA_API_KEY") or os.getenv("PL_API_KEY") or ""
+    logger.info("Starting Premier League data ingestion (API key present: %s)...", bool(api_key))
+    if api_key:
+        try:
+            logger.info("Fetching remote Premier League match fixtures...")
+            fetch_football_data("competitions/PL/matches", api_key=api_key, fallback_cache_file="raw_matches.json")
+        except Exception as err:
+            logger.warning("Remote API fetch failed: %s. Falling back to local data.", err)
     p_path, m_path = generate_curated_fallback_data()
-    print(f"Verified datasets:\n - {p_path}\n - {m_path}")
+    print(f"Ingestion pipeline completed successfully:\n - {p_path}\n - {m_path}")

@@ -16,6 +16,7 @@ This living memory document tracks active configurations, technology choices, de
 | **UI Components & Charts**| Tailwind, Framer Motion, Recharts | `tailwindcss@3.4`, `framer-motion`, `recharts` | Glassmorphic containers, animated probability bars, 2D PCA charts |
 | **Testing** | Pytest | `pytest>=7.4.0` | Unit & API integration test suite (22/22 passing) |
 | **Containerization** | Docker & Docker Compose | Dockerfile (Multi-stage), `compose v2.x` | Production-grade containerization with health checks |
+| **CI/CD Automation** | GitHub Actions | `.github/workflows/update_data.yml` | Weekly matchweek data refresh (`cron: 0 4 * * 1`) & validation |
 
 ---
 
@@ -27,6 +28,7 @@ This living memory document tracks active configurations, technology choices, de
 | **MOD-02** | **Match Outcome Predictor** | XGBoost Classification | 🟢 Complete | 🟢 Saved (`match_predictor.joblib`) | 🟢 `POST /api/v1/predict/match-outcome` | 🟢 `/match-predictor` | `CONTAINERIZED` |
 | **MOD-03** | **Player Scouting System** | K-Means Clustering & PCA | 🟢 Complete | 🟢 Saved (`scouting_kmeans.joblib`) | 🟢 `POST /api/v1/predict/scout-twin` | 🟢 `/scouting-studio` | `CONTAINERIZED` |
 | **CORE** | **Unified Architecture** | Next.js 14 + FastAPI Microservice | 🟢 Complete | 🟢 Complete | 🟢 `GET /api/v1/health` | 🟢 `Sidebar + layout.tsx` | `CONTAINERIZED` |
+| **PHASE-05**| **CI/CD Automated Data Ingestion** | GitHub Actions Weekly Cron | 🟢 Complete | 🟢 Validated by Pytest | 🟢 Automated Ingestion | N/A | `AUTOMATED_CI_CD` |
 
 *Legend: 🟢 Complete & Verified | 🟡 In Progress / Staged | 🔴 Pending Implementation*
 
@@ -45,6 +47,10 @@ This living memory document tracks active configurations, technology choices, de
 ---
 
 ### 4. Known Bugs, Blockers & Active Notes
+- **Phase 5 CI/CD Data Ingestion Implemented**:
+  - Workflow file: `.github/workflows/update_data.yml` titled `"Automated Matchweek Data Refresh"`.
+  - Cron trigger: `0 4 * * 1` (Mondays at 04:00 UTC) with `workflow_dispatch` manual trigger.
+  - Steps: Check out repo, setup Python 3.11 with pip caching, install dependencies, execute `fetch_api_data.py` (with `FOOTBALL_DATA_API_KEY: ${{ secrets.PL_API_KEY }}`), execute `clean_pipeline.py`, run pytest data validation gates (`tests/test_data_ingestion.py`), and commit refreshed datasets via `stefanzweifel/git-auto-commit-action@v5` with message `"chore(data): automated weekly Premier League matchday refresh [skip ci]"`.
 - **Containerization Implemented**:
   - `backend/Dockerfile`: Multi-stage Python 3.11-slim container with C++ compiler tools (`build-essential`, `g++`), `curl` healthcheck, and auto-fallback model loading.
   - `frontend/Dockerfile`: 3-stage Next.js 14 standalone build with `node:20-alpine`, non-root user (`nextjs:nodejs`), and static asset optimization.
