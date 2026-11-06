@@ -130,7 +130,8 @@
            font-semibold text-sm rounded-full transition-all duration-200;
   }
   .pl-btn-magenta {
-    @apply pl-btn text-white;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           font-semibold text-sm rounded-full transition-all duration-200 text-white;
     background: var(--pl-magenta);
   }
   .pl-btn-magenta:hover {
@@ -138,7 +139,8 @@
     transform: translateY(-1px);
   }
   .pl-btn-outline {
-    @apply pl-btn text-white border;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           font-semibold text-sm rounded-full transition-all duration-200 text-white border;
     border-color: var(--pl-border-light);
     background: transparent;
   }
@@ -147,7 +149,8 @@
     border-color: var(--pl-white);
   }
   .pl-btn-white {
-    @apply pl-btn bg-white text-pl-purple font-bold;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
+           font-semibold text-sm rounded-full transition-all duration-200 bg-white text-pl-purple font-bold;
   }
   .pl-btn-white:hover {
     background: #f0f0f0;
