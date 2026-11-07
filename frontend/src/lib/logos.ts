@@ -4,7 +4,7 @@
  */
 
 export const PL_LEAGUE_LOGO =
-  "https://resources.premierleague.com/premierleague/badges/50/PL-logo.png";
+  "https://images.fotmob.com/image_resources/logo/leaguelogo/47.png";
 
 export const PL_LEAGUE_LION_PURPLE =
   "https://resources.premierleague.com/premierleague/badges/50/t1.png"; // Fallback high-res badge
@@ -102,7 +102,7 @@ export const CLUB_CREST_MAP: Record<string, string> = {
 };
 
 export const LEAGUE_LOGOS: Record<string, string> = {
-  "premier-league": "https://resources.premierleague.com/premierleague/badges/50/PL-logo.png",
+  "premier-league": "https://images.fotmob.com/image_resources/logo/leaguelogo/47.png",
   "championship": "https://images.fotmob.com/image_resources/logo/leaguelogo/48.png",
   "la-liga": "https://images.fotmob.com/image_resources/logo/leaguelogo/87.png",
   "bundesliga": "https://images.fotmob.com/image_resources/logo/leaguelogo/54.png",
@@ -115,7 +115,7 @@ export const LEAGUE_LOGOS: Record<string, string> = {
 };
 
 export const LEAGUE_FALLBACK_LOGOS: Record<string, string> = {
-  "premier-league": "https://resources.premierleague.com/premierleague/badges/50/PL-logo.png",
+  "premier-league": "https://images.fotmob.com/image_resources/logo/leaguelogo/47.png",
   "championship": "https://images.fotmob.com/image_resources/logo/leaguelogo/48.png",
   "la-liga": "https://images.fotmob.com/image_resources/logo/leaguelogo/87.png",
   "bundesliga": "https://images.fotmob.com/image_resources/logo/leaguelogo/54.png",
@@ -305,6 +305,30 @@ export const GLOBAL_LEAGUES = [
 
 // Fallback high-res club badges across leagues
 export const MULTI_LEAGUE_CLUBS: Record<string, string> = {
+  // Champions League Clubs
+  "Inter Milan": "https://images.fotmob.com/image_resources/logo/teamlogo/8636.png",
+  "AC Milan": "https://images.fotmob.com/image_resources/logo/teamlogo/8564.png",
+  "Benfica": "https://images.fotmob.com/image_resources/logo/teamlogo/9773.png",
+  "Sporting CP": "https://images.fotmob.com/image_resources/logo/teamlogo/9768.png",
+  "FC Porto": "https://images.fotmob.com/image_resources/logo/teamlogo/9772.png",
+  "Feyenoord": "https://images.fotmob.com/image_resources/logo/teamlogo/10235.png",
+  "PSV Eindhoven": "https://images.fotmob.com/image_resources/logo/teamlogo/8640.png",
+  "Celtic": "https://images.fotmob.com/image_resources/logo/teamlogo/9925.png",
+  "Dinamo Zagreb": "https://images.fotmob.com/image_resources/logo/teamlogo/10052.png",
+  "Club Brugge": "https://images.fotmob.com/image_resources/logo/teamlogo/8342.png",
+  "Shakhtar Donetsk": "https://images.fotmob.com/image_resources/logo/teamlogo/10006.png",
+  "Red Star Belgrade": "https://images.fotmob.com/image_resources/logo/teamlogo/10054.png",
+  "Sparta Prague": "https://images.fotmob.com/image_resources/logo/teamlogo/8244.png",
+  "Sturm Graz": "https://images.fotmob.com/image_resources/logo/teamlogo/8169.png",
+  "Brest": "https://images.fotmob.com/image_resources/logo/teamlogo/9848.png",
+  "Bologna": "https://images.fotmob.com/image_resources/logo/teamlogo/9857.png",
+  "Girona": "https://images.fotmob.com/image_resources/logo/teamlogo/9812.png",
+  "VfB Stuttgart": "https://images.fotmob.com/image_resources/logo/teamlogo/10269.png",
+  "Stuttgart": "https://images.fotmob.com/image_resources/logo/teamlogo/10269.png",
+  "Young Boys": "https://images.fotmob.com/image_resources/logo/teamlogo/10192.png",
+  "Slovan Bratislava": "https://images.fotmob.com/image_resources/logo/teamlogo/9759.png",
+  "Raphinha": "https://images.fotmob.com/image_resources/playerimages/796857.png",
+
   // Championship
   "Derby County": "https://images.fotmob.com/image_resources/logo/teamlogo/8658.png",
   "Bolton Wanderers": "https://images.fotmob.com/image_resources/logo/teamlogo/8559.png",
@@ -399,6 +423,7 @@ export function getCountryFlag(countryName: string): string {
  * Falls back to name lookup or placeholder avatar.
  */
 const GLOBAL_PLAYER_PHOTOS: Record<string, string> = {
+  "raphinha": "https://images.fotmob.com/image_resources/playerimages/796857.png",
   "lamine-yamal": "https://images.fotmob.com/image_resources/playerimages/1504106.png",
   "lamine yamal": "https://images.fotmob.com/image_resources/playerimages/1504106.png",
   "kylian mbappé": "https://images.fotmob.com/image_resources/playerimages/737066.png",

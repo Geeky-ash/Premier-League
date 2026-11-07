@@ -180,21 +180,24 @@ export default function Navbar() {
                         className="flex items-center justify-between w-full px-4 py-2 text-sm hover:bg-[#eeece7] transition-colors"
                       >
                         <div className="flex items-center min-w-0 pr-3">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={getLeagueLogo(league.slug)}
-                            alt=""
-                            className="w-5 h-5 flex-shrink-0 object-contain mr-3"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              const fallback = getLeagueFallbackLogo(league.slug);
-                              if (fallback && e.currentTarget.src !== fallback) {
-                                e.currentTarget.src = fallback;
-                              } else {
-                                e.currentTarget.style.display = "none";
-                              }
-                            }}
-                          />
+                          <div className="w-5 h-5 flex items-center justify-center shrink-0 mr-3">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={getLeagueLogo(league.slug)}
+                              alt=""
+                              className="w-5 h-5 max-w-5 max-h-5 object-contain"
+                              loading="lazy"
+                              referrerPolicy="no-referrer"
+                              onError={(e) => {
+                                const fallback = getLeagueFallbackLogo(league.slug);
+                                if (fallback && e.currentTarget.src !== fallback) {
+                                  e.currentTarget.src = fallback;
+                                } else {
+                                  e.currentTarget.style.display = "none";
+                                }
+                              }}
+                            />
+                          </div>
                           <span className="font-medium text-cohere-primary truncate">
                             {league.name}
                           </span>
