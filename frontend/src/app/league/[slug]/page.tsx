@@ -17,12 +17,120 @@ import {
   Award,
 } from "lucide-react";
 import { fetchGlobalLeagueOverview, LeagueOverviewResponse } from "@/lib/api";
-import { getGlobalClubCrest, getLeagueCrest, getPlayerPhoto } from "@/lib/logos";
+import { getGlobalClubCrest, getLeagueCrest, getPlayerHeadshot, getPlayerPhoto } from "@/lib/logos";
 import H2HModal from "@/components/H2HModal";
 
 // ── Complete Resilient Client-Side Fallback Generator ──
 function getFallbackLeagueOverview(slug: string): LeagueOverviewResponse {
   const cleanSlug = slug.toLowerCase();
+  const laLigaLeaders = [
+    {
+      name: "Goals",
+      leaders: [
+        { player: "Robert Lewandowski", club: "FC Barcelona", val: 16 },
+        { player: "Kylian Mbappé", club: "Real Madrid", val: 12 },
+        { player: "Raphinha", club: "FC Barcelona", val: 11 },
+        { player: "Ayoze Pérez", club: "Villarreal", val: 10 },
+        { player: "Antoine Griezmann", club: "Atlético Madrid", val: 9 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 9 },
+        { player: "Dani Olmo", club: "FC Barcelona", val: 8 },
+        { player: "Lamine Yamal", club: "FC Barcelona", val: 7 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 7 },
+        { player: "Alexander Sørloth", club: "Atlético Madrid", val: 6 },
+      ],
+    },
+    {
+      name: "Assists",
+      leaders: [
+        { player: "Lamine Yamal", club: "FC Barcelona", val: 10 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 8 },
+        { player: "Pedri", club: "FC Barcelona", val: 7 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 7 },
+        { player: "Raphinha", club: "FC Barcelona", val: 6 },
+        { player: "Antoine Griezmann", club: "Atlético Madrid", val: 6 },
+        { player: "Dani Olmo", club: "FC Barcelona", val: 5 },
+        { player: "Rodrygo", club: "Real Madrid", val: 5 },
+        { player: "Federico Valverde", club: "Real Madrid", val: 4 },
+        { player: "Ayoze Pérez", club: "Villarreal", val: 4 },
+      ],
+    },
+    {
+      name: "xG",
+      leaders: [
+        { player: "Robert Lewandowski", club: "FC Barcelona", val: 15.2 },
+        { player: "Kylian Mbappé", club: "Real Madrid", val: 11.8 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 9.4 },
+        { player: "Raphinha", club: "FC Barcelona", val: 9.1 },
+        { player: "Ayoze Pérez", club: "Villarreal", val: 8.9 },
+        { player: "Antoine Griezmann", club: "Atlético Madrid", val: 8.5 },
+        { player: "Lamine Yamal", club: "FC Barcelona", val: 6.9 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 6.5 },
+        { player: "Dani Olmo", club: "FC Barcelona", val: 6.1 },
+        { player: "Alexander Sørloth", club: "Atlético Madrid", val: 5.4 },
+      ],
+    },
+    {
+      name: "Key Passes",
+      leaders: [
+        { player: "Lamine Yamal", club: "FC Barcelona", val: 42 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 34 },
+        { player: "Pedri", club: "FC Barcelona", val: 30 },
+        { player: "Antoine Griezmann", club: "Atlético Madrid", val: 28 },
+        { player: "Raphinha", club: "FC Barcelona", val: 27 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 26 },
+        { player: "Nico Williams", club: "Athletic Club", val: 24 },
+        { player: "Dani Olmo", club: "FC Barcelona", val: 22 },
+        { player: "Rodrygo", club: "Real Madrid", val: 21 },
+        { player: "Federico Valverde", club: "Real Madrid", val: 20 },
+      ],
+    },
+    {
+      name: "Shots on Target",
+      leaders: [
+        { player: "Kylian Mbappé", club: "Real Madrid", val: 28 },
+        { player: "Robert Lewandowski", club: "FC Barcelona", val: 26 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 22 },
+        { player: "Antoine Griezmann", club: "Atlético Madrid", val: 20 },
+        { player: "Lamine Yamal", club: "FC Barcelona", val: 18 },
+        { player: "Raphinha", club: "FC Barcelona", val: 17 },
+        { player: "Ayoze Pérez", club: "Villarreal", val: 16 },
+        { player: "Dani Olmo", club: "FC Barcelona", val: 15 },
+        { player: "Rodrygo", club: "Real Madrid", val: 14 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 13 },
+      ],
+    },
+    {
+      name: "Tackles",
+      leaders: [
+        { player: "Federico Valverde", club: "Real Madrid", val: 38 },
+        { player: "Pedri", club: "FC Barcelona", val: 32 },
+        { player: "Jude Bellingham", club: "Real Madrid", val: 29 },
+        { player: "Gavi", club: "FC Barcelona", val: 26 },
+        { player: "Koke", club: "Atlético Madrid", val: 25 },
+        { player: "Rodrigo De Paul", club: "Atlético Madrid", val: 24 },
+        { player: "Eduardo Camavinga", club: "Real Madrid", val: 23 },
+        { player: "Dani Carvajal", club: "Real Madrid", val: 22 },
+        { player: "Ander Herrera", club: "Athletic Club", val: 20 },
+        { player: "Dani Vivian", club: "Athletic Club", val: 19 },
+      ],
+    },
+    {
+      name: "Yellow Cards",
+      leaders: [
+        { player: "Dani Carvajal", club: "Real Madrid", val: 6 },
+        { player: "Ronald Araújo", club: "FC Barcelona", val: 5 },
+        { player: "Marcos Llorente", club: "Atlético Madrid", val: 5 },
+        { player: "Federico Valverde", club: "Real Madrid", val: 4 },
+        { player: "Vinícius Júnior", club: "Real Madrid", val: 4 },
+        { player: "Gavi", club: "FC Barcelona", val: 4 },
+        { player: "Koke", club: "Atlético Madrid", val: 3 },
+        { player: "Robin Le Normand", club: "Atlético Madrid", val: 3 },
+        { player: "Iñigo Martínez", club: "FC Barcelona", val: 3 },
+        { player: "Rodrigo De Paul", club: "Atlético Madrid", val: 3 },
+      ],
+    },
+  ];
+
   const isCL = cleanSlug.includes("champion");
 
   const clStandings = [
@@ -209,7 +317,7 @@ function getFallbackLeagueOverview(slug: string): LeagueOverviewResponse {
     },
     standings: isCL ? clStandings : genericStandings,
     fixtures: clFixtures,
-    stat_categories: clLeaders,
+    stat_categories: isCL ? clLeaders : (cleanSlug === "la-liga" ? laLigaLeaders : clLeaders),
   };
 }
 
@@ -485,21 +593,27 @@ export default function LeagueOverviewPage() {
                     <span className="font-mono text-xs font-bold text-cohere-muted w-4 shrink-0">
                       {i + 1}.
                     </span>
-                    <div className="relative w-7 h-7 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone">
-                      <Image
-                        src={getPlayerPhoto(leader.player)}
+                    <div className="relative w-7 h-7 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone flex items-center justify-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={getPlayerHeadshot(leader.player)}
                         alt={leader.player}
-                        fill
-                        className="object-cover object-top"
-                        unoptimized
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.src = "/fallback-player-avatar.svg";
+                        }}
                       />
-                      <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-white p-0.5 border border-cohere-hairline">
-                        <Image
+                      <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-white p-0.5 border border-cohere-hairline flex items-center justify-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                           src={getGlobalClubCrest(leader.club)}
                           alt={leader.club}
-                          fill
-                          className="object-contain"
-                          unoptimized
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
                         />
                       </div>
                     </div>

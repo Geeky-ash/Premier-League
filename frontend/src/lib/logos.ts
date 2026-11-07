@@ -465,30 +465,50 @@ const GLOBAL_PLAYER_PHOTOS: Record<string, string> = {
   "davies": "https://images.fotmob.com/image_resources/playerimages/802498.png",
 };
 
-export function getPlayerPhoto(playerIdOrName: string | number): string {
-  if (typeof playerIdOrName === "string") {
-    const key = playerIdOrName.trim().toLowerCase();
-    if (GLOBAL_PLAYER_PHOTOS[key]) {
-      return GLOBAL_PLAYER_PHOTOS[key];
-    }
-    for (const [k, url] of Object.entries(GLOBAL_PLAYER_PHOTOS)) {
-      if (key.includes(k) || k.includes(key)) {
-        return url;
-      }
-    }
-    if (PLAYER_PHOTO_MAP[playerIdOrName]) {
-      const code = PLAYER_PHOTO_MAP[playerIdOrName];
-      if (code.startsWith("p")) {
+export function getPlayerHeadshot(playerName?: string, teamSlug?: string): string {
+  if (!playerName) {
+    return "/fallback-player-avatar.svg";
+  }
+
+  const cleanName = playerName.trim();
+  const lowerName = cleanName.toLowerCase();
+
+  // 1. Check Premier League mapped photo IDs (p{id})
+  const plCode = PLAYER_PHOTO_MAP[cleanName] || PLAYER_PHOTO_MAP[lowerName];
+  if (plCode && plCode.startsWith("p")) {
+    return `https://resources.premierleague.com/premierleague/photos/players/250x250/${plCode}.png`;
+  }
+
+  // 2. Fuzzy match in Premier League player photo map
+  for (const [name, code] of Object.entries(PLAYER_PHOTO_MAP)) {
+    if (code.startsWith("p")) {
+      const lowerKey = name.toLowerCase();
+      if (lowerName.includes(lowerKey) || lowerKey.includes(lowerName)) {
         return `https://resources.premierleague.com/premierleague/photos/players/250x250/${code}.png`;
       }
     }
   }
 
+  // 3. Known global direct CDN player cutouts
+  if (GLOBAL_PLAYER_PHOTOS[lowerName]) {
+    return GLOBAL_PLAYER_PHOTOS[lowerName];
+  }
+  for (const [key, url] of Object.entries(GLOBAL_PLAYER_PHOTOS)) {
+    if (lowerName.includes(key) || key.includes(lowerName)) {
+      return url;
+    }
+  }
+
+  // 4. Robust fallback with high-quality Cohere design-styled avatar
+  const encoded = encodeURIComponent(cleanName);
+  return `https://ui-avatars.com/api/?name=${encoded}&background=eeece7&color=17171c&bold=true&size=128`;
+}
+
+export function getPlayerPhoto(playerIdOrName: string | number): string {
   if (typeof playerIdOrName === "number") {
     return `https://resources.premierleague.com/premierleague/photos/players/250x250/p${playerIdOrName}.png`;
   }
-
-  return `https://resources.premierleague.com/premierleague/photos/players/250x250/p223094.png`;
+  return getPlayerHeadshot(String(playerIdOrName));
 }
 
 export function getGlobalClubCrest(teamName: string): string {
