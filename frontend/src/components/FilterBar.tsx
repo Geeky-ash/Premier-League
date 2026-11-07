@@ -51,16 +51,16 @@ export default function FilterBar({
   };
 
   return (
-    <div className={`p-4 bg-slate-900/80 rounded-2xl border border-white/10 backdrop-blur-md shadow-xl space-y-4 ${className}`}>
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
-        <div className="flex items-center gap-2 text-xs font-bold text-white uppercase tracking-wider">
-          <SlidersHorizontal size={14} className="text-pl-green" />
+    <div className={`p-4 product-card space-y-4 font-body text-cohere-ink ${className}`}>
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-cohere-hairline">
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-cohere-primary uppercase tracking-wider">
+          <SlidersHorizontal size={14} className="text-cohere-coral" />
           <span>Advanced Statistical Filter Engine</span>
         </div>
         <button
           type="button"
           onClick={resetFilters}
-          className="flex items-center gap-1.5 text-[11px] font-semibold text-pl-text-muted hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-[11px] font-mono font-bold text-cohere-slate hover:text-cohere-coral transition-colors"
         >
           <RotateCcw size={12} />
           <span>Reset Filters</span>
@@ -70,10 +70,10 @@ export default function FilterBar({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Sample Size */}
         <div>
-          <label className="text-[11px] font-bold text-pl-text-secondary uppercase tracking-wider block mb-1.5">
+          <label className="text-[11px] font-mono font-bold text-cohere-muted uppercase tracking-wider block mb-1.5">
             Sample Horizon
           </label>
-          <div className="grid grid-cols-4 gap-1 bg-slate-950/60 p-1 rounded-xl border border-white/5">
+          <div className="grid grid-cols-4 gap-1 bg-white p-1 rounded-pill border border-cohere-hairline">
             {(
               [
                 { id: "last_5", label: "L5" },
@@ -86,10 +86,10 @@ export default function FilterBar({
                 key={s.id}
                 type="button"
                 onClick={() => update({ sample_size: s.id })}
-                className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
+                className={`py-1.5 text-xs font-mono font-bold rounded-pill transition-all ${
                   filters.sample_size === s.id
-                    ? "bg-pl-green text-slate-950 shadow-md"
-                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                    ? "bg-cohere-primary text-white shadow-sm"
+                    : "text-cohere-slate hover:text-cohere-ink"
                 }`}
               >
                 {s.label}
@@ -101,11 +101,11 @@ export default function FilterBar({
         {/* Minutes Threshold */}
         <div>
           <div className="flex items-center justify-between mb-1.5">
-            <label className="text-[11px] font-bold text-pl-text-secondary uppercase tracking-wider flex items-center gap-1">
-              <Clock size={11} className="text-pl-cyan" />
+            <label className="text-[11px] font-mono font-bold text-cohere-muted uppercase tracking-wider flex items-center gap-1">
+              <Clock size={11} className="text-cohere-coral" />
               <span>Minutes Threshold</span>
             </label>
-            <span className="text-xs font-extrabold text-pl-cyan">
+            <span className="text-xs font-mono font-bold text-cohere-coral">
               {filters.min_minutes}+ mins
             </span>
           </div>
@@ -115,10 +115,10 @@ export default function FilterBar({
                 key={m}
                 type="button"
                 onClick={() => update({ min_minutes: m })}
-                className={`flex-1 py-1 text-[11px] font-semibold rounded-lg border transition-all ${
+                className={`flex-1 py-1 text-[11px] font-mono font-bold rounded-sm border transition-all ${
                   filters.min_minutes === m
-                    ? "bg-pl-cyan/20 border-pl-cyan text-white"
-                    : "bg-slate-950/40 border-white/5 text-slate-400 hover:text-white"
+                    ? "bg-cohere-primary text-white border-cohere-primary"
+                    : "bg-white border-cohere-hairline text-cohere-slate hover:text-cohere-ink"
                 }`}
               >
                 {m}m
@@ -129,18 +129,18 @@ export default function FilterBar({
 
         {/* Starting XI Filter */}
         <div>
-          <label className="text-[11px] font-bold text-pl-text-secondary uppercase tracking-wider block mb-1.5 flex items-center gap-1">
-            <ShieldCheck size={12} className="text-pl-magenta" />
+          <label className="text-[11px] font-mono font-bold text-cohere-muted uppercase tracking-wider block mb-1.5 flex items-center gap-1">
+            <ShieldCheck size={12} className="text-cohere-action-blue" />
             <span>Lineup Status</span>
           </label>
-          <div className="grid grid-cols-2 gap-1 bg-slate-950/60 p-1 rounded-xl border border-white/5">
+          <div className="grid grid-cols-2 gap-1 bg-white p-1 rounded-pill border border-cohere-hairline">
             <button
               type="button"
               onClick={() => update({ started_only: false })}
-              className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
+              className={`py-1.5 text-xs font-mono font-bold rounded-pill transition-all ${
                 !filters.started_only
-                  ? "bg-white/15 text-white"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-cohere-primary text-white shadow-sm"
+                  : "text-cohere-slate hover:text-cohere-ink"
               }`}
             >
               All Matches
@@ -148,10 +148,10 @@ export default function FilterBar({
             <button
               type="button"
               onClick={() => update({ started_only: true })}
-              className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
+              className={`py-1.5 text-xs font-mono font-bold rounded-pill transition-all ${
                 filters.started_only
-                  ? "bg-pl-magenta text-white shadow-md shadow-pl-magenta/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-cohere-primary text-white shadow-sm"
+                  : "text-cohere-slate hover:text-cohere-ink"
               }`}
             >
               Started Only
@@ -162,11 +162,11 @@ export default function FilterBar({
         {/* Venue Filter */}
         {showVenueToggle && (
           <div>
-            <label className="text-[11px] font-bold text-pl-text-secondary uppercase tracking-wider block mb-1.5 flex items-center gap-1">
-              <MapPin size={11} className="text-pl-cyan" />
+            <label className="text-[11px] font-mono font-bold text-cohere-muted uppercase tracking-wider block mb-1.5 flex items-center gap-1">
+              <MapPin size={11} className="text-cohere-coral" />
               <span>Venue Split</span>
             </label>
-            <div className="grid grid-cols-3 gap-1 bg-slate-950/60 p-1 rounded-xl border border-white/5">
+            <div className="grid grid-cols-3 gap-1 bg-white p-1 rounded-pill border border-cohere-hairline">
               {(
                 [
                   { id: "all", label: "All" },
@@ -178,10 +178,10 @@ export default function FilterBar({
                   key={v.id}
                   type="button"
                   onClick={() => update({ venue: v.id })}
-                  className={`py-1.5 text-xs font-bold rounded-lg transition-all ${
+                  className={`py-1.5 text-xs font-mono font-bold rounded-pill transition-all ${
                     filters.venue === v.id
-                      ? "bg-pl-purple border border-pl-cyan/40 text-white"
-                      : "text-slate-400 hover:text-white hover:bg-white/5"
+                      ? "bg-cohere-primary text-white shadow-sm"
+                      : "text-cohere-slate hover:text-cohere-ink"
                   }`}
                 >
                   {v.label}

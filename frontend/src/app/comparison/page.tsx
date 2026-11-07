@@ -111,7 +111,7 @@ export default function ComparisonPage() {
     }, 150);
   };
 
-  const getClubColor = (club: string) => CLUB_COLORS[club] || "#38003c";
+  const getClubColor = (club: string) => CLUB_COLORS[club] || "#17171c";
 
   /* ── Stat comparison helper ── */
   const StatValue = ({
@@ -122,8 +122,8 @@ export default function ComparisonPage() {
     isBetter: boolean;
   }) => (
     <span
-      className={`text-stat-sm transition-all ${
-        isBetter ? "text-pl-green font-bold drop-shadow-[0_0_8px_rgba(0,255,135,0.4)]" : "text-white"
+      className={`text-sm font-mono transition-all ${
+        isBetter ? "text-cohere-coral font-bold" : "text-cohere-primary"
       }`}
     >
       {typeof val === "number" ? val.toLocaleString() : val}
@@ -131,15 +131,15 @@ export default function ComparisonPage() {
   );
 
   return (
-    <div className="space-y-8 animate-fade-in" ref={comparisonRef}>
+    <div className="space-y-8 animate-fade-in font-body text-cohere-ink" ref={comparisonRef}>
       {/* ═══ Section Header ═══ */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2.5">
-            <Shield className="text-pl-cyan" size={24} />
+          <h2 className="text-3xl font-display font-medium text-cohere-primary tracking-tight flex items-center gap-2.5">
+            <Shield className="text-cohere-coral" size={26} />
             Player Comparison Matrix
           </h2>
-          <p className="text-sm text-pl-text-muted mt-1">
+          <p className="text-sm text-cohere-body-muted mt-1 max-w-2xl">
             Select two Premier League stars to compare official tracking metrics and ML AI projections side-by-side.
           </p>
         </div>
@@ -150,7 +150,7 @@ export default function ComparisonPage() {
               setTransferA(null); setTransferB(null);
               setScoutA(null); setScoutB(null);
             }}
-            className="text-xs text-pl-magenta hover:text-white px-3 py-1.5 rounded-lg border border-pl-magenta/30 hover:border-pl-magenta transition-all w-fit"
+            className="text-xs font-mono font-medium text-cohere-coral hover:text-cohere-ink px-4 py-2 rounded-pill border border-cohere-hairline hover:bg-cohere-soft-stone transition-all w-fit"
           >
             Clear Selection
           </button>
@@ -162,10 +162,10 @@ export default function ComparisonPage() {
         {/* Slot A */}
         {playerA ? (
           <div
-            className="pl-card flex items-center gap-4 cursor-pointer group hover:border-pl-cyan/50 transition-all relative overflow-hidden"
+            className="product-card flex items-center gap-4 cursor-pointer group hover:border-cohere-coral transition-all relative overflow-hidden"
             onClick={() => setDrawerPlayer(playerA)}
           >
-            <div className="relative w-16 h-16 rounded-full shrink-0 border-2 border-white/20 overflow-hidden bg-slate-900 shadow-lg">
+            <div className="relative w-16 h-16 rounded-full shrink-0 border border-cohere-hairline overflow-hidden bg-cohere-soft-stone shadow-sm">
               <Image
                 src={getPlayerPhoto(playerA.name)}
                 alt={playerA.name}
@@ -174,10 +174,10 @@ export default function ComparisonPage() {
                 className="w-full h-full object-cover object-top"
                 unoptimized
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(playerA.name)}&background=38003c&color=00ff87`;
+                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(playerA.name)}&background=eeece7&color=17171c`;
                 }}
               />
-              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-slate-950 p-0.5 border border-white/20">
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white p-0.5 border border-cohere-hairline">
                 <Image
                   src={getClubCrest(playerA.club)}
                   alt={playerA.club}
@@ -189,17 +189,17 @@ export default function ComparisonPage() {
               </div>
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-lg font-bold text-white group-hover:text-pl-cyan transition-colors truncate">
+              <div className="text-lg font-bold text-cohere-primary group-hover:text-cohere-coral transition-colors truncate">
                 {playerA.name}
               </div>
-              <div className="text-xs text-pl-text-muted flex items-center gap-1.5 flex-wrap">
-                <span className="font-semibold text-slate-300">{playerA.club}</span>
+              <div className="text-xs text-cohere-slate flex items-center gap-1.5 flex-wrap">
+                <span className="font-semibold text-cohere-ink">{playerA.club}</span>
                 <span>•</span>
                 <span>{playerA.position}</span>
                 <span>•</span>
                 <span>Age {playerA.age}</span>
               </div>
-              <div className="text-[11px] text-pl-cyan mt-1 flex items-center gap-1">
+              <div className="text-[11px] text-cohere-coral font-medium mt-1 flex items-center gap-1">
                 <span>View player dossier</span>
                 <ArrowRight size={10} />
               </div>
@@ -211,7 +211,7 @@ export default function ComparisonPage() {
                 setTransferA(null);
                 setScoutA(null);
               }}
-              className="p-2 text-pl-text-muted hover:text-pl-magenta hover:bg-white/5 rounded-full transition-colors"
+              className="p-2 text-cohere-muted hover:text-cohere-coral hover:bg-white rounded-full transition-colors"
               title="Remove player"
             >
               <X size={18} />
@@ -220,23 +220,23 @@ export default function ComparisonPage() {
         ) : (
           <button
             onClick={() => setModalSlot("A")}
-            className="player-slot hover:border-pl-cyan/50 hover:bg-white/[0.03] transition-all flex flex-col items-center justify-center p-6 border-2 border-dashed border-white/10 rounded-xl"
+            className="player-slot hover:border-cohere-coral hover:bg-cohere-soft-stone/40 transition-all flex flex-col items-center justify-center p-6 border-2 border-dashed border-cohere-hairline rounded-lg bg-cohere-soft-stone/20"
           >
-            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-pl-cyan mb-2 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 rounded-full bg-cohere-coral/10 flex items-center justify-center text-cohere-coral mb-2">
               <Plus size={24} />
             </div>
-            <span className="text-sm font-semibold text-white">Select Player A</span>
-            <span className="text-xs text-pl-text-muted mt-0.5">Click to choose from 500+ Premier League stars</span>
+            <span className="text-sm font-semibold text-cohere-primary">Select Player A</span>
+            <span className="text-xs text-cohere-muted mt-0.5">Click to choose from 500+ Premier League stars</span>
           </button>
         )}
 
         {/* Slot B */}
         {playerB ? (
           <div
-            className="pl-card flex items-center gap-4 cursor-pointer group hover:border-pl-cyan/50 transition-all relative overflow-hidden"
+            className="product-card flex items-center gap-4 cursor-pointer group hover:border-cohere-action-blue transition-all relative overflow-hidden"
             onClick={() => setDrawerPlayer(playerB)}
           >
-            <div className="relative w-16 h-16 rounded-full shrink-0 border-2 border-white/20 overflow-hidden bg-slate-900 shadow-lg">
+            <div className="relative w-16 h-16 rounded-full shrink-0 border border-cohere-hairline overflow-hidden bg-cohere-soft-stone shadow-sm">
               <Image
                 src={getPlayerPhoto(playerB.name)}
                 alt={playerB.name}
@@ -245,10 +245,10 @@ export default function ComparisonPage() {
                 className="w-full h-full object-cover object-top"
                 unoptimized
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(playerB.name)}&background=38003c&color=00ff87`;
+                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(playerB.name)}&background=eeece7&color=1863dc`;
                 }}
               />
-              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-slate-950 p-0.5 border border-white/20">
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white p-0.5 border border-cohere-hairline">
                 <Image
                   src={getClubCrest(playerB.club)}
                   alt={playerB.club}
@@ -260,17 +260,17 @@ export default function ComparisonPage() {
               </div>
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-lg font-bold text-white group-hover:text-pl-cyan transition-colors truncate">
+              <div className="text-lg font-bold text-cohere-primary group-hover:text-cohere-action-blue transition-colors truncate">
                 {playerB.name}
               </div>
-              <div className="text-xs text-pl-text-muted flex items-center gap-1.5 flex-wrap">
-                <span className="font-semibold text-slate-300">{playerB.club}</span>
+              <div className="text-xs text-cohere-slate flex items-center gap-1.5 flex-wrap">
+                <span className="font-semibold text-cohere-ink">{playerB.club}</span>
                 <span>•</span>
                 <span>{playerB.position}</span>
                 <span>•</span>
                 <span>Age {playerB.age}</span>
               </div>
-              <div className="text-[11px] text-pl-cyan mt-1 flex items-center gap-1">
+              <div className="text-[11px] text-cohere-action-blue font-medium mt-1 flex items-center gap-1">
                 <span>View player dossier</span>
                 <ArrowRight size={10} />
               </div>
@@ -282,7 +282,7 @@ export default function ComparisonPage() {
                 setTransferB(null);
                 setScoutB(null);
               }}
-              className="p-2 text-pl-text-muted hover:text-pl-magenta hover:bg-white/5 rounded-full transition-colors"
+              className="p-2 text-cohere-muted hover:text-cohere-coral hover:bg-white rounded-full transition-colors"
               title="Remove player"
             >
               <X size={18} />
@@ -291,20 +291,20 @@ export default function ComparisonPage() {
         ) : (
           <button
             onClick={() => setModalSlot("B")}
-            className="player-slot hover:border-pl-cyan/50 hover:bg-white/[0.03] transition-all flex flex-col items-center justify-center p-6 border-2 border-dashed border-white/10 rounded-xl"
+            className="player-slot hover:border-cohere-action-blue hover:bg-cohere-soft-stone/40 transition-all flex flex-col items-center justify-center p-6 border-2 border-dashed border-cohere-hairline rounded-lg bg-cohere-soft-stone/20"
           >
-            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-pl-cyan mb-2 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 rounded-full bg-cohere-action-blue/10 flex items-center justify-center text-cohere-action-blue mb-2">
               <Plus size={24} />
             </div>
-            <span className="text-sm font-semibold text-white">Select Player B</span>
-            <span className="text-xs text-pl-text-muted mt-0.5">Click to choose from 500+ Premier League stars</span>
+            <span className="text-sm font-semibold text-cohere-primary">Select Player B</span>
+            <span className="text-xs text-cohere-muted mt-0.5">Click to choose from 500+ Premier League stars</span>
           </button>
         )}
       </div>
 
       {/* ── Notice ── */}
-      <div className="flex items-start gap-2.5 text-xs text-pl-text-muted bg-slate-900/60 rounded-xl px-4 py-3 border border-white/10 backdrop-blur-md">
-        <AlertCircle size={15} className="shrink-0 mt-0.5 text-pl-cyan" />
+      <div className="flex items-start gap-2.5 text-xs text-cohere-body-muted bg-cohere-pale-blue rounded-lg px-4 py-3 border border-cohere-hairline">
+        <AlertCircle size={15} className="shrink-0 mt-0.5 text-cohere-action-blue" />
         <span>
           ML transfer valuations, archetype cluster labels, and similarity twins are computed in real time by our FastAPI microservice.
           Click any loaded player card above to inspect their full radar profile and statistical twin breakdown.
@@ -313,9 +313,9 @@ export default function ComparisonPage() {
 
       {/* ═══ Side-by-Side Stat Comparison ═══ */}
       {playerA && playerB && (
-        <div className="pl-card p-0 overflow-hidden animate-slide-up border border-white/15 shadow-2xl">
+        <div className="cohere-card-white p-0 overflow-hidden animate-slide-up">
           {/* Header Row */}
-          <div className="grid grid-cols-3 bg-slate-950/90 px-6 py-4 border-b border-white/10">
+          <div className="grid grid-cols-3 bg-cohere-soft-stone px-6 py-4 border-b border-cohere-hairline">
             <div className="flex items-center gap-2">
               <Image
                 src={getClubCrest(playerA.club)}
@@ -325,13 +325,13 @@ export default function ComparisonPage() {
                 className="shrink-0"
                 unoptimized
               />
-              <span className="text-sm font-extrabold text-white truncate">{playerA.name}</span>
+              <span className="text-sm font-bold text-cohere-primary truncate">{playerA.name}</span>
             </div>
-            <div className="text-xs font-bold text-pl-cyan text-center uppercase tracking-wider self-center">
+            <div className="text-xs font-mono font-bold text-cohere-coral text-center uppercase tracking-wider self-center">
               Head-to-Head Matrix
             </div>
             <div className="flex items-center justify-end gap-2">
-              <span className="text-sm font-extrabold text-white truncate">{playerB.name}</span>
+              <span className="text-sm font-bold text-cohere-primary truncate">{playerB.name}</span>
               <Image
                 src={getClubCrest(playerB.club)}
                 alt={playerB.club}
@@ -350,11 +350,11 @@ export default function ComparisonPage() {
             const aBetter = valA > valB;
             const bBetter = valB > valA;
             return (
-              <div key={key} className="stat-row grid grid-cols-3 px-6 py-3 border-b border-white/5 hover:bg-white/[0.02] transition-colors items-center">
+              <div key={key} className="stat-row grid grid-cols-3 px-6 py-3 border-b border-cohere-hairline hover:bg-cohere-soft-stone/30 transition-colors items-center">
                 <div>
                   <StatValue val={valA} isBetter={aBetter} />
                 </div>
-                <div className="text-xs text-pl-text-muted text-center font-semibold">
+                <div className="text-xs text-cohere-slate text-center font-mono font-medium">
                   {label}
                 </div>
                 <div className="text-right">
@@ -365,50 +365,50 @@ export default function ComparisonPage() {
           })}
 
           {/* ML Enrichment Rows */}
-          <div className="stat-row grid grid-cols-3 px-6 py-4 bg-slate-900/60 border-b border-white/10 items-center">
+          <div className="stat-row grid grid-cols-3 px-6 py-4 bg-cohere-soft-stone/50 border-b border-cohere-hairline items-center">
             <div>
               {loadingA ? (
-                <span className="text-xs text-pl-text-muted animate-pulse">Calculating...</span>
+                <span className="text-xs text-cohere-muted animate-pulse">Calculating...</span>
               ) : (
-                <span className="text-stat-sm text-pl-green font-bold">
+                <span className="text-sm text-cohere-coral font-bold font-mono">
                   {transferA ? `€${transferA.valuation_eur_m.toFixed(1)}M` : "—"}
                 </span>
               )}
             </div>
-            <div className="text-xs text-pl-cyan text-center font-bold uppercase tracking-wider flex items-center justify-center gap-1.5">
-              <Sparkles size={14} />
+            <div className="text-xs text-cohere-primary text-center font-bold uppercase font-mono tracking-wider flex items-center justify-center gap-1.5">
+              <Sparkles size={14} className="text-cohere-coral" />
               <span>AI Predicted Valuation</span>
             </div>
             <div className="text-right">
               {loadingB ? (
-                <span className="text-xs text-pl-text-muted animate-pulse">Calculating...</span>
+                <span className="text-xs text-cohere-muted animate-pulse">Calculating...</span>
               ) : (
-                <span className="text-stat-sm text-pl-green font-bold">
+                <span className="text-sm text-cohere-action-blue font-bold font-mono">
                   {transferB ? `€${transferB.valuation_eur_m.toFixed(1)}M` : "—"}
                 </span>
               )}
             </div>
           </div>
 
-          <div className="stat-row grid grid-cols-3 px-6 py-4 bg-slate-900/80 items-center">
+          <div className="stat-row grid grid-cols-3 px-6 py-4 bg-cohere-soft-stone/70 items-center">
             <div>
               {loadingA ? (
-                <span className="text-xs text-pl-text-muted animate-pulse">Clustering...</span>
+                <span className="text-xs text-cohere-muted animate-pulse">Clustering...</span>
               ) : (
-                <span className="text-xs font-semibold text-pl-cyan bg-pl-cyan/10 px-2 py-1 rounded border border-pl-cyan/20">
+                <span className="text-xs font-semibold text-cohere-coral bg-cohere-coral/10 px-2 py-1 rounded border border-cohere-coral/20">
                   {scoutA?.cluster_archetype || "—"}
                 </span>
               )}
             </div>
-            <div className="text-xs text-pl-cyan text-center font-bold uppercase tracking-wider flex items-center justify-center gap-1.5">
-              <TrendingUp size={14} />
+            <div className="text-xs text-cohere-primary text-center font-bold uppercase font-mono tracking-wider flex items-center justify-center gap-1.5">
+              <TrendingUp size={14} className="text-cohere-action-blue" />
               <span>Tactical Archetype</span>
             </div>
             <div className="text-right">
               {loadingB ? (
-                <span className="text-xs text-pl-text-muted animate-pulse">Clustering...</span>
+                <span className="text-xs text-cohere-muted animate-pulse">Clustering...</span>
               ) : (
-                <span className="text-xs font-semibold text-pl-cyan bg-pl-cyan/10 px-2 py-1 rounded border border-pl-cyan/20">
+                <span className="text-xs font-semibold text-cohere-action-blue bg-cohere-action-blue/10 px-2 py-1 rounded border border-cohere-action-blue/20">
                   {scoutB?.cluster_archetype || "—"}
                 </span>
               )}
@@ -419,9 +419,9 @@ export default function ComparisonPage() {
 
       {/* ═══ Popular Player Comparisons ═══ */}
       <div>
-        <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-4 flex items-center gap-2">
+        <h3 className="text-xs uppercase tracking-widest text-cohere-slate font-mono font-bold mb-4 flex items-center gap-2">
           <span>Popular Premier League Battles</span>
-          <span className="h-px bg-white/10 flex-1" />
+          <span className="h-px bg-cohere-hairline flex-1" />
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {POPULAR_COMPARISONS.map(({ a, b }) => {
@@ -431,13 +431,13 @@ export default function ComparisonPage() {
             return (
               <div
                 key={`${a}-${b}`}
-                className="comparison-card p-4 rounded-xl bg-slate-900/70 border border-white/10 hover:border-pl-cyan/40 transition-all cursor-pointer group flex flex-col justify-between"
+                className="product-card p-4 hover:border-cohere-coral transition-all cursor-pointer group flex flex-col justify-between"
                 onClick={() => loadPreset(a, b)}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2 min-w-0">
-                      <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                      <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-white">
                         <Image
                           src={getPlayerPhoto(pA.name)}
                           alt={pA.name}
@@ -448,10 +448,10 @@ export default function ComparisonPage() {
                         />
                       </div>
                       <div className="truncate">
-                        <div className="text-xs font-bold text-white group-hover:text-pl-cyan transition-colors truncate">
+                        <div className="text-xs font-bold text-cohere-primary group-hover:text-cohere-coral transition-colors truncate">
                           {pA.name}
                         </div>
-                        <div className="text-[10px] text-pl-text-muted truncate flex items-center gap-1">
+                        <div className="text-[10px] text-cohere-muted truncate flex items-center gap-1">
                           <Image
                             src={getClubCrest(pA.club)}
                             alt={pA.club}
@@ -464,12 +464,12 @@ export default function ComparisonPage() {
                       </div>
                     </div>
 
-                    <span className="text-[10px] font-black text-pl-cyan px-1.5 py-0.5 rounded bg-pl-cyan/10 border border-pl-cyan/20">
+                    <span className="text-[10px] font-mono font-bold text-cohere-coral px-1.5 py-0.5 rounded bg-white border border-cohere-coral/30">
                       VS
                     </span>
 
                     <div className="flex items-center gap-2 min-w-0 flex-row-reverse text-right">
-                      <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                      <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-white">
                         <Image
                           src={getPlayerPhoto(pB.name)}
                           alt={pB.name}
@@ -480,10 +480,10 @@ export default function ComparisonPage() {
                         />
                       </div>
                       <div className="truncate">
-                        <div className="text-xs font-bold text-white group-hover:text-pl-cyan transition-colors truncate">
+                        <div className="text-xs font-bold text-cohere-primary group-hover:text-cohere-action-blue transition-colors truncate">
                           {pB.name}
                         </div>
-                        <div className="text-[10px] text-pl-text-muted truncate flex items-center justify-end gap-1">
+                        <div className="text-[10px] text-cohere-muted truncate flex items-center justify-end gap-1">
                           <span>{pB.club}</span>
                           <Image
                             src={getClubCrest(pB.club)}
@@ -498,14 +498,14 @@ export default function ComparisonPage() {
                   </div>
 
                   {/* Mini stat rows */}
-                  <div className="space-y-1 text-[11px] bg-slate-950/60 p-2 rounded-lg border border-white/5">
+                  <div className="space-y-1 text-[11px] bg-white p-2.5 rounded-sm border border-cohere-hairline">
                     {(["goals", "assists", "market_value_eur_m"] as const).map((k) => (
-                      <div key={k} className="flex justify-between text-pl-text-secondary">
-                        <span className="font-semibold text-white">{pA[k]}</span>
-                        <span className="text-pl-text-muted capitalize text-[10px]">
+                      <div key={k} className="flex justify-between text-cohere-ink">
+                        <span className="font-bold text-cohere-primary">{pA[k]}</span>
+                        <span className="text-cohere-muted capitalize text-[10px] font-mono">
                           {k === "market_value_eur_m" ? "Value (€M)" : k}
                         </span>
-                        <span className="font-semibold text-white">{pB[k]}</span>
+                        <span className="font-bold text-cohere-primary">{pB[k]}</span>
                       </div>
                     ))}
                   </div>
@@ -513,7 +513,7 @@ export default function ComparisonPage() {
 
                 <button
                   type="button"
-                  className="pl-btn-white w-full mt-3 text-[11px] py-2 flex items-center justify-center gap-1.5 group-hover:bg-pl-green group-hover:text-slate-950 transition-colors"
+                  className="button-pill-outline w-full mt-3 text-[11px] py-1.5 flex items-center justify-center gap-1.5 hover:bg-cohere-coral hover:text-white hover:border-cohere-coral transition-colors"
                 >
                   <span>Compare Head-to-Head</span>
                   <ArrowRight size={12} />

@@ -36,13 +36,21 @@ This living memory document tracks active configurations, technology choices, de
 | **MOD-08** | **In-Play Fouls & Alerts** | Telegram Bot API + SMTP Dispatch | 🟢 Complete | 🟢 `alerts.py` service | 🟢 `POST /api/v1/inplay/fouls/subscribe` | 🟢 `/inplay-fouls` | `LIVE` |
 | **MOD-09** | **Advanced Filtering Engine** | Multi-filter: sample, minutes, venue, starter | 🟢 Complete | 🟢 `player_prop_histories.json` | 🟢 `GET /api/v1/players/stats/filtered` | 🟢 `FilterBar.tsx` component | `LIVE` |
 | **MOD-10** | **H2H & Head-to-Head Analysis** | 10-match history + player prop trends | 🟢 Complete | 🟢 Real-time computation | 🟢 `GET /api/v1/h2h/{home}/{away}` | 🟢 `H2HModal.tsx` | `LIVE` |
+| **MOD-11** | **Worldwide Multi-League Hub** | 3-Column Layout: Standings, Fixtures, Leaders | 🟢 Complete | 🟢 `global_football.py` | 🟢 `GET /api/v1/global/league/{slug}/standings` | 🟢 `/league/[slug]` | `LIVE` |
+| **MOD-12** | **Team Analytics & Match Log** | Comprehensive Metrics + Opposition Conceded | 🟢 Complete | 🟢 `global_football.py` | 🟢 `GET /api/v1/global/team/{slug}/stats` | 🟢 `/team/[slug]` | `LIVE` |
+| **MOD-13** | **Player Profile & Radar Scouting** | 10-Axis Polygon Radar & Timeline Match Log | 🟢 Complete | 🟢 `global_football.py` | 🟢 `GET /api/v1/global/player/{id}/stats` | 🟢 `/player/[id]` | `LIVE` |
+| **MOD-14** | **Global Autocomplete Search** | Multi-entity Instant Search (Players & Teams) | 🟢 Complete | 🟢 `global_football.py` | 🟢 `GET /api/v1/global/search?q={query}` | 🟢 `GlobalSearchModal.tsx` | `LIVE` |
+| **MOD-15** | **Cohere Design System Tokens** | Enterprise Tokens & Semantic CSS Variables | 🟢 Complete | 🟢 `DESIGN.md` | 🟢 Tailwind + globals.css | 🟢 Full Site Rollout (`/`, `/fixtures`, `/scouting-studio`, `/transfer-predictor`, `/match-predictor`, `/comparison`, `/opposition`, `/leaderboards`, `/inplay-fouls`, `/league/[slug]`, `/team/[slug]`, `/player/[id]`) | `LIVE` |
 
 *Legend: 🟢 Complete & Verified | 🟡 In Progress / Staged | 🔴 Pending Implementation*
 
 ---
 
 ### 3. Key Environment Variables & Data Sources
-- **`NEXT_PUBLIC_API_URL`**: Target FastAPI endpoint (Defaults to `http://127.0.0.1:8000/api/v1`).
+- **`NEXT_PUBLIC_API_URL`**: Target FastAPI endpoint (Currently active on `http://127.0.0.1:8001/api/v1`).
+- **Next.js Dev Server**: Port 3000 (`http://localhost:3000`).
+- **Git Commit Policy**: No automated commits or pushes to GitHub until explicit user confirmation ("dont commit on github until i tell you").
+- **Tailwind & CSS Resolution**: Resolved Tailwind `@apply` opacity error by defining CSS properties directly for `.cohere-card`, `.cohere-pill-coral`, `.cohere-button-primary`, etc., in `globals.css` and exporting full hex color maps in `tailwind.config.js`. Verified with 100% clean production build (`npm run build`).
 - **Base Data Paths**:
   - Raw storage: `./data/raw/` (`raw_players.json`, `raw_matches.json`)
   - Processed storage: `./data/processed/` (`cleaned_players.csv`, `cleaned_matches.csv`)
@@ -80,7 +88,30 @@ This living memory document tracks active configurations, technology choices, de
   - Backend microservice in `backend/main.py` with Pydantic schemas in `backend/schemas.py`.
   - Next.js App Router application in `frontend/src/app` with TypeScript, Tailwind CSS, Recharts, and Framer Motion.
   - Production build verified: `npm run build` static generation succeeded with 0 errors.
-  - Full test suite verified: `pytest` passes 29/29 tests across ingestion, models, and FastAPI routes.
+  - Full test suite verified: `pytest` passes 41/41 tests across ingestion, models, and FastAPI routes.
+- **Phase 7 — Worldwide Multi-League Football Platform Expansion (playerstats.football mirror)**:
+  - **Cohere Design System Integration (`DESIGN.md`)**: Replaced hardcoded values with semantic Cohere tokens and PlayerStats CSS variables (`--ps-bg`, `--ps-nav`, `--ps-panel`, `--ps-card`, `--ps-surface`, `--ps-border`, `--ps-accent-purple`, `--ps-yellow`, etc.) exposed as utility classes (`bg-ps-bg`, `bg-ps-card`, `border-ps-border`, `text-ps-accent`).
+  - **Global Navigation Ribbon (`Navbar.tsx`)**: Left brand area with geometric shield icon + "PlayerStats" wordmark; center view tabs: "Fixtures", "In-Play" (live badge), "Leagues" (multi-league dropdown), "Props Finder", "Referees"; right action controls: Star (Favorites), Magnifying Glass (Global Search), Avatar (User Profile / AuthModal).
+  - **Global Fixtures & Matchday Hub (`/fixtures`)**: 2-column layout — date carousel ribbon (`WED 04` ... `TODAY 06` ... `FRI 13` + Filter icon), accordion grouped by competition (Premier League, Championship, La Liga, Bundesliga, Serie A) with lineups button, referee yellow card averages ("S. Attwell 🟨 3.32"), kickoff clocks; right sidebar "Popular Leagues" with category shortcut pills.
+  - **Worldwide League Overview (`/league/[slug]`)**: 3-column layout matching playerstats.football — Column 1: League standings table (MP, W, D, L, PTS, 5-match form dots); Column 2: Date-grouped fixtures with H2H buttons and referee ratings; Column 3: League player stats categories list (Goals, xG, Key Passes, SoT, Tackles, etc.).
+  - **Team Analytics & Match Log (`/team/[slug]`)**: Hero header with next fixture badge; left categorized metric drawer (Team Total Stats & Opposition Conceded view); comprehensive filter bar (Competitions checklist, Venue toggles, History sample size "Last 30 games", Reset filters, Toggle Totals, H2H vs Opposition); horizontal match log strip with opponent crests, score pills (W/D/L), and possession %.
+  - **Player Profile & Radar Scouting (`/player/[id]`)**: Hero header with player photo and club crest; multi-filter control panel (competitions toggles, venue, started game, history size); 10-axis SVG polygon radar chart displaying percentile metrics for Goals, xG, Shots, SoT, Tackles, Duels Won, Fouls Drawn, Assists, Key Passes, Dribbles; horizontal match log ribbon.
+  - **Global Autocomplete Search Modal (`GlobalSearchModal.tsx`)**: Instant autocomplete with separate "Players" (photo, club crest, position, country) and "Teams" (crest, league, country) sections.
+  - **Dynamic Real-Time Live Football News Aggregator (MOD-16)**:
+  - Dynamic async RSS ingestion service in `backend/services/live_news.py` querying tier-1 feeds (BBC Football, Sky Sports Premier League, The Guardian) with in-memory TTL caching (5 minutes) and offline fallback snapshots.
+  - Endpoints: `GET /api/v1/news/live` and `GET /api/v1/global/news` returning normalized `LiveNewsItem` arrays with club crest detection, categories, and relative timestamps.
+  - Animated News Marquee Ribbon (`frontend/src/components/NewsTicker.tsx`): 40px full-width ribbon with stationary `[LIVE NEWS]` coral badge, 35s smooth CSS marquee animation (`animate-marquee`), `hover:[animation-play-state:paused]`, club crest badges, and automatic 5-minute polling.
+  - Interactive Modal (`frontend/src/components/NewsDetailModal.tsx`): Cohere-styled white card over backdrop with relative timestamp, source metadata, full summary, and external link CTA.
+  - Fully tested: 42/42 pytest tests passing (100%). Zero Next.js 14 compilation/type errors.
+
+- **Cohere Design System Total Overhaul & Error Component Integrity**:
+  - Replaced legacy deep purple/cyan/neon styling across all 12 Next.js App Router pages and 8 modal/navigation components with Cohere Enterprise design tokens (`#17171c`, `#eeece7`, `#ffffff`, `#ff7759`, `#003c33`, `#d9d9dd`).
+  - Added native Next.js error boundary (`src/app/error.tsx`) and 404 handler (`src/app/not-found.tsx`) styled with Cohere tokens, eliminating Next.js "missing required error components" runtime warning when navigating to unmapped routes.
+  - Synchronized `fetchGlobalTeamDetail` & `GlobalTeamDetailResponse` in `src/lib/api.ts`.
+  - Next.js 14 production build (`next build`) runs with zero type or compilation errors across all 12 static/dynamic routes.
+  - Full test suite verified: `pytest` passes 41/41 tests (100%) across data ingestion, Scikit-learn/XGBoost models, and FastAPI routes.
+  - Active dev server serving at `http://localhost:3000` with FastAPI microservice at `http://127.0.0.1:8000`.
+  - Git policy strictly preserved: all changes remain uncommitted per instructions.
 - **Phase 6 — Six New Feature Suites (November 2026)**:
   - **Fixtures Hub (`/fixtures`)**: Date-tab selector (Yesterday/Today/Tomorrow/+2/+3), fixture cards with club crests, kickoff clocks, live score badges, lineups status indicators, referee name + color-coded strictness badge, "Simulate Fixture" CTA linking to match predictor, and "View H2H Trends" button opening H2HModal.
   - **Referee Impact Engine**: 16 PL referees with per-game card/foul stats. `calculate_referee_strictness()` returns normalized 1.0–10.0 index. `referee_yellows_per_game` and `referee_strictness_index` injected into XGBoost feature matrix (15 features total). Re-trained model: Test Accuracy 1.00.

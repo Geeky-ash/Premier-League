@@ -215,3 +215,100 @@ def test_referee_strictness_calculation():
     df = get_enriched_referee_df()
     assert len(df) >= 15
     assert "referee_strictness_index" in df.columns
+
+
+def test_global_leagues(client: TestClient):
+    """Verifies /api/v1/global/leagues returns multi-league catalog."""
+    res = client.get("/api/v1/global/leagues")
+    assert res.status_code == 200
+    data = res.json()
+    assert "leagues" in data
+    slugs = [l["slug"] for l in data["leagues"]]
+    assert "premier-league" in slugs
+    assert "championship" in slugs
+    assert "la-liga" in slugs
+
+
+def test_global_fixtures(client: TestClient):
+    """Verifies /api/v1/global/fixtures returns competitions accordion with referee ratings."""
+    res = client.get("/api/v1/global/fixtures?date=2026-11-06")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["total_matches"] >= 5
+    assert len(data["competitions"]) >= 3
+    # Check referee data presence
+    first_match = data["competitions"][0]["matches"][0]
+    assert "referee_name" in first_match
+    assert "referee_yellows" in first_match
+
+
+def test_global_league_standings(client: TestClient):
+    """Verifies /api/v1/global/league/{slug}/standings returns 3-column layout data."""
+    res = client.get("/api/v1/global/league/championship/standings")
+    assert res.status_code == 200
+    data = res.json()
+    assert "standings" in data
+    assert "fixtures" in data
+    assert "stat_categories" in data
+    assert len(data["standings"]) >= 10
+    assert len(data["stat_categories"]) >= 10
+
+
+def test_global_team_stats(client: TestClient):
+    """Verifies /api/v1/global/team/{slug}/stats returns timeline logs and against metrics."""
+    res = client.get("/api/v1/global/team/derby-county/stats?venue=all&history=last_30")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["team"]["name"] == "Derby County"
+    assert "match_history" in data
+    assert "team_stats" in data
+    assert "against_stats" in data
+    assert len(data["match_history"]) >= 10
+
+
+def test_global_player_stats(client: TestClient):
+    """Verifies /api/v1/global/player/{id}/stats returns 10-axis radar and match logs."""
+    res = client.get("/api/v1/global/player/lamine-yamal/stats?history=last_75")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["player"]["name"] == "Lamine Yamal"
+    assert "radar" in data
+    assert "Goals" in data["radar"]
+    assert "Dribbles" in data["radar"]
+    assert len(data["match_history"]) >= 5
+
+
+def test_global_search(client: TestClient):
+    """Verifies /api/v1/global/search autocomplete returns both players and teams."""
+    res = client.get("/api/v1/global/search?q=lamine")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["players"]) >= 1
+    assert any("Lamine Yamal" in p["name"] for p in data["players"])
+
+    res_team = client.get("/api/v1/global/search?q=derby")
+    assert res_team.status_code == 200
+    data_team = res_team.json()
+    assert len(data_team["teams"]) >= 1
+
+
+def test_live_news_feed(client: TestClient):
+    """Verifies /api/v1/news/live returns aggregated live football headlines."""
+    res = client.get("/api/v1/news/live")
+    assert res.status_code == 200
+    data = res.json()
+    assert isinstance(data, list)
+    assert len(data) >= 5
+    first = data[0]
+    assert "headline" in first
+    assert "category" in first
+    assert "club" in first
+    assert "source" in first
+    assert "timestamp" in first
+
+    # Also test global news alias
+    res_global = client.get("/api/v1/global/news")
+    assert res_global.status_code == 200
+    assert len(res_global.json()) >= 5
+
+

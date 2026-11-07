@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "standalone",
+  output: process.env.NEXT_STANDALONE === "true" ? "standalone" : undefined,
+  experimental: {
+    cpus: 1,
+    workerThreads: false,
+  },
   async rewrites() {
     return [
       {

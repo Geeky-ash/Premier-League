@@ -77,8 +77,8 @@ def test_scouting_page_loaders() -> None:
 
 
 def test_main_app_import() -> None:
-    """Smoke test ensuring frontend.app and root app import cleanly."""
-    import frontend.app as app_module
+    """Smoke test ensuring frontend_streamlit.app imports cleanly."""
+    import frontend_streamlit.app as app_module
     assert hasattr(app_module, "main"), "frontend.app missing main() entrypoint"
 
     import app as root_app

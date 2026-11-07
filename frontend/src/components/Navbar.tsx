@@ -1,424 +1,485 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Search,
+  Star,
+  User,
   ChevronDown,
+  Clock,
+  Radio,
+  Trophy,
+  Sliders,
+  Crosshair,
   Menu,
   X,
-  TrendingUp,
-  Trophy,
-  Crosshair,
-  Users,
+  ArrowRight,
 } from "lucide-react";
-import { fetchHealth } from "@/lib/api";
-import { getLeagueLogo, getClubCrest } from "@/lib/logos";
+import { GLOBAL_LEAGUES, getLeagueLogo, getLeagueFallbackLogo } from "@/lib/logos";
 import GlobalSearchModal from "@/components/GlobalSearchModal";
 import AuthModal from "@/components/AuthModal";
-import NewsDetailModal, { NewsItem } from "@/components/NewsDetailModal";
-import UtilityInfoModal from "@/components/UtilityInfoModal";
-
-/* ── Enriched news ticker items ── */
-const TICKER_NEWS: NewsItem[] = [
-  {
-    club: "Arsenal",
-    headline: "Bukayo Saka named Premier League Player of the Month",
-    summary:
-      "Bukayo Saka has won the Premier League Player of the Month award following three goals and two assists in three consecutive Arsenal victories.",
-    date: "November 2026",
-    category: "Player Award",
-  },
-  {
-    club: "Man City",
-    headline: "Erling Haaland reaches historic 100 Premier League goals milestone",
-    summary:
-      "The Norwegian striker reaches the century mark in record matches, solidifying Manchester City's attacking dominance at the summit of the table.",
-    date: "November 2026",
-    category: "Milestone",
-  },
-  {
-    club: "Liverpool",
-    headline: "Mohamed Salah commits future to Anfield through 2027",
-    summary:
-      "Liverpool have officially confirmed a contract extension for Egyptian king Mohamed Salah, keeping the forward at Anfield for three more seasons.",
-    date: "November 2026",
-    category: "Contract Update",
-  },
-  {
-    club: "Chelsea",
-    headline: "Cole Palmer claims Premier League Young Player of the Month",
-    summary:
-      "Cole Palmer's stellar playmaking orchestrates four goals in Stamford Bridge masterclass, earning unanimous recognition from the awards panel.",
-    date: "November 2026",
-    category: "Young Player Award",
-  },
-  {
-    club: "Newcastle",
-    headline: "Anthony Gordon selected for Senior England National Squad",
-    summary:
-      "Following lethal transition displays for Newcastle United, Gordon receives his international call-up for upcoming UEFA qualifiers.",
-    date: "November 2026",
-    category: "International Duty",
-  },
-  {
-    club: "Bournemouth",
-    headline: "Antoine Semenyo double propels Cherries into top-half contention",
-    summary:
-      "Antoine Semenyo delivers a clinical brace at the Vitality Stadium as Bournemouth dismantle stubborn defensive opposition.",
-    date: "November 2026",
-    category: "Matchday Report",
-  },
-  {
-    club: "Crystal Palace",
-    headline: "Eberechi Eze thunderbolt nominated for PL Goal of the Month",
-    summary:
-      "Eze's 28-yard curling free-kick into the top stanchion at Selhurst Park is shortlisted for the official Premier League Goal of the Month.",
-    date: "November 2026",
-    category: "Goal of the Month",
-  },
-];
-
-/* ── Top utility strip links ── */
-const UTILITY_LINKS = [
-  "Premier League",
-  "Shop",
-  "About Us",
-  "Football & Community",
-  "Events",
-  "Media",
-  "The Archive",
-];
+import NewsTicker from "@/components/NewsTicker";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const router = useRouter();
 
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
-  const [apiLive, setApiLive] = useState<boolean | null>(null);
+  const [leaguesOpen, setLeaguesOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [favoritesOpen, setFavoritesOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authInitialTab, setAuthInitialTab] = useState<"signin" | "register">("signin");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Modals state
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [authModal, setAuthModal] = useState<{ open: boolean; tab: "signin" | "register" }>({
-    open: false,
-    tab: "signin",
-  });
-  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
-  const [utilityModalTitle, setUtilityModalTitle] = useState<string | null>(null);
+  const leaguesRef = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLDivElement>(null);
+  const favoritesRef = useRef<HTMLDivElement>(null);
 
+  // Close dropdowns on outside click
   useEffect(() => {
-    fetchHealth()
-      .then(() => setApiLive(true))
-      .catch(() => setApiLive(false));
+    function handleClickOutside(e: MouseEvent) {
+      if (leaguesRef.current && !leaguesRef.current.contains(e.target as Node)) {
+        setLeaguesOpen(false);
+      }
+      if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
+        setProfileOpen(false);
+      }
+      if (favoritesRef.current && !favoritesRef.current.contains(e.target as Node)) {
+        setFavoritesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const moreTools = [
-    { label: "Fixtures & Referees", href: "/fixtures", icon: Trophy, tag: "PGMOL" },
-    { label: "Opposition Stats", href: "/opposition", icon: Crosshair, tag: "Heatmap" },
-    { label: "Season Leaderboards", href: "/leaderboards", icon: Trophy, tag: "Leaders" },
-    { label: "In-Play Fouls & Alerts", href: "/inplay-fouls", icon: TrendingUp, tag: "Live" },
-    { label: "Transfer Predictor", href: "/transfer-predictor", icon: TrendingUp, tag: "OLS" },
-    { label: "Match Predictor", href: "/match-predictor", icon: Trophy, tag: "XGBoost" },
-    { label: "Scouting Studio", href: "/scouting-studio", icon: Crosshair, tag: "K-Means" },
-    { label: "1v1 Player Comparison", href: "/comparison", icon: Users, tag: "Matrix" },
-  ];
+  // Keyboard shortcut Ctrl+K to open Global Search
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSearchModalOpen(true);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const isFixturesActive = pathname === "/fixtures" || pathname === "/";
+  const isInPlayActive = pathname === "/inplay-fouls";
+  const isPropsActive = pathname === "/transfer-predictor";
+  const isLeaguesActive = pathname.startsWith("/league");
 
   return (
     <>
-      <header className="w-full sticky top-0 z-40">
-        {/* ═══ 1. Top Utility Strip ═══ */}
-        <div className="w-full bg-pl-utility border-b border-pl-border">
-          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-8">
-            <div className="hidden md:flex items-center gap-4">
-              {UTILITY_LINKS.map((link) => (
-                <button
-                  key={link}
-                  onClick={() => {
-                    if (link === "Premier League") router.push("/");
-                    else setUtilityModalTitle(link);
-                  }}
-                  className="text-[11px] text-pl-text-muted hover:text-white transition-colors"
-                >
-                  {link}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-4">
-              {/* API Health Indicator */}
-              <div className="flex items-center gap-1.5">
-                <div
-                  className={`w-1.5 h-1.5 rounded-full ${
-                    apiLive === true
-                      ? "bg-pl-green animate-pulse-glow"
-                      : apiLive === false
-                      ? "bg-pl-magenta"
-                      : "bg-pl-text-muted"
-                  }`}
-                />
-                <span className="text-[10px] text-pl-text-muted">
-                  ML Engine {apiLive ? "Live" : apiLive === false ? "Offline" : "…"}
-                </span>
-              </div>
-
-              {/* Utility Auth Pill */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setAuthModal({ open: true, tab: "signin" })}
-                  className="text-[11px] text-pl-text-secondary hover:text-white transition-colors"
-                >
-                  Sign in
-                </button>
-                <span className="text-pl-border">|</span>
-                <button
-                  onClick={() => setAuthModal({ open: true, tab: "register" })}
-                  className="text-[11px] font-bold text-pl-magenta hover:underline"
-                >
-                  Join myPL
-                </button>
-              </div>
-            </div>
+      {/* ── Top Announcement Strip (Cohere Microcopy Bar) ── */}
+      <aside className="w-full h-9 bg-cohere-black text-white px-4 flex items-center justify-between text-xs font-body tracking-tight z-50">
+        <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+          <div className="flex items-center gap-2 truncate">
+            <span className="w-1.5 h-1.5 rounded-full bg-cohere-coral shrink-0" />
+            <span className="font-mono text-[11px] uppercase tracking-wider text-cohere-hairline">
+              STATIONARY & IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS
+            </span>
           </div>
+          <Link
+            href="/inplay-fouls"
+            className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-medium text-white hover:text-cohere-coral underline transition-colors shrink-0"
+          >
+            <span>Live Webhook Feed</span>
+            <ArrowRight size={12} />
+          </Link>
         </div>
+      </aside>
 
-        {/* ═══ 2. Main Navigation Bar ═══ */}
-        <nav className="w-full bg-pl-dark border-b border-pl-border">
-          <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-16">
-            {/* Official Logo Brand */}
-            <Link href="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="w-10 h-10 rounded-full bg-white/10 p-1.5 flex items-center justify-center border border-pl-border group-hover:border-pl-cyan transition-colors">
-                <img
-                  src={getLeagueLogo()}
-                  alt="Premier League Logo"
-                  className="w-full h-full object-contain"
-                />
+      {/* ── Main Header Bar ── */}
+      <header className="sticky top-0 z-40 w-full bg-white border-b border-cohere-hairline">
+        <div className="max-w-[1440px] mx-auto px-4 h-16 flex items-center justify-between gap-4">
+          {/* ── Left Brand Area ── */}
+          <div className="flex items-center gap-6 shrink-0">
+            <Link
+              href="/"
+              className="flex items-center gap-2.5 group transition-transform active:scale-95"
+            >
+              <div className="w-7 h-7 rounded-xs bg-cohere-primary text-white flex items-center justify-center font-display font-bold text-xs tracking-tight">
+                C
               </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-[14px] font-extrabold tracking-wide text-white group-hover:text-pl-cyan transition-colors">
-                  PREMIER LEAGUE
-                </span>
-                <span className="text-[9px] tracking-[0.25em] text-pl-green font-bold">
-                  ANALYTICS PLATFORM
-                </span>
-              </div>
+              <span className="font-display font-bold text-lg tracking-tight text-cohere-primary group-hover:text-cohere-coral transition-colors">
+                PlayerStats
+              </span>
+              <span className="font-mono text-[10px] uppercase text-cohere-slate border border-cohere-hairline px-1.5 py-0.5 rounded-xs">
+                v2.6
+              </span>
+            </Link>
+          </div>
+
+          {/* ── Center View Tabs ── */}
+          <nav className="hidden md:flex items-center gap-2">
+            {/* Fixtures Tab */}
+            <Link
+              href="/fixtures"
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all ${
+                isFixturesActive
+                  ? "blog-filter-chip font-semibold"
+                  : "text-cohere-ink hover:underline hover:text-cohere-primary"
+              }`}
+            >
+              <Clock size={14} className={isFixturesActive ? "text-cohere-coral" : "text-cohere-slate"} />
+              <span>Fixtures</span>
             </Link>
 
-            {/* Desktop Nav Items */}
-            <div className="hidden lg:flex items-center gap-1">
-              <Link
-                href="/fixtures"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/fixtures" ? "text-white font-bold" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Fixtures
-              </Link>
-              <Link
-                href="/match-predictor"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/match-predictor" ? "text-white" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Matches
-              </Link>
-              <Link
-                href="/opposition"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/opposition" ? "text-white" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Opposition
-              </Link>
-              <Link
-                href="/leaderboards"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/leaderboards" ? "text-white" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Leaderboards
-              </Link>
-              <Link
-                href="/inplay-fouls"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors flex items-center gap-1.5 ${
-                  pathname === "/inplay-fouls" ? "text-pl-magenta font-bold" : "text-pl-text-secondary hover:text-pl-magenta"
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-pl-magenta animate-pulse" />
-                <span>In-Play</span>
-              </Link>
-              <Link
-                href="/"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/" ? "text-white font-bold" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Stats Centre
-              </Link>
-              <Link
-                href="/scouting-studio"
-                className={`px-3 py-2 text-[13px] font-semibold transition-colors ${
-                  pathname === "/scouting-studio" ? "text-white" : "text-pl-text-secondary hover:text-white"
-                }`}
-              >
-                Scouting
-              </Link>
+            {/* In-Play Tab with Active Badge */}
+            <Link
+              href="/inplay-fouls"
+              className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-all ${
+                isInPlayActive
+                  ? "blog-filter-chip font-semibold"
+                  : "text-cohere-ink hover:underline hover:text-cohere-primary"
+              }`}
+            >
+              <Radio size={14} className={isInPlayActive ? "text-cohere-coral" : "text-cohere-coral"} />
+              <span>In-Play</span>
+              <span className="chip-coral px-1.5 py-0 text-[10px]">
+                4
+              </span>
+            </Link>
 
-              {/* More Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-                  onBlur={() => setTimeout(() => setMoreDropdownOpen(false), 200)}
-                  className="px-3 py-2 text-[13px] font-semibold text-pl-text-secondary hover:text-white flex items-center gap-1 transition-colors"
-                >
-                  More <ChevronDown size={12} className={`transition-transform ${moreDropdownOpen ? "rotate-180" : ""}`} />
-                </button>
+            {/* Leagues Dropdown */}
+            <div className="relative" ref={leaguesRef}>
+              <button
+                type="button"
+                onClick={() => setLeaguesOpen(!leaguesOpen)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all ${
+                  isLeaguesActive || leaguesOpen
+                    ? "blog-filter-chip font-semibold"
+                    : "text-cohere-ink hover:underline hover:text-cohere-primary"
+                }`}
+              >
+                <Trophy size={14} className={isLeaguesActive ? "text-cohere-coral" : "text-cohere-slate"} />
+                <span>Leagues</span>
+                <ChevronDown
+                  size={12}
+                  className={`transition-transform duration-200 ${
+                    leaguesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-                {moreDropdownOpen && (
-                  <div className="absolute right-0 top-full mt-1 w-64 bg-pl-dark border border-pl-border rounded-pl shadow-2xl p-2 space-y-1 animate-slide-up z-50">
-                    <div className="text-[10px] font-bold text-pl-text-muted uppercase px-2 py-1">
-                      Predictive Modules
-                    </div>
-                    {moreTools.map((t) => (
+              {leaguesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-72 sm:w-80 rounded-sm bg-white border border-cohere-hairline shadow-xl py-2 z-50 animate-slide-up">
+                  <div className="px-4 py-1.5 text-[10px] font-mono uppercase tracking-wider text-cohere-muted border-b border-cohere-hairline">
+                    World Competitions
+                  </div>
+                  <div className="max-h-80 overflow-y-auto py-1">
+                    {GLOBAL_LEAGUES.map((league) => (
                       <Link
-                        key={t.href}
-                        href={t.href}
-                        className="flex items-center justify-between p-2 rounded hover:bg-pl-purple transition-colors group"
+                        key={league.slug}
+                        href={`/league/${league.slug}`}
+                        onClick={() => setLeaguesOpen(false)}
+                        className="flex items-center justify-between w-full px-4 py-2 text-sm hover:bg-[#eeece7] transition-colors"
                       >
-                        <div className="flex items-center gap-2">
-                          <t.icon size={15} className="text-pl-cyan" />
-                          <span className="text-xs font-semibold text-white group-hover:text-pl-cyan">
-                            {t.label}
+                        <div className="flex items-center min-w-0 pr-3">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={getLeagueLogo(league.slug)}
+                            alt=""
+                            className="w-5 h-5 flex-shrink-0 object-contain mr-3"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const fallback = getLeagueFallbackLogo(league.slug);
+                              if (fallback && e.currentTarget.src !== fallback) {
+                                e.currentTarget.src = fallback;
+                              } else {
+                                e.currentTarget.style.display = "none";
+                              }
+                            }}
+                          />
+                          <span className="font-medium text-cohere-primary truncate">
+                            {league.name}
                           </span>
                         </div>
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-pl-purple text-pl-green">
-                          {t.tag}
+                        <span className="text-[10px] font-mono text-cohere-muted shrink-0 uppercase tracking-wider">
+                          {league.countryTag}
                         </span>
                       </Link>
                     ))}
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
 
-            {/* Right Action Buttons */}
-            <div className="flex items-center gap-3">
+            {/* Props Finder */}
+            <Link
+              href="/transfer-predictor"
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all ${
+                isPropsActive
+                  ? "blog-filter-chip font-semibold"
+                  : "text-cohere-ink hover:underline hover:text-cohere-primary"
+              }`}
+            >
+              <Crosshair size={14} className={isPropsActive ? "text-cohere-coral" : "text-cohere-slate"} />
+              <span>Props Finder</span>
+            </Link>
+
+            {/* Referees */}
+            <Link
+              href="/fixtures"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-cohere-ink hover:underline hover:text-cohere-primary transition-all"
+            >
+              <Sliders size={14} className="text-cohere-slate" />
+              <span>Referees</span>
+            </Link>
+
+            {/* Scouting Studio */}
+            <Link
+              href="/scouting-studio"
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all ${
+                pathname === "/scouting-studio"
+                  ? "blog-filter-chip font-semibold"
+                  : "text-cohere-ink hover:underline hover:text-cohere-primary"
+              }`}
+            >
+              <span>Scouting</span>
+            </Link>
+
+            {/* Match Predictor */}
+            <Link
+              href="/match-predictor"
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all ${
+                pathname === "/match-predictor"
+                  ? "blog-filter-chip font-semibold"
+                  : "text-cohere-ink hover:underline hover:text-cohere-primary"
+              }`}
+            >
+              <span>Simulation</span>
+            </Link>
+          </nav>
+
+          {/* ── Right Action Controls ── */}
+          <div className="flex items-center gap-3">
+            {/* Favorites (Star button) */}
+            <div className="relative" ref={favoritesRef}>
               <button
-                onClick={() => setSearchOpen(true)}
-                className="p-2 text-pl-text-secondary hover:text-white transition-colors rounded-full hover:bg-white/5"
-                title="Search players and modules"
+                type="button"
+                onClick={() => setFavoritesOpen(!favoritesOpen)}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-cohere-slate hover:text-cohere-ink hover:bg-cohere-soft-stone transition-colors"
+                title="Favorite Teams & Players"
+                aria-label="Favorites"
               >
-                <Search size={18} />
+                <Star size={16} />
               </button>
 
-              <Link href="/comparison" className="hidden sm:block">
-                <button className="pl-btn-magenta text-[12px] px-4 py-1.5 shadow">
-                  Stats Centre
-                </button>
-              </Link>
-
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden p-2 text-white"
-              >
-                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
+              {favoritesOpen && (
+                <div className="absolute right-0 mt-2 w-72 rounded-sm bg-white border border-cohere-hairline shadow-lg p-3 z-50 animate-slide-up">
+                  <div className="flex items-center justify-between pb-2 border-b border-cohere-hairline">
+                    <span className="text-xs font-semibold text-cohere-primary flex items-center gap-1.5">
+                      <Star size={12} className="text-cohere-coral fill-cohere-coral" /> Saved Favorites
+                    </span>
+                    <span className="text-[10px] font-mono text-cohere-muted">3 pinned</span>
+                  </div>
+                  <div className="py-2 space-y-1">
+                    <Link
+                      href="/team/derby-county"
+                      onClick={() => setFavoritesOpen(false)}
+                      className="flex items-center justify-between p-2 rounded-xs hover:bg-cohere-soft-stone text-xs text-cohere-ink transition-colors"
+                    >
+                      <span className="font-medium">Derby County</span>
+                      <span className="text-[10px] font-mono text-cohere-coral">Championship</span>
+                    </Link>
+                    <Link
+                      href="/player/lamine-yamal"
+                      onClick={() => setFavoritesOpen(false)}
+                      className="flex items-center justify-between p-2 rounded-xs hover:bg-cohere-soft-stone text-xs text-cohere-ink transition-colors"
+                    >
+                      <span className="font-medium">Lamine Yamal</span>
+                      <span className="text-[10px] font-mono text-cohere-coral">FC Barcelona</span>
+                    </Link>
+                    <Link
+                      href="/team/bolton-wanderers"
+                      onClick={() => setFavoritesOpen(false)}
+                      className="flex items-center justify-between p-2 rounded-xs hover:bg-cohere-soft-stone text-xs text-cohere-ink transition-colors"
+                    >
+                      <span className="font-medium">Bolton Wanderers</span>
+                      <span className="text-[10px] font-mono text-cohere-coral">Championship</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
 
-          {/* Mobile Menu */}
-          {mobileOpen && (
-            <div className="lg:hidden bg-pl-dark border-t border-pl-border px-4 py-4 space-y-2 animate-fade-in">
-              <Link
-                href="/"
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-semibold text-white"
-              >
-                Statistics (Dashboard)
-              </Link>
-              <Link
-                href="/transfer-predictor"
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-semibold text-pl-text-secondary hover:text-white"
-              >
-                Transfer Value Predictor
-              </Link>
-              <Link
-                href="/match-predictor"
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-semibold text-pl-text-secondary hover:text-white"
-              >
-                Match Outcome Predictor
-              </Link>
-              <Link
-                href="/scouting-studio"
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-semibold text-pl-text-secondary hover:text-white"
-              >
-                Scouting Studio
-              </Link>
-              <Link
-                href="/comparison"
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-semibold text-pl-text-secondary hover:text-white"
-              >
-                Player Comparison
-              </Link>
-              <div className="pt-2 border-t border-pl-border flex gap-2">
-                <button
-                  onClick={() => { setAuthModal({ open: true, tab: "signin" }); setMobileOpen(false); }}
-                  className="flex-1 py-2 text-xs font-bold rounded-full bg-pl-purple text-white border border-pl-border"
-                >
-                  Sign In
-                </button>
-                <button
-                  onClick={() => { setAuthModal({ open: true, tab: "register" }); setMobileOpen(false); }}
-                  className="flex-1 py-2 text-xs font-bold rounded-full bg-pl-magenta text-white"
-                >
-                  Join myPL
-                </button>
-              </div>
-            </div>
-          )}
-        </nav>
+            {/* Global Search Trigger (Magnifying Glass) */}
+            <button
+              type="button"
+              onClick={() => setSearchModalOpen(true)}
+              className="w-9 h-9 rounded-full flex items-center justify-center text-cohere-slate hover:text-cohere-ink hover:bg-cohere-soft-stone transition-colors"
+              title="Global Search (Ctrl+K)"
+              aria-label="Search"
+            >
+              <Search size={16} />
+            </button>
 
-        {/* ═══ 3. Animated News Ticker Strip with Official Club Crests ═══ */}
-        <div className="ticker-strip h-10 border-b border-pl-border">
-          <div className="flex items-center animate-ticker-scroll cursor-pointer">
-            {[...TICKER_NEWS, ...TICKER_NEWS].map((item, i) => (
+            {/* Primary CTA ("Sign In" / "Start Free Trial") */}
+            <button
+              type="button"
+              onClick={() => {
+                setAuthInitialTab("signin");
+                setAuthModalOpen(true);
+              }}
+              className="button-primary hidden sm:inline-flex"
+            >
+              <span>Sign In</span>
+            </button>
+
+            {/* User Profile Menu */}
+            <div className="relative" ref={profileRef}>
               <button
-                key={i}
-                onClick={() => setSelectedNews(item)}
-                className="flex items-center gap-2.5 px-6 shrink-0 hover:bg-white/5 transition-colors h-10 text-left"
+                type="button"
+                onClick={() => setProfileOpen(!profileOpen)}
+                className="w-9 h-9 rounded-full bg-cohere-soft-stone border border-cohere-hairline flex items-center justify-center text-cohere-primary hover:border-cohere-primary transition-colors"
+                title="Account Menu"
+                aria-label="Account"
               >
-                <img
-                  src={getClubCrest(item.club, 50)}
-                  alt={item.club}
-                  className="w-4 h-4 object-contain shrink-0"
-                />
-                <span className="text-[10px] font-bold text-pl-green uppercase tracking-wider">
-                  {item.club}
-                </span>
-                <span className="text-[11px] text-pl-text-secondary hover:text-white transition-colors">
-                  {item.headline}
-                </span>
-                <span className="text-pl-border mx-3">│</span>
+                <User size={15} />
               </button>
-            ))}
+
+              {profileOpen && (
+                <div className="absolute right-0 mt-2 w-56 rounded-sm bg-white border border-cohere-hairline shadow-lg p-2 z-50 animate-slide-up">
+                  <div className="px-3 py-2 border-b border-cohere-hairline">
+                    <div className="text-xs font-semibold text-cohere-primary">Enterprise Account</div>
+                    <div className="text-[10px] font-mono text-cohere-coral">Free Prototyping Tier</div>
+                  </div>
+                  <div className="py-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setProfileOpen(false);
+                        setAuthInitialTab("signin");
+                        setAuthModalOpen(true);
+                      }}
+                      className="w-full text-left px-3 py-2 text-xs text-cohere-ink hover:bg-cohere-soft-stone rounded-xs transition-colors"
+                    >
+                      Sign In
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setProfileOpen(false);
+                        setAuthInitialTab("register");
+                        setAuthModalOpen(true);
+                      }}
+                      className="w-full text-left px-3 py-2 text-xs text-cohere-coral hover:bg-cohere-coral/10 rounded-xs font-semibold transition-colors"
+                    >
+                      Start Free Trial &rarr;
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-cohere-slate hover:text-cohere-ink hover:bg-cohere-soft-stone transition-colors"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
           </div>
         </div>
+
+        {/* ── Mobile Navigation Drawer ── */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-cohere-hairline px-4 py-4 space-y-2 animate-slide-up shadow-md">
+            <Link
+              href="/fixtures"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2 rounded-xs text-sm font-medium text-cohere-ink hover:bg-cohere-soft-stone"
+            >
+              <Clock size={14} className="text-cohere-coral" /> Fixtures Hub
+            </Link>
+            <Link
+              href="/inplay-fouls"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between p-2 rounded-xs text-sm font-medium text-cohere-ink hover:bg-cohere-soft-stone"
+            >
+              <div className="flex items-center gap-2">
+                <Radio size={14} className="text-cohere-coral" /> In-Play Live
+              </div>
+              <span className="chip-coral px-1.5 py-0 text-[10px]">4 Live</span>
+            </Link>
+            <Link
+              href="/transfer-predictor"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2 rounded-xs text-sm font-medium text-cohere-ink hover:bg-cohere-soft-stone"
+            >
+              <Crosshair size={14} className="text-cohere-coral" /> Props Finder
+            </Link>
+            <Link
+              href="/scouting-studio"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2 rounded-xs text-sm font-medium text-cohere-ink hover:bg-cohere-soft-stone"
+            >
+              Scouting Studio
+            </Link>
+            <Link
+              href="/match-predictor"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2 rounded-xs text-sm font-medium text-cohere-ink hover:bg-cohere-soft-stone"
+            >
+              Match Simulation
+            </Link>
+            <div className="pt-3 border-t border-cohere-hairline">
+              <div className="text-[10px] font-mono uppercase text-cohere-muted px-2 pb-1.5">
+                Competitions
+              </div>
+              <div className="grid grid-cols-2 gap-1">
+                {GLOBAL_LEAGUES.slice(0, 6).map((l) => (
+                  <Link
+                    key={l.slug}
+                    href={`/league/${l.slug}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-xs text-xs text-cohere-body-muted hover:text-cohere-ink hover:bg-cohere-soft-stone flex items-center gap-2"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={getLeagueLogo(l.slug)}
+                      alt=""
+                      className="w-4 h-4 flex-shrink-0 object-contain mr-1.5"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const fallback = getLeagueFallbackLogo(l.slug);
+                        if (fallback && e.currentTarget.src !== fallback) {
+                          e.currentTarget.src = fallback;
+                        } else {
+                          e.currentTarget.style.display = "none";
+                        }
+                      }}
+                    />
+                    <span>{l.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
-      {/* Global Modals */}
-      <GlobalSearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
-      <AuthModal
-        open={authModal.open}
-        initialTab={authModal.tab}
-        onClose={() => setAuthModal({ open: false, tab: "signin" })}
+      {/* ── Real-Time Animated World Football News Ribbon ── */}
+      <NewsTicker />
+
+      {/* Global Autocomplete Search Modal */}
+      <GlobalSearchModal
+        open={searchModalOpen}
+        onClose={() => setSearchModalOpen(false)}
       />
-      <NewsDetailModal news={selectedNews} onClose={() => setSelectedNews(null)} />
-      <UtilityInfoModal title={utilityModalTitle} onClose={() => setUtilityModalTitle(null)} />
+
+      {/* Auth Modal */}
+      <AuthModal
+        open={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        initialTab={authInitialTab}
+      />
     </>
   );
 }

@@ -36,68 +36,63 @@ export default function DashboardPage() {
   const modules = [
     {
       title: "Transfer Value Predictor",
-      desc: "Regularized Ridge & OLS Regression pipeline estimating fair market value from tracking metrics.",
+      desc: "Regularized Ridge & OLS Regression pipeline estimating fair market valuation from on-pitch tracking metrics.",
       href: "/transfer-predictor",
       icon: TrendingUp,
-      color: "#00ff85",
-      tag: "SUPERVISED ML",
+      tag: "SUPERVISED REGRESSION",
     },
     {
       title: "Match Outcome Predictor",
-      desc: "XGBoost multi-class classifier forecasting Home Win, Draw, or Away Win probabilities.",
+      desc: "Multi-class XGBoost model calibrated to project 3-way matchday probability distributions (Win/Draw/Loss).",
       href: "/match-predictor",
       icon: Trophy,
-      color: "#e90052",
-      tag: "XGBOOST CORE",
+      tag: "GRADIENT BOOSTING",
     },
     {
       title: "Player Scouting Studio",
-      desc: "K-Means tactical clustering with 2D PCA projection and Euclidean similarity twin discovery.",
+      desc: "Unsupervised K-Means clustering across 2D PCA tactical manifolds for algorithmic player twin discovery.",
       href: "/scouting-studio",
       icon: Crosshair,
-      color: "#00d4ff",
-      tag: "UNSUPERVISED CLUSTERING",
+      tag: "K-MEANS & PCA",
     },
     {
-      title: "Player Comparison",
-      desc: "Side-by-side head-to-head metric comparison with ML valuation and tactical archetype enrichment.",
+      title: "Player Comparison Matrix",
+      desc: "Direct 1v1 statistical matrix with real-time ML transfer valuation and archetype cluster enrichment.",
       href: "/comparison",
       icon: Users,
-      color: "#fdb913",
       tag: "HEAD-TO-HEAD MATRIX",
     },
   ];
 
   return (
-    <div className="space-y-10 animate-fade-in">
-      {/* ── ML Engine Status ── */}
-      <div className="pl-card bg-slate-900/60 border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-xl">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-pl-green/10 border border-pl-green/20 flex items-center justify-center text-pl-green">
-            <Activity size={20} />
+    <div className="space-y-12 animate-fade-in font-body">
+      {/* ── ML Engine Status: Agent Console Card (Dark Band) ── */}
+      <div className="agent-console-card flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="flex items-center gap-4">
+          <div className="w-11 h-11 rounded-sm bg-cohere-deep-green flex items-center justify-center text-cohere-coral border border-white/10 shrink-0">
+            <Activity size={22} />
           </div>
-          <div>
-            <div className="text-sm font-bold text-white flex items-center gap-2">
-              <span>FastAPI Machine Learning Core</span>
-              <span className="w-2 h-2 rounded-full bg-pl-green animate-pulse" />
+          <div className="space-y-1">
+            <div className="flex items-center gap-2.5">
+              <span className="font-display text-base font-normal text-white tracking-tight">
+                Cohere Inference Core // Python 3.10+
+              </span>
+              <span className="w-2 h-2 rounded-full bg-cohere-coral animate-pulse" />
             </div>
-            <div className="text-xs text-pl-text-muted mt-0.5">
+            <p className="text-xs text-cohere-muted font-body">
               {health
-                ? `All ${Object.values(health.models_loaded).filter(Boolean).length}/5 serialized models active & served via REST API`
-                : "Connecting to ML microservice..."}
-            </div>
+                ? `All ${Object.values(health.models_loaded).filter(Boolean).length}/5 serialized inference pipelines active & served via FastAPI REST Gateway`
+                : "Connecting to ML inference microservice..."}
+            </p>
           </div>
         </div>
-        <div className="flex gap-2 flex-wrap sm:ml-auto">
+
+        <div className="flex gap-2 flex-wrap">
           {health &&
             Object.entries(health.models_loaded).map(([key, loaded]) => (
               <span
                 key={key}
-                className={`text-[10px] px-2.5 py-1 rounded-full font-semibold border ${
-                  loaded
-                    ? "bg-pl-green/15 text-pl-green border-pl-green/30"
-                    : "bg-pl-magenta/15 text-pl-magenta border-pl-magenta/30"
-                }`}
+                className={loaded ? "chip-coral" : "chip-pale-green opacity-50"}
               >
                 {key.replace(/_/g, " ").toUpperCase()}
               </span>
@@ -105,159 +100,151 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* ── Module Cards Grid ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {modules.map((mod) => (
-          <Link key={mod.href} href={mod.href} className="group">
-            <div className="pl-card bg-slate-900/60 border-white/10 hover:border-pl-cyan/50 hover:bg-slate-900/80 transition-all duration-200 cursor-pointer h-full flex flex-col justify-between rounded-2xl shadow-xl">
-              <div>
-                <div className="flex items-start justify-between">
-                  <div
-                    className="p-3 rounded-xl border border-white/10"
-                    style={{ backgroundColor: `${mod.color}15` }}
-                  >
-                    <mod.icon size={22} style={{ color: mod.color }} />
+      {/* ── Product & Module Cards: Cohere Soft Stone (22px radius) ── */}
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <div className="space-y-1">
+            <span className="font-mono text-xs uppercase tracking-wider text-cohere-coral">
+              Core Capabilities
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl font-normal tracking-tight text-cohere-primary">
+              Statistical Intelligence Modules
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {modules.map((mod) => (
+            <Link key={mod.href} href={mod.href} className="group block h-full">
+              <div className="product-card h-full flex flex-col justify-between hover:border-cohere-hairline transition-all duration-200">
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="w-10 h-10 rounded-sm bg-white border border-cohere-hairline flex items-center justify-center text-cohere-primary shrink-0">
+                      <mod.icon size={20} />
+                    </div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-cohere-coral border border-cohere-coral/30 bg-cohere-coral/10 px-2.5 py-1 rounded-sm">
+                      {mod.tag}
+                    </span>
                   </div>
-                  <span
-                    className="text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full border border-white/10"
-                    style={{
-                      backgroundColor: `${mod.color}12`,
-                      color: mod.color,
-                    }}
-                  >
-                    {mod.tag}
-                  </span>
+
+                  <h3 className="font-display text-xl font-normal text-cohere-primary mt-6 tracking-tight group-hover:text-cohere-coral transition-colors">
+                    {mod.title}
+                  </h3>
+                  <p className="text-sm text-cohere-body-muted mt-2 font-body leading-relaxed">
+                    {mod.desc}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-white mt-4 group-hover:text-pl-cyan transition-colors">
-                  {mod.title}
-                </h3>
-                <p className="text-sm text-pl-text-muted mt-1.5 leading-relaxed">
-                  {mod.desc}
-                </p>
+
+                <div className="mt-6 pt-4 border-t border-cohere-hairline flex items-center gap-1.5 text-sm font-medium text-cohere-action-blue group-hover:translate-x-1 transition-transform">
+                  <span>Explore Module</span>
+                  <ArrowRight size={14} />
+                </div>
               </div>
-              <div className="mt-5 pt-3 border-t border-white/5 flex items-center gap-1.5 text-xs font-bold text-pl-cyan group-hover:translate-x-1 transition-transform">
-                <span>Launch Interactive Module</span>
-                <ArrowRight size={14} />
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
 
-      {/* ── Leaderboards ── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* ── Leaderboards: Editorial White Surface & Rule Rows ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Top Scorers */}
-        <div className="pl-card bg-slate-900/60 border-white/10 rounded-2xl shadow-xl">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold flex items-center gap-2">
-              <Trophy size={14} className="text-pl-cyan" />
+        <div className="cohere-card-white p-6 sm:p-8">
+          <div className="flex items-center justify-between pb-4 border-b border-cohere-hairline">
+            <div className="flex items-center gap-2 font-display text-lg font-normal text-cohere-primary">
+              <Trophy size={18} className="text-cohere-coral" />
               <span>Top Goal Scorers (Golden Boot)</span>
-            </h3>
-            <span className="text-[10px] text-pl-cyan">Click player for dossier</span>
+            </div>
+            <span className="font-mono text-[11px] text-cohere-muted">Season 2024/25</span>
           </div>
-          <div className="space-y-1.5">
+
+          <div className="divide-y divide-cohere-hairline">
             {topScorers.map((p, i) => (
               <div
                 key={p.player_id}
-                className="stat-row p-2.5 rounded-xl hover:bg-white/5 cursor-pointer transition-colors flex items-center justify-between"
+                className="research-table-row flex items-center justify-between px-2 cursor-pointer transition-colors"
                 onClick={() => setDrawerPlayer(p)}
               >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="text-xs font-black text-pl-cyan w-5 text-center">
-                    #{i + 1}
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <span className="font-mono text-xs font-bold text-cohere-muted w-5 text-center">
+                    0{i + 1}
                   </span>
-                  <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone">
                     <Image
                       src={getPlayerPhoto(p.name)}
                       alt={p.name}
-                      width={36}
-                      height={36}
+                      width={40}
+                      height={40}
                       className="w-full h-full object-cover object-top"
                       unoptimized
                     />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-slate-950 p-0.5 border border-white/20">
-                      <Image
-                        src={getClubCrest(p.club)}
-                        alt={p.club}
-                        width={14}
-                        height={14}
-                        className="w-full h-full object-contain"
-                        unoptimized
-                      />
-                    </div>
                   </div>
                   <div className="truncate">
-                    <div className="text-sm font-bold text-white hover:text-pl-cyan transition-colors truncate">
+                    <div className="text-sm font-medium text-cohere-primary hover:text-cohere-action-blue transition-colors truncate">
                       {p.name}
                     </div>
-                    <div className="text-[11px] text-pl-text-muted truncate">
-                      {p.club} · {p.position}
+                    <div className="text-xs text-cohere-body-muted flex items-center gap-1.5">
+                      <span>{p.club}</span>
+                      <span>·</span>
+                      <span className="font-mono text-[11px]">{p.position}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right pl-3 shrink-0">
-                  <span className="text-base font-black text-white">{p.goals}</span>
-                  <span className="text-[10px] text-pl-text-muted block uppercase font-bold">Goals</span>
+                  <span className="font-display text-xl font-normal text-cohere-primary">{p.goals}</span>
+                  <span className="font-mono text-[10px] text-cohere-muted block uppercase">Goals</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Most Valuable */}
-        <div className="pl-card bg-slate-900/60 border-white/10 rounded-2xl shadow-xl">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold flex items-center gap-2">
-              <Sparkles size={14} className="text-pl-green" />
+        {/* Most Valuable Players */}
+        <div className="cohere-card-white p-6 sm:p-8">
+          <div className="flex items-center justify-between pb-4 border-b border-cohere-hairline">
+            <div className="flex items-center gap-2 font-display text-lg font-normal text-cohere-primary">
+              <Sparkles size={18} className="text-cohere-coral" />
               <span>Highest Market Valuations</span>
-            </h3>
-            <span className="text-[10px] text-pl-green">Click player for dossier</span>
+            </div>
+            <span className="font-mono text-[11px] text-cohere-muted">Ridge Projected</span>
           </div>
-          <div className="space-y-1.5">
+
+          <div className="divide-y divide-cohere-hairline">
             {topValuers.map((p, i) => (
               <div
                 key={p.player_id}
-                className="stat-row p-2.5 rounded-xl hover:bg-white/5 cursor-pointer transition-colors flex items-center justify-between"
+                className="research-table-row flex items-center justify-between px-2 cursor-pointer transition-colors"
                 onClick={() => setDrawerPlayer(p)}
               >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="text-xs font-black text-pl-green w-5 text-center">
-                    #{i + 1}
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <span className="font-mono text-xs font-bold text-cohere-muted w-5 text-center">
+                    0{i + 1}
                   </span>
-                  <div className="relative w-9 h-9 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone">
                     <Image
                       src={getPlayerPhoto(p.name)}
                       alt={p.name}
-                      width={36}
-                      height={36}
+                      width={40}
+                      height={40}
                       className="w-full h-full object-cover object-top"
                       unoptimized
                     />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-slate-950 p-0.5 border border-white/20">
-                      <Image
-                        src={getClubCrest(p.club)}
-                        alt={p.club}
-                        width={14}
-                        height={14}
-                        className="w-full h-full object-contain"
-                        unoptimized
-                      />
-                    </div>
                   </div>
                   <div className="truncate">
-                    <div className="text-sm font-bold text-white hover:text-pl-cyan transition-colors truncate">
+                    <div className="text-sm font-medium text-cohere-primary hover:text-cohere-action-blue transition-colors truncate">
                       {p.name}
                     </div>
-                    <div className="text-[11px] text-pl-text-muted truncate">
-                      {p.club} · {p.position}
+                    <div className="text-xs text-cohere-body-muted flex items-center gap-1.5">
+                      <span>{p.club}</span>
+                      <span>·</span>
+                      <span className="font-mono text-[11px]">{p.position}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right pl-3 shrink-0">
-                  <span className="text-base font-black text-pl-green">
+                  <span className="font-display text-xl font-normal text-cohere-coral">
                     €{p.market_value_eur_m}M
                   </span>
-                  <span className="text-[10px] text-pl-text-muted block uppercase font-bold">Valuation</span>
+                  <span className="font-mono text-[10px] text-cohere-muted block uppercase">Fair Value</span>
                 </div>
               </div>
             ))}

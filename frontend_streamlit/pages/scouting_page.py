@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from frontend.components.styles import (
+from frontend_streamlit.components.styles import (
     COLOR_PL_CYAN,
     COLOR_PL_GREEN,
     COLOR_PL_PINK,

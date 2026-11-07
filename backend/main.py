@@ -31,6 +31,9 @@ from backend.schemas import (
     ClusterMapPoint,
     FixtureItem,
     FixturesResponse,
+    GlobalFixturesResponse,
+    GlobalLeaguesResponse,
+    GlobalSearchResponse,
     H2HPlayerProp,
     H2HResponse,
     HealthResponse,
@@ -39,6 +42,7 @@ from backend.schemas import (
     InPlayFoulSubscribeResponse,
     LeaderboardPlayer,
     LeaderboardsResponse,
+    LiveNewsItem,
     MatchPredictRequest,
     MatchPredictResponse,
     OppositionConcededTeam,
@@ -939,14 +943,15 @@ async def get_season_leaderboards(
 # =====================================================================
 @app.get("/api/v1/inplay/matches")
 async def get_inplay_matches():
-    """Returns real-time simulated in-play match status with player foul tallies."""
+    """Returns real-time simulated in-play match status with player foul tallies matching the In-Play 4 counter."""
     return [
         {
             "match_id": "live_match_01",
             "fixture": "Arsenal vs Chelsea",
-            "minute": 68,
+            "minute": 64,
             "status": "LIVE",
             "score": "2 - 1",
+            "clock": "64'",
             "referee": "Anthony Taylor (Strictness: 6.5)",
             "players": [
                 {"name": "Kai Havertz", "club": "Arsenal", "fouls": 3, "yellow": True, "threshold_breached": True},
@@ -963,12 +968,43 @@ async def get_inplay_matches():
             "minute": 32,
             "status": "LIVE",
             "score": "1 - 1",
+            "clock": "32'",
             "referee": "Michael Oliver (Strictness: 5.8)",
             "players": [
                 {"name": "Rodri", "club": "Manchester City", "fouls": 2, "yellow": False, "threshold_breached": True},
                 {"name": "Alexis Mac Allister", "club": "Liverpool", "fouls": 3, "yellow": True, "threshold_breached": True},
                 {"name": "Erling Haaland", "club": "Manchester City", "fouls": 1, "yellow": False, "threshold_breached": False},
                 {"name": "Darwin Nunez", "club": "Liverpool", "fouls": 2, "yellow": False, "threshold_breached": True},
+            ]
+        },
+        {
+            "match_id": "live_match_03",
+            "fixture": "Real Madrid vs Barcelona",
+            "minute": 78,
+            "status": "LIVE",
+            "score": "3 - 2",
+            "clock": "78'",
+            "referee": "Jesús Gil Manzano (Strictness: 7.2)",
+            "players": [
+                {"name": "Vinícius Júnior", "club": "Real Madrid", "fouls": 1, "yellow": False, "threshold_breached": False},
+                {"name": "Jude Bellingham", "club": "Real Madrid", "fouls": 3, "yellow": True, "threshold_breached": True},
+                {"name": "Lamine Yamal", "club": "Barcelona", "fouls": 2, "yellow": False, "threshold_breached": True},
+                {"name": "Gavi", "club": "Barcelona", "fouls": 4, "yellow": True, "threshold_breached": True},
+            ]
+        },
+        {
+            "match_id": "live_match_04",
+            "fixture": "Bayern Munich vs Borussia Dortmund",
+            "minute": 51,
+            "status": "LIVE",
+            "score": "2 - 0",
+            "clock": "51'",
+            "referee": "Felix Brych (Strictness: 6.0)",
+            "players": [
+                {"name": "Harry Kane", "club": "Bayern Munich", "fouls": 1, "yellow": False, "threshold_breached": False},
+                {"name": "Joshua Kimmich", "club": "Bayern Munich", "fouls": 2, "yellow": False, "threshold_breached": True},
+                {"name": "Emre Can", "club": "Borussia Dortmund", "fouls": 3, "yellow": True, "threshold_breached": True},
+                {"name": "Julian Brandt", "club": "Borussia Dortmund", "fouls": 1, "yellow": False, "threshold_breached": False},
             ]
         }
     ]
@@ -1034,6 +1070,91 @@ async def trigger_inplay_foul_event(
         "alerts_dispatched": len(dispatched),
         "details": dispatched,
     }
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Global Multi-League Endpoints (PlayerStats Architecture Mirror)
+# ═══════════════════════════════════════════════════════════════════════════
+
+@app.get("/api/v1/global/leagues", response_model=GlobalLeaguesResponse)
+async def api_get_global_leagues():
+    """Returns all supported world leagues with metadata and shortcut categories."""
+    from backend.services.global_football import get_global_leagues
+    leagues = get_global_leagues()
+    return GlobalLeaguesResponse(leagues=leagues)
+
+
+@app.get("/api/v1/global/fixtures", response_model=GlobalFixturesResponse)
+async def api_get_global_fixtures(
+    date: Optional[str] = Query(None, description="Match date YYYY-MM-DD")
+):
+    """Returns fixtures grouped by competition accordion with referee strictness metrics."""
+    from backend.services.global_football import get_global_fixtures_by_date
+    target_date = date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    data = get_global_fixtures_by_date(target_date)
+    return GlobalFixturesResponse(
+        selected_date=data["selected_date"],
+        total_matches=data["total_matches"],
+        competitions=data["competitions"],
+    )
+
+
+@app.get("/api/v1/global/league/{slug}/standings")
+async def api_get_global_league_standings(slug: str):
+    """Returns 3-column structured overview: Standings, Fixtures, and Player Stat categories."""
+    from backend.services.global_football import get_league_overview
+    return get_league_overview(slug)
+
+
+@app.get("/api/v1/global/team/{slug}/stats")
+async def api_get_global_team_stats(
+    slug: str,
+    venue: str = Query("all", description="Venue filter: all, home, away"),
+    history: str = Query("last_30", description="History sample size: last_5, last_10, last_30, full"),
+):
+    """Returns team analytics, timeline match logs, and against stats (Opposition Conceded)."""
+    from backend.services.global_football import get_team_analytics
+    return get_team_analytics(slug=slug, venue=venue, history=history)
+
+
+@app.get("/api/v1/global/player/{player_id}/stats")
+async def api_get_global_player_stats(
+    player_id: str,
+    started_only: bool = Query(False, description="Filter for started games only"),
+    history: str = Query("last_75", description="History sample size"),
+):
+    """Returns player stats, 10-axis radar percentiles, and match timeline logs."""
+    from backend.services.global_football import get_player_profile_stats
+    return get_player_profile_stats(player_id=player_id, started_only=started_only, history=history)
+
+
+@app.get("/api/v1/global/search", response_model=GlobalSearchResponse)
+async def api_get_global_search(
+    q: str = Query(..., min_length=1, description="Search keyword for clubs or players")
+):
+    """Provides structured autocomplete across world clubs and players."""
+    from backend.services.global_football import search_global_entities
+    res = search_global_entities(q)
+    return GlobalSearchResponse(
+        query=res["query"],
+        players=res["players"],
+        teams=res["teams"],
+    )
+
+
+@app.get("/api/v1/news/live", response_model=List[LiveNewsItem])
+async def api_get_live_news():
+    """Fetches real-time world football headlines from tier-1 RSS feeds with TTL caching."""
+    from backend.services.live_news import get_live_football_news
+    return await get_live_football_news()
+
+
+@app.get("/api/v1/global/news", response_model=List[LiveNewsItem])
+async def api_get_global_news():
+    """Alias for live world football headlines."""
+    from backend.services.live_news import get_live_football_news
+    return await get_live_football_news()
+
 
 
 if __name__ == "__main__":

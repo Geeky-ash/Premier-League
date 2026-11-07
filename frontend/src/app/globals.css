@@ -1,27 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════════
-   Official Premier League Design System — globals.css
-   Based on premierleague.com Stats Centre visual identity
+   Cohere Enterprise Web System — globals.css
+   Specification derived strictly from DESIGN.md
    ═══════════════════════════════════════════════════════════════════ */
 
 @layer base {
   :root {
-    --pl-deepest: #190019;
-    --pl-dark: #240024;
-    --pl-purple: #38003c;
-    --pl-purple-light: #4a0050;
-    --pl-utility: #140014;
-    --pl-green: #00ff85;
-    --pl-magenta: #e90052;
-    --pl-cyan: #00d4ff;
-    --pl-white: #ffffff;
-    --pl-text-secondary: rgba(255, 255, 255, 0.75);
-    --pl-text-muted: rgba(255, 255, 255, 0.50);
-    --pl-border: rgba(255, 255, 255, 0.10);
-    --pl-border-light: rgba(255, 255, 255, 0.18);
+    --cohere-primary: #17171c;
+    --cohere-black: #000000;
+    --cohere-ink: #212121;
+    --cohere-deep-green: #003c33;
+    --cohere-dark-navy: #071829;
+    --cohere-canvas: #ffffff;
+    --cohere-soft-stone: #eeece7;
+    --cohere-pale-green: #edfce9;
+    --cohere-pale-blue: #f1f5ff;
+    --cohere-hairline: #d9d9dd;
+    --cohere-border-light: #e5e7eb;
+    --cohere-card-border: #f2f2f2;
+    --cohere-muted: #93939f;
+    --cohere-slate: #75758a;
+    --cohere-body-muted: #616161;
+    --cohere-action-blue: #1863dc;
+    --cohere-focus-blue: #4c6ee6;
+    --cohere-coral: #ff7759;
+    --cohere-coral-soft: #ffad9b;
+    --cohere-form-focus: #9b60aa;
+    --cohere-error: #b30000;
+
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-pill: 32px;
   }
 
   * {
@@ -34,193 +51,250 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--cohere-canvas);
+    color: var(--cohere-ink);
   }
 
   body {
-    background-color: var(--pl-deepest);
-    color: var(--pl-white);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;
+    color: #212121;
+    font-family: "Inter", Arial, ui-sans-serif, system-ui;
     min-height: 100vh;
     overflow-x: hidden;
   }
 
-  /* Scrollbar — deep purple theme */
+  /* Cohere Crisp Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--pl-deepest);
+    background: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--pl-purple);
-    border-radius: 4px;
+    background: #d9d9dd;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--pl-purple-light);
+    background: #93939f;
   }
 }
 
 @layer components {
-  /* ── Official PL Card ── */
-  .pl-card {
-    @apply rounded-pl bg-pl-purple border border-pl-border p-6;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  /* ── 1. Standard Product & Module Cards ── */
+  .product-card {
+    background-color: #eeece7;
+    color: #212121;
+    border-radius: 22px;
+    padding: 1.5rem;
+    border: 1px solid #f2f2f2;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .pl-card:hover {
-    border-color: var(--pl-border-light);
-  }
-
-  /* ── Stat Value — bold high-contrast numbers ── */
-  .stat-value {
-    @apply font-display font-extrabold text-white tracking-tight;
-  }
-  .stat-label {
-    @apply text-xs uppercase tracking-widest font-semibold;
-    color: var(--pl-text-muted);
+  @media (min-width: 640px) {
+    .product-card {
+      padding: 2rem;
+    }
   }
 
-  /* ── PL Gradient Banner Header ── */
-  .pl-banner {
-    background: linear-gradient(135deg, #00d4ff 0%, #38003c 100%);
-    @apply w-full py-10 px-8;
+  /* ── 2. Machine Learning Agent Console Cards & Dark Bands ── */
+  .agent-console-card {
+    background-color: #17171c;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   }
 
-  /* ── Navigation Tab (Stats Centre Sub-Nav) ── */
-  .nav-tab {
-    @apply px-5 py-3 text-sm font-semibold uppercase tracking-wider cursor-pointer
-           transition-colors duration-200;
-    color: var(--pl-text-secondary);
-    border-bottom: 3px solid transparent;
-  }
-  .nav-tab:hover {
-    color: var(--pl-white);
-  }
-  .nav-tab.active {
-    color: var(--pl-white);
-    border-bottom-color: var(--pl-white);
+  .dark-feature-band {
+    background-color: #003c33;
+    color: #ffffff;
+    border-radius: 22px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0, 60, 51, 0.25);
   }
 
-  /* ── Player Slot Card ── */
-  .player-slot {
-    @apply flex flex-col items-center justify-center rounded-pl-lg
-           border-2 border-dashed cursor-pointer transition-all duration-200;
-    border-color: var(--pl-border-light);
-    background: var(--pl-purple);
-    min-height: 280px;
+  /* ── 3. Buttons ── */
+  .button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #17171c;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.71;
+    padding: 0.625rem 1.5rem;
+    border-radius: 32px;
+    transition: all 0.15s ease;
   }
-  .player-slot:hover {
-    border-color: var(--pl-cyan);
-    background: var(--pl-purple-light);
+  .button-primary:hover {
+    background-color: #000000;
   }
-
-  /* ── Stat Comparison Row ── */
-  .stat-row {
-    @apply flex items-center justify-between py-3 px-4 border-b;
-    border-color: var(--pl-border);
-  }
-  .stat-row:last-child {
-    border-bottom: none;
-  }
-
-  /* ── PL Button ── */
-  .pl-btn {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
-           font-semibold text-sm rounded-full transition-all duration-200;
-  }
-  .pl-btn-magenta {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
-           font-semibold text-sm rounded-full transition-all duration-200 text-white;
-    background: var(--pl-magenta);
-  }
-  .pl-btn-magenta:hover {
-    background: #ff1a6d;
-    transform: translateY(-1px);
-  }
-  .pl-btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
-           font-semibold text-sm rounded-full transition-all duration-200 text-white border;
-    border-color: var(--pl-border-light);
-    background: transparent;
-  }
-  .pl-btn-outline:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--pl-white);
-  }
-  .pl-btn-white {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5
-           font-semibold text-sm rounded-full transition-all duration-200 bg-white text-pl-purple font-bold;
-  }
-  .pl-btn-white:hover {
-    background: #f0f0f0;
-    transform: translateY(-1px);
+  .button-primary:active {
+    transform: scale(0.98);
   }
 
-  /* ── News Ticker Strip ── */
-  .ticker-strip {
-    @apply flex items-center overflow-hidden whitespace-nowrap;
-    background: var(--pl-dark);
-    border-top: 1px solid var(--pl-border);
-    border-bottom: 1px solid var(--pl-border);
+  .button-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: transparent;
+    color: #212121;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+  .button-secondary:hover {
+    text-decoration: underline;
+    color: #1863dc;
   }
 
-  /* ── Search Input ── */
-  .pl-search {
-    @apply w-full px-4 py-3 rounded-pl text-white text-sm
-           border outline-none transition-colors duration-200;
-    background: var(--pl-dark);
-    border-color: var(--pl-border-light);
+  .button-pill-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: transparent;
+    color: #17171c;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 30px;
+    border: 1px solid #d9d9dd;
+    transition: all 0.15s ease;
   }
-  .pl-search::placeholder {
-    color: var(--pl-text-muted);
-  }
-  .pl-search:focus {
-    border-color: var(--pl-cyan);
-  }
-
-  /* ── Position Badge ── */
-  .pos-badge {
-    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px]
-           font-bold uppercase tracking-wider;
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--pl-text-secondary);
+  .button-pill-outline:hover {
+    border-color: #17171c;
+    background-color: rgba(23, 23, 28, 0.04);
   }
 
-  /* ── Popular Comparison Card ── */
-  .comparison-card {
-    @apply rounded-pl-lg overflow-hidden cursor-pointer transition-all duration-200;
-    background: var(--pl-purple);
-    border: 1px solid var(--pl-border);
+  /* ── 4. Filter Chips & Taxonomy Badges ── */
+  .blog-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: transparent;
+    color: #ff7759;
+    border: 1px solid #ff7759;
+    border-radius: 8px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.15s ease;
   }
-  .comparison-card:hover {
-    border-color: var(--pl-cyan);
-    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.12);
-    transform: translateY(-2px);
+  .blog-filter-chip:hover {
+    background-color: rgba(255, 119, 89, 0.08);
   }
 
-  /* ── Modal Overlay ── */
-  .modal-overlay {
-    @apply fixed inset-0 z-50 flex items-center justify-center;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+  .chip-coral {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: rgba(255, 119, 89, 0.12);
+    color: #ff7759;
+    border: 1px solid rgba(255, 119, 89, 0.25);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
-  /* ── Drawer (Slide-in Panel) ── */
-  .drawer-panel {
-    @apply fixed top-0 right-0 h-full z-50 overflow-y-auto;
-    background: var(--pl-deepest);
-    border-left: 1px solid var(--pl-border);
-    width: min(520px, 90vw);
-    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+  .chip-pale-green {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: #edfce9;
+    color: #003c33;
+    border: 1px solid rgba(0, 60, 51, 0.15);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
-}
 
-@layer utilities {
-  .text-gradient-pl {
-    background: linear-gradient(135deg, #00ff85, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* ── 5. Input Controls & Selectors ── */
+  .cohere-input {
+    background-color: #ffffff;
+    border: 1px solid #d9d9dd;
+    border-radius: 8px;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    color: #212121;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .cohere-input:focus {
+    border-color: #9b60aa;
+    box-shadow: 0 0 0 1px #9b60aa;
+  }
+
+  /* ── 6. Cohere Card Standard Alias ── */
+  .cohere-card {
+    background-color: #eeece7;
+    color: #212121;
+    border-radius: 22px;
+    padding: 1.5rem;
+    border: 1px solid #f2f2f2;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cohere-card-white {
+    background-color: #ffffff;
+    color: #212121;
+    border-radius: 22px;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  /* ── 7. Data Tables & Rule-Separated Lists ── */
+  .research-table-row {
+    border-bottom: 1px solid #d9d9dd;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: background-color 0.15s ease;
+  }
+  .research-table-row:hover {
+    background-color: #eeece7;
+  }
+
+  /* ── 8. Typography Utilities ── */
+  .font-display {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+  }
+  .font-body {
+    font-family: "Inter", sans-serif;
+  }
+  .font-mono {
+    font-family: "Space Mono", monospace;
+  }
+
+  /* ── 9. Animated News Marquee Ribbon ── */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 }

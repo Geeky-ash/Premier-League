@@ -64,22 +64,22 @@ export default function PlayerSearchModal({
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
-        className="w-full max-w-lg mx-4 bg-pl-dark rounded-pl-lg border border-pl-border shadow-2xl overflow-hidden animate-slide-up"
+        className="w-full max-w-lg mx-4 bg-white rounded-lg border border-cohere-hairline shadow-2xl overflow-hidden animate-slide-up font-body text-cohere-ink"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-pl-border bg-pl-purple/50">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-cohere-hairline bg-cohere-soft-stone">
           <div>
-            <span className="text-[10px] font-bold text-pl-green uppercase tracking-widest">
+            <span className="text-[10px] font-mono font-bold text-cohere-coral uppercase tracking-widest">
               Roster Search
             </span>
-            <h3 className="text-base font-extrabold text-white tracking-wide">
+            <h3 className="text-sm font-display font-medium text-cohere-primary tracking-wide">
               SELECT PLAYER FOR COMPARISON
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-pl-text-muted hover:text-white transition-colors"
+            className="p-1.5 text-cohere-muted hover:text-cohere-ink transition-colors"
           >
             <X size={18} />
           </button>
@@ -90,7 +90,7 @@ export default function PlayerSearchModal({
           <div className="relative">
             <Search
               size={16}
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-pl-cyan"
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-cohere-slate"
             />
             <input
               ref={inputRef}
@@ -98,7 +98,7 @@ export default function PlayerSearchModal({
               placeholder="Search by player name or club..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="pl-search pl-10"
+              className="cohere-input pl-10 w-full"
             />
           </div>
         </div>
@@ -109,10 +109,10 @@ export default function PlayerSearchModal({
             <button
               key={pos}
               onClick={() => setPosFilter(pos)}
-              className={`px-3 py-1 text-[11px] font-bold tracking-wider rounded-full transition-all ${
+              className={`px-3 py-1 text-[11px] font-mono font-bold tracking-wider rounded-pill transition-all ${
                 posFilter === pos
-                  ? "bg-pl-cyan text-pl-purple font-extrabold"
-                  : "bg-pl-purple text-pl-text-secondary hover:text-white border border-pl-border"
+                  ? "bg-cohere-primary text-white"
+                  : "bg-cohere-soft-stone text-cohere-slate hover:text-cohere-ink border border-cohere-hairline"
               }`}
             >
               {pos}
@@ -123,11 +123,11 @@ export default function PlayerSearchModal({
         {/* Player List */}
         <div className="mt-3 max-h-[360px] overflow-y-auto">
           {loading ? (
-            <div className="py-12 text-center text-pl-text-muted text-sm">
+            <div className="py-12 text-center text-cohere-muted text-xs font-mono">
               Loading Premier League roster...
             </div>
           ) : filtered.length === 0 ? (
-            <div className="py-12 text-center text-pl-text-muted text-sm">
+            <div className="py-12 text-center text-cohere-muted text-xs font-mono">
               No players found matching your search.
             </div>
           ) : (
@@ -138,11 +138,11 @@ export default function PlayerSearchModal({
                   onSelect(player);
                   onClose();
                 }}
-                className="w-full flex items-center gap-3.5 px-5 py-3 hover:bg-pl-purple transition-colors border-b border-pl-border/50 group text-left"
+                className="w-full flex items-center gap-3.5 px-5 py-3 hover:bg-cohere-soft-stone/40 transition-colors border-b border-cohere-hairline group text-left"
               >
                 {/* Official Player Photo with Club Badge Overlay */}
                 <div className="relative w-11 h-11 shrink-0">
-                  <div className="w-11 h-11 rounded-full bg-white/5 border border-pl-border overflow-hidden flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-full bg-cohere-soft-stone border border-cohere-hairline overflow-hidden flex items-center justify-center">
                     <img
                       src={getPlayerPhoto(player.name)}
                       alt={player.name}
@@ -155,32 +155,32 @@ export default function PlayerSearchModal({
                   <img
                     src={getClubCrest(player.club, 50)}
                     alt={player.club}
-                    className="absolute -bottom-1 -right-1 w-4 h-4 object-contain drop-shadow"
+                    className="absolute -bottom-1 -right-1 w-4 h-4 object-contain"
                   />
                 </div>
 
                 {/* Info */}
                 <div className="flex-1">
-                  <div className="text-sm font-bold text-white group-hover:text-pl-cyan transition-colors">
+                  <div className="text-sm font-bold text-cohere-primary group-hover:text-cohere-coral transition-colors">
                     {player.name}
                   </div>
-                  <div className="text-[11px] text-pl-text-muted flex items-center gap-2">
+                  <div className="text-[11px] text-cohere-slate flex items-center gap-2 font-mono">
                     <span>{player.club}</span>
                     <span>•</span>
                     <span>Age {player.age}</span>
                     <span>•</span>
-                    <span className="text-pl-green font-semibold">€{player.market_value_eur_m}M</span>
+                    <span className="text-cohere-coral font-bold">€{player.market_value_eur_m}M</span>
                   </div>
                 </div>
 
                 {/* Position Badge */}
-                <span className="pos-badge">
+                <span className="chip-coral text-[10px] font-mono">
                   {POS_MAP[player.position] || player.position}
                 </span>
 
                 <ChevronRight
                   size={15}
-                  className="text-pl-text-muted group-hover:text-pl-cyan group-hover:translate-x-0.5 transition-all"
+                  className="text-cohere-muted group-hover:text-cohere-coral group-hover:translate-x-0.5 transition-all"
                 />
               </button>
             ))

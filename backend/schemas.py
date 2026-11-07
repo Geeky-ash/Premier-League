@@ -230,3 +230,67 @@ class InPlayFoulSubscribeResponse(BaseModel):
     player_name: str
     status: str = "subscribed"
     created_at: str
+
+
+# --- Global Multi-League Schemas (PlayerStats mirror) ---
+class GlobalLeagueItem(BaseModel):
+    slug: str
+    name: str
+    country: str
+    country_tag: str
+    flag: str
+    season: str
+    crest: str
+    quick_categories: List[str]
+
+
+class GlobalLeaguesResponse(BaseModel):
+    leagues: List[GlobalLeagueItem]
+
+
+class GlobalFixtureMatch(BaseModel):
+    id: str
+    home_team: str
+    away_team: str
+    kickoff: str
+    match_clock: str
+    lineups_status: str
+    referee_name: str
+    referee_yellows: float
+    referee_reds: float
+    h2h_ready: bool
+
+
+class GlobalCompetitionFixtures(BaseModel):
+    league_name: str
+    league_slug: str
+    country_tag: str
+    flag: str
+    crest: str
+    matches: List[GlobalFixtureMatch]
+
+
+class GlobalFixturesResponse(BaseModel):
+    selected_date: str
+    total_matches: int
+    competitions: List[GlobalCompetitionFixtures]
+
+
+class GlobalSearchResponse(BaseModel):
+    query: str
+    players: List[Dict[str, Any]]
+    teams: List[Dict[str, Any]]
+
+
+class LiveNewsItem(BaseModel):
+    id: str
+    category: str
+    club: str
+    headline: str
+    summary: str
+    pub_date: str
+    timestamp: str
+    source: str
+    link: Optional[str] = None
+
+

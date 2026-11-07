@@ -73,14 +73,14 @@ export default function UtilityInfoModal({ title, onClose }: Props) {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
-        className="w-full max-w-md mx-4 bg-pl-dark rounded-pl-lg border border-pl-border shadow-2xl overflow-hidden animate-slide-up"
+        className="w-full max-w-md mx-4 bg-white rounded-lg border border-cohere-hairline shadow-2xl overflow-hidden animate-slide-up font-body text-cohere-ink"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="p-6 bg-pl-purple border-b border-pl-border relative">
+        <div className="p-6 bg-cohere-soft-stone border-b border-cohere-hairline relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-1.5 text-pl-text-muted hover:text-white transition-colors"
+            className="absolute top-4 right-4 p-1.5 text-cohere-muted hover:text-cohere-ink transition-colors"
           >
             <X size={18} />
           </button>
@@ -91,42 +91,42 @@ export default function UtilityInfoModal({ title, onClose }: Props) {
               className="w-8 h-8 object-contain"
             />
             <div>
-              <span className="text-[10px] font-bold text-pl-green uppercase tracking-widest">
+              <span className="text-[10px] font-mono font-bold text-cohere-coral uppercase tracking-widest">
                 Official Directory
               </span>
-              <h3 className="text-xl font-extrabold text-white">{title}</h3>
+              <h3 className="text-xl font-display font-medium text-cohere-primary">{title}</h3>
             </div>
           </div>
         </div>
 
         {/* Content */}
         <div className="p-6 space-y-4">
-          <p className="text-sm text-pl-text-secondary leading-relaxed">
+          <p className="text-sm text-cohere-body-muted leading-relaxed">
             {data.desc}
           </p>
 
-          <div className="space-y-2 pt-2">
+          <div className="space-y-2 pt-2 font-mono">
             {data.highlights.map((h, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs text-white">
-                <CheckCircle size={14} className="text-pl-green shrink-0" />
+              <div key={i} className="flex items-center gap-2 text-xs text-cohere-primary">
+                <CheckCircle size={14} className="text-cohere-deep-green shrink-0" />
                 <span>{h}</span>
               </div>
             ))}
           </div>
 
-          <div className="pt-4 border-t border-pl-border flex items-center justify-between">
+          <div className="pt-4 border-t border-cohere-hairline flex items-center justify-between">
             <a
               href={data.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="pl-btn-magenta text-xs py-2 px-4 flex items-center gap-2"
+              className="button-primary text-xs py-2 px-4 flex items-center gap-2 font-mono"
             >
               <span>{data.linkText}</span>
               <ExternalLink size={12} />
             </a>
             <button
               onClick={onClose}
-              className="text-xs text-pl-text-muted hover:text-white transition-colors"
+              className="text-xs font-mono text-cohere-slate hover:text-cohere-ink transition-colors"
             >
               Dismiss
             </button>

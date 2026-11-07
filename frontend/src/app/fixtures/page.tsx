@@ -4,263 +4,333 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Calendar,
   Clock,
-  ShieldAlert,
+  ChevronDown,
+  ChevronUp,
   ArrowRight,
-  TrendingUp,
-  Sparkles,
-  CheckCircle2,
-  AlertCircle,
-  Radio,
-  Sliders,
+  SlidersHorizontal,
+  Star,
+  ExternalLink,
 } from "lucide-react";
-import { fetchFixtures, FixturesResponse, FixtureItem } from "@/lib/api";
-import { getClubCrest, getLeagueLogo } from "@/lib/logos";
+import {
+  fetchGlobalFixtures,
+  GlobalFixturesResponse,
+  GlobalCompetitionFixtures,
+  GlobalFixtureMatch,
+} from "@/lib/api";
+import { getGlobalClubCrest, GLOBAL_LEAGUES } from "@/lib/logos";
 import H2HModal from "@/components/H2HModal";
 
-export default function FixturesHubPage() {
-  const [selectedDate, setSelectedDate] = useState<string>(() => {
-    return new Date().toISOString().split("T")[0];
-  });
-  const [fixturesData, setFixturesData] = useState<FixturesResponse | null>(null);
+export default function GlobalFixturesPage() {
+  const [selectedDateIndex, setSelectedDateIndex] = useState(2); // Default to Today
+  const [fixturesData, setFixturesData] = useState<GlobalFixturesResponse | null>(null);
   const [loading, setLoading] = useState(false);
+  const [expandedLeagues, setExpandedLeagues] = useState<Record<string, boolean>>({
+    "premier-league": true,
+    championship: true,
+    "la-liga": true,
+    bundesliga: true,
+    "serie-a": true,
+    "ligue-1": true,
+    "champions-league": true,
+    mls: true,
+    "saudi-pro-league": true,
+    eredivisie: true,
+  });
   const [h2hMatch, setH2hMatch] = useState<{ home: string; away: string } | null>(null);
 
-  // Generate date tab presets: Yesterday, Today, Tomorrow, +2, +3
-  const today = new Date();
-  const dateTabs = [-1, 0, 1, 2, 3].map((offset) => {
+  // Generate 10-day date carousel: WED 04, THU 05, TODAY 06, TOMO 07, etc.
+  const baseDate = new Date();
+  const dateTabs = [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7].map((offset, index) => {
     const d = new Date();
-    d.setDate(today.getDate() + offset);
-    const iso = d.toISOString().split("T")[0];
-    let label = d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-    if (offset === 0) label = "Today";
-    else if (offset === -1) label = "Yesterday";
-    else if (offset === 1) label = "Tomorrow";
-    return { iso, label };
+    d.setDate(baseDate.getDate() + offset);
+    const dayNum = String(d.getDate()).padStart(2, "0");
+    const weekday = d.toLocaleDateString("en-GB", { weekday: "short" }).toUpperCase();
+    let label = weekday;
+    if (offset === 0) label = "TODAY";
+    else if (offset === 1) label = "TOMO";
+    return {
+      index,
+      dayNum,
+      label,
+      isoDate: d.toISOString().split("T")[0],
+    };
   });
 
   useEffect(() => {
+    const activeTab = dateTabs[selectedDateIndex];
+    if (!activeTab) return;
     setLoading(true);
-    fetchFixtures(selectedDate)
+    fetchGlobalFixtures(activeTab.isoDate)
       .then(setFixturesData)
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, [selectedDate]);
+  }, [selectedDateIndex]);
+
+  const toggleLeague = (slug: string) => {
+    setExpandedLeagues((prev) => ({
+      ...prev,
+      [slug]: !prev[slug],
+    }));
+  };
 
   return (
-    <div className="space-y-8 animate-fade-in">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-pl-green">
-            <Calendar size={14} /> Official Fixtures Hub // Matchday Intelligence
-          </div>
-          <h2 className="text-2xl font-extrabold text-white tracking-tight mt-1 flex items-center gap-2.5">
-            <span>Premier League Fixtures & Referees</span>
-          </h2>
-          <p className="text-sm text-pl-text-muted mt-1">
-            Kickoff clocks, confirmed lineups, referee card tendencies, and real-time XGBoost probability forecasts.
-          </p>
-        </div>
-
-        {/* Date Selector */}
-        <div className="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-white/10 overflow-x-auto max-w-full">
-          {dateTabs.map((tab) => (
-            <button
-              key={tab.iso}
-              type="button"
-              onClick={() => setSelectedDate(tab.iso)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
-                selectedDate === tab.iso
-                  ? "bg-pl-green text-slate-950 shadow-md shadow-pl-green/20"
-                  : "text-slate-300 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Notice Banner */}
-      <div className="flex items-center justify-between gap-3 p-3.5 bg-slate-900/60 rounded-xl border border-white/10 text-xs text-pl-text-muted">
-        <div className="flex items-center gap-2">
-          <ShieldAlert size={15} className="text-pl-cyan shrink-0" />
-          <span>
-            Referee card ratings are computed from official PGMOL Premier League logs to predict foul impact on game momentum.
-          </span>
-        </div>
-        <span className="hidden sm:inline-block text-[10px] text-pl-green font-bold uppercase tracking-wider bg-pl-green/10 px-2 py-0.5 rounded border border-pl-green/30">
-          PGMOL Tracking
-        </span>
-      </div>
-
-      {/* Fixtures List */}
-      {loading ? (
-        <div className="py-20 text-center text-xs text-pl-cyan animate-pulse">
-          Loading matchday schedule and referee impact statistics...
-        </div>
-      ) : fixturesData && fixturesData.fixtures.length > 0 ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {fixturesData.fixtures.map((fix) => {
-            const isLive = fix.status === "LIVE";
-            const refStrictness = fix.referee?.referee_strictness_index || 5.0;
-            const refColor =
-              refStrictness >= 6.5
-                ? "text-pl-magenta border-pl-magenta/30 bg-pl-magenta/10"
-                : refStrictness >= 4.5
-                ? "text-pl-cyan border-pl-cyan/30 bg-pl-cyan/10"
-                : "text-pl-green border-pl-green/30 bg-pl-green/10";
-
+    <div className="space-y-8 animate-fade-in pb-16 font-body">
+      {/* ── Date Navigation Carousel Ribbon ── */}
+      <div className="flex items-center justify-between gap-2 border-b border-cohere-hairline pb-4">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+          {dateTabs.map((tab) => {
+            const isSelected = selectedDateIndex === tab.index;
             return (
-              <div
-                key={fix.fixture_id}
-                className="pl-card bg-slate-900/70 border-white/10 p-5 rounded-2xl shadow-xl hover:border-pl-cyan/40 transition-all flex flex-col justify-between group"
+              <button
+                key={tab.index}
+                type="button"
+                onClick={() => setSelectedDateIndex(tab.index)}
+                className={`flex flex-col items-center justify-center min-w-[76px] px-3.5 py-2.5 rounded-sm text-center transition-all ${
+                  isSelected
+                    ? "bg-cohere-primary text-white shadow-sm"
+                    : "bg-white text-cohere-body-muted border border-cohere-hairline hover:border-cohere-primary hover:text-cohere-primary"
+                }`}
               >
-                <div>
-                  {/* Status Strip */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/5">
-                    <div className="flex items-center gap-2">
-                      {isLive ? (
-                        <span className="flex items-center gap-1.5 text-xs font-black text-pl-magenta bg-pl-magenta/15 px-2.5 py-0.5 rounded-full border border-pl-magenta/40">
-                          <Radio size={12} className="animate-pulse" />
-                          <span>LIVE {fix.minute}&apos;</span>
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-1.5 text-xs font-bold text-slate-300 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
-                          <Clock size={12} className="text-pl-cyan" />
-                          <span>{fix.kickoff_time} KO</span>
-                        </span>
-                      )}
-                      <span className="text-[11px] text-pl-text-muted">{fix.venue}</span>
-                    </div>
-
-                    <div className="flex items-center gap-1.5">
-                      {fix.lineups_status === "LINEUPS_CONFIRMED" ? (
-                        <span className="text-[10px] font-bold text-pl-green bg-pl-green/10 px-2 py-0.5 rounded-md border border-pl-green/30 flex items-center gap-1">
-                          <CheckCircle2 size={11} />
-                          <span>Lineups Out</span>
-                        </span>
-                      ) : (
-                        <span className="text-[10px] font-semibold text-slate-400 bg-white/5 px-2 py-0.5 rounded-md border border-white/5">
-                          Expected Lineups
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Teams & Score / Matchup */}
-                  <div className="grid grid-cols-11 items-center gap-2 py-2">
-                    {/* Home Team */}
-                    <div className="col-span-5 flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-xl bg-white/5 p-1.5 shrink-0 border border-white/10 flex items-center justify-center">
-                        <Image
-                          src={getClubCrest(fix.home_team)}
-                          alt={fix.home_team}
-                          width={32}
-                          height={32}
-                          unoptimized
-                        />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-sm font-extrabold text-white truncate group-hover:text-pl-cyan transition-colors">
-                          {fix.home_team}
-                        </div>
-                        <div className="text-[11px] text-pl-green font-semibold">
-                          Win Prob: {fix.home_win_prob}%
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Middle Score / Clock */}
-                    <div className="col-span-1 text-center">
-                      {isLive ? (
-                        <span className="text-lg font-black text-white bg-slate-950 px-2.5 py-1 rounded-lg border border-white/20">
-                          {fix.home_score} - {fix.away_score}
-                        </span>
-                      ) : (
-                        <span className="text-xs font-black text-pl-text-muted">VS</span>
-                      )}
-                    </div>
-
-                    {/* Away Team */}
-                    <div className="col-span-5 flex items-center justify-end gap-3 text-right">
-                      <div className="min-w-0">
-                        <div className="text-sm font-extrabold text-white truncate group-hover:text-pl-cyan transition-colors">
-                          {fix.away_team}
-                        </div>
-                        <div className="text-[11px] text-pl-magenta font-semibold">
-                          Win Prob: {fix.away_win_prob}%
-                        </div>
-                      </div>
-                      <div className="w-11 h-11 rounded-xl bg-white/5 p-1.5 shrink-0 border border-white/10 flex items-center justify-center">
-                        <Image
-                          src={getClubCrest(fix.away_team)}
-                          alt={fix.away_team}
-                          width={32}
-                          height={32}
-                          unoptimized
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Referee Impact Badge */}
-                  <div className="mt-4 p-2.5 rounded-xl bg-slate-950/60 border border-white/5 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-bold text-pl-text-secondary">Referee:</span>
-                      <span className="font-bold text-white">{fix.referee?.referee_name || "Anthony Taylor"}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[11px] text-slate-300">
-                        {fix.referee?.yellow_cards_per_game || 4.2} 🟨/game
-                      </span>
-                      <span
-                        className={`text-[10px] font-black px-2 py-0.5 rounded border uppercase tracking-wider ${refColor}`}
-                        title="Strictness rating from 1.0 to 10.0"
-                      >
-                        Strictness: {refStrictness}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Action Strip */}
-                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setH2hMatch({ home: fix.home_team, away: fix.away_team })}
-                    className="text-xs text-pl-cyan hover:text-white font-semibold transition-colors flex items-center gap-1"
-                  >
-                    <span>View H2H Trends</span>
-                    <ArrowRight size={11} />
-                  </button>
-
-                  <Link
-                    href={`/match-predictor?home=${encodeURIComponent(fix.home_team)}&away=${encodeURIComponent(fix.away_team)}`}
-                    className="pl-btn-white text-[11px] py-1.5 px-3 flex items-center gap-1.5"
-                  >
-                    <Sliders size={12} />
-                    <span>Simulate Fixture</span>
-                  </Link>
-                </div>
-              </div>
+                <span
+                  className={`font-mono text-[10px] uppercase tracking-wider ${
+                    isSelected ? "text-cohere-coral" : "text-cohere-muted"
+                  }`}
+                >
+                  {tab.label}
+                </span>
+                <span className="font-display text-base font-normal">{tab.dayNum}</span>
+              </button>
             );
           })}
         </div>
-      ) : (
-        <div className="py-20 text-center text-sm text-pl-text-muted bg-slate-900/40 rounded-2xl border border-white/5">
-          No fixtures scheduled for this date. Select another matchday from the top strip.
+
+        {/* Filter Options */}
+        <button
+          type="button"
+          className="p-2.5 rounded-sm bg-white border border-cohere-hairline text-cohere-body-muted hover:text-cohere-primary hover:border-cohere-primary transition-colors shrink-0"
+          title="Filter Fixture Options"
+        >
+          <SlidersHorizontal size={16} />
+        </button>
+      </div>
+
+      {/* ── Main 2-Column Responsive Layout ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* ── Left / Center Column: Competition Accordion ── */}
+        <div className="lg:col-span-8 space-y-4">
+          {loading ? (
+            <div className="flex items-center justify-center p-12 text-cohere-muted text-sm bg-cohere-soft-stone rounded-lg border border-cohere-card-border">
+              <Clock size={16} className="animate-spin text-cohere-coral mr-2" /> Loading matchday fixtures...
+            </div>
+          ) : fixturesData?.competitions && fixturesData.competitions.length > 0 ? (
+            fixturesData.competitions.map((comp: GlobalCompetitionFixtures) => {
+              const isExpanded = expandedLeagues[comp.league_slug] !== false;
+              return (
+                <div
+                  key={comp.league_slug}
+                  className="rounded-lg bg-white border border-cohere-hairline overflow-hidden shadow-sm"
+                >
+                  {/* Accordion Header */}
+                  <div
+                    onClick={() => toggleLeague(comp.league_slug)}
+                    className="flex items-center justify-between px-5 py-3.5 bg-cohere-soft-stone cursor-pointer hover:bg-[#e7e5de] transition-colors border-b border-cohere-hairline"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="relative w-5 h-5 shrink-0 flex items-center justify-center">
+                        <Image
+                          src={comp.crest}
+                          alt={comp.league_name}
+                          fill
+                          className="object-contain"
+                          unoptimized
+                        />
+                      </div>
+                      <Link
+                        href={`/league/${comp.league_slug}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="font-display text-sm font-normal tracking-tight text-cohere-primary hover:text-cohere-action-blue transition-colors uppercase"
+                      >
+                        {comp.league_name}
+                      </Link>
+                      <span className="font-mono text-[10px] px-2 py-0.5 rounded-xs bg-white border border-cohere-hairline text-cohere-muted">
+                        {comp.country_tag}
+                      </span>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="text-cohere-muted hover:text-cohere-primary transition-colors"
+                    >
+                      {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </button>
+                  </div>
+
+                  {/* Match Rows */}
+                  {isExpanded && (
+                    <div className="divide-y divide-cohere-hairline">
+                      {comp.matches.map((match: GlobalFixtureMatch) => (
+                        <div
+                          key={match.id}
+                          className="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 hover:bg-cohere-soft-stone/40 transition-colors gap-4"
+                        >
+                          {/* Teams & Crests */}
+                          <div className="space-y-2 min-w-[220px]">
+                            <div className="flex items-center gap-3">
+                              <div className="relative w-5 h-5 shrink-0">
+                                <Image
+                                  src={getGlobalClubCrest(match.home_team)}
+                                  alt={match.home_team}
+                                  fill
+                                  className="object-contain"
+                                  unoptimized
+                                />
+                              </div>
+                              <span className="text-sm font-medium text-cohere-primary hover:text-cohere-action-blue transition-colors cursor-pointer">
+                                {match.home_team}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <div className="relative w-5 h-5 shrink-0">
+                                <Image
+                                  src={getGlobalClubCrest(match.away_team)}
+                                  alt={match.away_team}
+                                  fill
+                                  className="object-contain"
+                                  unoptimized
+                                />
+                              </div>
+                              <span className="text-sm font-medium text-cohere-primary hover:text-cohere-action-blue transition-colors cursor-pointer">
+                                {match.away_team}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Controls & Referee Tag */}
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                            {/* Lineups Button */}
+                            <button
+                              type="button"
+                              className="chip-coral flex items-center gap-1 uppercase"
+                            >
+                              <span>{match.lineups_status}</span>
+                              <ExternalLink size={10} />
+                            </button>
+
+                            {/* View Fixture CTA */}
+                            <button
+                              type="button"
+                              onClick={() => setH2hMatch({ home: match.home_team, away: match.away_team })}
+                              className="px-3.5 py-1.5 rounded-sm bg-cohere-primary hover:bg-black text-xs font-medium text-white transition-colors"
+                            >
+                              View Fixture &gt;
+                            </button>
+
+                            {/* Referee Pill */}
+                            {match.referee_name && (
+                              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-white border border-cohere-hairline text-xs">
+                                <span className="font-medium text-cohere-body-muted">{match.referee_name}</span>
+                                <span className="px-1.5 py-0.2 rounded-xs bg-[#fef3c7] text-[#92400e] font-mono text-[10px] font-bold">
+                                  🟨 {match.referee_yellows.toFixed(2)}
+                                </span>
+                              </div>
+                            )}
+
+                            {/* Kickoff Clock */}
+                            <span className="font-mono text-xs text-cohere-muted pl-1">
+                              {match.kickoff}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          ) : (
+            <div className="p-8 text-center text-cohere-muted bg-cohere-soft-stone rounded-lg border border-cohere-card-border">
+              No fixtures scheduled for this date.
+            </div>
+          )}
         </div>
-      )}
+
+        {/* ── Right Sidebar: Popular Leagues (Cohere Soft Stone) ── */}
+        <div className="lg:col-span-4 space-y-4">
+          <div className="flex items-center justify-between pb-1">
+            <h3 className="font-display text-sm font-normal tracking-tight text-cohere-primary uppercase">
+              Popular Leagues
+            </h3>
+            <button
+              type="button"
+              className="text-xs font-medium text-cohere-action-blue hover:underline flex items-center gap-1"
+            >
+              <Star size={11} /> Add Favourites
+            </button>
+          </div>
+
+          <div className="space-y-4">
+            {GLOBAL_LEAGUES.slice(0, 5).map((league) => (
+              <div
+                key={league.slug}
+                className="product-card p-5 space-y-3"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-7 h-7 shrink-0 flex items-center justify-center">
+                      <Image
+                        src={league.crest}
+                        alt={league.name}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
+                    <div>
+                      <Link
+                        href={`/league/${league.slug}`}
+                        className="font-display text-sm font-normal text-cohere-primary hover:text-cohere-action-blue transition-colors block"
+                      >
+                        {league.name}
+                      </Link>
+                      <span className="font-mono text-[10px] text-cohere-muted">{league.season}</span>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={`/league/${league.slug}`}
+                    className="w-8 h-8 rounded-full bg-white border border-cohere-hairline hover:bg-cohere-primary hover:text-white flex items-center justify-center text-cohere-primary transition-colors"
+                  >
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+
+                {/* Category Shortcut Pills */}
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {["Goalscorers", "Shots", "SoT", "Tackles", "Fouls Committed", "Yellows"].map(
+                    (cat) => (
+                      <Link
+                        key={cat}
+                        href={`/league/${league.slug}?stat=${encodeURIComponent(cat)}`}
+                        className="px-2.5 py-0.5 rounded-full bg-white hover:border-cohere-primary border border-cohere-hairline font-mono text-[10px] text-cohere-body-muted hover:text-cohere-primary transition-colors"
+                      >
+                        {cat}
+                      </Link>
+                    )
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* H2H Modal */}
       {h2hMatch && (
         <H2HModal
           homeTeam={h2hMatch.home}
           awayTeam={h2hMatch.away}
-          open={true}
+          open={!!h2hMatch}
           onClose={() => setH2hMatch(null)}
         />
       )}

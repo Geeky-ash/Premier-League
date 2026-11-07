@@ -19,10 +19,10 @@ if str(PROJECT_ROOT) not in sys.path:
 
 import streamlit as st
 
-from frontend.components.styles import inject_custom_styles
-from frontend.pages.match_predictor_page import render_match_predictor_page
-from frontend.pages.scouting_page import render_scouting_page
-from frontend.pages.transfer_predictor_page import render_transfer_predictor_page
+from frontend_streamlit.components.styles import inject_custom_styles
+from frontend_streamlit.pages.match_predictor_page import render_match_predictor_page
+from frontend_streamlit.pages.scouting_page import render_scouting_page
+from frontend_streamlit.pages.transfer_predictor_page import render_transfer_predictor_page
 
 # Page Configuration
 st.set_page_config(

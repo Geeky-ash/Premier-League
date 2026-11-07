@@ -428,3 +428,226 @@ export async function triggerInPlayFoul(params: {
   if (!res.ok) throw new Error("Failed to trigger foul event");
   return res.json();
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// Global Multi-League API Client (playerstats.football architecture)
+// ═══════════════════════════════════════════════════════════════════════════
+
+export interface GlobalLeagueItem {
+  slug: string;
+  name: string;
+  country: string;
+  country_tag: string;
+  flag: string;
+  season: string;
+  crest: string;
+  quick_categories: string[];
+}
+
+export interface GlobalLeaguesResponse {
+  leagues: GlobalLeagueItem[];
+}
+
+export interface GlobalFixtureMatch {
+  id: string;
+  home_team: string;
+  away_team: string;
+  kickoff: string;
+  match_clock: string;
+  lineups_status: string;
+  referee_name: string;
+  referee_yellows: number;
+  referee_reds: number;
+  h2h_ready: boolean;
+}
+
+export interface GlobalCompetitionFixtures {
+  league_name: string;
+  league_slug: string;
+  country_tag: string;
+  flag: string;
+  crest: string;
+  matches: GlobalFixtureMatch[];
+}
+
+export interface GlobalFixturesResponse {
+  selected_date: string;
+  total_matches: number;
+  competitions: GlobalCompetitionFixtures[];
+}
+
+export interface LeagueStandingItem {
+  rank: number;
+  club: string;
+  slug: string;
+  mp: number;
+  w: number;
+  d: number;
+  l: number;
+  pts: number;
+  form: string[];
+}
+
+export interface LeagueOverviewResponse {
+  league: GlobalLeagueItem;
+  standings: LeagueStandingItem[];
+  fixtures: {
+    date_heading: string;
+    matches: {
+      home_team: string;
+      away_team: string;
+      referee: string;
+      yellow_avg: number;
+      red_avg: number;
+      time: string;
+    }[];
+  }[];
+  stat_categories: {
+    name: string;
+    leaders: { player: string; club: string; val: number }[];
+  }[];
+}
+
+export interface TeamStatsResponse {
+  team: {
+    name: string;
+    slug: string;
+    league: string;
+    next_fixture: {
+      opponent: string;
+      date: string;
+      is_today: boolean;
+    };
+  };
+  competitions: string[];
+  match_history: {
+    date: string;
+    opponent: string;
+    comp: string;
+    venue: "H" | "A";
+    result: "W" | "D" | "L";
+    score: string;
+    possession: number;
+    shots: number;
+    sot: number;
+    fouls: number;
+    cards: number;
+  }[];
+  team_stats: Record<string, number>;
+  against_stats: Record<string, number>;
+}
+
+export type GlobalTeamDetailResponse = TeamStatsResponse;
+
+export interface PlayerProfileStatsResponse {
+  player: {
+    id: string;
+    name: string;
+    position: string;
+    club: string;
+    country: string;
+    flag: string;
+    age: number;
+    photo: string;
+  };
+  radar: Record<string, number>;
+  competitions: string[];
+  sample_size: string;
+  started_only: boolean;
+  match_history: {
+    date: string;
+    opponent: string;
+    comp: string;
+    venue: "H" | "A";
+    result: "W" | "D" | "L";
+    score: string;
+    min: number;
+    rating: number;
+    goals: number;
+    assists: number;
+    shots: number;
+    sot: number;
+    tackles: number;
+    fouls_won: number;
+  }[];
+}
+
+export interface GlobalSearchResponse {
+  query: string;
+  players: {
+    id: string;
+    name: string;
+    position: string;
+    club: string;
+    country: string;
+    photo: string;
+  }[];
+  teams: {
+    slug: string;
+    name: string;
+    league: string;
+    country: string;
+    crest: string;
+  }[];
+}
+
+export async function fetchGlobalLeagues(): Promise<GlobalLeaguesResponse> {
+  const res = await fetch(`${API_BASE}/global/leagues`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch global leagues");
+  return res.json();
+}
+
+export async function fetchGlobalFixtures(date?: string): Promise<GlobalFixturesResponse> {
+  const query = date ? `?date=${encodeURIComponent(date)}` : "";
+  const res = await fetch(`${API_BASE}/global/fixtures${query}`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch global fixtures");
+  return res.json();
+}
+
+export async function fetchGlobalLeagueOverview(slug: string): Promise<LeagueOverviewResponse> {
+  const res = await fetch(`${API_BASE}/global/league/${encodeURIComponent(slug)}/standings`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch league overview");
+  return res.json();
+}
+
+export async function fetchGlobalTeamStats(slug: string, venue: string = "all", history: string = "last_30"): Promise<TeamStatsResponse> {
+  const query = new URLSearchParams({ venue, history });
+  const res = await fetch(`${API_BASE}/global/team/${encodeURIComponent(slug)}/stats?${query.toString()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch team analytics");
+  return res.json();
+}
+
+export const fetchGlobalTeamDetail = fetchGlobalTeamStats;
+
+export async function fetchGlobalPlayerStats(id: string, started_only: boolean = false, history: string = "last_75"): Promise<PlayerProfileStatsResponse> {
+  const query = new URLSearchParams({ started_only: started_only ? "true" : "false", history });
+  const res = await fetch(`${API_BASE}/global/player/${encodeURIComponent(id)}/stats?${query.toString()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch player stats");
+  return res.json();
+}
+
+export async function fetchGlobalSearch(query: string): Promise<GlobalSearchResponse> {
+  const q = encodeURIComponent(query);
+  const res = await fetch(`${API_BASE}/global/search?q=${q}`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to execute global search");
+  return res.json();
+}
+
+export interface LiveNewsItem {
+  id: string;
+  category: string;
+  club: string;
+  headline: string;
+  summary: string;
+  pub_date: string;
+  timestamp: string;
+  source: string;
+  link?: string;
+}
+
+export async function fetchLiveNews(): Promise<LiveNewsItem[]> {
+  const res = await fetch(`${API_BASE}/news/live`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch live news");
+  return res.json();
+}
+

@@ -109,30 +109,30 @@ export default function MatchPredictorPage() {
   const pAway = prediction?.probabilities["Away Win"] || 25;
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-8 animate-fade-in font-body text-cohere-ink">
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-pl-green">
+        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-cohere-coral">
           <ShieldAlert className="w-4 h-4" /> Module 02 // Gradient-Boosted Classification
         </div>
-        <h2 className="text-2xl font-extrabold text-white tracking-tight mt-1">
+        <h2 className="text-3xl font-display font-medium text-cohere-primary tracking-tight mt-1">
           Match Outcome Predictor
         </h2>
-        <p className="text-sm text-pl-text-muted mt-1">
+        <p className="text-sm text-cohere-body-muted mt-1 max-w-2xl">
           Predict 3-way matchday outcomes calibrated using a multi-class XGBoost model trained on historical Premier League tactical data.
         </p>
       </div>
 
       {/* Featured Derbies Quick Bar */}
-      <div className="pl-card p-4 bg-slate-900/60 border-white/10">
-        <div className="text-xs font-bold text-pl-text-muted uppercase tracking-wider mb-2.5 flex items-center justify-between">
+      <div className="product-card p-5">
+        <div className="text-xs font-bold text-cohere-slate uppercase tracking-wider mb-3 flex items-center justify-between font-mono">
           <span className="flex items-center gap-1.5">
-            <Swords size={14} className="text-pl-cyan" />
+            <Swords size={14} className="text-cohere-coral" />
             Featured Premier League Matchups
           </span>
-          <span className="text-[11px] text-pl-cyan font-normal">Click to simulate fixture</span>
+          <span className="text-[11px] text-cohere-coral font-medium">Click to simulate fixture</span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {FEATURED_DERBIES.map((d) => {
             const isMatch = homeTeam === d.home && awayTeam === d.away;
             return (
@@ -140,31 +140,31 @@ export default function MatchPredictorPage() {
                 key={d.name}
                 type="button"
                 onClick={() => loadDerby(d.home, d.away)}
-                className={`p-2.5 rounded-xl text-left border transition-all flex flex-col justify-between ${
+                className={`p-3 rounded-lg text-left border transition-all flex flex-col justify-between ${
                   isMatch
-                    ? "bg-pl-purple/50 border-pl-green text-white shadow-lg shadow-pl-green/10"
-                    : "bg-slate-950/40 border-white/5 hover:border-white/20 text-slate-300"
+                    ? "bg-white border-cohere-coral shadow-sm text-cohere-primary font-bold"
+                    : "bg-white/80 border-cohere-hairline hover:border-cohere-primary/30 text-cohere-ink"
                 }`}
               >
-                <div className="flex items-center justify-between gap-1 mb-1.5">
+                <div className="flex items-center justify-between gap-1 mb-2">
                   <Image
                     src={getClubCrest(d.home)}
                     alt={d.home}
-                    width={20}
-                    height={20}
+                    width={22}
+                    height={22}
                     unoptimized
                   />
-                  <span className="text-[10px] font-bold text-pl-cyan">VS</span>
+                  <span className="text-[10px] font-mono font-bold text-cohere-coral">VS</span>
                   <Image
                     src={getClubCrest(d.away)}
                     alt={d.away}
-                    width={20}
-                    height={20}
+                    width={22}
+                    height={22}
                     unoptimized
                   />
                 </div>
                 <div className="text-xs font-bold truncate">{d.name}</div>
-                <div className="text-[10px] text-pl-text-muted truncate">
+                <div className="text-[10px] text-cohere-muted truncate">
                   {d.home.split(" ")[0]} v {d.away.split(" ")[0]}
                 </div>
               </button>
@@ -174,11 +174,11 @@ export default function MatchPredictorPage() {
       </div>
 
       {/* Fixture Matchup Banner */}
-      <div className="pl-card bg-slate-900/70 border-white/10 p-6 relative overflow-hidden shadow-2xl">
+      <div className="product-card p-6 relative overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-11 gap-6 items-center">
           {/* Home Team */}
-          <div className="md:col-span-5 flex flex-col sm:flex-row items-center gap-4 bg-slate-950/60 p-4 rounded-2xl border border-white/5">
-            <div className="relative w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+          <div className="md:col-span-5 flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-lg border border-cohere-hairline">
+            <div className="relative w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-sm bg-cohere-soft-stone border border-cohere-hairline">
               <Image
                 src={getClubCrest(homeTeam)}
                 alt={homeTeam}
@@ -189,13 +189,13 @@ export default function MatchPredictorPage() {
               />
             </div>
             <div className="flex-1 w-full space-y-1 text-center sm:text-left">
-              <label className="text-xs font-bold text-pl-cyan uppercase tracking-wider block">
+              <label className="text-xs font-mono font-bold text-cohere-coral uppercase tracking-wider block">
                 Home Club
               </label>
               <select
                 value={homeTeam}
                 onChange={(e) => setHomeTeam(e.target.value)}
-                className="pl-search text-base font-bold w-full bg-slate-900"
+                className="cohere-input text-base font-bold w-full cursor-pointer bg-white text-cohere-ink border border-cohere-hairline rounded-sm px-3 py-2"
               >
                 {clubs.map((c) => (
                   <option key={c} value={c} disabled={c === awayTeam}>
@@ -208,14 +208,14 @@ export default function MatchPredictorPage() {
 
           {/* VS Divider */}
           <div className="md:col-span-1 text-center flex flex-col items-center justify-center">
-            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-black text-pl-green shadow-inner">
+            <div className="w-10 h-10 rounded-full bg-white border border-cohere-coral flex items-center justify-center text-xs font-mono font-black text-cohere-coral shadow-sm">
               VS
             </div>
           </div>
 
           {/* Away Team */}
-          <div className="md:col-span-5 flex flex-col sm:flex-row-reverse items-center gap-4 bg-slate-950/60 p-4 rounded-2xl border border-white/5">
-            <div className="relative w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-2xl bg-white/5 border border-white/10">
+          <div className="md:col-span-5 flex flex-col sm:flex-row-reverse items-center gap-4 bg-white p-4 rounded-lg border border-cohere-hairline">
+            <div className="relative w-16 h-16 shrink-0 flex items-center justify-center p-2 rounded-sm bg-cohere-soft-stone border border-cohere-hairline">
               <Image
                 src={getClubCrest(awayTeam)}
                 alt={awayTeam}
@@ -226,13 +226,13 @@ export default function MatchPredictorPage() {
               />
             </div>
             <div className="flex-1 w-full space-y-1 text-center sm:text-right">
-              <label className="text-xs font-bold text-pl-magenta uppercase tracking-wider block">
+              <label className="text-xs font-mono font-bold text-cohere-action-blue uppercase tracking-wider block">
                 Away Club
               </label>
               <select
                 value={awayTeam}
                 onChange={(e) => setAwayTeam(e.target.value)}
-                className="pl-search text-base font-bold w-full bg-slate-900"
+                className="cohere-input text-base font-bold w-full cursor-pointer bg-white text-cohere-ink border border-cohere-hairline rounded-sm px-3 py-2"
               >
                 {clubs.map((c) => (
                   <option key={c} value={c} disabled={c === homeTeam}>
@@ -245,20 +245,20 @@ export default function MatchPredictorPage() {
         </div>
 
         {/* Action Button Strip */}
-        <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-          <div className="text-xs text-pl-text-muted flex items-center gap-1.5">
-            <Sparkles size={14} className="text-pl-green" />
+        <div className="mt-5 pt-4 border-t border-cohere-hairline flex flex-wrap items-center justify-between gap-3">
+          <div className="text-xs text-cohere-slate flex items-center gap-1.5 font-mono">
+            <Sparkles size={14} className="text-cohere-coral" />
             <span>Adjust levers below to simulate in-game tactical shifts</span>
           </div>
           <button
             type="button"
             onClick={triggerPredict}
             disabled={loading}
-            className="pl-btn-primary flex items-center gap-2 text-xs py-2 px-4 shadow-lg shadow-pl-green/20"
+            className="button-primary"
           >
             {loading ? (
               <>
-                <div className="w-3.5 h-3.5 border-2 border-slate-900 border-t-transparent rounded-full animate-spin" />
+                <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 <span>Simulating Match...</span>
               </>
             ) : (
@@ -274,18 +274,18 @@ export default function MatchPredictorPage() {
       {/* 2-Column */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left: Tactical Inputs */}
-        <div className="lg:col-span-6 pl-card space-y-5 bg-slate-900/60 border-white/10">
-          <div className="flex items-center justify-between pb-3 border-b border-white/10">
-            <div className="text-sm font-bold text-white flex items-center gap-2">
-              <Flame className="w-4 h-4 text-pl-green" /> Matchday Tactical Levers
+        <div className="lg:col-span-6 product-card space-y-5">
+          <div className="flex items-center justify-between pb-3 border-b border-cohere-hairline">
+            <div className="text-sm font-bold text-cohere-primary flex items-center gap-2">
+              <Flame className="w-4 h-4 text-cohere-coral" /> Matchday Tactical Levers
             </div>
-            {loading && <span className="text-xs text-pl-green animate-pulse">Computing XGBoost...</span>}
+            {loading && <span className="text-xs text-cohere-coral animate-pulse">Computing XGBoost...</span>}
           </div>
 
           {/* Possession */}
           <div>
             <div className="flex justify-between text-xs font-semibold mb-1.5">
-              <span className="text-pl-cyan font-bold flex items-center gap-1">
+              <span className="text-cohere-coral font-bold flex items-center gap-1">
                 <Image
                   src={getClubCrest(homeTeam)}
                   alt={homeTeam}
@@ -295,8 +295,8 @@ export default function MatchPredictorPage() {
                 />
                 {homeTeam}: {homePossession}%
               </span>
-              <span className="text-pl-text-muted">Possession Share</span>
-              <span className="text-pl-magenta font-bold flex items-center gap-1">
+              <span className="text-cohere-slate font-mono">Possession Share</span>
+              <span className="text-cohere-action-blue font-bold flex items-center gap-1">
                 {awayTeam}: {100 - homePossession}%
                 <Image
                   src={getClubCrest(awayTeam)}
@@ -313,7 +313,7 @@ export default function MatchPredictorPage() {
               max={75}
               value={homePossession}
               onChange={(e) => setHomePossession(Number(e.target.value))}
-              className="w-full accent-[#00ff85] cursor-pointer"
+              className="w-full accent-[#ff7759] cursor-pointer"
             />
           </div>
 
@@ -321,8 +321,8 @@ export default function MatchPredictorPage() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{homeTeam} Goals</span>
-                <span className="text-pl-green font-bold">{homeGoals}</span>
+                <span className="text-cohere-ink">{homeTeam} Goals</span>
+                <span className="text-cohere-coral font-bold">{homeGoals}</span>
               </div>
               <input
                 type="range"
@@ -330,13 +330,13 @@ export default function MatchPredictorPage() {
                 max={5}
                 value={homeGoals}
                 onChange={(e) => setHomeGoals(Number(e.target.value))}
-                className="w-full accent-[#00ff85] cursor-pointer"
+                className="w-full accent-[#ff7759] cursor-pointer"
               />
             </div>
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{awayTeam} Goals</span>
-                <span className="text-pl-magenta font-bold">{awayGoals}</span>
+                <span className="text-cohere-ink">{awayTeam} Goals</span>
+                <span className="text-cohere-action-blue font-bold">{awayGoals}</span>
               </div>
               <input
                 type="range"
@@ -344,7 +344,7 @@ export default function MatchPredictorPage() {
                 max={5}
                 value={awayGoals}
                 onChange={(e) => setAwayGoals(Number(e.target.value))}
-                className="w-full accent-[#e90052] cursor-pointer"
+                className="w-full accent-[#1863dc] cursor-pointer"
               />
             </div>
           </div>
@@ -353,8 +353,8 @@ export default function MatchPredictorPage() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{homeTeam} Shots</span>
-                <span className="text-pl-green font-bold">{homeShots}</span>
+                <span className="text-cohere-ink">{homeTeam} Shots</span>
+                <span className="text-cohere-coral font-bold">{homeShots}</span>
               </div>
               <input
                 type="range"
@@ -362,13 +362,13 @@ export default function MatchPredictorPage() {
                 max={30}
                 value={homeShots}
                 onChange={(e) => setHomeShots(Number(e.target.value))}
-                className="w-full accent-[#00ff85] cursor-pointer"
+                className="w-full accent-[#ff7759] cursor-pointer"
               />
             </div>
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{awayTeam} Shots</span>
-                <span className="text-pl-magenta font-bold">{awayShots}</span>
+                <span className="text-cohere-ink">{awayTeam} Shots</span>
+                <span className="text-cohere-action-blue font-bold">{awayShots}</span>
               </div>
               <input
                 type="range"
@@ -376,7 +376,7 @@ export default function MatchPredictorPage() {
                 max={30}
                 value={awayShots}
                 onChange={(e) => setAwayShots(Number(e.target.value))}
-                className="w-full accent-[#e90052] cursor-pointer"
+                className="w-full accent-[#1863dc] cursor-pointer"
               />
             </div>
           </div>
@@ -385,8 +385,8 @@ export default function MatchPredictorPage() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{homeTeam} Form (L5)</span>
-                <span className="text-pl-green font-bold">{homeForm} pts</span>
+                <span className="text-cohere-ink">{homeTeam} Form (L5)</span>
+                <span className="text-cohere-coral font-bold">{homeForm} pts</span>
               </div>
               <input
                 type="range"
@@ -394,13 +394,13 @@ export default function MatchPredictorPage() {
                 max={15}
                 value={homeForm}
                 onChange={(e) => setHomeForm(Number(e.target.value))}
-                className="w-full accent-[#00ff85] cursor-pointer"
+                className="w-full accent-[#ff7759] cursor-pointer"
               />
             </div>
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-pl-text-secondary">{awayTeam} Form (L5)</span>
-                <span className="text-pl-magenta font-bold">{awayForm} pts</span>
+                <span className="text-cohere-ink">{awayTeam} Form (L5)</span>
+                <span className="text-cohere-action-blue font-bold">{awayForm} pts</span>
               </div>
               <input
                 type="range"
@@ -408,7 +408,7 @@ export default function MatchPredictorPage() {
                 max={15}
                 value={awayForm}
                 onChange={(e) => setAwayForm(Number(e.target.value))}
-                className="w-full accent-[#e90052] cursor-pointer"
+                className="w-full accent-[#1863dc] cursor-pointer"
               />
             </div>
           </div>
@@ -416,8 +416,8 @@ export default function MatchPredictorPage() {
           {/* Referee Selection & Impact Levers */}
           <div>
             <div className="flex justify-between text-xs font-semibold mb-1.5">
-              <span className="text-pl-text-secondary">Assigned Match Referee</span>
-              <span className="text-pl-cyan font-bold">{selectedReferee.yellows} 🟨/game (Rating: {selectedReferee.strictness})</span>
+              <span className="text-cohere-ink">Assigned Match Referee</span>
+              <span className="text-cohere-coral font-bold">{selectedReferee.yellows} 🟨/game (Rating: {selectedReferee.strictness})</span>
             </div>
             <select
               value={selectedReferee.name}
@@ -425,7 +425,7 @@ export default function MatchPredictorPage() {
                 const found = REFEREE_OPTIONS.find((r) => r.name === e.target.value);
                 if (found) setSelectedReferee(found);
               }}
-              className="pl-search w-full"
+              className="cohere-input w-full cursor-pointer font-medium bg-white text-cohere-ink border border-cohere-hairline rounded-sm px-3 py-2"
             >
               {REFEREE_OPTIONS.map((r) => (
                 <option key={r.name} value={r.name}>
@@ -439,26 +439,26 @@ export default function MatchPredictorPage() {
         {/* Right: Outcome */}
         <div className="lg:col-span-6 space-y-5">
           {/* Hero */}
-          <div className="pl-card bg-gradient-to-br from-pl-purple/90 via-slate-900 to-slate-950 border border-pl-green/30 p-6 shadow-2xl relative overflow-hidden">
-            <div className="stat-label">Projected Match Result</div>
-            <div className="text-stat-xl text-gradient-pl mt-2 font-black tracking-tight">
+          <div className="agent-console-card p-6 relative overflow-hidden">
+            <div className="text-xs uppercase font-mono tracking-wider font-bold text-cohere-muted">Projected Match Result</div>
+            <div className="text-3xl sm:text-4xl text-cohere-coral mt-2 font-display font-medium tracking-tight">
               {prediction ? prediction.predicted_outcome : "Simulating..."}
             </div>
-            <div className="text-xs text-pl-text-muted mt-2 flex items-center gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-pl-green" />
+            <div className="text-xs text-white/70 mt-2 flex items-center gap-1.5">
+              <CheckCircle className="w-3.5 h-3.5 text-cohere-coral" />
               Model Confidence: {prediction ? `${prediction.confidence}%` : "—%"}
             </div>
           </div>
 
           {/* Probability Bars */}
-          <div className="pl-card space-y-5 bg-slate-900/60 border-white/10">
-            <div className="text-sm font-bold text-white flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-pl-green" /> Calibrated Probability Breakdown
+          <div className="cohere-card-white space-y-5">
+            <div className="text-sm font-bold text-cohere-primary flex items-center gap-2">
+              <BarChart2 className="w-4 h-4 text-cohere-coral" /> Calibrated Probability Breakdown
             </div>
 
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5 items-center">
-                <span className="text-pl-green font-bold flex items-center gap-1.5">
+                <span className="text-cohere-coral font-bold flex items-center gap-1.5">
                   <Image
                     src={getClubCrest(homeTeam)}
                     alt={homeTeam}
@@ -468,11 +468,11 @@ export default function MatchPredictorPage() {
                   />
                   <span>{homeTeam} Win</span>
                 </span>
-                <span className="text-pl-green font-extrabold">{pHome}%</span>
+                <span className="text-cohere-coral font-extrabold">{pHome}%</span>
               </div>
-              <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
+              <div className="h-3 w-full bg-cohere-soft-stone rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-pl-green rounded-full shadow-lg shadow-pl-green/20"
+                  className="h-full bg-cohere-coral rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${pHome}%` }}
                   transition={{ duration: 0.5 }}
@@ -482,17 +482,17 @@ export default function MatchPredictorPage() {
 
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5 items-center">
-                <span className="text-pl-cyan font-bold flex items-center gap-1.5">
-                  <span className="w-4 h-4 rounded-full bg-pl-cyan/20 flex items-center justify-center text-[10px] text-pl-cyan font-black">
+                <span className="text-cohere-ink font-bold flex items-center gap-1.5">
+                  <span className="w-4 h-4 rounded-full bg-cohere-hairline flex items-center justify-center text-[10px] text-cohere-ink font-black">
                     =
                   </span>
                   <span>Draw</span>
                 </span>
-                <span className="text-pl-cyan font-extrabold">{pDraw}%</span>
+                <span className="text-cohere-ink font-extrabold">{pDraw}%</span>
               </div>
-              <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
+              <div className="h-3 w-full bg-cohere-soft-stone rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-pl-cyan rounded-full shadow-lg shadow-pl-cyan/20"
+                  className="h-full bg-cohere-slate rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${pDraw}%` }}
                   transition={{ duration: 0.5 }}
@@ -502,7 +502,7 @@ export default function MatchPredictorPage() {
 
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5 items-center">
-                <span className="text-pl-magenta font-bold flex items-center gap-1.5">
+                <span className="text-cohere-action-blue font-bold flex items-center gap-1.5">
                   <Image
                     src={getClubCrest(awayTeam)}
                     alt={awayTeam}
@@ -512,11 +512,11 @@ export default function MatchPredictorPage() {
                   />
                   <span>{awayTeam} Win</span>
                 </span>
-                <span className="text-pl-magenta font-extrabold">{pAway}%</span>
+                <span className="text-cohere-action-blue font-extrabold">{pAway}%</span>
               </div>
-              <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
+              <div className="h-3 w-full bg-cohere-soft-stone rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-pl-magenta rounded-full shadow-lg shadow-pl-magenta/20"
+                  className="h-full bg-cohere-action-blue rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${pAway}%` }}
                   transition={{ duration: 0.5 }}

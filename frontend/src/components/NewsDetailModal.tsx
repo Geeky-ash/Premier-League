@@ -1,15 +1,21 @@
 "use client";
 
 import React from "react";
-import { X, Calendar, Share2, ArrowRight } from "lucide-react";
-import { getClubCrest } from "@/lib/logos";
+import Image from "next/image";
+import { X, Calendar, Share2, ExternalLink, Globe } from "lucide-react";
+import { getGlobalClubCrest } from "@/lib/logos";
 
 export interface NewsItem {
+  id?: string;
   club: string;
   headline: string;
   summary: string;
-  date: string;
+  date?: string;
+  pub_date?: string;
+  timestamp?: string;
   category: string;
+  source?: string;
+  link?: string;
 }
 
 interface Props {
@@ -20,68 +26,103 @@ interface Props {
 export default function NewsDetailModal({ news, onClose }: Props) {
   if (!news) return null;
 
+  const displayTime = news.timestamp || news.date || "Just now";
+  const displaySource = news.source || "World Football Press";
+
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in"
+      onClick={onClose}
+    >
       <div
-        className="w-full max-w-lg mx-4 bg-pl-dark rounded-pl-lg border border-pl-border shadow-2xl overflow-hidden animate-slide-up"
+        className="w-full max-w-lg bg-white rounded-lg border border-[#e5e7eb] shadow-2xl overflow-hidden animate-slide-up font-body text-cohere-ink"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Banner with club crest */}
-        <div className="relative p-6 bg-pl-gradient flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src={getClubCrest(news.club, 70)}
-              alt={news.club}
-              className="w-12 h-12 object-contain drop-shadow"
-            />
+        {/* Header Ribbon with club badge */}
+        <div className="relative p-6 bg-cohere-soft-stone border-b border-cohere-hairline flex items-center justify-between">
+          <div className="flex items-center gap-3.5">
+            <div className="relative w-12 h-12 shrink-0 flex items-center justify-center bg-white rounded-md p-1 border border-cohere-hairline shadow-2xs">
+              <Image
+                src={getGlobalClubCrest(news.club)}
+                alt={news.club}
+                width={40}
+                height={40}
+                className="object-contain"
+                unoptimized
+              />
+            </div>
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-black/30 text-pl-green">
+              <span className="inline-block px-2.5 py-0.5 rounded-xs font-mono text-[11px] uppercase tracking-wider font-semibold text-white bg-cohere-coral">
                 {news.category}
               </span>
-              <div className="text-sm font-extrabold text-white mt-1">
+              <div className="text-base font-bold text-cohere-primary mt-1 font-display tracking-tight">
                 {news.club}
               </div>
             </div>
           </div>
           <button
+            type="button"
             onClick={onClose}
-            className="p-1.5 rounded-full bg-black/20 text-white/80 hover:text-white hover:bg-black/40 transition-colors"
+            className="p-1.5 rounded-full text-cohere-muted hover:text-cohere-ink hover:bg-cohere-hairline/60 transition-colors"
+            title="Close"
           >
             <X size={18} />
           </button>
         </div>
 
-        {/* Content */}
+        {/* Content Body */}
         <div className="p-6 space-y-4">
-          <div className="flex items-center gap-2 text-xs text-pl-text-muted">
-            <Calendar size={13} />
-            <span>{news.date}</span>
+          <div className="flex items-center gap-2 text-xs font-mono text-cohere-muted">
+            <Globe size={13} className="text-cohere-coral" />
+            <span className="font-medium text-cohere-primary">{displaySource}</span>
             <span>•</span>
-            <span>Official Premier League Club Bulletin</span>
+            <Calendar size={13} />
+            <span>{displayTime}</span>
           </div>
 
-          <h3 className="text-xl font-extrabold text-white leading-tight">
+          <h3 className="text-xl font-display font-bold text-cohere-primary leading-snug">
             {news.headline}
           </h3>
 
-          <p className="text-sm text-pl-text-secondary leading-relaxed">
+          <p className="text-sm text-cohere-body-muted leading-relaxed font-body">
             {news.summary}
           </p>
 
-          <div className="pt-4 border-t border-pl-border flex items-center justify-between">
+          {/* Action Row */}
+          <div className="pt-4 border-t border-cohere-hairline flex items-center justify-between gap-3">
+            {news.link ? (
+              <a
+                href={news.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary bg-[#17171c] hover:bg-black text-white rounded-pill px-6 py-2.5 text-sm font-medium inline-flex items-center gap-2 transition-colors"
+              >
+                <span>Read Full Story</span>
+                <ExternalLink size={14} />
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={onClose}
+                className="button-primary bg-[#17171c] hover:bg-black text-white rounded-pill px-6 py-2.5 text-sm font-medium transition-colors"
+              >
+                Close Story
+              </button>
+            )}
+
             <button
-              onClick={onClose}
-              className="pl-btn-white text-xs py-2 px-5"
-            >
-              Continue to Analytics <ArrowRight size={13} />
-            </button>
-            <button
+              type="button"
               onClick={() => {
                 if (navigator.share) {
-                  navigator.share({ title: news.headline, text: news.summary, url: window.location.href });
+                  navigator.share({
+                    title: news.headline,
+                    text: news.summary,
+                    url: news.link || window.location.href,
+                  }).catch(() => {});
                 }
               }}
-              className="p-2 text-pl-text-muted hover:text-white transition-colors"
+              className="p-2 text-cohere-slate hover:text-cohere-ink rounded-full hover:bg-cohere-soft-stone transition-colors"
+              title="Share headline"
             >
               <Share2 size={16} />
             </button>

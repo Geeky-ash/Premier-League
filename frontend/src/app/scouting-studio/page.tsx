@@ -22,15 +22,14 @@ import {
   Award,
   ExternalLink,
   Sparkles,
-  TrendingUp,
 } from "lucide-react";
 import PlayerDetailDrawer from "@/components/PlayerDetailDrawer";
 
 const CLUSTER_PALETTE: Record<number, string> = {
-  0: "#00ff85",
-  1: "#00d4ff",
-  2: "#e90052",
-  3: "#fdb913",
+  0: "#003c33",
+  1: "#1863dc",
+  2: "#ff7759",
+  3: "#75758a",
 };
 
 const FEATURED_SCOUT_STARS = [
@@ -111,30 +110,31 @@ export default function ScoutingStudioPage() {
   const currentTargetRecord = players.find((p) => p.name === selectedPlayer);
 
   return (
-    <div className="space-y-8 animate-fade-in">
-      {/* Header */}
-      <div>
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-pl-green">
-          <Compass className="w-4 h-4" /> Module 03 // Unsupervised Scouting Intelligence
+    <div className="space-y-10 animate-fade-in font-body">
+      {/* ── Header ── */}
+      <div className="space-y-2">
+        <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-cohere-coral">
+          <Compass className="w-4 h-4" />
+          <span>Module 03 // Unsupervised Clustering Suite</span>
         </div>
-        <h2 className="text-2xl font-extrabold text-white tracking-tight mt-1">
+        <h2 className="font-display text-3xl sm:text-5xl font-normal text-cohere-primary tracking-tight">
           Player Scouting Studio
         </h2>
-        <p className="text-sm text-pl-text-muted mt-1">
+        <p className="text-sm sm:text-base text-cohere-body-muted max-w-3xl leading-relaxed">
           Cluster tactical playing styles via K-Means and uncover statistical twins with multi-dimensional Euclidean similarity metrics.
         </p>
       </div>
 
-      {/* Featured Scouting Presets */}
-      <div className="pl-card p-4 bg-slate-900/60 border-white/10">
-        <div className="text-xs font-bold text-pl-text-muted uppercase tracking-wider mb-2.5 flex items-center justify-between">
-          <span className="flex items-center gap-1.5">
-            <Sparkles size={14} className="text-pl-cyan" />
+      {/* ── Featured Scouting Benchmarks ── */}
+      <div className="cohere-card-white p-5">
+        <div className="text-xs font-mono text-cohere-muted uppercase tracking-wider mb-3 flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-cohere-primary">
+            <Sparkles size={14} className="text-cohere-coral" />
             Quick Scouting Benchmarks
           </span>
-          <span className="text-[11px] text-pl-cyan font-normal">Click to scout twin profile</span>
+          <span className="text-[11px] text-cohere-action-blue font-medium">Click to scout twin profile</span>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {FEATURED_SCOUT_STARS.map((starName) => {
             const isSelected = selectedPlayer === starName;
             const p = players.find((item) => item.name === starName);
@@ -143,13 +143,13 @@ export default function ScoutingStudioPage() {
                 key={starName}
                 type="button"
                 onClick={() => setSelectedPlayer(starName)}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all ${
                   isSelected
-                    ? "bg-pl-purple border-pl-green text-white shadow-lg shadow-pl-green/20"
-                    : "bg-slate-950/40 border-white/10 hover:border-white/25 text-slate-300"
+                    ? "bg-cohere-primary text-white border-cohere-primary shadow-sm"
+                    : "bg-white border-cohere-hairline hover:border-cohere-primary text-cohere-body-muted hover:text-cohere-primary"
                 }`}
               >
-                <div className="relative w-5 h-5 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                <div className="relative w-5 h-5 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone">
                   <Image
                     src={getPlayerPhoto(starName)}
                     alt={starName}
@@ -175,24 +175,24 @@ export default function ScoutingStudioPage() {
         </div>
       </div>
 
-      {/* Search / Selector */}
-      <div className="pl-card bg-slate-900/60 border-white/10">
+      {/* ── Search / Selector ── */}
+      <div className="cohere-card-white p-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
           <div className="md:col-span-5 relative">
-            <Search className="w-4 h-4 text-pl-text-muted absolute left-3.5 top-3.5" />
+            <Search className="w-4 h-4 text-cohere-muted absolute left-3.5 top-3.5" />
             <input
               type="text"
               placeholder="Search by player name or club..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-search pl-10 w-full"
+              className="cohere-input pl-10 w-full"
             />
           </div>
           <div className="md:col-span-7">
             <select
               value={selectedPlayer}
               onChange={(e) => setSelectedPlayer(e.target.value)}
-              className="pl-search font-semibold w-full"
+              className="cohere-input font-medium w-full cursor-pointer"
             >
               {filteredPlayers.map((p) => (
                 <option key={p.player_id} value={p.name}>
@@ -204,11 +204,11 @@ export default function ScoutingStudioPage() {
         </div>
       </div>
 
-      {/* Target Hero */}
-      <div className="pl-card bg-gradient-to-br from-pl-purple/90 via-slate-900 to-slate-950 border border-pl-green/30 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden shadow-2xl">
+      {/* ── Target Hero: Cohere Product Card ── */}
+      <div className="product-card flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-center gap-5">
           <div
-            className="relative w-20 h-20 rounded-full shrink-0 border-2 border-white/25 overflow-hidden bg-slate-900 shadow-xl cursor-pointer group"
+            className="relative w-20 h-20 rounded-full shrink-0 border-2 border-white overflow-hidden bg-white shadow-md cursor-pointer group"
             onClick={() => {
               if (currentTargetRecord) setDrawerPlayer(currentTargetRecord);
             }}
@@ -223,7 +223,7 @@ export default function ScoutingStudioPage() {
               unoptimized
             />
             {scoutData?.club && (
-              <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-slate-950 p-1 border border-white/20">
+              <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white p-1 border border-cohere-hairline shadow-sm">
                 <Image
                   src={getClubCrest(scoutData.club)}
                   alt={scoutData.club}
@@ -235,31 +235,35 @@ export default function ScoutingStudioPage() {
               </div>
             )}
           </div>
-          <div>
-            <div className="stat-label">Target Tactical Profile</div>
-            <div className="text-2xl sm:text-3xl font-black text-white mt-0.5 tracking-tight flex items-center gap-2">
+          <div className="space-y-1">
+            <div className="font-mono text-[10px] uppercase tracking-wider text-cohere-coral">
+              Target Tactical Profile
+            </div>
+            <div className="font-display text-2xl sm:text-3xl font-normal text-cohere-primary tracking-tight flex items-center gap-2">
               <span>{scoutData?.target_player || selectedPlayer}</span>
               {currentTargetRecord && (
                 <button
                   type="button"
                   onClick={() => setDrawerPlayer(currentTargetRecord)}
-                  className="text-pl-cyan hover:text-white transition-colors"
+                  className="text-cohere-action-blue hover:text-cohere-primary transition-colors"
                   title="View full dossier"
                 >
                   <ExternalLink size={16} />
                 </button>
               )}
             </div>
-            <div className="text-xs text-pl-text-muted mt-1 flex items-center gap-2 flex-wrap">
-              <span className="font-semibold text-slate-300">{scoutData?.club}</span>
+            <div className="text-xs text-cohere-body-muted flex items-center gap-2 flex-wrap">
+              <span className="font-medium text-cohere-primary">{scoutData?.club}</span>
               <span>•</span>
-              <span className="pos-badge">{scoutData?.position}</span>
+              <span className="px-2 py-0.5 rounded-xs bg-white border border-cohere-hairline font-mono text-[10px] text-cohere-primary">
+                {scoutData?.position}
+              </span>
               {currentTargetRecord && (
                 <>
                   <span>•</span>
                   <span>Age {currentTargetRecord.age}</span>
                   <span>•</span>
-                  <span className="text-pl-green font-bold">
+                  <span className="text-cohere-coral font-medium">
                     €{currentTargetRecord.market_value_eur_m}M
                   </span>
                 </>
@@ -269,13 +273,13 @@ export default function ScoutingStudioPage() {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
-          <div className="px-4 py-2.5 rounded-xl bg-pl-green/15 border border-pl-green/40 text-pl-green font-bold text-sm flex items-center gap-2.5 shadow-lg shadow-pl-green/10">
-            <Award className="w-5 h-5 text-pl-green" />
+          <div className="px-5 py-3 rounded-md bg-white border border-cohere-hairline text-cohere-primary flex items-center gap-3 shadow-sm">
+            <Award className="w-5 h-5 text-cohere-coral" />
             <div>
-              <div className="text-[10px] uppercase font-bold text-pl-text-muted tracking-wider">
+              <div className="font-mono text-[10px] uppercase text-cohere-muted tracking-wider">
                 Cluster Archetype
               </div>
-              <div className="text-sm font-black text-white">
+              <div className="font-display text-base font-normal text-cohere-primary">
                 {scoutData?.cluster_archetype || "Analyzing..."}
               </div>
             </div>
@@ -283,22 +287,23 @@ export default function ScoutingStudioPage() {
         </div>
       </div>
 
-      {/* 2-Column: Twins + PCA Chart */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left: Twins */}
+      {/* ── 2-Column: Twins + PCA Chart ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left: Top 5 Twins */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="text-sm font-bold text-white flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-pl-green" /> Top 5 Statistical Twins (Euclidean Distance)
+          <div className="flex items-center justify-between pb-2 border-b border-cohere-hairline">
+            <div className="font-display text-base font-normal text-cohere-primary flex items-center gap-2">
+              <Users className="w-4 h-4 text-cohere-coral" />
+              <span>Top 5 Statistical Twins (Euclidean Distance)</span>
             </div>
-            {loading && <span className="text-xs text-pl-green animate-pulse">Matching...</span>}
+            {loading && <span className="text-xs font-mono text-cohere-coral animate-pulse">Computing...</span>}
           </div>
 
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {(scoutData?.top_twins || []).map((twin, idx) => (
               <div
                 key={twin.name}
-                className="pl-card p-3.5 bg-slate-900/60 border-white/10 hover:border-pl-green/50 transition-all cursor-pointer flex items-center justify-between group rounded-xl"
+                className="cohere-card-white p-4 hover:border-cohere-primary transition-all cursor-pointer flex items-center justify-between group rounded-sm shadow-sm"
                 onClick={() => {
                   const found = players.find((p) => p.name === twin.name);
                   if (found) {
@@ -323,10 +328,10 @@ export default function ScoutingStudioPage() {
                 }}
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-bold text-xs text-pl-text-muted shrink-0">
-                    #{idx + 1}
+                  <div className="font-mono text-xs text-cohere-muted w-5 text-center shrink-0">
+                    0{idx + 1}
                   </div>
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-white/20 bg-slate-800">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-cohere-hairline bg-cohere-soft-stone">
                     <Image
                       src={getPlayerPhoto(twin.name)}
                       alt={twin.name}
@@ -335,7 +340,7 @@ export default function ScoutingStudioPage() {
                       className="w-full h-full object-cover object-top"
                       unoptimized
                     />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-slate-950 p-0.5 border border-white/20">
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-white p-0.5 border border-cohere-hairline">
                       <Image
                         src={getClubCrest(twin.club)}
                         alt={twin.club}
@@ -347,25 +352,27 @@ export default function ScoutingStudioPage() {
                     </div>
                   </div>
                   <div className="min-w-0">
-                    <div className="font-bold text-sm text-white group-hover:text-pl-cyan transition-colors flex items-center gap-1.5 truncate">
+                    <div className="font-medium text-sm text-cohere-primary group-hover:text-cohere-action-blue transition-colors flex items-center gap-1.5 truncate">
                       <span className="truncate">{twin.name}</span>
-                      <span className="pos-badge shrink-0">{twin.position}</span>
+                      <span className="px-1.5 py-0.2 rounded-xs text-[10px] font-mono bg-cohere-soft-stone text-cohere-ink shrink-0">
+                        {twin.position}
+                      </span>
                     </div>
-                    <div className="text-xs text-pl-text-muted truncate flex items-center gap-1 mt-0.5">
+                    <div className="text-xs text-cohere-body-muted truncate flex items-center gap-1.5 mt-0.5">
                       <span>{twin.club}</span>
                       <span>•</span>
                       <span>Age {twin.age}</span>
                       <span>•</span>
-                      <span className="text-pl-green font-semibold">€{twin.valuation_eur_m}M</span>
+                      <span className="text-cohere-coral font-medium">€{twin.valuation_eur_m}M</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="text-right shrink-0 pl-2">
-                  <div className="text-base font-extrabold text-pl-green">
+                <div className="text-right shrink-0 pl-3">
+                  <div className="font-display text-lg font-normal text-cohere-primary">
                     {twin.similarity_pct.toFixed(1)}%
                   </div>
-                  <div className="text-[10px] uppercase font-semibold text-pl-text-muted">
+                  <div className="font-mono text-[10px] uppercase text-cohere-muted">
                     Match Affinity
                   </div>
                 </div>
@@ -374,34 +381,42 @@ export default function ScoutingStudioPage() {
           </div>
         </div>
 
-        {/* Right: PCA Chart */}
-        <div className="lg:col-span-6 pl-card space-y-4 bg-slate-900/60 border-white/10">
-          <div className="flex items-center justify-between">
-            <div className="text-sm font-bold text-white flex items-center gap-2">
-              <Target className="w-4 h-4 text-pl-green" /> 2D PCA Tactical Map (All 4 Clusters)
+        {/* Right: PCA Chart in Agent Console Dark Card */}
+        <div className="lg:col-span-6 agent-console-card space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <div className="text-sm font-display text-white flex items-center gap-2">
+              <Target className="w-4 h-4 text-cohere-coral" />
+              <span>2D PCA Tactical Map (All 4 Clusters)</span>
             </div>
-            <div className="flex items-center gap-2 text-[10px] text-pl-text-muted">
-              <span className="inline-block w-2 h-2 rounded-full bg-pl-green" /> Finishers
-              <span className="inline-block w-2 h-2 rounded-full bg-pl-cyan" /> Creators
-              <span className="inline-block w-2 h-2 rounded-full bg-pl-magenta" /> Anchors
+            <div className="flex items-center gap-3 text-[11px] font-mono text-cohere-muted">
+              <span className="flex items-center gap-1">
+                <span className="inline-block w-2 h-2 rounded-full bg-cohere-coral" /> Finishers
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="inline-block w-2 h-2 rounded-full bg-cohere-action-blue" /> Creators
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="inline-block w-2 h-2 rounded-full bg-cohere-deep-green" /> Anchors
+              </span>
             </div>
           </div>
+
           <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 10 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.07)" />
-                <XAxis type="number" dataKey="x" name="PC1" stroke="#fff6" fontSize={11} />
-                <YAxis type="number" dataKey="y" name="PC2" stroke="#fff6" fontSize={11} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                <XAxis type="number" dataKey="x" name="PC1" stroke="#93939f" fontSize={11} />
+                <YAxis type="number" dataKey="y" name="PC2" stroke="#93939f" fontSize={11} />
                 <Tooltip
                   content={({ payload }) => {
                     if (!payload?.length) return null;
                     const pt = payload[0].payload;
                     return (
-                      <div className="bg-slate-900 border border-white/20 p-2.5 rounded-xl text-xs shadow-2xl">
-                        <div className="font-bold text-white">{pt.name}</div>
-                        <div className="text-pl-text-secondary">{pt.club}</div>
-                        <div className="text-pl-green font-semibold">{pt.archetype}</div>
-                        <div className="text-[10px] text-pl-cyan mt-1">Click dot to open dossier</div>
+                      <div className="bg-cohere-primary border border-white/20 p-3 rounded-sm text-xs shadow-2xl text-white space-y-1">
+                        <div className="font-bold">{pt.name}</div>
+                        <div className="text-cohere-muted">{pt.club}</div>
+                        <div className="text-cohere-coral font-medium">{pt.archetype}</div>
+                        <div className="text-[10px] font-mono text-cohere-slate">Click dot to open dossier</div>
                       </div>
                     );
                   }}
@@ -414,14 +429,14 @@ export default function ScoutingStudioPage() {
                   {clusterPoints.map((entry, i) => (
                     <Cell
                       key={`c-${i}`}
-                      fill={CLUSTER_PALETTE[entry.cluster] || "#94A3B8"}
-                      opacity={0.55}
+                      fill={CLUSTER_PALETTE[entry.cluster] || "#93939f"}
+                      opacity={0.65}
                     />
                   ))}
                 </Scatter>
                 <Scatter
                   data={targetPoint}
-                  fill="#00ff85"
+                  fill="#ff7759"
                   shape="star"
                   onClick={handleScatterClick}
                 />

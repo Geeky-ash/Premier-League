@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   X,
   TrendingUp,
@@ -25,16 +26,6 @@ interface Props {
   onClose: () => void;
   onCompareWith?: (twinName: string) => void;
 }
-
-const CLUB_COLORS: Record<string, string> = {
-  Arsenal: "#ef0107", Chelsea: "#034694", "Manchester City": "#6cabdd",
-  "Manchester United": "#d81920", Liverpool: "#c8102e", "Tottenham Hotspur": "#132257",
-  "Newcastle United": "#241f20", "Aston Villa": "#670e36", Brighton: "#0057b8",
-  "West Ham United": "#7a263a", Wolves: "#fdb913", Bournemouth: "#da291c",
-  Fulham: "#000000", "Crystal Palace": "#1b458f", Brentford: "#e30613",
-  Everton: "#003399", "Nottingham Forest": "#dd0000", Leicester: "#003090",
-  Ipswich: "#0044aa", Southampton: "#d71920",
-};
 
 export default function PlayerDetailDrawer({ player, open, onClose, onCompareWith }: Props) {
   const [transferData, setTransferData] = useState<TransferPredictResponse | null>(null);
@@ -70,35 +61,27 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
 
   if (!open || !player) return null;
 
-  const clubColor = CLUB_COLORS[player.club] || "#38003c";
-
   return (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Drawer Panel */}
-      <div className="drawer-panel animate-slide-right z-50">
-        {/* Hero Header with Club Color & Official Player Cutout */}
-        <div
-          className="relative p-6 pb-8 border-b border-pl-border"
-          style={{
-            background: `linear-gradient(135deg, ${clubColor}cc 0%, #240024 70%, #190019 100%)`,
-          }}
-        >
+      <div className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white border-l border-cohere-hairline shadow-2xl z-50 overflow-y-auto animate-slide-right font-body text-cohere-ink">
+        {/* Hero Header */}
+        <div className="relative p-6 bg-cohere-soft-stone border-b border-cohere-hairline">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-black/30 text-white/70 hover:text-white transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-full text-cohere-muted hover:text-cohere-ink transition-colors"
           >
             <X size={18} />
           </button>
 
-          <div className="flex items-end gap-5">
-            {/* Player Headshot Cutout */}
-            <div className="relative w-24 h-24 rounded-full bg-black/30 border-2 border-white/20 p-1 shrink-0 overflow-hidden shadow-2xl">
+          <div className="flex items-center gap-4">
+            <div className="relative w-20 h-20 rounded-full bg-white border border-cohere-hairline shrink-0 overflow-hidden shadow-sm">
               <img
                 src={getPlayerPhoto(player.name)}
                 alt={player.name}
@@ -109,27 +92,27 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
               />
             </div>
 
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1.5 mb-1">
                 <img
                   src={getClubCrest(player.club, 50)}
                   alt={player.club}
-                  className="w-5 h-5 object-contain drop-shadow"
+                  className="w-4 h-4 object-contain"
                 />
-                <span className="text-xs font-bold text-white/90 uppercase tracking-wider">
+                <span className="text-xs font-mono font-bold text-cohere-slate uppercase tracking-wider truncate">
                   {player.club}
                 </span>
               </div>
-              <h2 className="text-2xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-2xl font-display font-medium text-cohere-primary tracking-tight truncate">
                 {player.name}
               </h2>
-              <p className="text-xs text-white/75 mt-1 font-medium">
+              <p className="text-xs text-cohere-slate font-mono mt-0.5">
                 {player.position} · Age {player.age} · {player.minutes_played.toLocaleString()} mins
               </p>
               <div className="mt-2.5 flex items-center gap-2">
-                <span className="pos-badge bg-black/40 text-white font-bold">{player.position}</span>
+                <span className="chip-coral font-mono text-[10px]">{player.position}</span>
                 {player.cluster_archetype && (
-                  <span className="pos-badge bg-pl-cyan/25 text-pl-cyan font-bold border border-pl-cyan/40">
+                  <span className="chip-pale-green font-mono text-[10px]">
                     {player.cluster_archetype}
                   </span>
                 )}
@@ -140,9 +123,9 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
 
         {/* Season Performance Grid */}
         <div className="p-6">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3 flex items-center justify-between">
+          <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-cohere-slate mb-3 flex items-center justify-between">
             <span>Season Performance</span>
-            <span className="text-[10px] text-pl-green font-semibold">Premier League 2024/25</span>
+            <span className="text-[10px] text-cohere-coral">Premier League 2024/25</span>
           </h3>
           <div className="grid grid-cols-3 gap-3">
             {[
@@ -153,9 +136,9 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
               { label: "Pass %", value: `${player.pass_completion}%`, icon: Users },
               { label: "Tackles", value: player.tackles_interceptions, icon: Users },
             ].map((s) => (
-              <div key={s.label} className="pl-card p-3 text-center border-pl-border/60">
-                <div className="text-stat-md text-white">{s.value}</div>
-                <div className="stat-label mt-1">{s.label}</div>
+              <div key={s.label} className="p-3 text-center rounded-sm bg-cohere-soft-stone/40 border border-cohere-hairline">
+                <div className="text-lg font-mono font-bold text-cohere-primary">{s.value}</div>
+                <div className="text-[10px] font-mono font-semibold text-cohere-slate mt-0.5 uppercase">{s.label}</div>
               </div>
             ))}
           </div>
@@ -163,37 +146,37 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
 
         {/* ML Transfer Valuation */}
         <div className="px-6 pb-6">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3">
+          <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-cohere-slate mb-3">
             Machine Learning Valuation
           </h3>
-          <div className="pl-card bg-pl-card-gradient border-pl-green/30">
+          <div className="agent-console-card p-5">
             {loading ? (
-              <p className="text-sm text-pl-text-muted text-center py-4 animate-pulse">
+              <p className="text-xs font-mono text-white/70 text-center py-4 animate-pulse">
                 Evaluating Scikit-learn OLS pipeline...
               </p>
             ) : transferData ? (
               <div className="text-center">
-                <div className="text-stat-xl text-pl-green font-extrabold tracking-tight">
+                <div className="text-3xl font-display font-medium text-cohere-coral tracking-tight">
                   €{transferData.valuation_eur_m.toFixed(1)}M
                 </div>
-                <div className="stat-label mt-1 text-pl-text-muted">Estimated Market Value</div>
-                <div className="mt-4 grid grid-cols-2 gap-3 text-sm pt-3 border-t border-pl-border">
+                <div className="text-[11px] font-mono text-white/70 mt-1 uppercase">Estimated Market Value</div>
+                <div className="mt-4 grid grid-cols-2 gap-3 text-sm pt-3 border-t border-white/10 font-mono">
                   <div className="text-center">
-                    <div className="text-base font-bold text-white">
+                    <div className="text-sm font-bold text-white">
                       {(transferData.r2_score * 100).toFixed(0)}%
                     </div>
-                    <div className="stat-label text-[10px]">Holdout R² Confidence</div>
+                    <div className="text-[10px] text-white/60">Holdout R²</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-base font-bold text-white">
+                    <div className="text-sm font-bold text-white">
                       ±€{transferData.mae_score.toFixed(1)}M
                     </div>
-                    <div className="stat-label text-[10px]">MAE Error Margin</div>
+                    <div className="text-[10px] text-white/60">MAE Margin</div>
                   </div>
                 </div>
               </div>
             ) : (
-              <p className="text-sm text-pl-text-muted text-center py-4">
+              <p className="text-xs font-mono text-white/60 text-center py-4">
                 Valuation currently unavailable
               </p>
             )}
@@ -202,11 +185,11 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
 
         {/* Top 5 Statistical Twins with Club Badges */}
         <div className="px-6 pb-8">
-          <h3 className="text-xs uppercase tracking-widest text-pl-text-muted font-bold mb-3">
+          <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-cohere-slate mb-3">
             Top 5 Statistical Twins (K-Means Similarity)
           </h3>
           {loading ? (
-            <p className="text-sm text-pl-text-muted text-center py-4 animate-pulse">
+            <p className="text-xs font-mono text-cohere-muted text-center py-4 animate-pulse">
               Computing Euclidean distances in PCA space...
             </p>
           ) : scoutData && scoutData.top_twins.length > 0 ? (
@@ -214,30 +197,29 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
               {scoutData.top_twins.map((twin, i) => (
                 <div
                   key={twin.name}
-                  className="flex items-center gap-3 px-4 py-3 rounded-pl bg-pl-purple border border-pl-border hover:border-pl-cyan transition-colors"
+                  className="flex items-center gap-3 px-3.5 py-2.5 rounded-sm bg-cohere-soft-stone/40 border border-cohere-hairline hover:border-cohere-coral transition-colors"
                 >
-                  <span className="text-xs font-bold text-pl-cyan w-5">
+                  <span className="text-xs font-mono font-bold text-cohere-coral w-5">
                     #{i + 1}
                   </span>
-                  {/* Twin Club Crest */}
                   <img
                     src={getClubCrest(twin.club, 50)}
                     alt={twin.club}
-                    className="w-7 h-7 object-contain shrink-0"
+                    className="w-6 h-6 object-contain shrink-0"
                   />
-                  <div className="flex-1">
-                    <div className="text-xs font-bold text-white">
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-bold text-cohere-primary truncate">
                       {twin.name}
                     </div>
-                    <div className="text-[10px] text-pl-text-muted">
+                    <div className="text-[10px] font-mono text-cohere-slate truncate">
                       {twin.club} · {twin.position} · Age {twin.age}
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-xs font-extrabold text-pl-green">
+                  <div className="text-right font-mono">
+                    <div className="text-xs font-bold text-cohere-primary">
                       {twin.similarity_pct.toFixed(1)}%
                     </div>
-                    <div className="text-[9px] text-pl-text-muted uppercase font-semibold">
+                    <div className="text-[9px] text-cohere-muted uppercase font-semibold">
                       SIMILARITY
                     </div>
                   </div>
@@ -245,7 +227,7 @@ export default function PlayerDetailDrawer({ player, open, onClose, onCompareWit
               ))}
             </div>
           ) : (
-            <p className="text-sm text-pl-text-muted text-center py-4">
+            <p className="text-xs font-mono text-cohere-muted text-center py-4">
               No similarity vectors found
             </p>
           )}
