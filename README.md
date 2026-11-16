@@ -4,6 +4,62 @@ A production-grade, full-stack football intelligence and calibrated predictive a
 
 ---
 
+## 📸 Visual Tour — New UI (Google Stitch Enterprise 2026)
+
+All 17 application pages have been rebuilt to match our Google Stitch design specifications 1:1, featuring the Cohere 2026 design system, 3-tier header stack, and tactical football analytics visualizers. Full-resolution retina screenshots for all pages are maintained in the [`screenshots/new_ui/`](screenshots/new_ui/) directory.
+
+### 1. Live Matchday & Command Hub
+| Matchday Hub (`/`) | Worldwide Fixtures (`/fixtures`) |
+| :---: | :---: |
+| ![Matchday Hub](screenshots/new_ui/01_matchday_hub.png) | ![Worldwide Fixtures](screenshots/new_ui/02_fixtures.png) |
+| *Stitch Screen 02: 3-tier header, live news marquee, 3-column tactical workspace with 11v11 pitch & Telemetry Syndicate* | *Comprehensive 10-league calendar workspace with in-play status filters and model confidence* |
+
+### 2. Tactical Studios & Pitch Simulators
+| Dugout Tablet Tactical View (`/dugout`) | Substitution Timeline Simulation (`/simulation`) |
+| :---: | :---: |
+| ![Dugout View](screenshots/new_ui/05_dugout_tactical.png) | ![Substitution Simulation](screenshots/new_ui/07_substitution_simulation.png) |
+| *Stitch Screen 07: Touchline touchscreen view with 22-man player trajectory vectors and defensive line controls* | *Stitch Screen 08: Monte Carlo substitution engine with projected $\Delta\text{xG}$ delta calculations* |
+
+| Match Outcome Forecaster (`/match-predictor`) | Tactical Scouting Studio (`/scouting-studio`) |
+| :---: | :---: |
+| ![Match Predictor](screenshots/new_ui/08_match_predictor.png) | ![Scouting Studio](screenshots/new_ui/06_scouting_studio.png) |
+| *Stitch Screen 09: XGBoost multi-class win probability with interactive 11v11 Pitch Canvas* | *Unsupervised K-Means clustering ($k=4$) with Euclidean distance statistical twin finder* |
+
+### 3. Machine Learning & Disciplinary Intelligence
+| Transfer Value Predictor (`/transfer-predictor`) | Disciplinary & Foul Webhooks (`/inplay-fouls`) |
+| :---: | :---: |
+| ![Transfer Predictor](screenshots/new_ui/04_transfer_predictor.png) | ![In-Play Fouls](screenshots/new_ui/03_inplay_fouls.png) |
+| *Stitch Screen 11: Regularized Ridge / OLS pipeline with searchable combobox and regression scatter plot* | *Real-time foul accumulation tracking with automated Telegram bot dispatch* |
+
+| Referee Tendency Dial (`/referees`) | Player Comparison Matrix (`/comparison`) |
+| :---: | :---: |
+| ![Referee Tendency Dial](screenshots/new_ui/12_referees_telemetry.png) | ![Player Comparison](screenshots/new_ui/09_player_comparison.png) |
+| *Stitch Screen 04: PGMOL referee strictness dial (1.0–10.0) and rolling 10-match card telemetry* | *Side-by-side radar matrix comparing 10 normalized tracking metrics* |
+
+### 4. Global League & Team Intelligence
+| Premier League Standings (`/league/premier-league`) | La Liga Standings & Verified Scorers (`/league/la-liga`) |
+| :---: | :---: |
+| ![Premier League](screenshots/new_ui/13_league_premier_league.png) | ![La Liga](screenshots/new_ui/14_league_la_liga.png) |
+| *Full 20-club table with live goal differentials, recent form pills, and top scorers* | *Authentic Primera División table strictly filtered with zero cross-league player leakage* |
+
+| Chelsea FC Club Record (`/team/chelsea`) | Bukayo Saka Player Profile (`/player/bukayo-saka`) |
+| :---: | :---: |
+| ![Team Record](screenshots/new_ui/15_team_chelsea.png) | ![Player Profile](screenshots/new_ui/16_player_bukayo_saka.png) |
+| *Club record, match log carousel, conceding analysis, and squad tactical metrics* | *Stitch Screen 01 & 03: Performance radar and Goal Frame Shot Map with post/woodwork vectoring* |
+
+### 5. Opposition Analysis & Enterprise Authentication
+| Opposition Conceded Analytics (`/opposition`) | Season Statistical Leaders (`/leaderboards`) |
+| :---: | :---: |
+| ![Opposition Analytics](screenshots/new_ui/10_opposition_analytics.png) | ![Leaderboards](screenshots/new_ui/11_leaderboards.png) |
+| *Defensive concession positional heatmaps and vulnerable pitch zones* | *Official ranked leaderboards across goals, assists, shots, and per-90 metrics* |
+
+| Minimal Authentication Terminal (`/auth` & `/login`) |
+| :---: |
+| ![Authentication Terminal](screenshots/new_ui/17_auth_terminal.png) |
+| *Stitch Screen 12: Standalone terminal with pitch grid watermarks, field coordinates, mode switcher pill, and SSO* |
+
+---
+
 ## 🌟 Key Features & Tactical Modules
 
 ### 1. Early Kickoffs & Live Matchday Hub (`/` & `/fixtures`)
@@ -155,7 +211,13 @@ pytest tests/ -v
 ```
 - **Results**: **42 / 42 passed (100% pass rate)** across API endpoints, data pipelines, ML inference benchmarks, and CSS tokens.
 
-### 2. Frontend Production Build Check
+### 2. Playwright Multi-Route Visual & Bounding-Box Audit
+```bash
+node frontend/scripts/audit_headers.mjs
+```
+- **Results**: **32 / 32 tests passed (100% pass rate)** across Desktop (`1440x900`) and Mobile (`390x844`) viewports with zero header overlap ($\text{Margin} \ge +12\text{px}$).
+
+### 3. Frontend Production Build Check
 ```bash
 npm --prefix frontend run build
 ```
@@ -212,6 +274,7 @@ npm --prefix frontend run build
 │   │   │   ├── team/[slug]/        # Club Record & Form Logs
 │   │   │   └── player/[id]/        # Player Profile & Radar Scouting
 │   │   ├── components/
+│   │   │   ├── MainContentWrapper.tsx # Global responsive layout container & header offset
 │   │   │   ├── Navbar.tsx          # 3-tier header (announcement + nav + news ticker)
 │   │   │   ├── Footer.tsx          # Cohere Engine 2026 status footer
 │   │   │   ├── AuthModal.tsx       # Stitch-styled authentication popup
@@ -226,6 +289,8 @@ npm --prefix frontend run build
 │   └── tailwind.config.js          # Cohere design system palette and typography
 ├── models/                         # Trained ML pipelines (.joblib)
 ├── data/                           # Processed player & fixture datasets
+├── screenshots/
+│   └── new_ui/                     # 17 High-resolution screenshots of all New UI pages
 ├── stitch-export/                  # Complete HTML/CSS exports for 12 Google Stitch screens
 ├── tests/                          # 42 automated Pytest verification tests
 └── README.md
