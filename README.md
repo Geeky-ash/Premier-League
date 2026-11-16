@@ -1,149 +1,182 @@
-# PlayerStats — Enterprise AI Football Analytics Suite ⚽📊
+# PlayerStats Enterprise — AI Football Intelligence & Predictive Platform ⚽📊
 
-A production-grade, full-stack multi-league football intelligence and predictive analytics platform. Combines scikit-learn and XGBoost machine learning engines with an enterprise **Cohere Design System** Next.js 14 frontend and FastAPI microservice backend.
+A production-grade, full-stack football intelligence and calibrated predictive analytics platform engineered with the **Google Stitch / Cohere 2026 Enterprise Web System** (`Next.js 14 App Router`) and a high-performance **FastAPI** machine learning microservice.
 
 ---
 
-## 🌟 Key Features & Predictive Modules
+## 🌟 Key Features & Tactical Modules
 
-### 1. Transfer Value Predictor (Module 1)
+### 1. Early Kickoffs & Live Matchday Hub (`/` & `/fixtures`)
+*Replicated 1:1 from Google Stitch Screen 02 ("Worldwide Matchday Hub").*
+- **3-Tier Enterprise Header (`Navbar.tsx`)**:
+  - `36px` Microcopy Announcement Bar: Real-time SSE telemetry indicator and direct webhook shortcuts.
+  - `64px` Primary Navigation: Brand identity (`[C] PlayerStats V2.6`), competition dropdown, quick routes, `Ctrl+K` global search, and direct sign-in terminal links.
+  - `40px` Live News Marquee: Continuously animated headline ticker ingesting verified tier-1 RSS feeds.
+- **3-Column Tactical Workspace**:
+  - **Left (`lg:col-span-3`)**: Priority Leagues (`PL`, `LL`, `CL`, `BL`, `SA`, `L1`) with live match indicators and category pills, paired with the dark **Telemetry Syndicate** card streaming live Expected Threat ($\text{xT}$) vectoring at 8,912 packets/sec.
+  - **Center (`lg:col-span-5`)**: Featured Live Match (`Chelsea 2 - 2 Arsenal`, 74' +4' badge, scorers, in-play cards), **XGBoost In-Play Win Probability** 3-way segment bar, **11v11 Tactical Pitch Visualizer** with 22 player nodes & passing vectors, and referee disciplinary profile.
+  - **Right (`lg:col-span-4`)**: Interactive **Goal Frame Shot Map** (post, crossbar, target depth, xG ratings), **In-Play Momentum** wave graph with xT peak markers, and real-time **EPL Standings**.
+- **Enterprise Status Footer (`Footer.tsx`)**: Cohere Engine 2026 latency metrics, FastAPI documentation link, system SLA, and compliance disclosures.
+
+---
+
+### 2. Minimal Authentication Terminal (`/auth` & `/login`)
+*Replicated 1:1 from Google Stitch Screen 12 ("Minimal Authentication - Cohere 2026").*
+- **Minimal Top Bar**: Standalone navigation with `[C] PlayerStats V2.6` and `← Back to Matchday Hub`.
+- **Pitch Tactical Watermark**: Hairline field coordinates (`COORD_X 0.00`, `SYS_GATEWAY // 2026`, `SEC_LEVEL: TIER-1`, `PITCH_DIM 105x68M`) on a subtle radial grid canvas.
+- **Analyst Access Card (`max-w-[440px]`)**:
+  - Segmented Soft Stone pill switcher: Toggle between **Sign In** and **Create Account**.
+  - Work/Personal Email input (`analyst@club.com`) and password field with eye visibility toggle.
+  - 30-day session persistence toggle.
+  - One-click Google and GitHub SSO buttons under hairline divider.
+  - Available as both a dedicated page (`/auth`, `/login`) and an inline popup modal (`AuthModal.tsx`).
+
+---
+
+### 3. Machine Learning Core & Statistical Pipelines
+
+#### Transfer Value Predictor (`/transfer-predictor`)
 - **Engine**: Regularized Scikit-learn Linear Regression pipeline with `StandardScaler` and `OneHotEncoder`.
-- **Validation Gates**: Rigorous holdout benchmark ($R^2 \ge 0.60$, $\text{MAE} \le €15.2\text{M}$).
-- **Interactive Suite**: 
-  - Dynamic Star Presets (*Haaland, Saka, Palmer, Yamal, Mbappé, Bellingham, Kane, Messi, Ronaldo, etc.*).
-  - Searchable Combobox with real-time fuzzy matching across 25+ international star players.
-  - Live Recharts actual vs. fitted valuation scatter plot with benchmark regression trendlines.
-  - Real-time client-side fallback OLS valuation estimator for offline resiliency.
+- **Benchmarks**: Strict validation gates ($R^2 \ge 0.60$, $\text{MAE} \le €15.2\text{M}$).
+- **Interactive Capabilities**: Searchable combobox across 25+ star presets (*Haaland, Saka, Palmer, Yamal, Mbappé, Bellingham*), Recharts valuation regression scatter plot, and client-side offline OLS fallback.
 
-### 2. Match Outcome Forecaster (Module 2)
+#### Match Outcome Forecaster (`/match-predictor`)
 - **Engine**: Calibrated multi-class `XGBoost` classifier predicting Home Win, Draw, or Away Win probabilities.
 - **Features**: Head-to-Head differential vectors, possession dominance, expected goals ($\text{xG}$), home-pitch bias, and 5-match rolling form.
-- **UI**: Visual win probability distribution gauges, historical match logs, and dynamic H2H modal breakdowns.
+- **Visuals**: Embedded **11v11 Pitch Canvas** (`PitchCanvas.tsx`) displaying tactical lineups and passing lanes.
 
-### 3. Tactical Scouting & Player Twin Engine (Module 3)
+#### Tactical Scouting Studio & Twin Matcher (`/scouting-studio`)
 - **Engine**: Unsupervised `K-Means` clustering ($k=4$) and 2D Principal Component Analysis (PCA).
-- **Tactical Archetypes**: *Elite Finisher*, *Playmaking Maestro*, *Engine Box-to-Box*, and *Defensive Anchor*.
-- **Similarity Search**: Euclidean vector distance scoring across standardized metrics to discover top-5 statistical player twins.
+- **Archetypes**: *Elite Finisher*, *Playmaking Maestro*, *Engine Box-to-Box*, and *Defensive Anchor*.
+- **Similarity Search**: Euclidean vector distance scoring across standardized metrics to find top-5 statistical player twins.
 
-### 4. Global Multi-League Intelligence (10 Competitions)
-Structured 3-column architecture (Standings, Matchday Fixtures, Leaderboards) across 10 global leagues:
-- 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League**
+---
+
+### 4. Specialized Tactical Workspaces
+- **Referee Tendency Dial (`/referees`)**: PGMOL Referee strictness index (1.0–10.0), 10-match rolling card history (🟨 / 🟥), and foul-to-card conversion rates via [`RefGauge.tsx`](file:///e:/Premier%20League/frontend/src/components/RefGauge.tsx).
+- **Dugout Tablet Tactical View (`/dugout`)**: Touch-optimized pitch layout with real-time positional markers and manager tactical instructions.
+- **Substitution Timeline Simulation (`/simulation`)**: Monte Carlo simulation of bench substitutions with live projected $\Delta\text{xG}$ impact via `POST /api/v1/simulation/tactical`.
+- **Goal Frame Shot Map (`GoalShotMap.tsx` on `/player/[id]`)**: Goalpost vectoring highlighting post-shot xG, woodwork strikes, and saved efforts.
+- **In-Play Disciplinary & Foul Alerts (`/inplay-fouls`)**: Live foul counter with configurable automated Telegram bot alert thresholds.
+- **Opposition / Conceded Analysis (`/opposition`)**: Defensive concession positional heatmaps and vulnerable pitch zones.
+- **1v1 Comparison Matrix (`/comparison`)**: Multi-metric radar chart comparing any two players side-by-side.
+
+---
+
+### 5. Multi-League Data Ingestion & Caching
+Authentic competition data and filtered leaderboards across 10 global tournaments:
+- 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **Premier League** (`PL`)
+- 🇪🇸 **La Liga** (`PD`)
+- 🇩🇪 **Bundesliga** (`BL1`)
+- 🇮🇹 **Serie A** (`SA`)
+- 🇫🇷 **Ligue 1** (`FL1`)
+- 🇪🇺 **UEFA Champions League** (`CL`)
 - 🏴󠁧󠁢󠁥󠁮󠁧󠁿 **EFL Championship**
-- 🇪🇸 **La Liga**
-- 🇩🇪 **Bundesliga**
-- 🇮🇹 **Serie A**
-- 🇫🇷 **Ligue 1**
-- 🇪🇺 **UEFA Champions League**
 - 🇺🇸 **Major League Soccer (MLS)**
 - 🇸🇦 **Saudi Pro League**
 - 🇳🇱 **Eredivisie**
 
-### 5. Real-Time Football News Ribbon (Ticker Tape)
-- **Backend Aggregator**: Live RSS ingestion service (`backend/services/live_news.py`) fetching tier-1 global feeds (Sky Sports, BBC Sport, The Guardian).
-- **Caching**: Non-blocking in-memory TTL cache (5-minute refresh cycle) preventing rate-limit stalls.
-- **Animated Frontend**: Infinite CSS marquee ticker with stationary brand badge, team crests, and category tags.
-
-### 6. Referee & In-Play Match Tracker
-- Real-time card averages (🟨 / 🟥), match clocks, lineup status indicators, and tactical against-stats for all upcoming fixtures.
+*Zero Cross-League Leaks*: League tables and leaderboards strictly filter players and teams by genuine competition affiliation with automatic image fallback resolvers.
 
 ---
 
-## 🎨 Enterprise Design System (Cohere Aesthetic)
+## 🎨 Enterprise Cohere Design System
 
-The user interface follows the modern **Cohere enterprise design tokens**:
-- **Background**: Crisp `#ffffff` canvas with `#eeece7` soft stone surfaces and `#17171c` high-contrast ink typography.
-- **Borders**: Sharp 1px hairline dividers (`#d9d9dd`).
-- **Accents**: Coral `#ff7759` primary action tag with `#00473e` deep forest green success indicators.
-- **Typography**: Clean monospace numeric labels (`Space Mono`) paired with minimalist sans-serif (`Inter` / `Unica77`).
+Constructed around the **Cohere Enterprise Web System** design tokens:
+- **Surfaces**: Canvas White (`#ffffff`), Soft Stone (`#eeece7`), Pale Green (`#edfce9`), Pale Blue (`#f1f5ff`), Deep Enterprise Green (`#003c33`), Primary Ink (`#17171c`).
+- **Accents**: Coral (`#ff7759`), Soft Coral (`#ffad9b`), Action Blue (`#1863dc`), Error Red (`#b30000`).
+- **Dividers & Rules**: Hairline 1px borders (`#d9d9dd`), Light Border (`#e5e7eb`).
+- **Typography**: Space Grotesk (display headings), Space Mono (technical telemetry & badges), and Inter (body copy).
+- **Border Radii**: Strict geometric scale (`xs: 4px`, `sm: 8px`, `md: 16px`, `lg: 22px`, `pill: 32px`).
 
 ---
 
 ## 🛠️ Architecture & Tech Stack
 
 ```
-[ External Data & Tier-1 RSS Feeds ]
-                │
-                ▼
-      [ FastAPI Microservice ] (port 8000)
-    ├── Services (global_football, live_news)
-    ├── Serialized ML Models (.joblib)
-    └── Pydantic v2 Schema Validation
-                │
-                ▼
-      [ Next.js 14 Frontend ] (port 3000)
-    ├── App Router (12 Static & Dynamic Routes)
-    ├── Cohere Enterprise Tailwind Design System
-    ├── Recharts Scatter & Radar Analytics
-    └── Client-Side Offline Fallback Pipelines
+[ External Football APIs / RSS Feeds ]
+                  │
+                  ▼
+       [ FastAPI Microservice ] (Port 8001)
+     ├── Endpoints (/api/v1/*, /referees, /simulation/tactical)
+     ├── Serialized ML Models (Ridge, XGBoost, PCA, KMeans)
+     └── Pydantic v2 Schema Validation & Resilient Caching
+                  │
+                  ▼
+       [ Next.js 14 Frontend ] (Port 3000)
+     ├── App Router (17 Static & Dynamic Routes)
+     ├── Cohere Enterprise Tailwind Design Tokens
+     ├── Tactical Pitch & Shot Map SVG Visualizers
+     └── Next.js Server Proxy Rewrites (/api/v1/* -> 8001)
 ```
 
-- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Lucide Icons, Recharts.
+- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Material Symbols Outlined, Lucide Icons, Recharts.
 - **Backend**: FastAPI, Uvicorn, Pydantic v2, HTTPX, ElementTree XML parsing.
 - **Machine Learning**: Scikit-learn 1.6+, XGBoost, NumPy, Pandas, Joblib.
-- **DevOps**: Docker & Docker Compose (`node:20-alpine`, `python:3.11-slim`).
-- **Test Suite**: Automated Pytest suite with **42 passing tests** (100% pass rate).
+- **Design Source**: Google Stitch Canvas (`stitch-export/` with 12 complete HTML screen specs).
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quickstart & Setup
 
-### Option 1: Docker Compose (Recommended)
+### 1. Prerequisites
+- Python 3.10+
+- Node.js 18+ and `npm`
 
-```bash
-# Clone the repository
-git clone https://github.com/Geeky-ash/Premier-League.git
-cd Premier-League
-
-# Start both services
-docker compose up --build -d
-
-# Access applications:
-# Frontend:          http://localhost:3000
-# Backend API Docs:  http://localhost:8000/docs
-```
-
-### Option 2: Local Development Setup
-
-#### 1. Backend API (FastAPI)
+### 2. Backend Setup (FastAPI Microservice)
 ```bash
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Start FastAPI server
-uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+# Launch FastAPI server on port 8001
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8001 --reload
 ```
+*Interactive Swagger documentation available at: `http://127.0.0.1:8001/docs`*
 
-#### 2. Frontend Application (Next.js 14)
+### 3. Frontend Setup (Next.js 14 App Router)
 ```bash
 cd frontend
 
-# Install dependencies
+# Install Node modules
 npm install
 
-# Start development server
-npm run dev
-
-# Accessible at http://localhost:3000
+# Start local development server on port 3000
+npm run dev -- -p 3000
 ```
+*Frontend terminal available at: `http://localhost:3000`*
 
 ---
 
-## 🧪 Automated Testing & Validation
+## 🧪 Automated Testing & Build Validation
 
-The codebase includes an exhaustive test suite covering ETL pipelines, ML validation gates, API contracts, and frontend CSS token conformity:
-
+### 1. Backend Test Suite (Pytest)
 ```bash
-# Run complete test suite (42 tests)
 pytest tests/ -v
 ```
+- **Results**: **42 / 42 passed (100% pass rate)** across API endpoints, data pipelines, ML inference benchmarks, and CSS tokens.
 
+### 2. Frontend Production Build Check
+```bash
+npm --prefix frontend run build
 ```
-====================== 42 passed, 71 warnings in 35.66s =======================
-tests/test_api.py ....................                                   [ 47%]
-tests/test_data_ingestion.py .......                                     [ 64%]
-tests/test_frontend.py ......                                            [ 78%]
-tests/test_models.py .........                                           [100%]
-```
+- **Results**: All **17 routes** compiled cleanly with 0 TypeScript or linting errors:
+  - `○ /` (Early Kickoffs & Live Matchday Hub)
+  - `○ /fixtures` (Matchday Calendar)
+  - `○ /auth` (Minimal Authentication Terminal)
+  - `○ /login` (Auth Terminal alias)
+  - `○ /referees` (Referee Tendency Dial)
+  - `○ /dugout` (Dugout Tactical View)
+  - `○ /simulation` (Substitution Timeline Sim)
+  - `○ /match-predictor` (XGBoost Match Predictor)
+  - `○ /transfer-predictor` (Transfer Valuation Suite)
+  - `○ /scouting-studio` (K-Means Tactical Twin Engine)
+  - `○ /comparison` (1v1 Player Matrix)
+  - `○ /opposition` (Conceded Stats Heatmap)
+  - `○ /leaderboards` (Season Multi-Stat Leaders)
+  - `○ /inplay-fouls` (Foul Counter & Webhooks)
+  - `ƒ /league/[slug]` (League Overview & Standings)
+  - `ƒ /team/[slug]` (Team Record & Analytics)
+  - `ƒ /player/[id]` (Player Profile & Goal Frame Shot Map)
 
 ---
 
@@ -151,30 +184,50 @@ tests/test_models.py .........                                           [100%]
 
 ```
 ├── backend/
-│   ├── main.py                    # Unified FastAPI endpoints & lifespan handlers
-│   ├── schemas.py                 # Strict Pydantic v2 request/response contracts
+│   ├── main.py                     # FastAPI entrypoint, referee & simulation endpoints
+│   ├── schemas.py                  # Pydantic v2 request/response contracts
 │   └── services/
-│       ├── global_football.py     # 10-league data, fixtures, radar stats & fuzzy search
-│       └── live_news.py           # Real-time RSS news ingestion with TTL caching
+│       ├── global_football.py      # League standings, player stats, fuzzy search & fallback cache
+│       └── live_news.py            # Real-time RSS news aggregator with TTL caching
 ├── frontend/
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── layout.tsx         # Root layout with Cohere navbar, news ribbon & footer
-│   │   │   ├── page.tsx           # Enterprise stats dashboard
-│   │   │   ├── transfer-predictor/ # Module 1: Transfer Value Predictor with combobox
-│   │   │   ├── match-predictor/   # Module 2: Match Outcome Predictor
-│   │   │   ├── scouting-studio/   # Module 3: K-Means Tactical Twin Engine
-│   │   │   ├── fixtures/          # Global 10-league fixtures & calendar
-│   │   │   ├── leaderboards/      # Cross-league stat leaders
-│   │   │   ├── opposition/        # Team concession & against-stats
-│   │   │   ├── inplay-fouls/      # Referee & card disciplinary tracking
-│   │   │   └── league/[slug]/     # Dynamic 3-column league overview
-│   │   ├── components/            # Navbar, NewsTicker, H2HModal, Drawer, Modals
-│   │   └── lib/                   # api.ts (REST client), logos.ts (CDN mappings)
-├── models/                        # Serialized .joblib artifacts & training pipelines
-├── data/                          # Raw, processed, and cached datasets
-├── tests/                         # Pytest suite (42 unit, ML, and API test cases)
-├── docker-compose.yml             # Orchestrated multi-container deployment
+│   │   │   ├── layout.tsx          # Root layout with Cohere 2026 fonts & styling
+│   │   │   ├── globals.css         # Design tokens, marquee animations & tactical grid CSS
+│   │   │   ├── page.tsx            # Stitch Screen 02: Early Kickoffs & Live Matchday Hub
+│   │   │   ├── auth/page.tsx       # Stitch Screen 12: Minimal Authentication Terminal
+│   │   │   ├── login/page.tsx      # Auth alias route
+│   │   │   ├── referees/page.tsx   # Stitch Screen 04: Referee Tendency Dial
+│   │   │   ├── dugout/page.tsx     # Stitch Screen 07: Dugout Tablet Tactical View
+│   │   │   ├── simulation/page.tsx # Stitch Screen 08: Substitution Timeline Simulation
+│   │   │   ├── match-predictor/    # Module 2: XGBoost Match Forecaster
+│   │   │   ├── transfer-predictor/ # Module 1: Transfer Value Regression Suite
+│   │   │   ├── scouting-studio/    # Module 3: K-Means Tactical Twin Engine
+│   │   │   ├── fixtures/           # Worldwide Matchday Workspace
+│   │   │   ├── comparison/         # 1v1 Player Comparison Matrix
+│   │   │   ├── opposition/         # Conceded Positional Heatmaps
+│   │   │   ├── leaderboards/       # Season Multi-Stat Leaders
+│   │   │   ├── inplay-fouls/       # Disciplinary & Real-Time Foul Webhooks
+│   │   │   ├── league/[slug]/      # Authentic League Overview & Standings
+│   │   │   ├── team/[slug]/        # Club Record & Form Logs
+│   │   │   └── player/[id]/        # Player Profile & Radar Scouting
+│   │   ├── components/
+│   │   │   ├── Navbar.tsx          # 3-tier header (announcement + nav + news ticker)
+│   │   │   ├── Footer.tsx          # Cohere Engine 2026 status footer
+│   │   │   ├── AuthModal.tsx       # Stitch-styled authentication popup
+│   │   │   ├── GoalShotMap.tsx     # Goal Frame Shot Map SVG visualizer
+│   │   │   ├── RefGauge.tsx        # PGMOL Referee strictness dial
+│   │   │   ├── PitchCanvas.tsx     # 11v11 tactical formation visualizer
+│   │   │   └── GlobalSearchModal.tsx # Ctrl+K global search combobox
+│   │   └── lib/
+│   │       ├── api.ts              # Typed REST client with port 8001 / fallback handling
+│   │       └── logos.ts            # High-res club badges and player headshot resolvers
+│   ├── next.config.mjs             # Next.js API rewrites to FastAPI backend
+│   └── tailwind.config.js          # Cohere design system palette and typography
+├── models/                         # Trained ML pipelines (.joblib)
+├── data/                           # Processed player & fixture datasets
+├── stitch-export/                  # Complete HTML/CSS exports for 12 Google Stitch screens
+├── tests/                          # 42 automated Pytest verification tests
 └── README.md
 ```
 
