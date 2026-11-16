@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MainContentWrapper from "@/components/MainContentWrapper";
 
 export const metadata: Metadata = {
   title: "PlayerStats Enterprise // Premier League & Worldwide Football Intelligence",
@@ -28,7 +29,7 @@ export default function RootLayout({
       </head>
       <body className="bg-surface font-body-md text-body-md text-on-surface min-h-screen antialiased">
         <Navbar />
-        {children}
+        <MainContentWrapper>{children}</MainContentWrapper>
         <Footer />
       </body>
     </html>

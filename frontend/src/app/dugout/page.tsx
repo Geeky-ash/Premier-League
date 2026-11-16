@@ -37,7 +37,7 @@ export default function DugoutPage() {
   return (
     <div className="min-h-screen bg-[#111114] text-white pb-16 font-body">
       {/* ── Top Touchline Tablet Bar ── */}
-      <header className="sticky top-0 z-40 bg-[#17171c] border-b border-[#2b2b36] px-4 py-3">
+      <header className="sticky top-[140px] z-40 bg-[#17171c] border-b border-[#2b2b36] px-4 py-3">
         <div className="max-w-[1560px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* Match Score & Status */}
           <div className="flex items-center gap-4">

@@ -131,7 +131,7 @@ export default function ComparisonPage() {
   );
 
   return (
-    <div className="space-y-8 animate-fade-in font-body text-cohere-ink" ref={comparisonRef}>
+    <div className="space-y-8 animate-fade-in font-body text-cohere-ink scroll-mt-[152px]" ref={comparisonRef}>
       {/* ═══ Section Header ═══ */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

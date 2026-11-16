@@ -8,7 +8,7 @@ export default function MatchdayHub() {
   const [selectedFilter, setSelectedFilter] = useState("ALL MATCHES (58)");
 
   return (
-<main className="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div className="flex flex-col w-full">
+<div className="w-full"><div className="flex flex-col w-full">
 <div className="px-margin-desktop py-space-md bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
 <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
 <div className="flex flex-col">
@@ -434,6 +434,6 @@ export default function MatchdayHub() {
 </div>
 </aside>
 </div>
-</div></main>
+</div></div>
   );
 }
