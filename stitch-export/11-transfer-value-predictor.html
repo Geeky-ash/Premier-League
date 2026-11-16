@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide flex items-center gap-1.5" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a aria-current="page" class="transition-colors uppercase tracking-wide text-primary font-semibold border-b-2 border-primary" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<div class="w-full px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- Hero / Module Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-md border-b border-outline-variant/30">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-xs text-label-xs uppercase tracking-widest font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            MODULE 01 // SUPERVISED VALUATION MODEL
+          </span>
+<span class="font-label-xs text-label-xs text-outline font-medium tracking-wide">BUILD 2026.4.11</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-on-surface tracking-tight">
+          Player Transfer Value Predictor
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed">
+          Predictive econometric machine learning pipeline trained on 14,000+ historical European transfers with XGBoost &amp; Gaussian regression models calibrating contract leverage, age curves, and positional micro-metrics.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="px-3 py-2 rounded bg-surface-container-low border border-outline-variant/50 flex flex-col text-right">
+<span class="font-label-xs text-label-xs text-outline uppercase">MODEL ACCURACY (R²)</span>
+<span class="font-label-md text-label-md text-primary font-bold">0.938 • RMSE €6.4M</span>
+</div>
+<button class="px-4 py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg transition-colors flex items-center gap-1.5 shadow-sm" id="btn-recalibrate">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Recalibrate Engine</span>
+</button>
+</div>
+</div>
+<!-- Benchmark Star Presets Carousel/Strip -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase text-on-surface-variant font-semibold tracking-wider">
+          Quick-Fill Calibration Archetypes (2025/26 Benchmarks)
+        </span>
+<span class="font-label-xs text-label-xs text-outline">Click any preset to inject model vectors</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-sm">
+<!-- Preset 1: Haaland -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group" data-age="24" data-caps="39" data-contract="3.5" data-diff="+2.3%" data-ga="1.24" data-high="196.5" data-low="172.0" data-mins="3100" data-mult="1.45" data-name="Erling Haaland" data-val="184.2" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-primary">
+              EH
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">MCI</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Erling Haaland</div>
+<div class="font-label-xs text-label-xs text-outline">Striker • 24y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-primary">€184.2M</span>
+</div>
+</button>
+<!-- Preset 2: Saka -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group" data-age="23" data-caps="42" data-contract="3.0" data-diff="+1.8%" data-ga="0.78" data-high="151.0" data-low="132.0" data-mins="2950" data-mult="1.45" data-name="Bukayo Saka" data-val="142.5" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-secondary">
+              BS
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">ARS</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Bukayo Saka</div>
+<div class="font-label-xs text-label-xs text-outline">Winger • 23y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-primary">€142.5M</span>
+</div>
+</button>
+<!-- Preset 3: Cole Palmer -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group border-primary ring-1 ring-primary/20" data-age="22" data-caps="11" data-contract="5.0" data-diff="+12.4%" data-ga="0.88" data-high="149.2" data-low="126.8" data-mins="2850" data-mult="1.45" data-name="Cole Palmer" data-val="138.4" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-tertiary">
+              CP
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">CHE</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Cole Palmer</div>
+<div class="font-label-xs text-label-xs text-outline">Attacker • 22y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-secondary">€138.4M</span>
+</div>
+</button>
+<!-- Preset 4: Declan Rice -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group" data-age="26" data-caps="58" data-contract="3.5" data-diff="+4.2%" data-ga="0.32" data-high="123.0" data-low="105.0" data-mins="3200" data-mult="1.45" data-name="Declan Rice" data-val="114.6" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-primary">
+              DR
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">ARS</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Declan Rice</div>
+<div class="font-label-xs text-label-xs text-outline">Midfielder • 26y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-primary">€114.6M</span>
+</div>
+</button>
+<!-- Preset 5: Alexander Isak -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group" data-age="25" data-caps="46" data-contract="2.5" data-diff="+3.4%" data-ga="0.74" data-high="106.5" data-low="88.0" data-mins="2600" data-mult="1.45" data-name="Alexander Isak" data-val="98.2" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-outline">
+              AI
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">NEW</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Alexander Isak</div>
+<div class="font-label-xs text-label-xs text-outline">Striker • 25y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-primary">€98.2M</span>
+</div>
+</button>
+<!-- Preset 6: Mohamed Salah -->
+<button class="preset-card text-left p-3 rounded bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all flex flex-col justify-between group" data-age="32" data-caps="100" data-contract="1.0" data-diff="-1.8%" data-ga="0.95" data-high="72.0" data-low="54.0" data-mins="2700" data-mult="1.45" data-name="Mohamed Salah" data-val="63.8" type="button">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-xs font-bold text-secondary">
+              MS
+            </div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">LIV</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors">Mohamed Salah</div>
+<div class="font-label-xs text-label-xs text-outline">Forward • 32y</div>
+</div>
+<div class="mt-2 pt-1 border-t border-outline-variant/30 flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">FITTED</span>
+<span class="font-label-md text-label-md font-bold text-primary">€63.8M</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Dual-Panel Interactive Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Panel: Valuation Input Controls -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded p- space-md lg:p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/40">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Parameter Vector Configurator</h2>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">AUTO-CALCULATING</span>
+</div>
+<!-- Searchable Player Combobox -->
+<div class="relative flex flex-col gap-1">
+<label class="font-label-xs text-label-xs uppercase text-on-surface-variant font-semibold" for="player-search">Active Subject / Search Database</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-outline absolute left-3 pointer-events-none text-[18px]">person_search</span>
+<input class="w-full pl-9 pr-24 py-2 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors" id="player-search" placeholder="Search by name, club, or scouting index..." type="text" value="Cole Palmer"/>
+<span class="absolute right-2 font-label-xs text-label-xs text-outline bg-surface-container-low px-2 py-1 rounded">Chelsea FC</span>
+</div>
+<div class="hidden absolute top-[66px] left-0 right-0 z-20 bg-surface-container-lowest border border-outline-variant rounded shadow-md overflow-hidden" id="autocomplete-list">
+<button class="w-full text-left px-3 py-2 text-sm hover:bg-surface-container flex items-center justify-between border-b border-outline-variant/30" type="button">
+<span class="font-semibold text-on-surface">Cole Palmer • Chelsea</span>
+<span class="font-label-xs text-label-xs text-outline">Attacking Midfielder</span>
+</button>
+<button class="w-full text-left px-3 py-2 text-sm hover:bg-surface-container flex items-center justify-between border-b border-outline-variant/30" type="button">
+<span class="font-semibold text-on-surface">Lamine Yamal • Barcelona</span>
+<span class="font-label-xs text-label-xs text-outline">Right Winger</span>
+</button>
+<button class="w-full text-left px-3 py-2 text-sm hover:bg-surface-container flex items-center justify-between" type="button">
+<span class="font-semibold text-on-surface">Florian Wirtz • Leverkusen</span>
+<span class="font-label-xs text-label-xs text-outline">Attacking Midfielder</span>
+</button>
+</div>
+</div>
+<!-- Sliders Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-lg gap-y-space-md pt-space-xs">
+<!-- Age Slider -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Age Profile</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="val-age">22 yrs</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-age" max="36" min="17" step="1" type="range" value="22"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>17 (Apex Value)</span>
+<span>26 (Peak)</span>
+<span>36</span>
+</div>
+</div>
+<!-- Contract Length Slider -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Contract Remaining</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="val-contract">3.5 yrs</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-contract" max="6.0" min="0.5" step="0.5" type="range" value="3.5"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>6 Months</span>
+<span>3.0 yrs</span>
+<span>6.0 yrs</span>
+</div>
+</div>
+<!-- Minutes Played -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Minutes / Season</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="val-mins">2,850 mins</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-mins" max="3800" min="500" step="50" type="range" value="2850"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>500 (Squad)</span>
+<span>2,200</span>
+<span>3,800 (Overloaded)</span>
+</div>
+</div>
+<!-- Goals & Assists / 90 -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">G+A per 90 Mins</span>
+<span class="font-label-md text-label-md text-secondary font-bold" id="val-ga">0.88</span>
+</div>
+<input class="w-full accent-secondary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-ga" max="1.50" min="0.05" step="0.01" type="range" value="0.88"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>0.10 (Standard)</span>
+<span>0.50 (Elite)</span>
+<span>1.50 (Alien)</span>
+</div>
+</div>
+<!-- League Multiplier -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">League Multiplier</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="val-mult">1.45 (Tier 1 PL)</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-mult" max="1.50" min="0.80" step="0.05" type="range" value="1.45"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>0.80 (Tier 3)</span>
+<span>1.15 (Serie A)</span>
+<span>1.50 (PL Peak)</span>
+</div>
+</div>
+<!-- International Caps -->
+<div class="flex flex-col gap-1.5 p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Senior International Caps</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="val-caps">34</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-outline-variant rounded-lg cursor-pointer" id="slider-caps" max="120" min="0" step="1" type="range" value="34"/>
+<div class="flex justify-between font-label-xs text-label-xs text-outline">
+<span>0 (Uncapped)</span>
+<span>50 (Regular)</span>
+<span>120 (Veteran)</span>
+</div>
+</div>
+</div>
+<!-- Footnote / Simulation Toggle -->
+<div class="pt-space-xs flex items-center justify-between text-outline">
+<div class="flex items-center gap-1.5 font-label-xs text-label-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>GAUSSIAN REGRESSION COEFFICIENTS: CONVERGED (0.004)</span>
+</div>
+<button class="font-label-xs text-label-xs underline hover:text-on-surface transition-colors" id="btn-reset">
+            Reset to Palmer Baseline
+          </button>
+</div>
+</div>
+<!-- Right Panel: Valuation Terminal Readout -->
+<div class="lg:col-span-5 bg-primary text-on-primary rounded p-space-md lg:p-space-lg flex flex-col justify-between gap-space-lg shadow-xl relative overflow-hidden">
+<!-- Faint telemetry geometric grid pattern in background -->
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-primary-container/30 pointer-events-none blur-2xl"></div>
+<div class="flex flex-col gap-space-md relative z-10">
+<div class="flex items-center justify-between border-b border-primary-container pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-outline-variant uppercase tracking-wider font-semibold">PREDICTED FAIR MARKET VALUATION</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-primary-container text-on-primary-container border border-outline/20">ESTIMATOR: XGBOOST</span>
+</div>
+<!-- Primary Metric Value -->
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl font-bold tracking-tight text-surface-bright font-headline-sm" id="output-val">€138.4M</span>
+<span class="font-label-md text-label-md text-outline-variant">EUR</span>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<span class="font-label-sm text-label-sm text-outline-variant" id="output-range">
+                €126.8M — €149.2M (90% Confidence Interval)
+              </span>
+</div>
+</div>
+<!-- Market Variance Indicator -->
+<div class="p-space-sm rounded bg-primary-container/50 border border-outline/20 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline-variant uppercase">Variance vs Current Market Price</span>
+<span class="font-body-sm text-body-sm text-surface-bright">Reported Transfermarkt baseline: €120.0M</span>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary font-label-md text-label-md font-bold" id="output-diff">
+              +12.4% Undervalued
+            </span>
+</div>
+<!-- Value Driver Attribution Breakdown -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-xs text-label-xs uppercase text-outline-variant tracking-wider font-semibold">
+              Shapley Value Driver Breakdown
+            </span>
+<div class="flex flex-col gap-2 font-label-sm text-label-sm">
+<!-- Driver 1 -->
+<div class="flex items-center justify-between">
+<span class="text-outline-variant">Age Curve Multiplier (&lt; 23.5y)</span>
+<span class="text-surface-bright font-bold font-label-md" id="driver-age">+€28.0M</span>
+</div>
+<div class="w-full bg-primary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" id="bar-age" style="width: 78%"></div>
+</div>
+<!-- Driver 2 -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-outline-variant">xG / xA &amp; Actual Output Performance</span>
+<span class="text-surface-bright font-bold font-label-md" id="driver-ga">+€34.2M</span>
+</div>
+<div class="w-full bg-primary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed-dim h-full rounded-full" id="bar-ga" style="width: 89%"></div>
+</div>
+<!-- Driver 3 -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-outline-variant">Contract Control &amp; Duration Leverage</span>
+<span class="text-surface-bright font-bold font-label-md" id="driver-contract">+€22.0M</span>
+</div>
+<div class="w-full bg-primary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full rounded-full" id="bar-contract" style="width: 62%"></div>
+</div>
+<!-- Driver 4 -->
+<div class="flex items-center justify-between pt-1">
+<span class="text-outline-variant">League &amp; Commercial Brand Asset Index</span>
+<span class="text-surface-bright font-bold font-label-md" id="driver-mult">+€18.4M</span>
+</div>
+<div class="w-full bg-primary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full" id="bar-mult" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Actions -->
+<div class="flex items-center gap-space-sm pt-space-md border-t border-primary-container relative z-10">
+<button class="flex-1 py-2.5 rounded bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Valuation Audit PDF</span>
+</button>
+<button class="p-2.5 rounded bg-primary-container hover:bg-primary-container/80 text-surface-bright transition-colors border border-outline/20" title="Send to Syndication Ledger" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scatter Plot Visualization: Actual vs Model-Fitted Valuations -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-space-md lg:p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-sm border-b border-outline-variant/30">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">scatter_plot</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Actual vs Model-Fitted Valuations (Market Residuals)
+            </h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Cross-validation scatter of 24 benchmark superstars plotted against the 45-degree parity trajectory.
+          </span>
+</div>
+<div class="flex items-center gap-space-md font-label-xs text-label-xs">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span> Benchmark Stars
+          </span>
+<span class="flex items-center gap-1.5 text-outline">
+<span class="w-3 h-0.5 bg-outline-variant"></span> Parity Ideal (y = x)
+          </span>
+<span class="flex items-center gap-1.5 text-primary font-bold">
+<span class="w-2.5 h-2.5 rounded-full bg-primary border-2 border-surface"></span> Active Calibration
+          </span>
+</div>
+</div>
+<!-- High-fidelity Vector SVG Scatter Visualization -->
+<div class="w-full overflow-x-auto">
+<div class="min-w-[700px] w-full h-[340px] relative bg-surface-container-low/40 rounded p-4 flex flex-col justify-between">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 300">
+<!-- Grid lines -->
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="50" x2="780" y1="260" y2="260"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="50" x2="780" y1="200" y2="200"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="50" x2="780" y1="140" y2="140"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="50" x2="780" y1="80" y2="80"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="50" x2="780" y1="20" y2="20"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="150" x2="150" y1="20" y2="260"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="300" x2="300" y1="20" y2="260"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="450" x2="450" y1="20" y2="260"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="600" x2="600" y1="20" y2="260"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2 2" stroke-width="1" x1="750" x2="750" y1="20" y2="260"></line>
+<!-- Parity Trendline (Ideal Model y = x) -->
+<line opacity="0.6" stroke="#707976" stroke-dasharray="4 4" stroke-width="1.5" x1="60" x2="760" y1="250" y2="30"></line>
+<!-- Gaussian Confidence Band (Translucent Polygon) -->
+<polygon fill="#003c33" fill-opacity="0.04" points="60,265 760,48 760,12 60,235"></polygon>
+<!-- Scatter Data Points -->
+<!-- Haaland (Actual 180, Fitted 184) -->
+<g class="cursor-pointer group">
+<circle cx="730" cy="42" fill="#fc7557" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#1b1b20" font-family="Space Mono" font-size="10" font-weight="700" text-anchor="middle" x="730" y="30">Haaland (€184M)</text>
+</g>
+<!-- Mbappé (Actual 180, Fitted 178) -->
+<g class="cursor-pointer group">
+<circle cx="715" cy="55" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="715" y="73">Mbappé (€178M)</text>
+</g>
+<!-- Bellingham (Actual 180, Fitted 172) -->
+<g class="cursor-pointer group">
+<circle cx="690" cy="62" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="690" y="52">Bellingham (€172M)</text>
+</g>
+<!-- Saka (Actual 140, Fitted 142) -->
+<g class="cursor-pointer group">
+<circle cx="560" cy="115" fill="#fc7557" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#1b1b20" font-family="Space Mono" font-size="10" font-weight="700" text-anchor="middle" x="560" y="103">Saka (€142M)</text>
+</g>
+<!-- Cole Palmer (Active Selection / Highlighted) -->
+<g class="cursor-pointer" id="plot-point-active">
+<circle cx="530" cy="122" fill="#fc7557" fill-opacity="0.2" r="10"></circle>
+<circle cx="530" cy="122" fill="#fc7557" r="6" stroke="#00241e" stroke-width="2"></circle>
+<line stroke="#fc7557" stroke-dasharray="2 2" stroke-width="1.5" x1="530" x2="530" y1="122" y2="155"></line>
+<rect fill="#00241e" height="22" rx="4" width="120" x="470" y="155"></rect>
+<text fill="#ffffff" font-family="Space Mono" font-size="10" font-weight="bold" text-anchor="middle" x="530" y="170">Palmer: €138.4M</text>
+</g>
+<!-- Lamine Yamal (Actual 150, Fitted 156) -->
+<g class="cursor-pointer group">
+<circle cx="610" cy="85" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="610" y="75">Yamal (€156M)</text>
+</g>
+<!-- Musiala (Actual 130, Fitted 135) -->
+<g class="cursor-pointer group">
+<circle cx="510" cy="132" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="end" x="510" y="146">Musiala (€135M)</text>
+</g>
+<!-- Declan Rice (Actual 110, Fitted 114) -->
+<g class="cursor-pointer group">
+<circle cx="430" cy="168" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="430" y="185">Rice (€114M)</text>
+</g>
+<!-- Alexander Isak (Actual 95, Fitted 98) -->
+<g class="cursor-pointer group">
+<circle cx="370" cy="192" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="370" y="210">Isak (€98M)</text>
+</g>
+<!-- Mohamed Salah (Actual 65, Fitted 63) -->
+<g class="cursor-pointer group">
+<circle cx="230" cy="235" fill="#00241e" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#404946" font-family="Space Mono" font-size="10" text-anchor="middle" x="230" y="250">Salah (€64M)</text>
+</g>
+<!-- Coordinate axes labels -->
+<text fill="#707976" font-family="Space Mono" font-size="10" text-anchor="start" x="50" y="15">▲ FITTED MODEL VALUE (€M)</text>
+<text fill="#707976" font-family="Space Mono" font-size="10" text-anchor="end" x="780" y="280">REPORTED TRANSFERMARKT INDEX (€M) ▶</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="end" x="40" y="263">€40M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="end" x="40" y="203">€80M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="end" x="40" y="143">€120M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="end" x="40" y="83">€160M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="end" x="40" y="23">€200M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="150" y="278">€50M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="300" y="278">€100M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="450" y="278">€150M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="600" y="278">€200M</text>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="750" y="278">€250M</text>
+</svg>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between text-outline text-label-xs font-label-xs pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px]">info</span>
+<span>Sample population: Top 5 Leagues • Transferred or active valuations &gt; €40M • Epoch 2024-2026</span>
+</div>
+<div class="flex items-center gap-3">
+<span>Pearson r: <b class="text-on-surface">0.968</b></span>
+<span>Mean Absolute Error: <b class="text-on-surface">€4.82M</b></span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function initTransferPredictor() {
+      // Elements
+      const sliderAge = document.getElementById('slider-age');
+      const sliderContract = document.getElementById('slider-contract');
+      const sliderMins = document.getElementById('slider-mins');
+      const sliderGa = document.getElementById('slider-ga');
+      const sliderMult = document.getElementById('slider-mult');
+      const sliderCaps = document.getElementById('slider-caps');
+
+      const valAge = document.getElementById('val-age');
+      const valContract = document.getElementById('val-contract');
+      const valMins = document.getElementById('val-mins');
+      const valGa = document.getElementById('val-ga');
+      const valMult = document.getElementById('val-mult');
+      const valCaps = document.getElementById('val-caps');
+
+      const outputVal = document.getElementById('output-val');
+      const outputRange = document.getElementById('output-range');
+      const outputDiff = document.getElementById('output-diff');
+
+      const driverAge = document.getElementById('driver-age');
+      const driverGa = document.getElementById('driver-ga');
+      const driverContract = document.getElementById('driver-contract');
+      const driverMult = document.getElementById('driver-mult');
+
+      const playerSearch = document.getElementById('player-search');
+      const autocompleteList = document.getElementById('autocomplete-list');
+      const presets = document.querySelectorAll('.preset-card');
+      const btnReset = document.getElementById('btn-reset');
+      const btnRecalibrate = document.getElementById('btn-recalibrate');
+
+      // Calculation formula mimicking the econometric XGBoost pipeline
+      function calculateValuation() {
+        const age = parseFloat(sliderAge.value);
+        const contract = parseFloat(sliderContract.value);
+        const mins = parseFloat(sliderMins.value);
+        const ga = parseFloat(sliderGa.value);
+        const mult = parseFloat(sliderMult.value);
+        const caps = parseFloat(sliderCaps.value);
+
+        // Age factor: Peak around 23-26, penalizes > 29 steeply
+        let ageCurve = 1.0;
+        if (age <= 23) {
+          ageCurve = 1.25 - (age - 18) * 0.02;
+        } else if (age <= 28) {
+          ageCurve = 1.15 - (age - 23) * 0.03;
+        } else {
+          ageCurve = 1.0 - (age - 28) * 0.10;
+        }
+        if (ageCurve < 0.35) ageCurve = 0.35;
+
+        // Base output baseline
+        const outputScore = (ga * 65.0) + (mins / 3000.0 * 20.0);
+        const contractLeverage = (contract / 4.0) * 28.0;
+        const repScore = (caps * 0.25);
+
+        let fitted = (outputScore * ageCurve * mult) + contractLeverage + repScore;
+        if (fitted < 12) fitted = 12;
+
+        const lowCi = fitted * 0.915;
+        const highCi = fitted * 1.08;
+
+        // Update readouts
+        outputVal.textContent = '€' + fitted.toFixed(1) + 'M';
+        outputRange.textContent = '€' + lowCi.toFixed(1) + 'M — €' + highCi.toFixed(1) + 'M (90% Confidence Interval)';
+
+        // Driver estimations
+        const ageVal = (ageCurve * 22.0).toFixed(1);
+        const gaVal = (ga * 38.5).toFixed(1);
+        const conVal = (contract * 6.2).toFixed(1);
+        const brandVal = ((mult - 0.8) * 26.0).toFixed(1);
+
+        driverAge.textContent = '+€' + ageVal + 'M';
+        driverGa.textContent = '+€' + gaVal + 'M';
+        driverContract.textContent = '+€' + conVal + 'M';
+        driverMult.textContent = '+€' + brandVal + 'M';
+
+        // Calculate variance vs baseline benchmark (€120M default baseline)
+        const baseline = 120.0;
+        const diffPercent = (((fitted - baseline) / baseline) * 100).toFixed(1);
+        if (diffPercent >= 0) {
+          outputDiff.textContent = '+' + diffPercent + '% Undervalued';
+          outputDiff.className = 'px-2.5 py-1 rounded bg-secondary-container text-on-secondary font-label-md text-label-md font-bold';
+        } else {
+          outputDiff.textContent = diffPercent + '% Premium / Over';
+          outputDiff.className = 'px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md font-bold';
+        }
+      }
+
+      function updateLabels() {
+        valAge.textContent = sliderAge.value + ' yrs';
+        valContract.textContent = parseFloat(sliderContract.value).toFixed(1) + ' yrs';
+        valMins.textContent = Number(sliderMins.value).toLocaleString() + ' mins';
+        valGa.textContent = parseFloat(sliderGa.value).toFixed(2);
+        valMult.textContent = parseFloat(sliderMult.value).toFixed(2) + ' (Tier ' + (sliderMult.value >= 1.4 ? '1 PL' : '2 League') + ')';
+        valCaps.textContent = sliderCaps.value;
+      }
+
+      [sliderAge, sliderContract, sliderMins, sliderGa, sliderMult, sliderCaps].forEach(slider => {
+        slider.addEventListener('input', () => {
+          updateLabels();
+          calculateValuation();
+        });
+      });
+
+      // Quick preset fill buttons
+      presets.forEach(btn => {
+        btn.addEventListener('click', () => {
+          presets.forEach(p => p.classList.remove('border-primary', 'ring-1', 'ring-primary/20'));
+          btn.classList.add('border-primary', 'ring-1', 'ring-primary/20');
+
+          playerSearch.value = btn.dataset.name;
+          sliderAge.value = btn.dataset.age;
+          sliderContract.value = btn.dataset.contract;
+          sliderMins.value = btn.dataset.mins;
+          sliderGa.value = btn.dataset.ga;
+          sliderMult.value = btn.dataset.mult;
+          sliderCaps.value = btn.dataset.caps;
+
+          updateLabels();
+          calculateValuation();
+        });
+      });
+
+      // Combobox micro-interaction
+      playerSearch.addEventListener('focus', () => {
+        autocompleteList.classList.remove('hidden');
+      });
+      playerSearch.addEventListener('blur', () => {
+        setTimeout(() => autocompleteList.classList.add('hidden'), 200);
+      });
+
+      autocompleteList.querySelectorAll('button').forEach(item => {
+        item.addEventListener('click', () => {
+          const playerName = item.querySelector('.font-semibold').textContent.split('•')[0].trim();
+          playerSearch.value = playerName;
+          autocompleteList.classList.add('hidden');
+          calculateValuation();
+        });
+      });
+
+      // Reset
+      btnReset.addEventListener('click', () => {
+        const palmerPreset = document.querySelector('[data-name="Cole Palmer"]');
+        if (palmerPreset) palmerPreset.click();
+      });
+
+      // Recalibrate trigger animation
+      btnRecalibrate.addEventListener('click', () => {
+        btnRecalibrate.classList.add('opacity-75');
+        const originalText = btnRecalibrate.innerHTML;
+        btnRecalibrate.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Computing...</span>';
+        setTimeout(() => {
+          btnRecalibrate.classList.remove('opacity-75');
+          btnRecalibrate.innerHTML = originalText;
+          calculateValuation();
+        }, 500);
+      });
+
+      // Initialize
+      updateLabels();
+      calculateValuation();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span>LATENCY: 14MS</span><span>FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span>© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer></body></html>

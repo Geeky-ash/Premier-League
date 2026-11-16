@@ -5,6 +5,7 @@ import Image from "next/image";
 import { predictMatchOutcome, fetchClubs, MatchPredictResponse } from "@/lib/api";
 import { getClubCrest } from "@/lib/logos";
 import { motion } from "framer-motion";
+import PitchCanvas from "@/components/PitchCanvas";
 import {
   ShieldAlert,
   Flame,
@@ -525,6 +526,17 @@ export default function MatchPredictorPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* ── 11v11 Tactical Pitch Canvas (Stitch Visualizer) ── */}
+      <div className="mt-8">
+        <PitchCanvas
+          homeTeamName={homeTeam}
+          awayTeamName={awayTeam}
+          homeScore={homeGoals}
+          awayScore={awayGoals}
+          matchMinute="74'"
+        />
       </div>
     </div>
   );

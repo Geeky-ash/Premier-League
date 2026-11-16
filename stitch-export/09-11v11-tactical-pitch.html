@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<!-- TOP CONTEXT STRIP -->
+<section class="w-full bg-surface-container-lowest px-margin-desktop py-space-sm border-b border-outline-variant flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-semibold text-on-surface">EPL_MD28</span>
+<span>STAMFORD BRIDGE, LONDON</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container/10 border border-secondary-container/30">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">74' +4'</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-primary font-label-xs text-label-xs font-semibold">
+<span>LINEUPS CONFIRMED ↗</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-headline-md text-headline-md font-semibold text-on-surface">
+<span class="text-tertiary">CHELSEA</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-label-md tracking-wider">2 - 2</span>
+<span class="text-secondary">ARSENAL</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-label-xs text-label-xs">
+<span class="px-1.5 py-0.5 bg-amber-100 text-amber-900 rounded font-bold">▮ 3 YEL</span>
+<span class="px-1.5 py-0.5 bg-surface-container-high text-on-surface-variant rounded">xG 1.84 - 1.62</span>
+</div>
+</div>
+<!-- TACTICAL PHASE CONTROLS -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low p-0.5 rounded border border-outline-variant">
+<button class="phase-btn px-3 py-1 rounded bg-surface-container-lowest font-label-xs text-label-xs font-semibold text-primary transition-all" id="btn-possession">Possession</button>
+<button class="phase-btn px-3 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-all" id="btn-oop">Out of Possession</button>
+<button class="phase-btn px-3 py-1 rounded font-label-xs text-label-xs text-on-surface-variant hover:text-on-surface transition-all" id="btn-trans">Transition (Turnover)</button>
+</div>
+<div class="flex items-center gap-1 font-label-xs text-label-xs bg-surface-container-high px-2.5 py-1 rounded border border-outline-variant">
+<span class="text-tertiary font-bold">CFC [4-2-3-1]</span>
+<span class="text-outline">vs</span>
+<span class="text-secondary font-bold">ARS [4-3-3]</span>
+</div>
+</div>
+</section>
+<!-- WORKSPACE BODY: PITCH CANVAS + TELEMETRY INSPECTOR -->
+<section class="w-full px-margin-desktop py-space-md grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- LEFT 8.5 COLUMNS: PITCH CANVAS -->
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<!-- CANVAS TOOLBAR -->
+<div class="w-full bg-surface-container-lowest rounded p-space-sm border border-outline-variant flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Spatial Formation Matrix</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 bg-surface-container text-on-surface-variant rounded">105m × 68m Real-Time Telemetry</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs">
+<label class="flex items-center gap-1 cursor-pointer">
+<input checked="" class="accent-primary" id="toggle-vectors" type="checkbox"/>
+<span class="text-on-surface">Pass Vectors</span>
+</label>
+<span class="text-outline-variant">|</span>
+<label class="flex items-center gap-1 cursor-pointer">
+<input checked="" class="accent-primary" id="toggle-channels" type="checkbox"/>
+<span class="text-on-surface">5-Channel Grid</span>
+</label>
+<span class="text-outline-variant">|</span>
+<label class="flex items-center gap-1 cursor-pointer">
+<input checked="" class="accent-primary" id="toggle-centroids" type="checkbox"/>
+<span class="text-on-surface">Centroid Hulls</span>
+</label>
+</div>
+</div>
+<!-- INTERACTIVE PITCH (SVG CONTAINER) -->
+<div class="relative w-full aspect-[105/68] bg-[#eeece7] rounded overflow-hidden border border-outline-variant select-none shadow-sm">
+<!-- PITCH FIVE-LANE CHANNELS -->
+<div class="absolute inset-0 grid grid-cols-5 pointer-events-none transition-opacity duration-300" id="channel-overlay">
+<div class="border-r border-[#d9d9dd]/60 flex items-start p-2"><span class="font-label-xs text-[9px] uppercase tracking-wider text-[#707976]/60">L-Wing (14m)</span></div>
+<div class="border-r border-[#d9d9dd]/60 bg-[#003c33]/[0.02] flex items-start p-2"><span class="font-label-xs text-[9px] uppercase tracking-wider text-[#707976]/60">L-Half-Space</span></div>
+<div class="border-r border-[#d9d9dd]/60 flex items-start p-2"><span class="font-label-xs text-[9px] uppercase tracking-wider text-[#707976]/60">Central Corridor</span></div>
+<div class="border-r border-[#d9d9dd]/60 bg-[#fc7557]/[0.02] flex items-start p-2"><span class="font-label-xs text-[9px] uppercase tracking-wider text-[#707976]/60">R-Half-Space</span></div>
+<div class="flex items-start p-2"><span class="font-label-xs text-[9px] uppercase tracking-wider text-[#707976]/60">R-Wing (14m)</span></div>
+</div>
+<!-- SVG TACTICAL PITCH LINES & DYNAMIC VECTORS -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1050 680">
+<defs>
+<marker id="arrow-cfc" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#003c33"></path>
+</marker>
+<marker id="arrow-ars" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#a83820"></path>
+</marker>
+<!-- Overload Glow -->
+<radialgradient cx="28%" cy="25%" id="cfcOverloadGlow" r="20%">
+<stop offset="0%" stop-color="#003c33" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#003c33" stop-opacity="0"></stop>
+</radialgradient>
+<radialgradient cx="80%" cy="80%" id="arsIsolationGlow" r="22%">
+<stop offset="0%" stop-color="#fc7557" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#fc7557" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+<!-- OVERLOAD HEAT ZONES -->
+<ellipse cx="320" cy="180" fill="url(#cfcOverloadGlow)" rx="140" ry="100"></ellipse>
+<ellipse cx="820" cy="520" fill="url(#arsIsolationGlow)" rx="130" ry="110"></ellipse>
+<!-- REGULATION PITCH LINES (HAIRLINE #d9d9dd) -->
+<g fill="none" stroke="#d9d9dd" stroke-width="2">
+<!-- Perimeter Boundary -->
+<rect height="630" width="1000" x="25" y="25"></rect>
+<!-- Halfway Line -->
+<line x1="525" x2="525" y1="25" y2="655"></line>
+<!-- Center Circle -->
+<circle cx="525" cy="340" r="91.5"></circle>
+<circle cx="525" cy="340" fill="#d9d9dd" r="2.5"></circle>
+<!-- Left Box (Chelsea Defensive Half) -->
+<rect height="390" width="165" x="25" y="145"></rect>
+<rect height="190" width="55" x="25" y="245"></rect>
+<circle cx="135" cy="340" fill="#d9d9dd" r="2.5"></circle>
+<path d="M 190 270 A 91.5 91.5 0 0 1 190 410"></path>
+<!-- Right Box (Arsenal Defensive Half) -->
+<rect height="390" width="165" x="860" y="145"></rect>
+<rect height="190" width="55" x="970" y="245"></rect>
+<circle cx="915" cy="340" fill="#d9d9dd" r="2.5"></circle>
+<path d="M 860 270 A 91.5 91.5 0 0 0 860 410"></path>
+<!-- Corner Arcs -->
+<path d="M 25 35 A 10 10 0 0 0 35 25"></path>
+<path d="M 25 645 A 10 10 0 0 1 35 655"></path>
+<path d="M 1015 25 A 10 10 0 0 0 1025 35"></path>
+<path d="M 1015 655 A 10 10 0 0 1 1025 645"></path>
+</g>
+<!-- CENTROID CONVEX HULLS -->
+<g class="transition-opacity duration-300" id="centroid-group">
+<!-- Chelsea Hull (Blue/Green Wash) -->
+<polygon fill="#003c33" fill-opacity="0.06" points="170,220 220,130 430,160 480,310 390,480 200,480" stroke="#003c33" stroke-dasharray="4 4" stroke-width="1.5"></polygon>
+<circle cx="315" cy="296" fill="#003c33" r="6"></circle>
+<text fill="#003c33" font-family="Space Mono" font-size="10" font-weight="bold" x="328" y="300">CFC CENTROID [31.5m, 29.6m]</text>
+<!-- Arsenal Hull (Red Wash) -->
+<polygon fill="#a83820" fill-opacity="0.06" points="860,240 760,140 620,220 580,420 740,540 850,470" stroke="#a83820" stroke-dasharray="4 4" stroke-width="1.5"></polygon>
+<circle cx="735" cy="338" fill="#a83820" r="6"></circle>
+<text fill="#a83820" font-family="Space Mono" font-size="10" font-weight="bold" x="630" y="360">ARS CENTROID [73.5m, 33.8m]</text>
+</g>
+<!-- TACTICAL PASS VECTORS & CHANNEL FLOWS -->
+<g class="transition-opacity duration-300" id="vector-group">
+<!-- Caicedo -> Palmer Progressive Switch -->
+<path d="M 360 300 Q 420 230 470 210" fill="none" marker-end="url(#arrow-cfc)" stroke="#003c33" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#003c33" font-family="Space Mono" font-size="9" font-weight="bold" x="390" y="240">+0.22 xT</text>
+<!-- Chelsea Flank Overload Curve -->
+<path d="M 230 140 Q 340 110 440 120" fill="none" marker-end="url(#arrow-cfc)" stroke="#003c33" stroke-dasharray="6 3" stroke-width="2"></path>
+<text fill="#003c33" font-family="Space Mono" font-size="9" x="290" y="105">LEFT OVERLOAD (56% TILT)</text>
+<!-- Saliba -> Saka Long Switch Isolation -->
+<path d="M 870 380 Q 750 510 680 540" fill="none" marker-end="url(#arrow-ars)" stroke="#a83820" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#a83820" font-family="Space Mono" font-size="9" font-weight="bold" x="730" y="490">ISOLATION CHANNEL (+0.38 xT)</text>
+<!-- Rice -> Odegaard Central Penetration -->
+<path d="M 720 370 Q 660 330 630 270" fill="none" marker-end="url(#arrow-ars)" stroke="#a83820" stroke-dasharray="4 4" stroke-width="2"></path>
+</g>
+<!-- EVENT PITCH MARKERS (Substitutions & Bookings) -->
+<!-- Cucurella Yellow Card Marker -->
+<rect fill="#eab308" height="12" rx="1" width="8" x="235" y="110"></rect>
+<!-- Rice Yellow Card Marker -->
+<rect fill="#eab308" height="12" rx="1" width="8" x="715" y="380"></rect>
+</svg>
+<!-- 22 PLAYERS PINS (HTML ABSOLUTE OVERLAY FOR CRISP HOVER & UI TOOLTIPS) -->
+<div class="absolute inset-0 pointer-events-auto" id="player-pins-layer">
+<!-- ================= CHELSEA (11) ================= -->
+<!-- GK: Sanchez (1) -->
+<div class="player-pin group absolute left-[6%] top-[50%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Robert Sánchez" data-stat="Pass Acc: 84% | Saves: 4" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">1</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Sánchez</span>
+</div>
+<!-- RB: Gusto (27) -->
+<div class="player-pin group absolute left-[21%] top-[80%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Malo Gusto" data-stat="Tackles: 4/5 | Distance: 9.1km" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">27</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Gusto</span>
+</div>
+<!-- CB: Fofana (29) -->
+<div class="player-pin group absolute left-[18%] top-[60%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Wesley Fofana" data-stat="Interceptions: 3 | Duels: 7/8" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">29</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Fofana</span>
+</div>
+<!-- CB: Colwill (6) -->
+<div class="player-pin group absolute left-[18%] top-[40%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Levi Colwill" data-stat="Prog Passes: 7 | Long Balls: 5/6" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">6</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Colwill</span>
+</div>
+<!-- LB: Cucurella (3) -->
+<div class="player-pin group absolute left-[22%] top-[20%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Marc Cucurella" data-stat="Pressures: 19 | 🟨 52' Booking" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">3</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Cucurella</span>
+</div>
+<!-- DM: Caicedo (25) -->
+<div class="player-pin group absolute left-[34%] top-[44%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Moisés Caicedo" data-stat="Pass Volume: 68 | Ball Recoveries: 9" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary-container border-2 border-surface-container-lowest flex items-center justify-center text-primary-fixed font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">25</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Caicedo</span>
+</div>
+<!-- DM: Lavia (45) -->
+<div class="player-pin group absolute left-[32%] top-[66%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Roméo Lavia" data-stat="Press Resistance: 92% | Duels: 5/6" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary-container border-2 border-surface-container-lowest flex items-center justify-center text-primary-fixed font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">45</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Lavia</span>
+</div>
+<!-- RW: Madueke (11) -->
+<div class="player-pin group absolute left-[44%] top-[78%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Noni Madueke" data-stat="Dribbles: 3/4 | Key Passes: 2" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">11</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Madueke</span>
+</div>
+<!-- AM: Palmer (20) ★ GOAL -->
+<div class="player-pin group absolute left-[45%] top-[31%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Cole Palmer" data-stat="⚽ Goal 45' | xA 0.44 | 4 Chances" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm ring-2 ring-secondary group-hover:scale-110 transition-transform">20</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-bold text-secondary bg-surface-container-lowest px-1 rounded shadow-xs">Palmer ★</span>
+</div>
+<!-- LW: Neto (7) -->
+<div class="player-pin group absolute left-[42%] top-[17%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Pedro Neto" data-stat="Sprint Speed: 34.2km/h | Crosses: 4" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-primary border-2 border-surface-container-lowest flex items-center justify-center text-on-primary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">7</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-primary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Neto</span>
+</div>
+<!-- CF: Jackson (15) ⚽ GOAL -->
+<div class="player-pin group absolute left-[49%] top-[48%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Nicolas Jackson" data-stat="⚽ Goal 12' | Shots: 3 on tgt | xG 0.72" data-team="Chelsea">
+<div class="w-7 h-7 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm ring-2 ring-secondary group-hover:scale-110 transition-transform">15</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-bold text-secondary bg-surface-container-lowest px-1 rounded shadow-xs">Jackson ⚽</span>
+</div>
+<!-- ================= ARSENAL (11) ================= -->
+<!-- GK: Raya (22) -->
+<div class="player-pin group absolute left-[94%] top-[50%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="David Raya" data-stat="Claims: 3 | Long Distribution: 11/14" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">22</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Raya</span>
+</div>
+<!-- RB: White (4) -->
+<div class="player-pin group absolute left-[81%] top-[24%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Ben White" data-stat="Overlaps: 6 | Pass Acc: 89%" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">4</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">White</span>
+</div>
+<!-- CB: Saliba (2) -->
+<div class="player-pin group absolute left-[83%] top-[39%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="William Saliba" data-stat="Clearances: 5 | Passes to Saka: 14" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">2</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Saliba</span>
+</div>
+<!-- CB: Gabriel (6) -->
+<div class="player-pin group absolute left-[83%] top-[61%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Gabriel Magalhães" data-stat="Aerial Duels: 6/6 | Blocks: 3" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">6</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Gabriel</span>
+</div>
+<!-- LB: Timber (12) -->
+<div class="player-pin group absolute left-[79%] top-[79%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Jurriën Timber" data-stat="Inverted Touches: 44 | Tackles: 3" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">12</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Timber</span>
+</div>
+<!-- DM: Partey (5) -->
+<div class="player-pin group absolute left-[72%] top-[40%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Thomas Partey" data-stat="Tackles: 4 | Pass Acc: 91%" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">5</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Partey</span>
+</div>
+<!-- CM: Rice (41) -->
+<div class="player-pin group absolute left-[69%] top-[56%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Declan Rice" data-stat="Distance: 10.4km | 🟨 64' Booking" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">41</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Rice</span>
+</div>
+<!-- AM: Ødegaard (8) -->
+<div class="player-pin group absolute left-[60%] top-[40%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Martin Ødegaard" data-stat="Chances Created: 5 | Assists: 1" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">8</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Ødegaard</span>
+</div>
+<!-- RW: Saka (7) ⚽ GOAL -->
+<div class="player-pin group absolute left-[65%] top-[79%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Bukayo Saka" data-stat="⚽ Goal 62' | 1v1 Wins: 8 | xT +0.38" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm ring-2 ring-secondary group-hover:scale-110 transition-transform">7</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-bold text-secondary bg-surface-container-lowest px-1 rounded shadow-xs">Saka ⚽</span>
+</div>
+<!-- LW: Martinelli (11) ⚽ GOAL -->
+<div class="player-pin group absolute left-[59%] top-[21%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Gabriel Martinelli" data-stat="⚽ Goal 21' | Top Speed: 35.1km/h" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary-container border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm ring-2 ring-secondary group-hover:scale-110 transition-transform">11</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-bold text-secondary bg-surface-container-lowest px-1 rounded shadow-xs">Martinelli ⚽</span>
+</div>
+<!-- CF: Havertz (29) -->
+<div class="player-pin group absolute left-[54%] top-[50%] -translate-x-1/2 -translate-y-1/2 cursor-pointer" data-player="Kai Havertz" data-stat="Aerial Wins: 7 | Pressing Runs: 28" data-team="Arsenal">
+<div class="w-7 h-7 rounded-full bg-secondary border-2 border-surface-container-lowest flex items-center justify-center text-on-secondary font-label-xs text-label-xs font-bold shadow-sm group-hover:scale-110 transition-transform">29</div>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-label-xs text-[10px] font-semibold text-secondary bg-surface-container-lowest/90 px-1 rounded shadow-xs">Havertz</span>
+</div>
+<!-- SUBSTITUTION PITCH LABELS -->
+<div class="absolute left-[38%] bottom-[5%] bg-surface-container-lowest/90 px-2 py-0.5 rounded border border-outline-variant font-label-xs text-[10px] text-primary flex items-center gap-1 shadow-xs">
+<span class="text-secondary-container font-bold">▲</span> Nkunku (67') for Neto
+          </div>
+<div class="absolute right-[36%] bottom-[5%] bg-surface-container-lowest/90 px-2 py-0.5 rounded border border-outline-variant font-label-xs text-[10px] text-secondary flex items-center gap-1 shadow-xs">
+<span class="text-secondary font-bold">▲</span> Trossard (70') for Martinelli
+          </div>
+</div>
+<!-- DYNAMIC INSPECTOR TOOLTIP FLOATING ON PIN HOVER -->
+<div class="hidden absolute pointer-events-none z-30 bg-primary text-on-primary px-3 py-2 rounded text-xs shadow-md border border-outline-variant font-mono" id="canvas-tooltip">
+<div class="font-bold text-surface-bright" id="tooltip-title"></div>
+<div class="text-primary-fixed-dim text-[11px]" id="tooltip-body"></div>
+</div>
+</div>
+<!-- CANVAS BOTTOM METRIC SUMMARY STRIP -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Pitch Territorial Gain</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">+18.4m</span>
+<span class="font-label-xs text-label-xs text-outline">Chelsea Left Half-Space</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Saka 1v1 Isolation Pct</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-secondary">68.2%</span>
+<span class="font-label-xs text-label-xs text-outline">Vs Cucurella (14 Duels)</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Palmer Receiver Score</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">9.4 / 10</span>
+<span class="font-label-xs text-label-xs text-outline">Pocket occupancy rate 82%</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Turnover Danger Index</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-secondary-container">High [0.41 xGA]</span>
+<span class="font-label-xs text-label-xs text-outline">Transition in Central 3rd</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 3.5 COLUMNS: TACTICAL TELEMETRY INSPECTOR & COMPACTNESS -->
+<div class="xl:col-span-4 flex flex-col gap-space-sm">
+<!-- FIELD TILT KPI CARD -->
+<div class="bg-surface-container-lowest rounded p-space-md border border-outline-variant flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Field Tilt Index</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">Final 3rd Touches</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md font-bold">
+<span class="text-tertiary">54% Chelsea</span>
+<span class="text-secondary">46% Arsenal</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container flex overflow-hidden">
+<div class="h-full bg-primary" style="width: 54%"></div>
+<div class="h-full bg-secondary-container" style="width: 46%"></div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs pt-1">
+<span>182 Touches Attacking Third</span>
+<span>155 Touches Attacking Third</span>
+</div>
+</div>
+<!-- SHAPE COMPACTNESS & CENTROIDS -->
+<div class="bg-surface-container-lowest rounded p-space-md border border-outline-variant flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Formation Shape Metrics</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Active Block</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-tertiary font-bold">CHELSEA COMPACTNESS</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-label-xs text-label-xs text-outline">Width:</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">42.4m</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">Depth:</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">34.1m</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">High-Line:</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">38.6m</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded border border-outline-variant flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary font-bold">ARSENAL COMPACTNESS</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-label-xs text-label-xs text-outline">Width:</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">46.8m</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">Depth:</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">31.2m</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-label-xs text-label-xs text-outline">High-Line:</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">41.2m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PROGRESSIVE PASSING NETWORK TABLE -->
+<div class="bg-surface-container-lowest rounded p-space-md border border-outline-variant flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Top Progressive Links</span>
+<span class="font-label-xs text-label-xs text-outline">Pass Volume &gt; 10</span>
+</div>
+<div class="flex flex-col border border-outline-variant rounded overflow-hidden">
+<div class="bg-surface-container-high px-space-sm py-1.5 flex items-center justify-between font-label-xs text-label-xs text-on-surface font-semibold uppercase">
+<span>Link Connection</span>
+<span>Vol / Acc</span>
+<span>Prog xT</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-2 bg-surface-container-lowest border-b border-outline-variant/60 font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">Caicedo → Palmer</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">18 (89%)</span>
+<span class="font-label-xs text-label-xs text-primary font-bold font-mono">+0.31</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-2 bg-surface-container-lowest border-b border-outline-variant/60 font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-semibold text-on-surface">Saliba → Saka</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">14 (92%)</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold font-mono">+0.28</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-2 bg-surface-container-lowest border-b border-outline-variant/60 font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-semibold text-on-surface">Rice → Ødegaard</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">13 (85%)</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold font-mono">+0.19</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-2 bg-surface-container-lowest font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">Colwill → Cucurella</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">16 (94%)</span>
+<span class="font-label-xs text-label-xs text-primary font-bold font-mono">+0.14</span>
+</div>
+</div>
+</div>
+<!-- HIGH PRESS INTENSITY / PPDA TRIGGER ZONES -->
+<div class="bg-surface-container-lowest rounded p-space-md border border-outline-variant flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">High-Press Telemetry</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase">PPDA Metric</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant flex flex-col items-center text-center">
+<span class="font-label-xs text-label-xs text-tertiary font-bold">CHELSEA PPDA</span>
+<span class="font-display-lg text-display-lg font-bold text-primary my-1">8.4</span>
+<span class="font-label-xs text-[10px] text-primary bg-primary-fixed px-1.5 py-0.5 rounded font-semibold">Intense Press</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low border border-outline-variant flex flex-col items-center text-center">
+<span class="font-label-xs text-label-xs text-secondary font-bold">ARSENAL PPDA</span>
+<span class="font-display-lg text-display-lg font-bold text-secondary my-1">10.2</span>
+<span class="font-label-xs text-[10px] text-secondary bg-secondary-fixed px-1.5 py-0.5 rounded font-semibold">Mid-Block Regain</span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high/60 text-outline font-label-xs text-label-xs flex items-center justify-between">
+<span>High Turnover Recoveries:</span>
+<span class="font-bold text-on-surface">CFC: 6 | ARS: 8</span>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTION SCRIPT FOR TELEMETRY TOGGLES & TOOLTIP -->
+<script>
+    (function initTacticalPitch() {
+      // Toggle Layers
+      const vectorToggle = document.getElementById('toggle-vectors');
+      const channelToggle = document.getElementById('toggle-channels');
+      const centroidToggle = document.getElementById('toggle-centroids');
+      
+      const vectorGroup = document.getElementById('vector-group');
+      const channelOverlay = document.getElementById('channel-overlay');
+      const centroidGroup = document.getElementById('centroid-group');
+
+      if (vectorToggle && vectorGroup) {
+        vectorToggle.addEventListener('change', (e) => {
+          vectorGroup.style.opacity = e.target.checked ? '1' : '0';
+        });
+      }
+
+      if (channelToggle && channelOverlay) {
+        channelToggle.addEventListener('change', (e) => {
+          channelOverlay.style.opacity = e.target.checked ? '1' : '0';
+        });
+      }
+
+      if (centroidToggle && centroidGroup) {
+        centroidToggle.addEventListener('change', (e) => {
+          centroidGroup.style.opacity = e.target.checked ? '1' : '0';
+        });
+      }
+
+      // Phase buttons state toggle
+      const phaseBtns = document.querySelectorAll('.phase-btn');
+      phaseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          phaseBtns.forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+          btn.classList.remove('text-on-surface-variant');
+        });
+      });
+
+      // Player Pin Hover Tooltip
+      const pins = document.querySelectorAll('.player-pin');
+      const tooltip = document.getElementById('canvas-tooltip');
+      const tipTitle = document.getElementById('tooltip-title');
+      const tipBody = document.getElementById('tooltip-body');
+
+      pins.forEach(pin => {
+        pin.addEventListener('mouseenter', (e) => {
+          const playerName = pin.getAttribute('data-player');
+          const team = pin.getAttribute('data-team');
+          const stats = pin.getAttribute('data-stat');
+
+          tipTitle.textContent = `${playerName} (${team})`;
+          tipBody.textContent = stats;
+          
+          tooltip.classList.remove('hidden');
+          const rect = pin.getBoundingClientRect();
+          const parentRect = pin.parentElement.getBoundingClientRect();
+
+          tooltip.style.left = `${rect.left - parentRect.left + 32}px`;
+          tooltip.style.top = `${rect.top - parentRect.top - 10}px`;
+        });
+
+        pin.addEventListener('mouseleave', () => {
+          tooltip.classList.add('hidden');
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span class="">LATENCY: 14MS</span><span class="">FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span class="">© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer>
+</body></html>

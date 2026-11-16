@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide flex items-center gap-1.5" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a aria-current="page" class="transition-colors uppercase tracking-wide text-primary font-semibold border-b-2 border-primary" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<!-- LEAGUE SELECTOR BAR & SUB-HEADER -->
+<div class="w-full bg-surface-container-lowest px-margin-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs uppercase tracking-widest text-outline">JURISDICTION / FEDERATION:</span>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1.5 transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+          Premier League
+        </button>
+<button class="px-space-md py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" type="button">
+          La Liga EA SPORTS
+        </button>
+<button class="px-space-md py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" type="button">
+          UEFA Champions League
+        </button>
+<button class="px-space-md py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" type="button">
+          Serie A Enilive
+        </button>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-label-xs text-label-xs text-outline">
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span> OPPA MODEL v4.11 CALIBRATED
+      </span>
+<span>INDEX REFRESH: T-MINUS 04:12</span>
+<button class="flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span> CSV Export
+      </button>
+</div>
+</div>
+<!-- LEAGUE HERO BANNER -->
+<div class="w-full px-margin-desktop py-space-lg bg-surface-container-low">
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-lg">
+<div class="w-16 h-16 rounded-xl bg-primary text-on-primary flex items-center justify-center font-display-lg text-display-lg font-bold shadow-md relative overflow-hidden">
+<span class="z-10 tracking-tighter">PL</span>
+<div class="absolute -right-4 -bottom-4 w-12 h-12 rounded-full bg-secondary-container opacity-40 blur-sm"></div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs uppercase px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-bold tracking-wider">TIER-1 TELEMETRY FEED</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> MATCHDAY 24 OF 38
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">PREMIER LEAGUE 2026/27 — COMPREHENSIVE OVERVIEW</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High-cadence tactical audit, xG differentials, matchday simulation variance, and micro-metrics registry.</p>
+</div>
+</div>
+<!-- METRIC CHIPS STRIP -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full xl:w-auto">
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex flex-col min-w-[130px]">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Total Matches</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">240</span>
+<span class="font-label-xs text-label-xs text-outline">/ 380</span>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-medium mt-0.5">63.1% Complete</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex flex-col min-w-[130px]">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Goals / Match</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">2.94</span>
+<span class="font-label-xs text-label-xs text-secondary-container font-semibold">+0.14 vs avg</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">706 Net Total</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex flex-col min-w-[130px]">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Clean Sheet %</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">28.2%</span>
+<span class="font-label-xs text-label-xs text-primary font-semibold">135 CS</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-0.5">League Dispersion</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-lg flex flex-col min-w-[130px]">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Penalty Conv %</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">82.4%</span>
+<span class="font-label-xs text-label-xs text-outline">56/68</span>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-medium mt-0.5">xP Value: 0.79</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN 3-COLUMN WORKSPACE -->
+<div class="w-full px-margin-desktop py-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ========================================== -->
+<!-- LEFT COLUMN: COMPLETE 20-TEAM LEAGUE TABLE -->
+<!-- ========================================== -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">League Table Standings</h2>
+</div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> UCL (1-4)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span> UEL (5)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> REL (18-20)</span>
+</div>
+</div>
+<!-- TABLE CONTAINER -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-2 px-2 text-center w-8">#</th>
+<th class="py-2 px-2">Club</th>
+<th class="py-2 px-1 text-center font-label-sm text-label-sm">MP</th>
+<th class="py-2 px-1 text-center font-label-sm text-label-sm">W</th>
+<th class="py-2 px-1 text-center font-label-sm text-label-sm">D</th>
+<th class="py-2 px-1 text-center font-label-sm text-label-sm">L</th>
+<th class="py-2 px-1 text-center font-label-sm text-label-sm">GD</th>
+<th class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-on-surface">PTS</th>
+<th class="py-2 px-2 text-right">Form (L5)</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- 1. ARSENAL (UCL) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">1</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center font-label-xs">ARS</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Arsenal</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs font-medium">17</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">2</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+35</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">56</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<!-- 2. MANCHESTER CITY (UCL) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">2</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary text-[10px] font-bold flex items-center justify-center font-label-xs">MCI</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Man City</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs font-medium">16</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">3</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+34</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">53</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+</div>
+</td>
+</tr>
+<!-- 3. LIVERPOOL (UCL) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">3</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center font-label-xs">LIV</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Liverpool</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs font-medium">15</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">3</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+28</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">51</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<!-- 4. CHELSEA (UCL) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">4</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-tertiary text-on-tertiary text-[10px] font-bold flex items-center justify-center font-label-xs">CHE</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Chelsea</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs font-medium">14</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">4</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+21</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-primary">46</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<!-- 5. ASTON VILLA (UEL) -->
+<tr class="bg-tertiary-container/5 hover:bg-tertiary-container/10 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-tertiary-container">5</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary text-[10px] font-bold flex items-center justify-center font-label-xs">AVL</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Aston Villa</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs font-medium">13</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+13</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-tertiary-container">44</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<!-- 6-17 MID TABLE -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">6</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">NEW</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Newcastle</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">12</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+9</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">41</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">7</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">TOT</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Tottenham</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">11</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">8</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+8</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">38</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">8</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">MUN</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Man United</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">11</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">4</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">9</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+4</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">37</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">9</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">BHA</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Brighton</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">10</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">8</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-primary font-semibold">+3</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">36</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">10</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">FUL</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Fulham</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">9</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">9</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline font-semibold">0</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">33</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">11</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">BRE</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Brentford</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">9</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">5</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">10</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-2</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">32</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">12</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">WHU</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">West Ham</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">8</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">10</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-5</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">30</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">13</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">CRY</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Crystal Palace</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">8</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">9</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-6</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">29</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">14</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">BOU</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Bournemouth</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">10</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-8</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">28</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">15</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">NFO</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Nott'm Forest</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">11</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-9</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">27</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">16</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">EVE</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Everton</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">6</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">7</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">11</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-12</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">25</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm text-outline">17</td>
+<td class="py-1.5 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[10px] font-bold flex items-center justify-center font-label-xs">WOL</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Wolves</span>
+</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs">5</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">8</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-outline">11</td>
+<td class="py-1.5 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-14</td>
+<td class="py-1.5 px-2 text-center font-label-sm text-label-sm font-bold">23</td>
+<td class="py-1.5 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+</div>
+</td>
+</tr>
+<!-- 18-20 RELEGATION ZONE -->
+<tr class="bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">18</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed text-[10px] font-bold flex items-center justify-center font-label-xs">IPS</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Ipswich Town</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs">4</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">8</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">12</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-19</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">20</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center">W</span>
+</div>
+</td>
+</tr>
+<tr class="bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">19</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed text-[10px] font-bold flex items-center justify-center font-label-xs">LEI</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Leicester City</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs">4</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">6</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">14</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-24</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">18</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+</div>
+</td>
+</tr>
+<tr class="bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-colors">
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">20</td>
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed text-[10px] font-bold flex items-center justify-center font-label-xs">SOU</span>
+<span class="font-medium text-on-surface truncate max-w-[110px]">Southampton</span>
+</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">24</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs">2</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">4</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-outline">18</td>
+<td class="py-2 px-1 text-center font-label-xs text-label-xs text-secondary-container font-semibold">-32</td>
+<td class="py-2 px-2 text-center font-label-sm text-label-sm font-bold text-secondary">10</td>
+<td class="py-2 px-2 text-right">
+<div class="inline-flex gap-0.5 font-label-xs text-[9px] font-bold">
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+<span class="w-4 h-4 rounded bg-surface-container-high text-on-surface-variant flex items-center justify-center">D</span>
+<span class="w-4 h-4 rounded bg-secondary-container text-on-secondary flex items-center justify-center">L</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-label-xs text-label-xs text-outline">
+<span>* Tiebreak: GD &gt; GF &gt; H2H Points</span>
+<button class="text-primary hover:underline font-semibold">Inspect Full Model Factors →</button>
+</div>
+</div>
+<!-- ======================================================= -->
+<!-- CENTER COLUMN: MATCHDAY FIXTURES & EXPECTED RESULTS      -->
+<!-- ======================================================= -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- SECTION CONTROLS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">sports_soccer</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Matchday 24 Telemetry</h2>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="font-label-xs text-label-xs font-bold px-2 text-on-surface">MD 24</span>
+<button class="w-7 h-7 rounded bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- DATE GROUP: SATURDAY -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold text-outline">Saturday, 1 Feb 2026</span>
+<span class="font-label-xs text-label-xs text-primary font-medium">4 Fixtures Completed</span>
+</div>
+<!-- FIXTURE 1: ARS VS MCI (HEADLINE MATCH) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-bold">FULL TIME</span>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-bold">REF CARD RATIO: 3.8/G</span>
+<span class="text-outline">M. Oliver</span>
+</div>
+</div>
+<!-- MATCHUP SCORE & LOGOS -->
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-2 flex-1">
+<span class="w-7 h-7 rounded-full bg-primary text-on-primary text-xs font-bold flex items-center justify-center">ARS</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Arsenal</span>
+</div>
+<div class="flex items-center gap-2 px-space-md">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">2</span>
+<span class="font-label-md text-label-md text-outline">-</span>
+<span class="font-display-lg text-display-lg text-on-surface font-bold">1</span>
+</div>
+<div class="flex items-center justify-end gap-2 flex-1 text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Man City</span>
+<span class="w-7 h-7 rounded-full bg-tertiary-container text-on-tertiary text-xs font-bold flex items-center justify-center">MCI</span>
+</div>
+</div>
+<!-- EXPECTED GOALS COMPARISON BAR -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="font-bold text-primary">1.94 xG</span>
+<span class="text-outline uppercase tracking-wider">Expected Goals (xG)</span>
+<span class="font-bold text-tertiary-container">1.82 xG</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 51.6%;"></div>
+<div class="bg-tertiary-container h-full" style="width: 48.4%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Shots: 14 (6) vs 12 (5) • Poss: 48% - 52%</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold flex items-center gap-1 transition-colors">
+              H2H Snapshot <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- FIXTURE 2: CHE VS TOT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-bold">FULL TIME</span>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-bold">REF CARD RATIO: 4.4/G</span>
+<span class="text-outline">A. Taylor</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-2 flex-1">
+<span class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary text-xs font-bold flex items-center justify-center">CHE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Chelsea</span>
+</div>
+<div class="flex items-center gap-2 px-space-md">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">3</span>
+<span class="font-label-md text-label-md text-outline">-</span>
+<span class="font-display-lg text-display-lg text-on-surface font-bold">1</span>
+</div>
+<div class="flex items-center justify-end gap-2 flex-1 text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Tottenham</span>
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface text-xs font-bold flex items-center justify-center">TOT</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="font-bold text-tertiary">2.41 xG</span>
+<span class="text-outline uppercase tracking-wider">Expected Goals (xG)</span>
+<span class="font-bold text-on-surface-variant">0.89 xG</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-tertiary h-full" style="width: 73%;"></div>
+<div class="bg-outline h-full" style="width: 27%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Shots: 19 (9) vs 8 (2) • Box Touches: 38 vs 14</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold flex items-center gap-1 transition-colors">
+              H2H Snapshot <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- DATE GROUP: SUNDAY (UPCOMING / LIVE) -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider font-semibold text-outline">Sunday, 2 Feb 2026</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-secondary-fixed text-secondary font-bold">1 LIVE / 1 SCHEDULED</span>
+</div>
+<!-- FIXTURE 3: LIV VS NEW (LIVE IN-PLAY) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border-l-4 border-secondary-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE 68'
+            </span>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-bold">CARDS: 2Y</span>
+<span class="text-outline">S. Barrott</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-2 flex-1">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary text-xs font-bold flex items-center justify-center">LIV</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Liverpool</span>
+</div>
+<div class="flex items-center gap-2 px-space-md">
+<span class="font-display-lg text-display-lg text-secondary font-bold">2</span>
+<span class="font-label-md text-label-md text-outline">:</span>
+<span class="font-display-lg text-display-lg text-secondary font-bold">2</span>
+</div>
+<div class="flex items-center justify-end gap-2 flex-1 text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Newcastle</span>
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface text-xs font-bold flex items-center justify-center">NEW</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="font-bold text-secondary">2.18 xG</span>
+<span class="text-outline uppercase tracking-wider">Live Model xG</span>
+<span class="font-bold text-on-surface">1.75 xG</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 55%;"></div>
+<div class="bg-outline h-full" style="width: 45%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Momentum: Liverpool +68% zone bias</span>
+<button class="px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant hover:bg-secondary-fixed-dim font-label-xs text-label-xs font-bold flex items-center gap-1 transition-colors">
+              Telemetry Stream <span class="material-symbols-outlined text-[14px]">sensors</span>
+</button>
+</div>
+</div>
+<!-- FIXTURE 4: AVL VS MUN (UPCOMING) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm opacity-95">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-outline font-bold">TODAY • 17:30</span>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-bold">HISTORICAL Y/G: 4.1</span>
+<span class="text-outline">R. Jones</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-2 flex-1">
+<span class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary text-xs font-bold flex items-center justify-center">AVL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Aston Villa</span>
+</div>
+<div class="flex flex-col items-center px-space-md">
+<span class="font-label-xs text-label-xs text-primary font-bold">VS</span>
+<span class="font-label-xs text-[10px] text-outline">Villa Park</span>
+</div>
+<div class="flex items-center justify-end gap-2 flex-1 text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Man United</span>
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface text-xs font-bold flex items-center justify-center">MUN</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">Pre-Match Win Prob:</span>
+<div class="flex items-center gap-2 font-bold">
+<span class="text-primary">AVL 42%</span>
+<span class="text-outline">DRAW 27%</span>
+<span class="text-secondary-container">MUN 31%</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Opta Projection: 1.62 vs 1.44</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold flex items-center gap-1 transition-colors">
+              H2H Snapshot <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================== -->
+<!-- RIGHT COLUMN: PLAYER LEADERBOARDS & MULTI-CATEGORY STATS   -->
+<!-- ========================================================== -->
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">leaderboard</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Player Leaders</h2>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-semibold">2026/27 PL</span>
+</div>
+<!-- CATEGORY TABS -->
+<div class="flex items-center gap-1 overflow-x-auto pb-2 border-b border-outline-variant/30 scrollbar-none">
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-xs text-label-xs font-semibold shrink-0" type="button">Goals</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">Assists</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">xG Model</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">Key Passes</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">Shots OT</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">Tackles</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0" type="button">Cards</button>
+</div>
+<!-- RANKED PLAYER LIST -->
+<div class="flex flex-col divide-y divide-outline-variant/20 mt-space-sm">
+<!-- RANK 1: ERLING HAALAND -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-primary w-4 text-center">1</span>
+<div class="relative w-10 h-10 shrink-0">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container-high" data-alt="Erling Haaland athletic portrait headshot wearing light blue sky kit, clean studio photography with crisp lighting and soft shadow on stark minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAoZLTmmpCyVTUGyJlIQeowFoAU97yX9wwmAJUdSTP6xGe6J4P1q33CuSNJJA390aGQLw5qbd-_DVwCBt_xiot07ZX8zNE9xJLawXM92iSTEPmREHyjcTs9RRUASYU0w-h_kBhTcvKBafNi1tA0Ck1br8nYRCTo2jyjuKEYvyPb646wG9ZgyGu-dwv3oRIm21TLU6dPO02LTuDZJaCXteZD5KrOgFGQJloJkl5ktnK"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary-container text-on-tertiary text-[8px] font-bold flex items-center justify-center">MC</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Erling Haaland</span>
+<span class="font-label-xs text-label-xs text-outline">Man City • 1,980 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              21 goals
+            </span>
+<span class="font-label-xs text-[10px] text-primary mt-0.5">18.42 xG (+2.58)</span>
+</div>
+</div>
+<!-- RANK 2: MOHAMED SALAH -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant w-4 text-center">2</span>
+<div class="relative w-10 h-10 shrink-0">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container-high" data-alt="Mohamed Salah professional footballer portrait headshot in red jersey, high resolution sports photo on warm neutral paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYafJLOw3y4_g2D839_3MGOinR3pinvzMReECTdK7WZWsWvYyqLlxagpMoDrlTLTLJJGdXkbZjZNcdh9s5KVRzwZggmGZU0SpaiXB9y5zQBfem1AyZsVO7xtOgzWl3iJT02RFUhph9WVcqCn-s1rpOD5baoGcYLJKJ-sn6MoycN1vv8uJ_rFLx-DZ7a2f2eRgPUQMjSDAL-JFZT0ny_MfKNF6hJXgvx2jz5TaWmIee"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary text-[8px] font-bold flex items-center justify-center">LIV</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Mohamed Salah</span>
+<span class="font-label-xs text-label-xs text-outline">Liverpool • 2,042 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              18 goals
+            </span>
+<span class="font-label-xs text-[10px] text-primary mt-0.5">15.11 xG (+2.89)</span>
+</div>
+</div>
+<!-- RANK 3: COLE PALMER -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant w-4 text-center">3</span>
+<div class="relative w-10 h-10 shrink-0">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container-high" data-alt="Cole Palmer professional sports headshot portrait, calm confident expression, wearing dark royal blue football shirt, studio rim light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJHq1_VMBwzEB1lptdZg2GwnrHfeGWaZ3TeF0CkEXG-u_PGWLncI3lqceSb58uyL4yxv0bNxZbsz7Ej3QmgUt4O-t0A6d0G8C8Ihon45utB4Xaf18JlvbrJXIEm8Oqz106CHMeczM6ZIvPLN6rBgh6HJxDVdSZ8lzwXn7YWhbyvzN3N526Hl4fJMUjbv_HghicxrZTYXTqFB0YBFxVCattrS_mXgM_iGh7oDByTUsz"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary text-on-tertiary text-[8px] font-bold flex items-center justify-center">CHE</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Cole Palmer</span>
+<span class="font-label-xs text-label-xs text-outline">Chelsea • 1,910 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              15 goals
+            </span>
+<span class="font-label-xs text-[10px] text-primary mt-0.5">12.60 xG (+2.40)</span>
+</div>
+</div>
+<!-- RANK 4: BUKAYO SAKA -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant w-4 text-center">4</span>
+<div class="relative w-10 h-10 shrink-0">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container-high" data-alt="Bukayo Saka sharp portrait cutout, dynamic athletic lighting, Arsenal red and white team colors background, premium editorial sports aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF7LInajGeFouGooQRCeprEHoqljAekusbzDTtTLi-GeW4IEpiuAFLKTgH37CHJcuyvNC03OZ4MRu3noq1qY_7w__vx8UhS1GttsttA4oIof_FOyAAfIGPbSrinvy5tcTDRAm6UM0Hpe0Jq4V7fmJd8omxxv7-rW5XY7SJOfk6BLm4GzUYVJJvNE6kO36wt4Ms7iXAtSJiUGyvi6hj3KQmwT45J5qqodA6B5A0cfBV"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-primary text-on-primary text-[8px] font-bold flex items-center justify-center">ARS</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Bukayo Saka</span>
+<span class="font-label-xs text-label-xs text-outline">Arsenal • 1,845 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              12 goals
+            </span>
+<span class="font-label-xs text-[10px] text-primary mt-0.5">10.82 xG (+1.18)</span>
+</div>
+</div>
+<!-- RANK 5: ALEXANDER ISAK -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant w-4 text-center">5</span>
+<div class="relative w-10 h-10 shrink-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface-variant font-label-xs">AI</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-surface-container-highest text-on-surface text-[8px] font-bold flex items-center justify-center">NEW</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Alexander Isak</span>
+<span class="font-label-xs text-label-xs text-outline">Newcastle • 1,670 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              12 goals
+            </span>
+<span class="font-label-xs text-[10px] text-primary mt-0.5">11.45 xG (+0.55)</span>
+</div>
+</div>
+<!-- RANK 6: OLLIE WATKINS -->
+<div class="py-space-sm flex items-center justify-between gap-space-xs hover:bg-surface-container-low px-1 rounded-lg transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant w-4 text-center">6</span>
+<div class="relative w-10 h-10 shrink-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface-variant font-label-xs">OW</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-secondary-container text-on-secondary text-[8px] font-bold flex items-center justify-center">AVL</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Ollie Watkins</span>
+<span class="font-label-xs text-label-xs text-outline">Aston Villa • 1,890 mins</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-[#eeece7] text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+              11 goals
+            </span>
+<span class="font-label-xs text-[10px] text-outline mt-0.5">11.20 xG (-0.20)</span>
+</div>
+</div>
+</div>
+<!-- MINI RADAR / SHOT DRILLDOWN PREVIEW -->
+<div class="mt-space-md p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-bold text-on-surface">Golden Boot Probability Vector</span>
+<span class="font-label-xs text-label-xs text-secondary-container font-bold">Cohere SIM</span>
+</div>
+<div class="w-full h-12 flex items-end gap-1.5 pt-2">
+<div class="flex-1 bg-primary/20 rounded-t h-full flex flex-col justify-end p-0.5 text-center">
+<span class="font-label-xs text-[9px] font-bold text-primary">54%</span>
+</div>
+<div class="flex-1 bg-secondary/20 rounded-t h-[65%] flex flex-col justify-end p-0.5 text-center">
+<span class="font-label-xs text-[9px] font-bold text-secondary">24%</span>
+</div>
+<div class="flex-1 bg-tertiary/20 rounded-t h-[42%] flex flex-col justify-end p-0.5 text-center">
+<span class="font-label-xs text-[9px] font-bold text-tertiary">14%</span>
+</div>
+<div class="flex-1 bg-outline/20 rounded-t h-[20%] flex flex-col justify-end p-0.5 text-center">
+<span class="font-label-xs text-[9px] font-bold text-outline">8%</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-xs text-[10px] text-outline pt-1">
+<span>Haaland</span>
+<span>Salah</span>
+<span>Palmer</span>
+<span>Field</span>
+</div>
+</div>
+<!-- FULL RADAR EXPLORER LINK -->
+<button class="mt-space-md w-full py-2 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">radar</span>
+        Launch Deep Scouting Matrix
+      </button>
+</div>
+</div>
+<!-- SCRIPT FOR INTERACTIVE TABS & SELECTION -->
+<script>
+    // Category tabs micro-interaction
+    document.querySelectorAll('.scrollbar-none button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.scrollbar-none button').forEach(b => {
+          b.className = 'px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-xs text-label-xs shrink-0';
+        });
+        button.className = 'px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-xs text-label-xs font-semibold shrink-0';
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span>LATENCY: 14MS</span><span>FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span>© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer></body></html>

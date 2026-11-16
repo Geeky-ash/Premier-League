@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { fetchGlobalPlayerStats, PlayerProfileStatsResponse } from "@/lib/api";
 import { getGlobalClubCrest, getPlayerPhoto } from "@/lib/logos";
+import GoalShotMap from "@/components/GoalShotMap";
 
 export default function PlayerProfilePage() {
   const params = useParams();
@@ -352,6 +353,14 @@ export default function PlayerProfilePage() {
             )}
           </div>
         </div>
+      </div>
+
+      {/* ── Optical Goal Frame Shot Map (Stitch Visualizer) ── */}
+      <div className="mt-8">
+        <GoalShotMap
+          title={`${data?.player.name || "Player"} — Goal Frame Shot Map`}
+          subtitle="Post-Shot Frame Vector Projection & 7.32m x 2.44m Spatial Telemetry"
+        />
       </div>
 
       {/* ── Match Log Timeline Ribbon (Bottom) ── */}

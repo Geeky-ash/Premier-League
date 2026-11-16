@@ -1,0 +1,635 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a aria-current="page" class="transition-colors uppercase tracking-wide text-primary font-semibold border-b-2 border-primary" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a aria-current="page" class="transition-colors uppercase tracking-wide flex items-center gap-1.5 text-primary font-semibold border-b-2 border-primary" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<div class="px-margin-desktop py-space-md bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">TELEMETRY FEED • MATCHDAY WORKSPACE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Early Kickoffs &amp; Live Matchday Hub</h1>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<span class="font-label-xs text-label-xs px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-medium">MODEL CONF: 97.4%</span>
+<button class="h-9 px-space-md rounded bg-primary text-on-primary font-label-lg text-label-lg flex items-center gap-1.5 shadow-sm hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span> Refresh Feed
+        </button>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-md overflow-x-auto py-space-xs">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">THU 05</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">FRI 06</button>
+<button class="px-space-md py-1.5 rounded bg-surface-container text-primary font-bold shadow-sm relative" type="button">
+          TODAY 07
+          <span class="absolute bottom-0 left-2 right-2 h-0.5 bg-secondary-container rounded-full"></span>
+</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">TOMO 08</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">MON 09</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">TUE 10</button>
+<button class="px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container transition-colors" type="button">WED 11</button>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-xs text-label-xs font-semibold shadow-sm" type="button">ALL MATCHES (58)</button>
+<button class="px-3 py-1 rounded bg-surface-container text-secondary font-label-xs text-label-xs font-semibold flex items-center gap-1 hover:bg-secondary-fixed transition-colors" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span> LIVE (6)
+        </button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs hover:bg-surface-container-high transition-colors" type="button">TODAY'S FIXTURES</button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs hover:bg-surface-container-high transition-colors" type="button">COMPLETED</button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs hover:bg-surface-container-high transition-colors" type="button">PREDICTIONS &amp; ODDS</button>
+</div>
+</div>
+</div>
+<div class="w-full px-margin-desktop py-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<aside class="lg:col-span-3 flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase font-bold tracking-wider text-outline">PRIORITY LEAGUES</span>
+<span class="font-label-xs text-label-xs text-secondary-container font-semibold">TIER-1 CORE</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="p-space-sm rounded bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-xs font-bold">PL</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">Premier League</span>
+</div>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">3 LIVE</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">Goalscorers</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">Shots</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">SoT</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">Tackles</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">Yellows</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-xs font-bold">LL</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">La Liga</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">1 LIVE</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Goalscorers</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Shots</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">SoT</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Yellows</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary flex items-center justify-center font-headline-sm text-xs font-bold">CL</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">UEFA Champions League</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">WED</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">xG Matchup</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Pressing Index</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface-variant text-surface-container-lowest flex items-center justify-center font-headline-sm text-xs font-bold">BL</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">Bundesliga</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">1 LIVE</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Shots</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Tackles</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Fouls</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-xs font-bold">SA</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">Serie A</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">0 LIVE</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Defensive Lines</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Cards</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-xs font-bold">L1</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-sm font-semibold">Ligue 1</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-medium">1 LIVE</span>
+</div>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Carries</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">Pass Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-space-md rounded-lg shadow-sm flex flex-col gap-2 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-widest text-primary-fixed-dim">TELEMETRY SYNDICATE</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+</div>
+<p class="font-headline-sm text-headline-sm text-sm text-surface-bright">Live Expected Threat (xT) Vectoring Online</p>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Tracking 22-man player trajectory clusters with 50ms positional latency.</p>
+<div class="mt-2 pt-2 bg-primary-container p-2 rounded flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-surface-bright">INGEST PACKETS</span>
+<span class="font-bold text-secondary-fixed">8,912 / SEC</span>
+</div>
+</div>
+</aside>
+<main class="lg:col-span-5 flex flex-col gap-space-md">
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md transition-all border border-outline-variant"><div class="flex items-center justify-between pb-space-xs flex-wrap gap-2"><div class="flex items-center gap-2"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/30 text-on-surface"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-md text-label-md font-bold text-secondary-container tracking-tight">74'</span><span class="font-label-xs text-label-xs px-1 py-0.2 rounded bg-secondary-container text-on-secondary font-bold">+4'</span></div><span class="font-label-xs text-label-xs text-outline uppercase font-semibold">PREMIER LEAGUE • MATCHDAY 28</span><div class="flex items-center gap-1 ml-1"><span class="px-1.5 py-0.5 rounded bg-[#ffc107] text-[#1b1b20] font-label-xs text-[10px] font-bold shadow-sm" title="Yellow card: M. Caicedo 39'">🟨 2</span><span class="px-1.5 py-0.5 rounded bg-[#ba1a1a] text-on-primary font-label-xs text-[10px] font-bold shadow-sm" title="Red cards: 0">🟥 0</span></div></div><button class="bg-[#edfce9] text-[#003c33] border border-[#003c33]/20 font-label-xs text-xs px-3 py-1 rounded-full cursor-pointer hover:bg-[#d8f5d2] transition-colors font-bold flex items-center gap-1.5 shadow-sm" type="button"><span class="">[ LINEUPS OUT ↗ ]</span></button></div><div class="grid grid-cols-7 items-center gap-2"><div class="col-span-3 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-headline-md text-headline-md font-bold text-primary shrink-0 border border-outline-variant">CHE</div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm truncate text-on-surface">Chelsea</span><span class="font-label-xs text-label-xs text-outline">xG: 1.84 • Poss: 52%</span></div></div><div class="col-span-1 flex flex-col items-center justify-center"><div class="font-display-lg text-display-lg font-bold text-on-surface leading-none flex items-center gap-1"><span class="">2</span><span class="text-outline-variant font-light">–</span><span class="">2</span></div></div><div class="col-span-3 flex items-center justify-end gap-3 text-right"><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm truncate text-on-surface">Arsenal</span><span class="font-label-xs text-label-xs text-outline">xG: 1.62 • Poss: 48%</span></div><div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-headline-md text-headline-md font-bold text-secondary shrink-0 border border-outline-variant">ARS</div></div></div><div class="grid grid-cols-2 gap-space-sm p-space-sm bg-surface-container-low rounded border border-outline-variant/40 font-label-xs text-label-xs text-on-surface-variant"><div class="flex flex-col gap-1"><span class="">⚽ N. Jackson 12'</span><span class="">⚽ C. Palmer 45' (P)</span><span class="text-[10px] text-outline flex items-center gap-1"><span class="text-primary font-bold">▲</span> Nkunku 67' <span class="text-error font-bold">▼</span> Mudryk 67'</span><span class="text-[10px] text-outline flex items-center gap-1"><span class="px-1 rounded bg-[#ffc107] text-[#1b1b20] font-bold">🟨</span> Caicedo 39'</span></div><div class="flex flex-col gap-1 text-right"><span class="">⚽ G. Martinelli 21'</span><span class="">⚽ B. Saka 62'</span><span class="text-[10px] text-outline flex items-center justify-end gap-1"><span class="text-primary font-bold">▲</span> Trossard 70' <span class="text-error font-bold">▼</span> Martinelli 70'</span><span class="text-[10px] text-outline flex items-center justify-end gap-1"><span class="px-1 rounded bg-[#ffc107] text-[#1b1b20] font-bold">🟨</span> Gabriel 54'</span></div></div><div class="flex flex-col gap-1.5 p-space-sm bg-surface-container-low rounded border border-outline-variant/40"><div class="flex items-center justify-between font-label-xs text-label-xs text-outline"><span class="font-bold text-on-surface">XGBOOST WIN PROBABILITY (IN-PLAY)</span><span class="">SIMULATIONS: 50,000</span></div><div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden flex"><div class="bg-primary h-full transition-all" style="width: 41%;"></div><div class="bg-outline h-full transition-all" style="width: 33%;"></div><div class="bg-secondary-container h-full transition-all" style="width: 26%;"></div></div><div class="grid grid-cols-3 text-center pt-1 font-label-sm text-label-sm"><div class="flex flex-col"><span class="font-bold text-primary">CHE 41%</span><span class="text-outline font-label-xs text-label-xs">H: 2.80</span></div><div class="flex flex-col"><span class="font-bold text-on-surface-variant">DRAW 33%</span><span class="text-outline font-label-xs text-label-xs">D: 3.10</span></div><div class="flex flex-col"><span class="font-bold text-secondary">ARS 26%</span><span class="text-outline font-label-xs text-label-xs">A: 2.60</span></div></div></div><div class="flex flex-col gap-2 p-space-sm bg-surface-container-low rounded border border-outline-variant/40"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">grid_view</span><span class="font-headline-sm text-headline-sm text-xs font-bold text-on-surface">11v11 Tactical Pitch Visualizer</span></div><div class="flex items-center gap-1 bg-surface-container-lowest px-1.5 py-0.5 rounded border border-outline-variant"><span class="font-label-xs text-[10px] text-primary font-bold">4-2-3-1</span><span class="text-outline-variant text-[10px]">vs</span><span class="font-label-xs text-[10px] text-secondary font-bold">4-3-3</span></div></div><div class="relative w-full rounded overflow-hidden bg-[#eeece7] border border-[#d9d9dd] shadow-inner"><svg class="w-full h-auto block select-none" viewBox="0 0 520 320"><rect fill="#eeece7" height="320" width="520"></rect><rect fill="none" height="280" stroke="#d9d9dd" stroke-width="1.5" width="480" x="20" y="20"></rect><line stroke="#d9d9dd" stroke-width="1.5" x1="260" x2="260" y1="20" y2="300"></line><circle cx="260" cy="160" fill="none" r="45" stroke="#d9d9dd" stroke-width="1.5"></circle><circle cx="260" cy="160" fill="#d9d9dd" r="2.5"></circle><rect fill="none" height="130" stroke="#d9d9dd" stroke-width="1.5" width="75" x="20" y="95"></rect><rect fill="none" height="60" stroke="#d9d9dd" stroke-width="1.5" width="28" x="20" y="130"></rect><circle cx="75" cy="160" fill="#d9d9dd" r="2.5"></circle><path d="M 95 130 A 40 40 0 0 1 95 190" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><rect fill="none" height="130" stroke="#d9d9dd" stroke-width="1.5" width="75" x="425" y="95"></rect><rect fill="none" height="60" stroke="#d9d9dd" stroke-width="1.5" width="28" x="472" y="130"></rect><circle cx="445" cy="160" fill="#d9d9dd" r="2.5"></circle><path d="M 425 130 A 40 40 0 0 0 425 190" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><path d="M 20 28 A 8 8 0 0 1 28 20" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><path d="M 20 292 A 8 8 0 0 0 28 300" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><path d="M 500 28 A 8 8 0 0 0 492 20" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><path d="M 500 292 A 8 8 0 0 1 492 300" fill="none" stroke="#d9d9dd" stroke-width="1.5"></path><line stroke="#fc7557" stroke-dasharray="4 3" stroke-width="1.5" x1="215" x2="290" y1="100" y2="60"></line><line stroke="#003c33" stroke-dasharray="4 3" stroke-width="1.5" x1="220" x2="320" y1="160" y2="160"></line><polygon fill="#fc7557" points="288,57 296,60 290,65"></polygon><polygon fill="#003c33" points="318,157 326,160 318,163"></polygon><g><circle cx="45" cy="160" fill="#00241e" r="10" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="8" font-weight="bold" text-anchor="middle" y="163" x="45">1</text><text fill="#1b1b20" font-family="Space Grotesk" font-size="8" font-weight="bold" text-anchor="middle" y="180" x="45">Sanchez</text><circle cx="105" cy="65" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="68" x="105">3</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="82" x="105">Cucurella</text><circle cx="100" cy="125" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="128" x="100">6</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="142" x="100">Colwill</text><circle cx="100" cy="195" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="198" x="100">29</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="212" x="100">Fofana</text><circle cx="105" cy="255" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="258" x="105">27</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="272" x="105">Gusto</text><circle cx="160" cy="130" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="133" x="160">25</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="147" x="160">Caicedo</text><circle cx="160" cy="190" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="193" x="160">45</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="207" x="160">Lavia</text><circle cx="215" cy="85" fill="#00241e" r="9" stroke="#fc7557" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="88" x="215">11</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="102" x="215">Madueke</text><circle cx="220" cy="160" fill="#00241e" r="10" stroke="#fc7557" stroke-width="2"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="163" x="220">20</text><text fill="#00241e" font-family="Space Grotesk" font-size="7.5" font-weight="bold" text-anchor="middle" y="177" x="220">Palmer ★</text><circle cx="215" cy="235" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="238" x="215">7</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="252" x="215">Neto</text><circle cx="260" cy="120" fill="#00241e" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="123" x="260">15</text><text fill="#00241e" font-family="Space Grotesk" font-size="7" font-weight="bold" text-anchor="middle" y="137" x="260">Jackson ⚽</text></g><g><circle cx="475" cy="160" fill="#a83820" r="10" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="8" font-weight="bold" text-anchor="middle" y="163" x="475">22</text><text fill="#1b1b20" font-family="Space Grotesk" font-size="8" font-weight="bold" text-anchor="middle" y="180" x="475">Raya</text><circle cx="415" cy="65" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="68" x="415">4</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="82" x="415">White</text><circle cx="420" cy="125" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="128" x="420">2</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="142" x="420">Saliba</text><circle cx="420" cy="195" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="198" x="420">6</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="212" x="420">Gabriel</text><circle cx="415" cy="255" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="258" x="415">12</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="272" x="415">Timber</text><circle cx="360" cy="160" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="163" x="360">5</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="177" x="360">Partey</text><circle cx="340" cy="105" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="108" x="340">41</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="122" x="340">Rice</text><circle cx="340" cy="215" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="218" x="340">8</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="232" x="340">Ødegaard</text><circle cx="290" cy="65" fill="#a83820" r="10" stroke="#fc7557" stroke-width="2"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="68" x="290">7</text><text fill="#a83820" font-family="Space Grotesk" font-size="7.5" font-weight="bold" text-anchor="middle" y="82" x="290">Saka ⚽</text><circle cx="290" cy="255" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="258" x="290">11</text><text fill="#00241e" font-family="Space Grotesk" font-size="7" font-weight="bold" text-anchor="middle" y="272" x="290">Martinelli ⚽</text><circle cx="295" cy="160" fill="#a83820" r="9" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="7.5" font-weight="bold" text-anchor="middle" y="163" x="295">29</text><text fill="#404946" font-family="Space Grotesk" font-size="7" text-anchor="middle" y="177" x="295">Havertz</text></g></svg></div><div class="flex items-center justify-between text-[10px] font-label-xs text-outline px-1"><span class="">CHE Passing Channel: Overload Left (56%)</span><span class="">ARS Transition Vector: Saka Isolation (xT +0.38)</span></div></div><div class="flex flex-col gap-2 p-space-sm bg-surface-container-low rounded border border-outline-variant/40"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">sports</span><span class="font-headline-sm text-headline-sm text-xs font-bold text-on-surface">Referee Whistle Profile: J. Brooks</span></div><span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container font-semibold text-secondary-container">VAR: P. Tierney</span></div><div class="flex flex-col gap-1"><div class="flex items-center justify-between text-[11px] font-label-xs"><span class="text-outline">Card Strictness Index:</span><span class="font-bold text-secondary font-label-sm">6.8 / 10.0 (Above Avg)</span></div><div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden relative"><div class="h-full bg-gradient-to-r from-primary via-[#ffc107] to-secondary" style="width: 68%;"></div></div><div class="flex items-center justify-between text-[9px] font-label-xs text-outline"><span class="">1.0 Lenient</span><span class="">5.0 Median</span><span class="">10.0 Draconian</span></div></div><div class="grid grid-cols-4 gap-1 text-center pt-1 font-label-xs text-[10px]"><div class="p-1 rounded bg-surface-container-lowest"><span class="text-outline block">Yellows/G</span><span class="font-bold text-on-surface">3.32</span></div><div class="p-1 rounded bg-surface-container-lowest"><span class="text-outline block">Reds/G</span><span class="font-bold text-on-surface">0.18</span></div><div class="p-1 rounded bg-surface-container-lowest"><span class="text-outline block">Fouls/Match</span><span class="font-bold text-on-surface">22.4</span></div><div class="p-1 rounded bg-surface-container-lowest"><span class="text-outline block">Penalty %</span><span class="font-bold text-on-surface">18%</span></div></div></div></article>
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs font-bold">
+              HALF TIME
+            </span>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">PREMIER LEAGUE</span>
+</div>
+<button class="font-label-xs text-label-xs font-bold text-primary hover:text-secondary-container flex items-center gap-1 transition-colors" type="button">
+            STATS <span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+<div class="grid grid-cols-7 items-center gap-2">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-sm font-bold text-secondary shrink-0">LIV</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-sm truncate text-on-surface">Liverpool</span>
+<span class="font-label-xs text-label-xs text-outline">xG: 1.15</span>
+</div>
+</div>
+<div class="col-span-1 flex items-center justify-center">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">1 – 0</span>
+</div>
+<div class="col-span-3 flex items-center justify-end gap-3 text-right">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-sm truncate text-on-surface">Brentford</span>
+<span class="font-label-xs text-label-xs text-outline">xG: 0.28</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-sm font-bold text-outline shrink-0">BRE</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-low rounded font-label-xs text-label-xs">
+<span class="text-on-surface-variant">⚽ M. Salah 31'</span>
+<span class="text-outline">Possession: 64% – 36%</span>
+</div>
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sports</span>
+            Referee: M. Oliver (🟨 3.58 / match)
+          </span>
+<span class="">Anfield, Liverpool</span>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-sm opacity-95">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-xs text-label-xs font-semibold">
+              TODAY 20:00
+            </span>
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">FA CUP FIFTH ROUND</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary-container font-bold">PRE-MATCH TELEMETRY</span>
+</div>
+<div class="grid grid-cols-7 items-center gap-2">
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-sm font-bold text-tertiary-container shrink-0">EVE</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-sm truncate text-on-surface">Everton</span>
+<span class="font-label-xs text-label-xs text-outline">Form: W-D-L-W</span>
+</div>
+</div>
+<div class="col-span-1 flex items-center justify-center">
+<span class="font-label-md text-label-md text-outline font-bold">VS</span>
+</div>
+<div class="col-span-3 flex items-center justify-end gap-3 text-right">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-sm truncate text-on-surface">Coventry City</span>
+<span class="font-label-xs text-label-xs text-outline">Form: W-W-W-D</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-sm font-bold text-on-surface-variant shrink-0">COV</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-low rounded font-label-xs text-label-xs">
+<span class="text-on-surface">Implied Odds: 1.55 (EVE) | 4.20 (X) | 5.80 (COV)</span>
+<span class="text-secondary font-semibold">High Cross Frequency Expected</span>
+</div>
+</article>
+</main>
+<aside class="lg:col-span-4 flex flex-col gap-space-md"><div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm border border-outline-variant"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">sports_soccer</span><span class="font-headline-sm text-headline-sm text-sm font-bold text-on-surface">Goal Frame Shot Map</span></div><span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">POST &amp; CROSSBAR VECTOR</span></div><div class="relative w-full rounded bg-[#eeece7] p-2 flex flex-col items-center justify-center border border-[#d9d9dd]"><svg class="w-full h-36 select-none" viewBox="0 0 320 140"><defs><pattern height="8" id="goalNet" patternUnits="userSpaceOnUse" width="8"><path d="M 0 0 L 8 8 M 8 0 L 0 8" fill="none" stroke="#d9d9dd" stroke-width="0.5"></path></pattern></defs><rect fill="url(#goalNet)" height="90" width="240" x="40" y="25"></rect><line stroke="#c0c8c5" stroke-width="1.5" x1="20" x2="300" y1="115" y2="115"></line><rect fill="none" height="90" stroke="#1b1b20" stroke-width="3" width="240" x="40" y="25"></rect><circle cx="40" cy="25" fill="#1b1b20" r="2.5"></circle><circle cx="280" cy="25" fill="#1b1b20" r="2.5"></circle><g><circle cx="255" cy="42" fill="#003c33" r="7" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="6.5" font-weight="bold" text-anchor="middle" y="44.5" x="255">45'</text><circle cx="65" cy="95" fill="#003c33" r="6" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="6" font-weight="bold" text-anchor="middle" y="97" x="65">12'</text></g><g><circle cx="70" cy="40" fill="#a83820" r="6.5" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="6.5" font-weight="bold" text-anchor="middle" y="42.5" x="70">21'</text><circle cx="245" cy="90" fill="#a83820" r="6.5" stroke="#ffffff" stroke-width="1.5"></circle><text fill="#ffffff" font-family="Space Mono" font-size="6.5" font-weight="bold" text-anchor="middle" y="92.5" x="245">62'</text></g><g><circle cx="180" cy="75" fill="#001c4d" r="5" stroke="#ffffff" stroke-width="1.2"></circle><text fill="#ffffff" font-family="Space Mono" font-size="5" font-weight="bold" text-anchor="middle" y="77" x="180">S</text><circle cx="140" cy="55" fill="#001c4d" r="5" stroke="#ffffff" stroke-width="1.2"></circle><text fill="#ffffff" font-family="Space Mono" font-size="5" font-weight="bold" text-anchor="middle" y="57" x="140">S</text></g><g><line stroke="#707976" stroke-width="2" x1="160" x2="168" y1="21" y2="29"></line><line stroke="#707976" stroke-width="2" x1="168" x2="160" y1="21" y2="29"></line><text fill="#707976" font-family="Space Grotesk" font-size="6.5" font-weight="bold" y="18" x="152">69' BAR</text></g></svg><div class="flex items-center justify-between w-full text-[9px] font-label-xs text-outline pt-1 px-1"><span class="">Post-Shot xG: 2.44</span><span class="">Target Depth: 16 Shots (8 SoT, 4 Goals)</span></div></div><div class="grid grid-cols-3 gap-1.5 pt-1 text-[10px] font-label-xs"><div class="flex items-center gap-1.5 p-1 rounded bg-surface-container"><span class="w-2.5 h-2.5 rounded-full bg-primary shrink-0"></span><span class="text-on-surface font-semibold truncate">Goal (4)</span></div><div class="flex items-center gap-1.5 p-1 rounded bg-surface-container"><span class="w-2.5 h-2.5 rounded-full bg-tertiary shrink-0"></span><span class="text-on-surface font-semibold truncate">Saved (4)</span></div><div class="flex items-center gap-1.5 p-1 rounded bg-surface-container"><span class="text-outline font-bold shrink-0">✕</span><span class="text-outline truncate">Woodwork (1)</span></div></div></div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-sm font-bold text-on-surface">In-Play Momentum</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-surface-container text-outline">CHE v ARS</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-bold">CHE +0.42 xT PEAK</span>
+</div>
+<div class="relative w-full h-32 bg-surface-container-low rounded p-2 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between text-[9px] font-label-xs text-outline select-none">
+<span class="">+100 INTENSITY (CHE)</span>
+<span class="">NEUTRAL BALANCE</span>
+<span class="">+100 INTENSITY (ARS)</span>
+</div>
+<svg class="w-full h-20 overflow-visible" preserveAspectRatio="none" viewBox="0 0 300 80">
+<defs>
+<linearGradient id="momentumGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#003c33" stop-opacity="0.25"></stop>
+<stop offset="50%" stop-color="#eeece7" stop-opacity="0"></stop>
+<stop offset="100%" stop-color="#a83820" stop-opacity="0.25"></stop>
+</linearGradient>
+</defs>
+<line stroke="#c0c8c5" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="300" y1="40" y2="40"></line>
+<path d="M 0 40 
+                     C 25 15, 40 10, 60 25 
+                     C 80 40, 95 65, 120 60 
+                     C 140 55, 160 30, 185 20 
+                     C 210 10, 230 55, 255 35 
+                     C 270 20, 285 28, 300 30 
+                     L 300 40 L 0 40 Z" fill="url(#momentumGradient)"></path>
+<path d="M 0 40 
+                     C 25 15, 40 10, 60 25 
+                     C 80 40, 95 65, 120 60 
+                     C 140 55, 160 30, 185 20 
+                     C 210 10, 230 55, 255 35 
+                     C 270 20, 285 28, 300 30" fill="none" stroke="#003c33" stroke-width="2.5"></path>
+<circle class="animate-ping" cx="250" cy="35" fill="#fc7557" r="4"></circle>
+<circle cx="250" cy="35" fill="#a83820" r="3"></circle>
+</svg>
+<div class="flex items-center justify-between text-[10px] font-label-xs text-outline select-none">
+<span class="">0'</span>
+<span class="">15'</span>
+<span class="">30'</span>
+<span class="">45'</span>
+<span class="">60'</span>
+<span class="font-bold text-secondary">74' (NOW)</span>
+<span class="">90'</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center font-label-xs text-label-xs pt-1">
+<div class="p-1.5 rounded bg-surface-container">
+<span class="text-outline">Attacking 3rd Dominance:</span>
+<span class="font-bold text-primary block">Chelsea 56%</span>
+</div>
+<div class="p-1.5 rounded bg-surface-container">
+<span class="text-outline">Counter-Press Recovery:</span>
+<span class="font-bold text-secondary block">Arsenal 4.8s</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-sm font-bold text-on-surface">Live Standings (EPL Real-Time)</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">LIVE PTS</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-label-xs text-label-xs">
+<thead>
+<tr class="text-outline border-b-0 pb-1">
+<th class="py-1">#</th>
+<th class="py-1">Club</th>
+<th class="py-1 text-center">PL</th>
+<th class="py-1 text-center">W</th>
+<th class="py-1 text-center">D</th>
+<th class="py-1 text-center">L</th>
+<th class="py-1 text-right font-bold text-on-surface">PTS</th>
+<th class="py-1 text-right">Form</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 font-bold">1</td>
+<td class="py-1.5 font-semibold text-primary">Liverpool</td>
+<td class="py-1.5 text-center text-outline">28</td>
+<td class="py-1.5 text-center">20</td>
+<td class="py-1.5 text-center">5</td>
+<td class="py-1.5 text-center">3</td>
+<td class="py-1.5 text-right font-bold text-primary">65</td>
+<td class="py-1.5 text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 font-bold">2</td>
+<td class="py-1.5 font-semibold text-on-surface">Arsenal</td>
+<td class="py-1.5 text-center text-outline">28</td>
+<td class="py-1.5 text-center">18</td>
+<td class="py-1.5 text-center">7</td>
+<td class="py-1.5 text-center">3</td>
+<td class="py-1.5 text-right font-bold text-on-surface">61</td>
+<td class="py-1.5 text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1.5 font-bold">3</td>
+<td class="py-1.5 font-semibold text-on-surface">Man City</td>
+<td class="py-1.5 text-center text-outline">27</td>
+<td class="py-1.5 text-center">17</td>
+<td class="py-1.5 text-center">6</td>
+<td class="py-1.5 text-center">4</td>
+<td class="py-1.5 text-right font-bold text-on-surface">57</td>
+<td class="py-1.5 text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/50">
+<td class="py-1.5 font-bold text-secondary">4</td>
+<td class="py-1.5 font-semibold text-primary">Chelsea</td>
+<td class="py-1.5 text-center text-outline">28</td>
+<td class="py-1.5 text-center">15</td>
+<td class="py-1.5 text-center">6</td>
+<td class="py-1.5 text-center">7</td>
+<td class="py-1.5 text-right font-bold text-secondary">51</td>
+<td class="py-1.5 text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-sm font-bold text-on-surface">H2H Prop Insights</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-primary text-on-primary font-bold">94% CONF</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">OPTA TIER-1</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Cole Palmer • Chelsea</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">1.92</span>
+</div>
+<p class="font-body-sm text-body-sm text-xs text-on-surface-variant">Over 1.5 Shots on Target</p>
+<div class="flex items-center justify-between pt-1 font-label-xs text-label-xs">
+<span class="text-secondary font-bold">8/10 Matches Hit (80%)</span>
+<span class="text-outline">Avg: 2.3 SoT / 90</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Bukayo Saka • Arsenal</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">1.78</span>
+</div>
+<p class="font-body-sm text-body-sm text-xs text-on-surface-variant">Over 2.5 Crosses</p>
+<div class="flex items-center justify-between pt-1 font-label-xs text-label-xs">
+<span class="text-secondary font-bold">9/10 Matches Hit (90%)</span>
+<span class="text-outline">Avg: 4.1 Crosses / 90</span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Nicolas Jackson • Chelsea</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">2.10</span>
+</div>
+<p class="font-body-sm text-body-sm text-xs text-on-surface-variant">To be Fouled 2+ Times</p>
+<div class="flex items-center justify-between pt-1 font-label-xs text-label-xs">
+<span class="text-secondary font-bold">7/10 Matches Hit (70%)</span>
+<span class="text-outline">Target CB: Gabriel</span>
+</div>
+</div>
+</div>
+<button class="w-full py-1.5 rounded bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold hover:bg-surface-container-high transition-colors" type="button">
+          EXPORT COMPLETE PROP INDEX →
+        </button>
+</div>
+</aside>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span class="">LATENCY: 14MS</span><span class="">FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span class="">© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer>
+
+</body></html>

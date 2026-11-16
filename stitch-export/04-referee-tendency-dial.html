@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<!-- Top Command Ribbon / Breadcrumb Header -->
+<section class="w-full bg-surface-container-lowest px-margin-desktop py-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[26px]">sports</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline">TELEMETRY_REF_ID: // REF-2026-ENG-441</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-secondary-container/15 text-secondary font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> OPTA OPTICAL LIVE
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Referee Tendency Dial &amp; Disciplinary Telemetry</h1>
+</div>
+</div>
+<!-- Official Selector & Season Meta -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative inline-flex items-center bg-surface-container rounded px-3 py-1.5">
+<label class="font-label-xs text-label-xs text-outline uppercase mr-2" for="ref-selector">Official:</label>
+<select class="bg-transparent font-headline-sm text-headline-sm text-on-surface font-semibold focus:outline-none cursor-pointer pr-5" id="ref-selector">
+<option selected="" value="brooks">J. Brooks (ENG)</option>
+<option value="oliver">M. Oliver (ENG)</option>
+<option value="taylor">A. Taylor (ENG)</option>
+<option value="tierney">P. Tierney (ENG)</option>
+<option value="barrott">S. Barrott (ENG)</option>
+</select>
+<span class="material-symbols-outlined text-outline text-[16px] pointer-events-none absolute right-2">expand_more</span>
+</div>
+<div class="flex items-center bg-surface-container rounded px-3 py-1.5">
+<span class="font-label-xs text-label-xs text-outline mr-2 uppercase">Competition:</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Premier League 2026/27</span>
+</div>
+<button class="px-space-md py-2 rounded bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>EXPORT CSV</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Content Body -->
+<div class="w-full px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- Active Official Profile Banner -->
+<div class="w-full rounded-xl bg-surface-container p-space-lg shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Official Bio / Portrait Frame -->
+<div class="lg:col-span-5 flex items-center gap-space-md">
+<div class="relative w-24 h-24 rounded-lg bg-surface-container-highest flex-shrink-0 overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="High-resolution, clinical black and white photographic portrait of Premier League Tier 1 referee J. Brooks in black matchday kit with FIFA badge, neutral lighting against light studio gray backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDBEChwQSrtuWe1Zzk6RCLztl4nU_tD4Z92BxVEXmiS2r7If4wVXPini6T1psUqaSHkzu3tl01WKnQbvFc5SyswjbXZvomlkr44XABzEp1TXKXZ80ZKYHIPAm5dJKaj4KeGFWxZKPtzkqpt7UdaIb98oXBESd5Lne9cyx4-tYihh6OBgaSMEvnstgxtctDRHfSooP34GmzOEKVp1Md6alo6JUnAeKoSkTUhtd-T5jG"/>
+<div class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-primary text-on-primary font-label-xs text-label-xs">PL-T1</div>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold truncate">John Brooks</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-label-xs text-label-xs font-semibold shadow-sm">FIFA BADGE 2026</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs font-bold">142 FIXTURES</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Premier League Select Group 1 • UEFA Category Elite Roster • Sussex FA Registration</p>
+<div class="flex items-center gap-space-md text-outline font-label-xs text-label-xs pt-1">
+<span>Avg Delay per Stop: <strong class="text-on-surface font-label-md text-label-md">28.4s</strong></span>
+<span>•</span>
+<span>Dissent Sensitivity: <strong class="text-secondary font-label-md text-label-md">VERY HIGH (94th %)</strong></span>
+</div>
+</div>
+</div>
+<!-- Strictness Level Indicator Micro-card -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Overall Strictness Rating</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/15 text-secondary font-label-xs text-label-xs font-bold">DRACONIAN TIER</span>
+</div>
+<div class="flex items-baseline gap-space-sm my-1">
+<span class="font-display-xl text-display-xl font-bold text-on-surface">6.8</span>
+<span class="font-headline-sm text-headline-sm text-outline">/ 10.0</span>
+<span class="ml-auto font-label-sm text-label-sm text-secondary font-semibold">+1.4 Above League Avg</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+<div class="flex justify-between font-label-xs text-label-xs text-outline pt-1">
+<span>1.0 Lenient</span>
+<span>Median: 5.4</span>
+<span>10.0 Strict</span>
+</div>
+</div>
+<!-- Real-Time Contextual Insight Box -->
+<div class="lg:col-span-3 bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-xs text-label-xs font-bold uppercase tracking-wider text-on-surface">Monte Carlo Predicate</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant my-1">
+            Model anticipates <strong class="text-on-surface">4.18 ± 0.6 total cards</strong> for upcoming fixture fixture load. 78% likelihood of first half yellow card before 35:00.
+          </p>
+<div class="flex items-center justify-between font-label-xs text-label-xs text-outline">
+<span>Confidence: <strong class="text-primary font-semibold">91.4%</strong></span>
+<span class="text-secondary font-semibold">Bypass Warning: High Dissent Risk</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Hero Section: Disciplinary Tendency Dial & Arc Slider Visualization -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Dial Hero Card -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">PRIMARY TELEMETRY VECTOR</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Referee Card Strictness Tendency Dial</h2>
+</div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs">
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant">Calibrated 1.0 - 10.0 Arc</span>
+<span class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">CI [6.4 – 7.1]</span>
+</div>
+</div>
+<!-- Visual SVG Semi-Circular Gauge Component -->
+<div class="relative w-full flex flex-col items-center justify-center my-space-md">
+<svg class="w-full max-w-[460px] overflow-visible" viewbox="0 0 400 220">
+<!-- Background Tracks (Zones) -->
+<!-- Zone 1: Lenient (1.0 - 4.0) -> Arc 180° to ~126° -->
+<path d="M 40 200 A 160 160 0 0 1 123 68" fill="none" stroke="#b8ede0" stroke-linecap="round" stroke-width="26"></path>
+<!-- Zone 2: Standard (4.0 - 7.0) -> Arc ~126° to ~72° -->
+<path d="M 132 61 A 160 160 0 0 1 268 61" fill="none" stroke="#eae7ee" stroke-width="26"></path>
+<!-- Zone 3: Draconian (7.0 - 10.0) -> Arc ~72° to 0° -->
+<path d="M 277 68 A 160 160 0 0 1 360 200" fill="none" stroke="#fc7557" stroke-linecap="round" stroke-width="26"></path>
+<!-- Inner subtle ticks -->
+<line stroke="#c0c8c5" stroke-dasharray="2 6" stroke-width="1.5" x1="200" x2="200" y1="200" y2="46"></line>
+<circle cx="200" cy="200" fill="none" r="160" stroke="#e4e1e8" stroke-dasharray="4 6" stroke-width="1"></circle>
+<!-- Confidence Interval Range Arc (6.4 to 7.1 corresponds to angle ~64.8° to ~52.2°) -->
+<!-- Rendered as highlighted glow on track -->
+<path d="M 248 53 A 160 160 0 0 1 278 68" fill="none" opacity="0.3" stroke="#a83820" stroke-width="32"></path>
+<!-- Pointer Needle (Rotated at 6.8 / 10 -> angle = 180 - (5.8/9 * 180) = ~64°) -->
+<g transform="rotate(57.6, 200, 200)">
+<!-- Needle Polygon -->
+<polygon fill="#00241e" points="196,200 200,52 204,200"></polygon>
+<circle cx="200" cy="52" fill="#fc7557" r="5"></circle>
+</g>
+<circle cx="200" cy="200" fill="#00241e" r="16"></circle>
+<circle cx="200" cy="200" fill="#ffffff" r="6"></circle>
+<!-- Gauge Scale Labels -->
+<text class="font-label-sm text-label-sm" fill="#707976" x="32" y="218">1.0</text>
+<text class="font-label-sm text-label-sm" fill="#1b4f45" x="100" y="44">LENIENT (4.0)</text>
+<text class="font-label-sm text-label-sm" fill="#404946" x="182" y="32">STD (5.5)</text>
+<text class="font-label-sm text-label-sm" fill="#a83820" x="270" y="44">DRACONIAN</text>
+<text class="font-label-sm text-label-sm" fill="#707976" x="360" y="218">10.0</text>
+</svg>
+<!-- Floating Needle Metagauge HUD -->
+<div class="flex items-center gap-space-lg mt-space-sm bg-surface-container px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="text-center">
+<span class="font-label-xs text-label-xs text-outline block">CURRENT POSITION</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">6.80</span>
+</div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<div class="text-center">
+<span class="font-label-xs text-label-xs text-outline block">CONFIDENCE SPREAD</span>
+<span class="font-label-md text-label-md text-secondary font-bold">± 0.35 [6.45 – 7.15]</span>
+</div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<div class="text-center">
+<span class="font-label-xs text-label-xs text-outline block">LEAGUE VOLATILITY</span>
+<span class="font-label-md text-label-md text-primary font-bold">LOW (σ = 0.42)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs pt-space-xs">
+<span>Formula: (Cards_p90 × 0.45) + (Fouls_to_Tackles × 0.30) + (Penalty_Freq × 0.25)</span>
+<span class="text-primary font-semibold">Tier Status: 93rd Percentile Card Strictness</span>
+</div>
+</div>
+<!-- Historical Rolling Trend Chart (10-Match Rolling Average vs 5-Year Benchmark) -->
+<div class="lg:col-span-5 bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">LONGITUDINAL TELEMETRY</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-xs text-label-xs text-on-surface-variant shadow-sm">N = 64 FIXTURES</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">10-Match Rolling vs 5-Year Benchmark</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Tracking recent upward volatility in official disciplinary severity post-AFCON directive updates.
+          </p>
+</div>
+<!-- Inline Sparkline / Area SVG Chart -->
+<div class="w-full my-space-md bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs mb-2">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-0.5 bg-secondary-container"></span>
+<span class="text-on-surface font-semibold">10-Match Rolling (Brooks)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-0.5 bg-outline-variant"></span>
+<span>5-Yr Career Mean (4.82)</span>
+</div>
+</div>
+<svg class="w-full h-32 overflow-visible" viewbox="0 0 340 130">
+<!-- Grid lines -->
+<line stroke="#f0edf4" stroke-width="1" x1="0" x2="340" y1="20" y2="20"></line>
+<line stroke="#f0edf4" stroke-width="1" x1="0" x2="340" y1="60" y2="60"></line>
+<line stroke="#f0edf4" stroke-width="1" x1="0" x2="340" y1="100" y2="100"></line>
+<!-- 5-Year Benchmark Line (Static 4.82 -> y=68) -->
+<line stroke="#c0c8c5" stroke-dasharray="3 3" stroke-width="1.5" x1="0" x2="340" y1="68" y2="68"></line>
+<!-- Rolling Area Fill -->
+<polygon fill="#fc7557" opacity="0.12" points="0,95 34,88 68,92 102,75 136,65 170,58 204,62 238,45 272,38 306,30 340,24 340,120 0,120"></polygon>
+<!-- 10-Match Line Plot -->
+<polyline fill="none" points="0,95 34,88 68,92 102,75 136,65 170,58 204,62 238,45 272,38 306,30 340,24" stroke="#fc7557" stroke-width="2.5"></polyline>
+<!-- Key points -->
+<circle cx="238" cy="45" fill="#a83820" r="3"></circle>
+<circle cx="272" cy="38" fill="#a83820" r="3"></circle>
+<circle cx="306" cy="30" fill="#a83820" r="3"></circle>
+<circle cx="340" cy="24" fill="#fc7557" r="4"></circle>
+<!-- Callout on current fixture -->
+<text class="font-label-xs text-label-xs" fill="#a83820" font-weight="700" x="270" y="16">CURRENT: 6.8</text>
+</svg>
+<div class="flex justify-between font-label-xs text-label-xs text-outline pt-2">
+<span>Match -10 (Sept)</span>
+<span>Match -5 (Nov)</span>
+<span>Match -2 (Jan)</span>
+<span>Current (Feb)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span>Five-Match Velocity: <strong class="text-secondary font-label-md text-label-md">+0.82 Δ</strong></span>
+<span>Inter-Official Delta: <strong class="text-primary font-label-md text-label-md">+22.4%</strong></span>
+</div>
+</div>
+</div>
+<!-- Core Disciplinary KPI Matrix (4 Enterprise Cards in Soft Stone #eeece7 / surface-container) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: Yellows / Game -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">BOOKINGS VOLUME</span>
+<span class="w-6 h-6 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">style</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">3.32</span>
+<span class="font-label-sm text-label-sm text-outline">/ 90 MIN</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            Rank <strong class="text-on-surface">6th of 20</strong> Officials
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded flex items-center justify-between font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">League Median:</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">3.10 (+7.1%)</span>
+</div>
+</div>
+<!-- KPI 2: Reds / Game -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">EXPULSION RATE</span>
+<span class="w-6 h-6 rounded bg-secondary-container/20 flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg font-bold text-secondary">0.18</span>
+<span class="font-label-sm text-label-sm text-outline">/ MATCH</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            1 dismissal in every <strong class="text-on-surface">5.5 fixtures</strong>
+</p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded flex items-center justify-between font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">Vs League Average:</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">+28.0% FREQ</span>
+</div>
+</div>
+<!-- KPI 3: Fouls / Match -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">STOPPAGE INTENSITY</span>
+<span class="w-6 h-6 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">front_hand</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">22.4</span>
+<span class="font-label-sm text-label-sm text-outline">FOULS/GM</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+            Tackle-to-Foul ratio: <strong class="text-on-surface">0.64</strong>
+</p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded flex items-center justify-between font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">Threshold Level:</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">TIGHT (Low Tolerance)</span>
+</div>
+</div>
+<!-- KPI 4: Penalty Spot Award % -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">SPOT AWARD RATE</span>
+<span class="w-6 h-6 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">adjust</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">18.2%</span>
+<span class="font-label-sm text-label-sm text-outline">OF MATCHES</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+<strong class="text-on-surface">4 Penalties</strong> in last 22 fixtures
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded flex items-center justify-between font-label-xs text-label-xs shadow-sm">
+<span class="text-outline">VAR Confirmed:</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">100% (Zero Reversals)</span>
+</div>
+</div>
+</div>
+<!-- Split Panel: Officiating Bias & PPM Audit Table vs Disciplinary Minute Distribution -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Table: Club Points-Per-Match (PPM) & Officiating Tendencies -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CLUB BIAS &amp; PPM AUDIT</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Outcome Breakdown by Premier League Club</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">MIN 3 MATCHES</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-xs text-label-xs font-bold">2024-2027 ROLLING</span>
+</div>
+</div>
+<!-- Analytical Dense Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface font-label-sm text-label-sm uppercase">
+<th class="py-2.5 px-3 rounded-l">Club</th>
+<th class="py-2.5 px-2 text-center">Matches</th>
+<th class="py-2.5 px-2 text-center">Record (W-D-L)</th>
+<th class="py-2.5 px-2 text-right">PPM</th>
+<th class="py-2.5 px-2 text-right">Fouls / GM</th>
+<th class="py-2.5 px-3 text-right rounded-r">Net Cards</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-xs">C</div>
+<span class="font-semibold text-on-surface">Chelsea FC</span>
+</td>
+<td class="py-3 px-2 text-center font-label-md text-label-md">4</td>
+<td class="py-3 px-2 text-center font-label-sm text-label-sm text-on-surface-variant">3W - 1D - 0L</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md font-bold text-primary">2.50</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md">9.0</td>
+<td class="py-3 px-3 text-right">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-xs text-label-xs font-semibold text-on-surface">1.25 p90</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-xs">M</div>
+<span class="font-semibold text-on-surface">Manchester City</span>
+</td>
+<td class="py-3 px-2 text-center font-label-md text-label-md">5</td>
+<td class="py-3 px-2 text-center font-label-sm text-label-sm text-on-surface-variant">3W - 2D - 0L</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md font-bold text-primary">2.40</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md">8.2</td>
+<td class="py-3 px-3 text-right">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-xs text-label-xs font-semibold text-on-surface">1.00 p90</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-xs">A</div>
+<span class="font-semibold text-on-surface">Arsenal</span>
+</td>
+<td class="py-3 px-2 text-center font-label-md text-label-md">3</td>
+<td class="py-3 px-2 text-center font-label-sm text-label-sm text-on-surface-variant">2W - 0D - 1L</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md font-bold text-on-surface">2.00</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md">13.0</td>
+<td class="py-3 px-3 text-right">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 font-label-xs text-label-xs font-bold text-secondary">2.67 p90</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-xs">L</div>
+<span class="font-semibold text-on-surface">Liverpool</span>
+</td>
+<td class="py-3 px-2 text-center font-label-md text-label-md">4</td>
+<td class="py-3 px-2 text-center font-label-sm text-label-sm text-on-surface-variant">2W - 1D - 1L</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md font-bold text-secondary">1.75</td>
+<td class="py-3 px-2 text-right font-label-md text-label-md">15.2</td>
+<td class="py-3 px-3 text-right">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 font-label-xs text-label-xs font-bold text-secondary">3.50 p90</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- VAR Overturn Micro-audit Ribbon -->
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">troubleshoot</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">VAR Overturn Frequency: 0.28 / Fixture</span>
+<span class="font-label-xs text-label-xs text-outline">Net Home Club Differential: +2 On-Pitch Decisions Upheld</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-lowest font-label-xs text-label-xs text-primary font-bold shadow-sm self-start sm:self-auto">
+            PGMOL ACCURACY: 98.4%
+          </span>
+</div>
+</div>
+<!-- Right Visual: Disciplinary Minute Distribution Bar Visualizer -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CHRONOLOGICAL EXPOSURE</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs font-bold">PEAK: 61'-75'</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Disciplinary Minute Distribution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Quantified frequency of card issuance across 15-minute game states. Pronounced spike during physical degradation intervals (65'-85').
+          </p>
+</div>
+<!-- Chrono Bar Visualization -->
+<div class="space-y-space-sm my-space-md">
+<!-- 0 - 15' -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-outline font-semibold">00' – 15' (Game Initiation)</span>
+<span class="font-label-sm text-label-sm text-on-surface">5% (7 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 5%;"></div>
+</div>
+</div>
+<!-- 16 - 30' -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-outline font-semibold">16' – 30' (Tactical Settlement)</span>
+<span class="font-label-sm text-label-sm text-on-surface">11% (16 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 11%;"></div>
+</div>
+</div>
+<!-- 31 - 45' -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-outline font-semibold">31' – 45+' (Pre-Interval Fatigue)</span>
+<span class="font-label-sm text-label-sm text-on-surface">18% (25 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-surface-tint h-full rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+<!-- 46 - 60' -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-outline font-semibold">46' – 60' (Second-Half Reset)</span>
+<span class="font-label-sm text-label-sm text-on-surface">14% (19 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-surface-tint h-full rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+<!-- 61 - 75' (PEAK) -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-secondary font-bold">61' – 75' (Critical Volatility Window)</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">34% (48 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 34%;"></div>
+</div>
+</div>
+<!-- 76 - 90+' -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-xs text-label-xs">
+<span class="text-outline font-semibold">76' – 90+' (Game Climax / Stoppage)</span>
+<span class="font-label-sm text-label-sm text-on-surface">18% (26 Cards)</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex items-center justify-between text-outline font-label-xs text-label-xs">
+<span>First Card Mean Minute: <strong class="text-on-surface font-label-sm text-label-sm">31'40"</strong></span>
+<span class="text-secondary font-semibold">Late Sub Foul-to-Card: 41%</span>
+</div>
+</div>
+</div>
+<!-- Supplementary Analytical Drawer / Tactical Scouting Notes -->
+<div class="w-full bg-surface-container rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Tactical Match Preparation Directive</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Front-office guidance for technical staff and match managers ahead of Brooks fixture assignment.</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm font-label-sm text-label-sm">
+<div class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Avoid Vocal Contestation (Zero-Tolerance)</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Target Wing Fullback Duels (Foul Sensitivity 78%)</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-primary text-on-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>DISPATCH TO COACHING STAFF</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive State Controller Script -->
+<script>
+    (function initTelemetryInteractivity() {
+      const refSelector = document.getElementById('ref-selector');
+      if (!refSelector) return;
+
+      refSelector.addEventListener('change', function(e) {
+        const val = e.target.value;
+        // Visual indicator that telemetry has synced
+        console.log('Switching referee telemetry instance to:', val);
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span class="">LATENCY: 14MS</span><span class="">FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span class="">© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer>
+</body></html>

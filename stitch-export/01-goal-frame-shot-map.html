@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes marquee{0%{transform:translateX(0%);}100%{transform:translateX(-50%);}}.animate-marquee{display:inline-flex;white-space:nowrap;animation:marquee 40s linear infinite;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline": "#707976",
+        "inverse-on-surface": "#f3eff7",
+        "on-surface-variant": "#404946",
+        "primary-container": "#003c33",
+        "on-tertiary-container": "#6d9aff",
+        "tertiary": "#001c4d",
+        "on-surface": "#1b1b20",
+        "inverse-surface": "#303035",
+        "error": "#ba1a1a",
+        "on-tertiary": "#ffffff",
+        "surface-container": "#f0edf4",
+        "secondary": "#a83820",
+        "on-secondary-fixed-variant": "#87200a",
+        "secondary-fixed": "#ffdad3",
+        "surface-container-high": "#eae7ee",
+        "on-secondary-container": "#6c1000",
+        "tertiary-fixed-dim": "#b0c6ff",
+        "primary": "#00241e",
+        "on-secondary": "#ffffff",
+        "on-error-container": "#93000a",
+        "on-primary-fixed": "#00201b",
+        "on-tertiary-fixed": "#001945",
+        "secondary-container": "#fc7557",
+        "on-primary-fixed-variant": "#1b4f45",
+        "on-primary-container": "#74a79b",
+        "surface-container-lowest": "#ffffff",
+        "surface": "#fbf8ff",
+        "error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ffb4a4",
+        "on-secondary-fixed": "#3d0600",
+        "surface-container-low": "#f5f2fa",
+        "on-error": "#ffffff",
+        "surface-bright": "#fbf8ff",
+        "primary-fixed-dim": "#9dd1c4",
+        "background": "#fbf8ff",
+        "primary-fixed": "#b8ede0",
+        "outline-variant": "#c0c8c5",
+        "surface-tint": "#35675d",
+        "inverse-primary": "#9dd1c4",
+        "surface-dim": "#dcd9e0",
+        "tertiary-fixed": "#d9e2ff",
+        "on-primary": "#ffffff",
+        "on-background": "#1b1b20",
+        "on-tertiary-fixed-variant": "#00419d",
+        "tertiary-container": "#003077",
+        "surface-container-highest": "#e4e1e8",
+        "surface-variant": "#e4e1e8"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin": "1.5rem",
+        "gutter-lg": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xl": "2rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-sm": [
+          "Space Grotesk"
+        ],
+        "display-lg": [
+          "Space Grotesk"
+        ],
+        "label-lg": [
+          "Inter"
+        ],
+        "label-xs": [
+          "Space Mono"
+        ],
+        "body-sm": [
+          "Inter"
+        ],
+        "headline-md": [
+          "Space Grotesk"
+        ],
+        "headline-lg": [
+          "Space Grotesk"
+        ],
+        "body-md": [
+          "Inter"
+        ],
+        "body-lg": [
+          "Inter"
+        ],
+        "display-xl": [
+          "Space Grotesk"
+        ],
+        "label-md": [
+          "Space Mono"
+        ],
+        "label-sm": [
+          "Space Mono"
+        ]
+      },
+      "fontSize": {
+        "headline-sm": [
+          "18px",
+          {
+            "lineHeight": "24px",
+            "letterSpacing": "0em",
+            "fontWeight": "500"
+          }
+        ],
+        "display-lg": [
+          "36px",
+          {
+            "lineHeight": "42px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-lg": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-xs": [
+          "10px",
+          {
+            "lineHeight": "12px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "22px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "34px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "20px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "400"
+          }
+        ],
+        "display-xl": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "11px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "400"
+          }
+        ]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 flex flex-col"><div class="h-[36px] bg-primary text-on-primary px-margin-desktop flex items-center justify-between border-b border-outline/20"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-xs text-label-xs uppercase tracking-wider text-surface-bright">STATIONARY &amp; IN-PLAY STATS CENTRE — ENTERPRISE AI ANALYTICS</span></div><div class="flex items-center gap-space-md"><span class="font-label-xs text-label-xs text-outline-variant">FEED_PROTOCOL: V2.6-SSE</span><a class="font-label-xs text-label-xs text-surface-bright hover:text-secondary-fixed underline transition-colors" href="#">Live Webhook Feed →</a></div></div><div class="h-[64px] bg-surface-container-lowest px-margin-desktop flex items-center justify-between border-b border-outline-variant"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-headline-sm font-semibold select-none">C</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">PlayerStats</span><span class="font-label-xs text-label-xs px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium border border-outline-variant">V2.6</span></div><nav class="flex items-center gap-space-md h-[64px]" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">Fixtures</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-matchday-hub" href="#">In-Play <span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold leading-none">6</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="worldwide-league-overview" href="#">Leagues</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="props-finder" href="#">Props Finder</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="referee-analytics" href="#">Referees</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="player-comparison-radar" href="#">Scouting</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="matchday-simulation" href="#">Simulation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg uppercase tracking-wide" data-path="transfer-value-predictor" href="#">Transfer Predictor</a></nav></div><div class="flex items-center gap-space-sm"><button class="w-9 h-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Starred Favorites" type="button"><span class="material-symbols-outlined text-[20px]">star</span></button><button class="flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm">Search</span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant font-label-xs text-label-xs text-outline">Ctrl+K</kbd></button><button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors" type="button">Sign In</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-[40px] bg-surface-container-lowest px-margin-desktop flex items-center border-b border-outline-variant overflow-hidden"><div class="flex items-center gap-space-sm pr-space-md border-r border-outline-variant shrink-0 bg-surface-container-lowest z-10"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span> LIVE NEWS</span></div><div class="relative flex-1 overflow-hidden"><div class="animate-marquee flex items-center gap-space-xl font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Real Madrid agree €110M terms for RB Leipzig CB prospect</span><span class="text-outline-variant font-label-xs">• 4m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold text-label-xs">[PREMIER LEAGUE]</span><span class="font-semibold text-on-surface">Arsenal v Man City: Tactical possession model predicts 1.94 xG vs 1.82 xG</span><span class="text-outline-variant font-label-xs">• 12m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-bold text-label-xs">[LA LIGA]</span><span class="font-semibold text-on-surface">FC Barcelona submit official squad list with 4 youth telemetry markers</span><span class="text-outline-variant font-label-xs">• 26m ago</span></div><div class="flex items-center gap-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold text-label-xs">[TRANSFERS]</span><span class="font-semibold text-on-surface">Bayern Munich open valuation audit for defensive midfielder index</span><span class="text-outline-variant font-label-xs">• 35m ago</span></div></div></div></div></header><main class="w-full pt-[140px] bg-surface min-h-[calc(100vh-220px)]"><div class="flex flex-col w-full">
+<div class="w-full bg-surface-container-low px-margin-desktop py-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs uppercase tracking-wider font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span>
+            74' IN-PLAY TELEMETRY
+          </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">OPT-OPTICAL TRACKING V4.1</span>
+<span class="font-label-xs text-label-xs text-outline">• CALIBRATED 120FPS LENS ARRAY</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Goal Frame Shot Map Visualizer</h1>
+<span class="font-label-md text-label-md text-on-surface-variant">Post-Shot Model Analytics (PSxG-Vector)</span>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm bg-surface-container-lowest p-1.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 px-space-sm py-1 bg-surface-container rounded-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Chelsea 2</span>
+<span class="font-label-xs text-label-xs text-outline">vs</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Arsenal 2</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-primary text-on-primary transition-all" id="filter-all" onclick="applyTeamFilter('ALL')">ALL TEAMS</button>
+<button class="px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" id="filter-che" onclick="applyTeamFilter('CHE')">CHELSEA</button>
+<button class="px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" id="filter-ars" onclick="applyTeamFilter('ARS')">ARSENAL</button>
+</div>
+<div class="flex items-center gap-1 pl-space-xs">
+<button class="px-2 py-1 rounded text-label-xs font-label-xs bg-primary text-on-primary font-medium" id="half-all" onclick="applyHalfFilter('ALL')">FULL</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant hover:text-on-surface" id="half-1" onclick="applyHalfFilter('1H')">1H</button>
+<button class="px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant hover:text-on-surface" id="half-2" onclick="applyHalfFilter('2H')">2H</button>
+</div>
+<select class="bg-surface-container text-on-surface font-label-xs text-label-xs rounded px-2.5 py-1.5 focus:outline-none" id="player-select" onchange="applyPlayerFilter(this.value)">
+<option value="ALL">All Shooters (12)</option>
+<option value="Cole Palmer">Cole Palmer (CHE)</option>
+<option value="Nicolas Jackson">Nicolas Jackson (CHE)</option>
+<option value="Bukayo Saka">Bukayo Saka (ARS)</option>
+<option value="Gabriel Martinelli">Gabriel Martinelli (ARS)</option>
+<option value="Kai Havertz">Kai Havertz (ARS)</option>
+<option value="Noni Madueke">Noni Madueke (CHE)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-space-sm mt-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Total Shot Volume</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">16</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Attempts</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-label-xs font-label-xs text-outline">
+<span>CHE: 9 shots</span>
+<span>ARS: 7 shots</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Shots on Target (SoT)</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-primary-container leading-none">8</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">50.0% Acc</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Expected Goals (xG)</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">2.14</span>
+<span class="font-label-sm text-label-sm text-outline">vs</span>
+<span class="font-display-lg text-display-lg text-on-surface leading-none">1.82</span>
+</div>
+<div class="mt-2 flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-primary font-semibold">CHE 2.14 xG</span>
+<span class="text-secondary font-semibold">ARS 1.82 xG</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Post-Shot Model (PSxG)</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-secondary leading-none">2.44</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-xs text-label-xs font-semibold">+0.62 Net</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-2 truncate">Trajectory Finishing Boost</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between col-span-2 md:col-span-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Avg Shot Distance</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">15.4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">metres</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline mt-2">Box: 11 | Outside: 5</span>
+</div>
+</div>
+</div>
+<div class="w-full px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Post-Shot Frame Vector Projection</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Front elevation of 7.32m × 2.44m frame. Node volume mapped to raw xG, outer halo denotes PSxG quality delta.</p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="font-label-xs text-label-xs text-outline">SCALE:</span>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">1:24 ARCHITECTURAL</span>
+</div>
+</div>
+<div class="relative w-full aspect-[16/9] max-h-[520px] bg-surface-container-low rounded-xl overflow-hidden shadow-inner flex items-center justify-center p-4">
+<svg class="w-full h-full select-none" id="goal-canvas" preserveaspectratio="xMidYMid meet" viewbox="0 0 1000 560">
+<defs>
+<pattern height="22" id="net-hex" patternunits="userSpaceOnUse" width="22">
+<path d="M 11,0 L 22,6.35 L 22,19.05 L 11,25.4 L 0,19.05 L 0,6.35 Z" fill="none" opacity="0.65" stroke="#dcd9e0" stroke-width="0.8"></path>
+</pattern>
+<radialgradient cx="50%" cy="50%" id="halo-coral" r="50%">
+<stop offset="0%" stop-color="#fc7557" stop-opacity="0.9"></stop>
+<stop offset="60%" stop-color="#fc7557" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#fc7557" stop-opacity="0"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="halo-blue" r="50%">
+<stop offset="0%" stop-color="#003077" stop-opacity="0.85"></stop>
+<stop offset="70%" stop-color="#6d9aff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#6d9aff" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+<rect fill="#f0edf4" height="70" width="1000" x="0" y="490"></rect>
+<line stroke="#c0c8c5" stroke-dasharray="4,4" stroke-width="1.5" x1="0" x2="1000" y1="490" y2="490"></line>
+<rect fill="url(#net-hex)" height="400" width="720" x="140" y="90"></rect>
+<line stroke="#c0c8c5" stroke-width="1.2" x1="140" x2="210" y1="90" y2="50"></line>
+<line stroke="#c0c8c5" stroke-width="1.2" x1="860" x2="790" y1="90" y2="50"></line>
+<line stroke="#c0c8c5" stroke-width="1.2" x1="210" x2="790" y1="50" y2="50"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2,2" stroke-width="0.8" x1="210" x2="210" y1="50" y2="490"></line>
+<line stroke="#c0c8c5" stroke-dasharray="2,2" stroke-width="0.8" x1="790" x2="790" y1="50" y2="490"></line>
+<rect fill="none" height="406" stroke="#707976" stroke-dasharray="6,4" stroke-width="0.75" width="728" x="136" y="86"></rect>
+<line opacity="0.4" stroke="#c0c8c5" stroke-width="0.7" x1="380" x2="380" y1="90" y2="490"></line>
+<line opacity="0.4" stroke="#c0c8c5" stroke-width="0.7" x1="620" x2="620" y1="90" y2="490"></line>
+<line opacity="0.4" stroke="#c0c8c5" stroke-width="0.7" x1="140" x2="860" y1="223" y2="223"></line>
+<line opacity="0.4" stroke="#c0c8c5" stroke-width="0.7" x1="140" x2="860" y1="356" y2="356"></line>
+<rect fill="#1b1b20" height="12" rx="3" width="736" x="132" y="82"></rect>
+<rect fill="#1b1b20" height="410" rx="3" width="12" x="132" y="82"></rect>
+<rect fill="#1b1b20" height="410" rx="3" width="12" x="856" y="82"></rect>
+<rect fill="#00241e" height="6" rx="1" width="24" x="126" y="488"></rect>
+<rect fill="#00241e" height="6" rx="1" width="24" x="850" y="488"></rect>
+<g id="dimension-markers">
+<line stroke="#707976" stroke-width="1" x1="140" x2="860" y1="40" y2="40"></line>
+<line stroke="#707976" stroke-width="1" x1="140" x2="140" y1="35" y2="45"></line>
+<line stroke="#707976" stroke-width="1" x1="860" x2="860" y1="35" y2="45"></line>
+<rect fill="#fbf8ff" height="20" rx="2" width="120" x="440" y="30"></rect>
+<text fill="#1b1b20" font-family="Space Mono" font-size="11" font-weight="600" text-anchor="middle" x="500" y="44">7.32m (24.0 FT)</text>
+<line stroke="#707976" stroke-width="1" x1="900" x2="900" y1="90" y2="490"></line>
+<line stroke="#707976" stroke-width="1" x1="895" x2="905" y1="90" y2="90"></line>
+<line stroke="#707976" stroke-width="1" x1="895" x2="905" y1="490" y2="490"></line>
+<rect fill="#fbf8ff" height="22" rx="2" width="85" x="875" y="278"></rect>
+<text fill="#1b1b20" font-family="Space Mono" font-size="11" font-weight="600" text-anchor="middle" x="917" y="293">2.44m (8FT)</text>
+</g>
+<g class="cursor-pointer" id="shot-nodes">
+<g class="shot-node" data-half="1H" data-id="1" data-player="Nicolas Jackson" data-team="CHE" onclick="selectShot(1)">
+<circle cx="490" cy="430" fill="url(#halo-coral)" r="28"></circle>
+<circle cx="490" cy="430" fill="#fc7557" r="16" stroke="#ffffff" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle" x="490" y="434">G</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" font-weight="600" text-anchor="middle" x="490" y="464">Jackson 12'</text>
+</g>
+<g class="shot-node" data-half="1H" data-id="2" data-player="Gabriel Martinelli" data-team="ARS" onclick="selectShot(2)">
+<circle cx="820" cy="130" fill="url(#halo-coral)" r="24"></circle>
+<circle cx="820" cy="130" fill="#fc7557" r="13" stroke="#ffffff" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle" x="820" y="134">G</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" font-weight="600" text-anchor="middle" x="820" y="160">Martinelli 21'</text>
+</g>
+<g class="shot-node" data-half="1H" data-id="3" data-player="David Raya" data-team="CHE" onclick="selectShot(3)">
+<circle cx="260" cy="380" fill="url(#halo-blue)" r="22"></circle>
+<circle cx="260" cy="380" fill="#003077" r="14" stroke="#ffffff" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="9" font-weight="700" text-anchor="middle" x="260" y="384">S</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" text-anchor="middle" x="260" y="410">Raya Sv 34'</text>
+</g>
+<g class="shot-node" data-half="1H" data-id="4" data-player="Noni Madueke" data-team="CHE" onclick="selectShot(4)">
+<line stroke="#707976" stroke-width="3" x1="75" x2="105" y1="265" y2="295"></line>
+<line stroke="#707976" stroke-width="3" x1="105" x2="75" y1="265" y2="295"></line>
+<text fill="#707976" font-family="Space Mono" font-size="9" text-anchor="middle" x="90" y="315">Madueke 41' (W)</text>
+</g>
+<g class="shot-node" data-half="1H" data-id="5" data-player="Cole Palmer" data-team="CHE" onclick="selectShot(5)">
+<circle cx="185" cy="445" fill="url(#halo-coral)" r="34"></circle>
+<circle cx="185" cy="445" fill="#fc7557" r="21" stroke="#ffffff" stroke-width="3"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="12" font-weight="700" text-anchor="middle" x="185" y="450">G</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" font-weight="700" text-anchor="middle" x="185" y="480">Palmer 45' (P)</text>
+</g>
+<g class="shot-node" data-half="2H" data-id="6" data-player="Robert Sanchez" data-team="ARS" onclick="selectShot(6)">
+<circle cx="560" cy="280" fill="url(#halo-blue)" r="20"></circle>
+<circle cx="560" cy="280" fill="#003077" r="13" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="9" font-weight="700" text-anchor="middle" x="560" y="284">S</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" text-anchor="middle" x="560" y="306">Sanchez Sv 58'</text>
+</g>
+<g class="shot-node" data-half="2H" data-id="7" data-player="Bukayo Saka" data-team="ARS" onclick="selectShot(7)">
+<circle cx="810" cy="440" fill="url(#halo-coral)" r="26"></circle>
+<circle cx="810" cy="440" fill="#fc7557" r="15" stroke="#ffffff" stroke-width="2.5"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle" x="810" y="444">G</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="9" font-weight="600" text-anchor="middle" x="810" y="470">Saka 62'</text>
+</g>
+<g class="shot-node" data-half="2H" data-id="8" data-player="Kai Havertz" data-team="ARS" onclick="selectShot(8)">
+<line stroke="#a83820" stroke-width="3" x1="488" x2="512" y1="70" y2="94"></line>
+<line stroke="#a83820" stroke-width="3" x1="512" x2="488" y1="70" y2="94"></line>
+<circle cx="500" cy="82" fill="none" r="18" stroke="#a83820" stroke-dasharray="3,3" stroke-width="1.5"></circle>
+<text fill="#a83820" font-family="Space Mono" font-size="9" font-weight="700" text-anchor="middle" x="500" y="62">Havertz 69' (BAR)</text>
+</g>
+<g class="shot-node" data-half="2H" data-id="9" data-player="Cole Palmer" data-team="CHE" onclick="selectShot(9)">
+<circle cx="680" cy="340" fill="url(#halo-blue)" r="18"></circle>
+<circle cx="680" cy="340" fill="#003077" r="11" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="680" y="344">S</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="8" text-anchor="middle" x="680" y="364">Blocked 66'</text>
+</g>
+<g class="shot-node" data-half="1H" data-id="10" data-player="Bukayo Saka" data-team="ARS" onclick="selectShot(10)">
+<circle cx="340" cy="220" fill="url(#halo-blue)" r="16"></circle>
+<circle cx="340" cy="220" fill="#003077" r="10" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#ffffff" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="340" y="224">S</text>
+<text fill="#1b1b20" font-family="Space Mono" font-size="8" text-anchor="middle" x="340" y="242">Defl. Sv 28'</text>
+</g>
+</g>
+</svg>
+</div>
+<div class="mt-space-md grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container-low p-2 rounded-lg">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">Goal Converted (4)</span>
+<span class="font-label-xs text-label-xs text-outline">Halo = PSxG Lift</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-2 rounded-lg">
+<span class="w-3.5 h-3.5 rounded-full bg-tertiary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">Goalkeeper Saved (4)</span>
+<span class="font-label-xs text-label-xs text-outline">Opta Parried / Held</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-2 rounded-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary leading-none">✕</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">Woodwork (1)</span>
+<span class="font-label-xs text-label-xs text-outline">Post / Crossbar strike</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-2 rounded-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-outline leading-none">✕</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">Off Target / Miss (7)</span>
+<span class="font-label-xs text-label-xs text-outline">Exterior frame vector</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-xs font-bold">CHE</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Robert Sanchez</h3>
+<span class="font-label-xs text-label-xs text-outline">Chelsea GK • 74 Mins</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">2 SAVES</span>
+</div>
+<div class="grid grid-cols-3 gap-2 my-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">PSxG Faced</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">1.88</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">Goals Conc.</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">2</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">GAA Delta</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">-0.12</span>
+</div>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Neutral shot-stopping index. Conceded high-quadrant screamer (0.68 PSxG) and acute low-post drive.</p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-xs font-bold">ARS</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">David Raya</h3>
+<span class="font-label-xs text-label-xs text-outline">Arsenal GK • 74 Mins</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">2 SAVES</span>
+</div>
+<div class="grid grid-cols-3 gap-2 my-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">PSxG Faced</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">1.72</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">Goals Conc.</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">2</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">GAA Delta</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">-0.28</span>
+</div>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Negative delta governed primarily by Palmer penalty conversion (0.94 PSxG) inside bottom corner.</p>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between" id="inspector-card">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">troubleshoot</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Shot Vector Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-xs text-label-xs font-bold" id="inspect-pill">GOAL 45'</span>
+</div>
+<div class="my-space-xs bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface" id="inspect-player">Cole Palmer</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-primary text-on-primary rounded font-bold" id="inspect-team">CHELSEA FC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="inspect-context">45+2' Penalty Kick • Left Foot Low Placement</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm my-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Pre-Shot xG</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="inspect-xg">0.79</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Baseline spot probability</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Post-Shot xG</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold" id="inspect-psxg">0.94</span>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">+0.15 Finishing Delta</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Velocity (km/h)</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="inspect-vel">104.2</span>
+<span class="font-label-xs text-label-xs text-outline">Exit speed at contact</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Strike Distance</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="inspect-dist">11.0m</span>
+<span class="font-label-xs text-label-xs text-outline">Penalty spot</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-xs text-label-xs text-outline uppercase">Biomechanical Telemetry Snapshot</span>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between text-label-xs font-label-xs">
+<span class="text-on-surface-variant">Goalkeeper Anticipation Error:</span>
+<span class="font-semibold text-secondary" id="inspect-gk-error">Dived opposite (+0.44s)</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between text-label-xs font-label-xs">
+<span class="text-on-surface-variant">Corner Frame Distance:</span>
+<span class="font-semibold text-on-surface" id="inspect-post-dist">0.42m from inside post</span>
+</div>
+</div>
+<button class="mt-space-md w-full py-2 bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all font-label-sm text-label-sm uppercase tracking-wider rounded-lg font-semibold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+            View 3D Trajectory Replay
+          </button>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-xs">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Finishing Delta Spectrum</h4>
+<span class="font-label-xs text-label-xs text-outline">PSxG minus xG</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Identifies match-defining shooting efficiency above baseline expected conversion.</p>
+<div class="mt-space-md flex flex-col gap-3">
+<div>
+<div class="flex justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface font-semibold">Martinelli (Postage Stamp)</span>
+<span class="text-secondary font-bold">+0.50 PSxG</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface font-semibold">Saka (Bottom Corner)</span>
+<span class="text-secondary font-bold">+0.22 PSxG</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 58%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface font-semibold">Jackson (Central Driven)</span>
+<span class="text-secondary font-bold">+0.14 PSxG</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 44%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-xs text-label-xs mb-1">
+<span class="text-on-surface font-semibold">Palmer (Spot Conversion)</span>
+<span class="text-secondary font-bold">+0.15 PSxG</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 46%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Comprehensive Shot Matrix (16 Telemetry Events)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High-density log recorded via pitch sensors. Click any row to sync the Goal Frame visualizer.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface font-label-xs text-label-xs font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">download</span> EXPORT JSON
+          </button>
+<button class="px-space-sm py-1.5 rounded bg-primary text-on-primary font-label-xs text-label-xs font-semibold hover:bg-primary-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> COLUMNS
+          </button>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l">Min</th>
+<th class="py-2.5 px-3">Player</th>
+<th class="py-2.5 px-3">Club</th>
+<th class="py-2.5 px-3">Type</th>
+<th class="py-2.5 px-3 text-right">Dist (m)</th>
+<th class="py-2.5 px-3 text-right">xG</th>
+<th class="py-2.5 px-3 text-right">PSxG</th>
+<th class="py-2.5 px-3 text-right">Delta</th>
+<th class="py-2.5 px-3 text-center rounded-r">Result</th>
+</tr>
+</thead>
+<tbody class="font-label-xs text-label-xs" id="shot-table-body">
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(1)">
+<td class="py-3 px-3 font-semibold text-on-surface">12'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Nicolas Jackson</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">CHE</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Right Foot (Low)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">8.4m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.38</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-semibold">0.52</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.14</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold">GOAL</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(2)">
+<td class="py-3 px-3 font-semibold text-on-surface">21'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Gabriel Martinelli</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">ARS</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Right Foot (Curler)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">18.2m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.18</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-semibold">0.68</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-bold">+0.50</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold">GOAL</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(10)">
+<td class="py-3 px-3 font-semibold text-on-surface">28'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Bukayo Saka</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">ARS</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Deflected)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">14.1m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.12</td>
+<td class="py-3 px-3 text-right text-tertiary font-label-sm font-semibold">0.29</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.17</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">SAVED</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(3)">
+<td class="py-3 px-3 font-semibold text-on-surface">34'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Cole Palmer</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">CHE</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Low)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">19.8m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.08</td>
+<td class="py-3 px-3 text-right text-tertiary font-label-sm font-semibold">0.31</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.23</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">SAVED</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(4)">
+<td class="py-3 px-3 font-semibold text-on-surface">41'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Noni Madueke</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">CHE</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Wide)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">16.3m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.14</td>
+<td class="py-3 px-3 text-right text-outline font-label-sm">0.00</td>
+<td class="py-3 px-3 text-right text-outline font-label-sm">-0.14</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-surface-container text-outline font-medium">WIDE</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(5)">
+<td class="py-3 px-3 font-semibold text-on-surface">45+2'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Cole Palmer</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">CHE</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Penalty)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">11.0m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.79</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-semibold">0.94</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.15</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold">GOAL</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(6)">
+<td class="py-3 px-3 font-semibold text-on-surface">58'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Kai Havertz</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">ARS</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Header (Point Blank)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">6.1m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.42</td>
+<td class="py-3 px-3 text-right text-tertiary font-label-sm font-semibold">0.55</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.13</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">SAVED</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(7)">
+<td class="py-3 px-3 font-semibold text-on-surface">62'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Bukayo Saka</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">ARS</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Inside Post)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">13.6m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.24</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-semibold">0.46</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm font-semibold">+0.22</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-bold">GOAL</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(9)">
+<td class="py-3 px-3 font-semibold text-on-surface">66'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Cole Palmer</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">CHE</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Left Foot (Deflected)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">21.4m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.05</td>
+<td class="py-3 px-3 text-right text-tertiary font-label-sm font-semibold">0.18</td>
+<td class="py-3 px-3 text-right text-secondary font-label-sm">+0.13</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">BLOCKED</span></td>
+</tr>
+<tr class="cursor-pointer hover:bg-surface-container-low transition-colors bg-surface-container-lowest" onclick="selectShot(8)">
+<td class="py-3 px-3 font-semibold text-on-surface">69'</td>
+<td class="py-3 px-3 font-semibold text-on-surface">Kai Havertz</td>
+<td class="py-3 px-3"><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">ARS</span></td>
+<td class="py-3 px-3 text-on-surface-variant">Header (Crossbar)</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">7.2m</td>
+<td class="py-3 px-3 text-right text-on-surface font-label-sm">0.31</td>
+<td class="py-3 px-3 text-right text-outline font-label-sm">0.00</td>
+<td class="py-3 px-3 text-right text-outline font-label-sm">-0.31</td>
+<td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">WOODWORK</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const shotDetails = {
+    1: {
+      player: "Nicolas Jackson",
+      team: "CHELSEA FC",
+      teamCode: "CHE",
+      minute: "12' First Half",
+      type: "Right Foot Low Driven",
+      xg: "0.38",
+      psxg: "0.52",
+      delta: "+0.14 PSxG Delta",
+      velocity: "98.4",
+      distance: "8.4m",
+      status: "GOAL 12'",
+      statusBg: "bg-secondary-container text-on-secondary",
+      gkError: "Raya unsighted by Saliba",
+      postDist: "0.85m off ground centre"
+    },
+    2: {
+      player: "Gabriel Martinelli",
+      team: "ARSENAL FC",
+      teamCode: "ARS",
+      minute: "21' First Half",
+      type: "Right Foot Curler (Top Corner)",
+      xg: "0.18",
+      psxg: "0.68",
+      delta: "+0.50 PSxG Delta",
+      velocity: "101.8",
+      distance: "18.2m",
+      status: "GOAL 21'",
+      statusBg: "bg-secondary-container text-on-secondary",
+      gkError: "Sanchez outstretched (0.12m away)",
+      postDist: "0.18m from upper junction"
+    },
+    3: {
+      player: "Cole Palmer",
+      team: "CHELSEA FC",
+      teamCode: "CHE",
+      minute: "34' First Half",
+      type: "Left Foot Low Dipping Shot",
+      xg: "0.08",
+      psxg: "0.31",
+      delta: "+0.23 PSxG Delta",
+      velocity: "92.0",
+      distance: "19.8m",
+      status: "SAVED 34'",
+      statusBg: "bg-tertiary-fixed text-on-tertiary-fixed",
+      gkError: "Raya rapid dive to right post",
+      postDist: "1.1m from left upright"
+    },
+    4: {
+      player: "Noni Madueke",
+      team: "CHELSEA FC",
+      teamCode: "CHE",
+      minute: "41' First Half",
+      type: "Left Foot Cutting Strike",
+      xg: "0.14",
+      psxg: "0.00",
+      delta: "-0.14 PSxG Delta",
+      velocity: "88.6",
+      distance: "16.3m",
+      status: "OFF TARGET 41'",
+      statusBg: "bg-surface-container text-outline",
+      gkError: "Raya watched wide harmlessly",
+      postDist: "1.8m wide left of target"
+    },
+    5: {
+      player: "Cole Palmer",
+      team: "CHELSEA FC",
+      teamCode: "CHE",
+      minute: "45+2' Penalty Kick",
+      type: "Left Foot Low Corner Placement",
+      xg: "0.79",
+      psxg: "0.94",
+      delta: "+0.15 PSxG Delta",
+      velocity: "104.2",
+      distance: "11.0m",
+      status: "GOAL 45+2'",
+      statusBg: "bg-secondary-container text-on-secondary",
+      gkError: "Raya committed wrong side",
+      postDist: "0.42m from lower left post"
+    },
+    6: {
+      player: "Kai Havertz",
+      team: "ARSENAL FC",
+      teamCode: "ARS",
+      minute: "58' Second Half",
+      type: "Header (Close Range Reflex)",
+      xg: "0.42",
+      psxg: "0.55",
+      delta: "+0.13 PSxG Delta",
+      velocity: "64.0",
+      distance: "6.1m",
+      status: "SAVED 58'",
+      statusBg: "bg-tertiary-fixed text-on-tertiary-fixed",
+      gkError: "Sanchez reflex forearm parry",
+      postDist: "0.9m above crossbar base"
+    },
+    7: {
+      player: "Bukayo Saka",
+      team: "ARSENAL FC",
+      teamCode: "ARS",
+      minute: "62' Second Half",
+      type: "Left Foot Curler Inside Low Post",
+      xg: "0.24",
+      psxg: "0.46",
+      delta: "+0.22 PSxG Delta",
+      velocity: "99.1",
+      distance: "13.6m",
+      status: "GOAL 62'",
+      statusBg: "bg-secondary-container text-on-secondary",
+      gkError: "Sanchez unsighted by Cucurella",
+      postDist: "0.38m from right lower post"
+    },
+    8: {
+      player: "Kai Havertz",
+      team: "ARSENAL FC",
+      teamCode: "ARS",
+      minute: "69' Second Half",
+      type: "Header off Corner (Woodwork)",
+      xg: "0.31",
+      psxg: "0.00",
+      delta: "-0.31 PSxG Delta",
+      velocity: "72.4",
+      distance: "7.2m",
+      status: "WOODWORK 69'",
+      statusBg: "bg-secondary-fixed text-on-secondary-fixed",
+      gkError: "Beaten in air, saved by bar",
+      postDist: "Direct central crossbar strike"
+    },
+    9: {
+      player: "Cole Palmer",
+      team: "CHELSEA FC",
+      teamCode: "CHE",
+      minute: "66' Second Half",
+      type: "Left Foot Deflected Shot",
+      xg: "0.05",
+      psxg: "0.18",
+      delta: "+0.13 PSxG Delta",
+      velocity: "84.0",
+      distance: "21.4m",
+      status: "BLOCKED 66'",
+      statusBg: "bg-surface-container text-on-surface-variant",
+      gkError: "Gabriel charge-down block",
+      postDist: "1.4m inside right post"
+    },
+    10: {
+      player: "Bukayo Saka",
+      team: "ARSENAL FC",
+      teamCode: "ARS",
+      minute: "28' First Half",
+      type: "Left Foot Driven Angle",
+      xg: "0.12",
+      psxg: "0.29",
+      delta: "+0.17 PSxG Delta",
+      velocity: "95.5",
+      distance: "14.1m",
+      status: "SAVED 28'",
+      statusBg: "bg-tertiary-fixed text-on-tertiary-fixed",
+      gkError: "Sanchez diving save to left",
+      postDist: "1.6m inside left post"
+    }
+  };
+
+  let currentTeam = 'ALL';
+  let currentHalf = 'ALL';
+  let currentPlayer = 'ALL';
+
+  function selectShot(id) {
+    const data = shotDetails[id];
+    if (!data) return;
+
+    document.getElementById('inspect-pill').className = 'px-2 py-0.5 rounded-full font-label-xs text-label-xs font-bold ' + data.statusBg;
+    document.getElementById('inspect-pill').innerText = data.status;
+    document.getElementById('inspect-player').innerText = data.player;
+    document.getElementById('inspect-team').innerText = data.team;
+    document.getElementById('inspect-context').innerText = data.minute + ' • ' + data.type;
+    document.getElementById('inspect-xg').innerText = data.xg;
+    document.getElementById('inspect-psxg').innerText = data.psxg;
+    document.getElementById('inspect-vel').innerText = data.velocity;
+    document.getElementById('inspect-dist').innerText = data.distance;
+    document.getElementById('inspect-gk-error').innerText = data.gkError;
+    document.getElementById('inspect-post-dist').innerText = data.postDist;
+
+    const nodes = document.querySelectorAll('.shot-node');
+    nodes.forEach(n => {
+      if (parseInt(n.getAttribute('data-id')) === id) {
+        n.style.opacity = '1';
+        n.style.transform = 'scale(1.1)';
+        n.style.transformOrigin = 'center';
+      } else {
+        n.style.transform = 'scale(1.0)';
+      }
+    });
+  }
+
+  function filterNodes() {
+    const nodes = document.querySelectorAll('.shot-node');
+    nodes.forEach(node => {
+      const team = node.getAttribute('data-team');
+      const half = node.getAttribute('data-half');
+      const player = node.getAttribute('data-player');
+
+      let visible = true;
+      if (currentTeam !== 'ALL' && team !== currentTeam) visible = false;
+      if (currentHalf !== 'ALL' && half !== currentHalf) visible = false;
+      if (currentPlayer !== 'ALL' && player !== currentPlayer) visible = false;
+
+      node.style.display = visible ? 'inline' : 'none';
+    });
+  }
+
+  function applyTeamFilter(team) {
+    currentTeam = team;
+    document.getElementById('filter-all').className = team === 'ALL' ? 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-primary text-on-primary transition-all' : 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-on-surface-variant hover:text-on-surface transition-all';
+    document.getElementById('filter-che').className = team === 'CHE' ? 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-primary text-on-primary transition-all' : 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-on-surface-variant hover:text-on-surface transition-all';
+    document.getElementById('filter-ars').className = team === 'ARS' ? 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-primary text-on-primary transition-all' : 'px-space-sm py-1 rounded text-label-xs font-label-xs font-semibold bg-surface-container text-on-surface-variant hover:text-on-surface transition-all';
+    filterNodes();
+  }
+
+  function applyHalfFilter(half) {
+    currentHalf = half;
+    document.getElementById('half-all').className = half === 'ALL' ? 'px-2 py-1 rounded text-label-xs font-label-xs bg-primary text-on-primary font-medium' : 'px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant hover:text-on-surface';
+    document.getElementById('half-1').className = half === '1H' ? 'px-2 py-1 rounded text-label-xs font-label-xs bg-primary text-on-primary font-medium' : 'px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant hover:text-on-surface';
+    document.getElementById('half-2').className = half === '2H' ? 'px-2 py-1 rounded text-label-xs font-label-xs bg-primary text-on-primary font-medium' : 'px-2 py-1 rounded text-label-xs font-label-xs bg-surface-container text-on-surface-variant hover:text-on-surface';
+    filterNodes();
+  }
+
+  function applyPlayerFilter(player) {
+    currentPlayer = player;
+    filterNodes();
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl"><div class="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><div class="w-5 h-5 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm text-xs font-bold">C</div><span class="font-headline-sm text-headline-sm text-on-surface">PlayerStats Enterprise</span><span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cohere Engine 2026</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">High-fidelity football data terminal, live pitch telemetry, and AI probability indices engineered for professional front offices and analytical syndicates.</p><div class="flex items-center gap-space-md pt-space-xs font-label-xs text-label-xs text-outline"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span> SYSTEM STATUS: OPERATIONAL</span><span class="">LATENCY: 14MS</span><span class="">FEED: OPTA / STATSBOMB TIER-1</span></div></div><div class="flex items-start gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Analytics Core</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Pitch Telemetry</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">xG Vector Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Monte Carlo Sims</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Enterprise API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GraphQL Gateway</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WebSocket Ingest</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Telemetry Schema</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-xs text-label-xs uppercase text-on-surface font-semibold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Enterprise SLA</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Data Privacy &amp; GDPR</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security Compliance</a></div></div></div><div class="w-full px-margin-desktop py-space-sm border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-outline"><div class="flex items-center gap-space-md"><span class="">© 2026 Cohere Enterprise • PlayerStats Platform. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Terms of License</a><a class="hover:text-on-surface transition-colors" href="#">Security Disclosure</a><a class="hover:text-on-surface transition-colors" href="#">API Status v2.6.4</a></div></div></footer>
+</body></html>
