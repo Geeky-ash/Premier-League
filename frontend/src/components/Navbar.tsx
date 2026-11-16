@@ -48,6 +48,9 @@ export default function Navbar() {
   const isScoutingActive = pathname === "/scouting-studio";
   const isSimulationActive = pathname === "/simulation";
   const isDugoutActive = pathname === "/dugout";
+  const isAuthPage = pathname === "/auth" || pathname === "/login";
+
+  if (isAuthPage) return null;
 
   return (
     <>
@@ -280,24 +283,22 @@ export default function Navbar() {
             </button>
 
             {/* Sign In Button */}
-            <button
-              type="button"
-              onClick={() => setAuthModalOpen(true)}
+            <Link
+              href="/auth"
               className="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-label-lg text-label-lg transition-colors font-semibold"
             >
               Sign In
-            </button>
+            </Link>
 
             {/* Profile Avatar Icon */}
-            <button
-              type="button"
-              onClick={() => setAuthModalOpen(true)}
+            <Link
+              href="/auth"
               className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:opacity-90 transition-opacity"
             >
               <span className="material-symbols-outlined text-on-primary text-[18px]">
                 person
               </span>
-            </button>
+            </Link>
           </div>
         </div>
 

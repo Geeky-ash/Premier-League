@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayerStats Enterprise — Authentication</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ffffff;
+      color: #212121;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .font-mono-tech {
+      font-family: 'Space Mono', monospace;
+    }
+    /* Pitch tactical watermark corner hairlines */
+    .tactical-grid-bg {
+      background-image: 
+        radial-gradient(#d9d9dd 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white flex flex-col justify-between selection:bg-[#ff7759] selection:text-white">
+
+  <!-- 1. MINIMAL TOP BAR -->
+  <header class="w-full h-16 bg-white border-b border-[#d9d9dd] px-6 lg:px-12 flex items-center justify-between shrink-0">
+    <!-- Left Brand Identity -->
+    <a href="#" class="flex items-center space-x-3 group">
+      <div class="w-7 h-7 bg-[#17171c] rounded-md flex items-center justify-center text-white font-display font-bold text-sm tracking-tight transition-transform group-hover:scale-105">
+        C
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="font-display font-bold text-lg text-[#17171c] tracking-tight">PlayerStats</span>
+        <span class="px-1.5 py-0.5 rounded text-[11px] font-mono-tech font-bold bg-[#eeece7] text-[#17171c] tracking-wide border border-[#dcd9d4]">V2.6</span>
+      </div>
+    </a>
+
+    <!-- Right Secondary Link -->
+    <div class="flex items-center">
+      <a href="#" class="inline-flex items-center text-sm font-medium text-[#212121] hover:text-[#ff7759] transition-colors group">
+        <span class="mr-1.5 transition-transform group-hover:-translate-x-1">←</span>
+        <span class="underline underline-offset-4 decoration-[#d9d9dd] group-hover:decoration-[#ff7759]">Back to Matchday Hub</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CENTERED CONTENT AREA WITH TACTICAL ACCENTS -->
+  <main class="flex-1 flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
+    
+    <!-- Subtle Tactical Watermark Geometry (Clean pitch coordinate marks) -->
+    <div class="absolute inset-0 pointer-events-none opacity-40 tactical-grid-bg"></div>
+
+    <!-- Center Pitch Corner Arc Markings (Hairline accents #d9d9dd) -->
+    <div class="absolute top-12 left-12 w-24 h-24 border-t border-l border-[#d9d9dd] pointer-events-none hidden md:block">
+      <span class="absolute top-2 left-2 text-[10px] font-mono-tech text-[#75758a]">COORD_X 0.00</span>
+    </div>
+    <div class="absolute top-12 right-12 w-24 h-24 border-t border-r border-[#d9d9dd] pointer-events-none hidden md:block">
+      <span class="absolute top-2 right-2 text-[10px] font-mono-tech text-[#75758a]">SYS_GATEWAY // 2026</span>
+    </div>
+    <div class="absolute bottom-12 left-12 w-24 h-24 border-b border-l border-[#d9d9dd] pointer-events-none hidden md:block">
+      <span class="absolute bottom-2 left-2 text-[10px] font-mono-tech text-[#75758a]">SEC_LEVEL: TIER-1</span>
+    </div>
+    <div class="absolute bottom-12 right-12 w-24 h-24 border-b border-r border-[#d9d9dd] pointer-events-none hidden md:block">
+      <span class="absolute bottom-2 right-2 text-[10px] font-mono-tech text-[#75758a]">PITCH_DIM 105x68M</span>
+    </div>
+
+    <!-- CENTERED AUTHENTICATION CARD (max-w-[440px]) -->
+    <div class="w-full max-w-[440px] bg-white border border-[#d9d9dd] rounded-[22px] p-8 sm:p-9 relative z-10">
+      
+      <!-- Top Technical Mono Tag -->
+      <div class="flex items-center space-x-2 mb-4">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#ff7759] animate-pulse"></span>
+        <span class="font-mono-tech text-[12px] uppercase font-bold text-[#ff7759] tracking-[0.28px]">
+          ANALYST ACCESS // MATCHDAY INTELLIGENCE
+        </span>
+      </div>
+
+      <!-- Headline & Subtitle -->
+      <div class="mb-6">
+        <h1 class="font-display font-bold text-[32px] leading-tight text-[#17171c] tracking-[-0.32px]" id="auth-title">
+          Sign in to PlayerStats
+        </h1>
+        <p class="text-[14px] leading-relaxed text-[#616161] mt-2" id="auth-subtitle">
+          Access saved clubs, custom scouting models, and real-time referee foul alerts.
+        </p>
+      </div>
+
+      <!-- Mode Switcher Pill Bar (Segmented track in #eeece7 Soft Stone) -->
+      <div class="w-full bg-[#eeece7] p-1 rounded-[32px] flex items-center mb-6">
+        <button type="button" id="tab-signin" class="flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] bg-[#17171c] text-white transition-all shadow-sm">
+          Sign In
+        </button>
+        <button type="button" id="tab-signup" class="flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] text-[#75758a] hover:text-[#17171c] transition-all">
+          Create Account
+        </button>
+      </div>
+
+      <!-- AUTHENTICATION FORM -->
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        
+        <!-- Optional Name field for Signup (hidden by default) -->
+        <div id="field-name" class="space-y-1.5 hidden">
+          <label class="block font-mono-tech text-[11px] font-bold uppercase tracking-wider text-[#17171c]">
+            Full Name &amp; Federation Role
+          </label>
+          <input 
+            type="text" 
+            placeholder="e.g. Pep Guardiola (Technical Staff)" 
+            class="w-full h-11 px-3.5 bg-white border border-[#d9d9dd] rounded-lg text-[14px] text-[#212121] placeholder-[#75758a] focus:outline-none focus:border-[#9b60aa] focus:ring-1 focus:ring-[#9b60aa] transition-all"
+          >
+        </div>
+
+        <!-- Email Field -->
+        <div class="space-y-1.5">
+          <label class="block font-mono-tech text-[11px] font-bold uppercase tracking-wider text-[#17171c]">
+            Work or Personal Email
+          </label>
+          <div class="relative">
+            <input 
+              type="email" 
+              value="analyst@club.com" 
+              placeholder="analyst@club.com"
+              required
+              class="w-full h-11 px-3.5 bg-white border border-[#d9d9dd] rounded-lg text-[14px] text-[#212121] placeholder-[#75758a] focus:outline-none focus:border-[#9b60aa] focus:ring-1 focus:ring-[#9b60aa] transition-all"
+            >
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between">
+            <label class="block font-mono-tech text-[11px] font-bold uppercase tracking-wider text-[#17171c]">
+              Password
+            </label>
+            <a href="#" id="forgot-link" class="text-[13px] font-medium text-[#1863dc] hover:underline underline-offset-2">
+              Forgot password?
+            </a>
+          </div>
+          <div class="relative flex items-center">
+            <input 
+              id="password-input"
+              type="password" 
+              value="••••••••••••••••" 
+              placeholder="Enter your security passkey"
+              required
+              class="w-full h-11 pl-3.5 pr-10 bg-white border border-[#d9d9dd] rounded-lg text-[14px] text-[#212121] placeholder-[#75758a] focus:outline-none focus:border-[#9b60aa] focus:ring-1 focus:ring-[#9b60aa] transition-all"
+            >
+            <button 
+              type="button" 
+              id="toggle-pwd" 
+              class="absolute right-3 text-[#75758a] hover:text-[#17171c] p-1 focus:outline-none"
+              title="Toggle password visibility"
+            >
+              <!-- Eye SVG Icon -->
+              <svg id="eye-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Session Checkbox Option -->
+        <div class="pt-1 flex items-center justify-between">
+          <label class="flex items-center space-x-2.5 cursor-pointer select-none">
+            <input 
+              type="checkbox" 
+              checked 
+              class="w-4 h-4 rounded border-[#d9d9dd] text-[#17171c] focus:ring-[#9b60aa] accent-[#17171c] cursor-pointer"
+            >
+            <span class="text-[14px] text-[#212121]">Keep me signed in for 30 days</span>
+          </label>
+        </div>
+
+        <!-- Primary CTA Button (button-primary) -->
+        <div class="pt-2">
+          <button 
+            type="submit" 
+            id="primary-submit-btn" 
+            class="w-full h-11 rounded-[32px] bg-[#17171c] hover:bg-[#2b2b33] active:scale-[0.99] text-white font-medium text-[14px] flex items-center justify-center space-x-2 transition-all"
+          >
+            <span id="btn-text">Sign In</span>
+            <span class="font-mono-tech text-xs">→</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Divider Rule -->
+      <div class="relative my-6">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-[#d9d9dd]"></div>
+        </div>
+        <div class="relative flex justify-center text-[12px]">
+          <span class="bg-white px-3 font-mono-tech uppercase text-[#93939f] tracking-wider">
+            OR CONTINUE WITH
+          </span>
+        </div>
+      </div>
+
+      <!-- SSO Action Buttons (button-pill-outline) -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Google SSO -->
+        <button 
+          type="button" 
+          class="h-10 px-4 rounded-[30px] border border-[#d9d9dd] bg-white hover:bg-[#fbf8ff] hover:border-[#17171c] text-[#17171c] text-[13px] font-medium flex items-center justify-center space-x-2 transition-colors"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.94 0 12s.46 3.84 1.26 5.42l4.02-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+          <span>Google</span>
+        </button>
+
+        <!-- GitHub SSO -->
+        <button 
+          type="button" 
+          class="h-10 px-4 rounded-[30px] border border-[#d9d9dd] bg-white hover:bg-[#fbf8ff] hover:border-[#17171c] text-[#17171c] text-[13px] font-medium flex items-center justify-center space-x-2 transition-colors"
+        >
+          <svg class="w-4 h-4 fill-current text-[#17171c]" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 4. MINIMAL FOOTER MICROCOPY -->
+    <div class="mt-8 text-center relative z-10">
+      <p class="text-[12px] text-[#93939f] font-normal max-w-sm mx-auto leading-relaxed">
+        By continuing, you agree to PlayerStats 
+        <a href="#" class="underline hover:text-[#17171c] transition-colors">Terms of Service</a> 
+        and 
+        <a href="#" class="underline hover:text-[#17171c] transition-colors">Privacy Policy</a>.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Interactive script for Toggle modes and password visibility -->
+  <script>
+    const tabSignIn = document.getElementById('tab-signin');
+    const tabSignUp = document.getElementById('tab-signup');
+    const authTitle = document.getElementById('auth-title');
+    const authSubtitle = document.getElementById('auth-subtitle');
+    const btnText = document.getElementById('btn-text');
+    const fieldName = document.getElementById('field-name');
+    const forgotLink = document.getElementById('forgot-link');
+
+    tabSignIn.addEventListener('click', () => {
+      tabSignIn.className = "flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] bg-[#17171c] text-white transition-all shadow-sm";
+      tabSignUp.className = "flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] text-[#75758a] hover:text-[#17171c] transition-all";
+      authTitle.textContent = "Sign in to PlayerStats";
+      authSubtitle.textContent = "Access saved clubs, custom scouting models, and real-time referee foul alerts.";
+      btnText.textContent = "Sign In";
+      fieldName.classList.add('hidden');
+      forgotLink.classList.remove('invisible');
+    });
+
+    tabSignUp.addEventListener('click', () => {
+      tabSignUp.className = "flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] bg-[#17171c] text-white transition-all shadow-sm";
+      tabSignIn.className = "flex-1 py-2 text-center text-[13px] font-medium rounded-[28px] text-[#75758a] hover:text-[#17171c] transition-all";
+      authTitle.textContent = "Create an account";
+      authSubtitle.textContent = "Start tracking live pitch telemetry, xG models, and tactical squad benchmarks.";
+      btnText.textContent = "Create Account";
+      fieldName.classList.remove('hidden');
+      forgotLink.classList.add('invisible');
+    });
+
+    // Password visibility toggle
+    const togglePwd = document.getElementById('toggle-pwd');
+    const passwordInput = document.getElementById('password-input');
+    togglePwd.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
+
+</body>
+</html>

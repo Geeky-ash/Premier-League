@@ -2,8 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isAuthPage = pathname === "/auth" || pathname === "/login";
+  if (isAuthPage) return null;
+
   return (
     <footer className="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-xl">
       <div className="w-full px-margin-desktop py-space-xl flex flex-col md:flex-row items-start justify-between gap-space-lg">
